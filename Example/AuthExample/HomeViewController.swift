@@ -32,10 +32,10 @@ class HomeViewController: UIViewController, ConsentDelegate {
         self.dismiss(animated: true, completion: nil)
     }
 
-    func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: ConsentString?) {
+    func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: CCPAString?) {
         self.userData = [
             "consentUUID: \(consentUUID.uuidString)",
-            "euconsent: \(consentString?.consentString ?? "<unknown>")"
+            "consentString: \(consentString ?? "<unknown>")"
         ]
         self.consents = consents
         self.consentTableView.reloadData()

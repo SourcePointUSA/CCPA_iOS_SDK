@@ -49,10 +49,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ConsentDelegat
         self.dismiss(animated: true, completion: nil)
     }
 
-    func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: ConsentString?) {
+    func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: CCPAString?) {
         self.userData = [
             "consentUUID: \(consentUUID.uuidString)",
-            "euconsent: \(consentString?.consentString ?? "<unknown>")"
+            "consentString: \(consentString ?? "<unknown>")"
         ]
         self.consents = consents
         self.consentTableView.reloadData()
@@ -85,7 +85,7 @@ extension LoginViewController: UITableViewDataSource {
     func initData() {
         self.userData = [
             "consentUUID: loading...",
-            "euconsent: loading..."
+            "consentString: loading..."
         ]
         consentTableView.reloadData()
     }

@@ -15,6 +15,6 @@ import Foundation
     @objc optional func messageDidDisappear()
     @objc optional func onAction(_ action: Action)
     @objc func consentUIDidDisappear()
-    @objc optional func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: ConsentString?)
+    @objc optional func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: CCPAString?)
     @objc optional func onError(error: CCPAConsentViewControllerError?)
 }

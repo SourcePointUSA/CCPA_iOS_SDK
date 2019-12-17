@@ -7,6 +7,8 @@
 
 import Foundation
 
+public typealias CCPAString = String
+
 struct ConsentsResponse: Codable {
     let consentedVendors: [VendorConsent]
     let consentedPurposes: [PurposeConsent]
@@ -22,12 +24,12 @@ protocol WrapperApiRequest: Codable, Equatable {
 
 struct MessageResponse: WrapperApiRequest {
     let url: URL?
-    let euconsent: ConsentString?
+    let ccpaString: CCPAString?
     let uuid, requestUUID: UUID
 }
 
 struct ActionResponse: WrapperApiRequest {
-    let euconsent: ConsentString
+    let ccpaString: CCPAString
     let uuid, requestUUID: UUID
 }
 

@@ -15,33 +15,14 @@ import UIKit
     }
 
     /// :nodoc:
-    static public let EU_CONSENT_KEY: String = "euconsent"
+    static public let CCPA_CONSENT_KEY: String = "ccpastring"
     /// :nodoc:
     static public let CONSENT_UUID_KEY: String = "consentUUID"
-
-    /// If the user has consent data stored, reading for this key in the `UserDefaults` will return "1"
-    static public let IAB_CONSENT_CMP_PRESENT: String = "IABConsent_CMPPresent"
-
-    /// If the user is subject to GDPR, reading for this key in the `UserDefaults` will return "1" otherwise "0"
-    static public let IAB_CONSENT_SUBJECT_TO_GDPR: String = "IABConsent_SubjectToGDPR"
-
-    /// They key used to store the IAB Consent string for the user in the `UserDefaults`
-    static public let IAB_CONSENT_CONSENT_STRING: String = "IABConsent_ConsentString"
-
-    /// They key used to read and write the parsed IAB Purposes consented by the user in the `UserDefaults`
-    static public let IAB_CONSENT_PARSED_PURPOSE_CONSENTS: String = "IABConsent_ParsedPurposeConsents"
-
-    /// The key used to read and write the parsed IAB Vendor consented by the user in the `UserDefaults`
-    static public let IAB_CONSENT_PARSED_VENDOR_CONSENTS: String = "IABConsent_ParsedVendorConsents"
-
-    static private let MAX_VENDOR_ID: Int = 500
-    static private let MAX_PURPOSE_ID: Int = 24
 
     /// :nodoc:
     public var debugLevel: DebugLevel = .OFF
 
-    /// The IAB consent string, set after the user has chosen after interacting with the CCPAConsentViewController
-    public var euconsent: ConsentString?
+    public var ccpaString: CCPAString?
 
     /// The UUID assigned to the user, set after the user has chosen after interacting with the CCPAConsentViewController
     public var consentUUID: UUID?
@@ -114,7 +95,7 @@ import UIKit
             onError: consentDelegate.onError(error:)
         )
 
-        self.euconsent = try? ConsentString(consentString: UserDefaults.standard.string(forKey: CCPAConsentViewController.EU_CONSENT_KEY) ?? "")
+        self.ccpaString = UserDefaults.standard.string(forKey: CCPAConsentViewController.CCPA_CONSENT_KEY)
         self.consentUUID = UUID(uuidString: UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY) ?? "")
 
         super.init(nibName: nil, bundle: nil)
@@ -126,7 +107,7 @@ import UIKit
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func getConsents(forUUID uuid: UUID, consentString: ConsentString?) {
+    private func getConsents(forUUID uuid: UUID, consentString: CCPAString?) {
         sourcePoint.getCustomConsents(consentUUID: uuid) { [weak self] consents in
             self?.onConsentReady(
                 consentUUID: uuid,
@@ -149,7 +130,7 @@ import UIKit
                 if let url = message.url {
                     self?.loadMessage(fromUrl: url)
                 } else {
-                    self?.getConsents(forUUID: message.uuid, consentString: message.euconsent)
+                    self?.getConsents(forUUID: message.uuid, consentString: message.ccpaString)
                 }
             }
         }
@@ -164,76 +145,11 @@ import UIKit
         }
     }
 
-    /**
-     Get the IAB consents given to each vendor id in the array passed as parameter
-
-     - Precondition: this function should be called either during the `Callback` `onConsentReady` or after it has returned.
-     - Parameter _: an `Array` of vendor ids
-     - Returns: an `Array` of `Bool` indicating if the user has given consent to the corresponding vendor.
-     */
-    public func getIABVendorConsents(_ forIds: [Int]) throws -> [Bool] {
-        var results = Array(repeating: false, count: forIds.count)
-        let storedConsentString = UserDefaults.standard.string(forKey: CCPAConsentViewController.IAB_CONSENT_CONSENT_STRING) ?? ""
-        let consentString = try ConsentString(consentString: storedConsentString)
-
-        for i in 0..<forIds.count {
-            results[i] = consentString.isVendorAllowed(vendorId: forIds[i])
-        }
-        return results
-    }
-
-    /**
-     Checks if the IAB purposes passed as parameter were given consent or not.
-
-     - Precondition: this function should be called either during the `Callback` `onConsentReady` or after it has returned.
-     - Parameter _: an `Array` of purpose ids
-     - Returns: an `Array` of `Bool` indicating if the user has given consent to the corresponding purpose.
-     */
-    public func getIABPurposeConsents(_ forIds: [Int8]) throws -> [Bool] {
-        var results = Array(repeating: false, count: forIds.count)
-        let storedConsentString = UserDefaults.standard.string(forKey: CCPAConsentViewController.IAB_CONSENT_CONSENT_STRING) ?? ""
-        let consentString = try ConsentString(consentString: storedConsentString)
-
-        for i in 0..<forIds.count {
-            results[i] = consentString.purposeAllowed(forPurposeId: forIds[i])
-        }
-        return results
-    }
-
-    internal func storeIABVars(consentString: ConsentString) {
-        sourcePoint.getGdprStatus { gdprApplies in
-            UserDefaults.standard.setValue(gdprApplies ? "1" : "0", forKey: CCPAConsentViewController.IAB_CONSENT_SUBJECT_TO_GDPR)
-        }
-
-        UserDefaults.standard.setValue(consentString.consentString, forKey: CCPAConsentViewController.IAB_CONSENT_CONSENT_STRING)
-
-        // Generate parsed vendor consents string
-        var parsedVendorConsents = [Character](repeating: "0", count: CCPAConsentViewController.MAX_VENDOR_ID)
-        for i in 1...CCPAConsentViewController.MAX_VENDOR_ID {
-            if consentString.isVendorAllowed(vendorId: i) {
-                parsedVendorConsents[i - 1] = "1"
-            }
-        }
-        UserDefaults.standard.setValue(String(parsedVendorConsents), forKey: CCPAConsentViewController.IAB_CONSENT_PARSED_VENDOR_CONSENTS)
-
-        // Generate parsed purpose consents string
-        var parsedPurposeConsents = [Character](repeating: "0", count: CCPAConsentViewController.MAX_PURPOSE_ID)
-        for i in consentString.purposesAllowed {
-            parsedPurposeConsents[Int(i) - 1] = "1"
-        }
-        UserDefaults.standard.setValue(String(parsedPurposeConsents), forKey: CCPAConsentViewController.IAB_CONSENT_PARSED_PURPOSE_CONSENTS)
-    }
-
     /// It will clear all the stored userDefaults Data
     public func clearAllConsentData() {
         let userDefaults = UserDefaults.standard
-        userDefaults.removeObject(forKey: CCPAConsentViewController.EU_CONSENT_KEY)
+        userDefaults.removeObject(forKey: CCPAConsentViewController.CCPA_CONSENT_KEY)
         userDefaults.removeObject(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
-        userDefaults.removeObject(forKey: CCPAConsentViewController.IAB_CONSENT_CMP_PRESENT)
-        userDefaults.removeObject(forKey: CCPAConsentViewController.IAB_CONSENT_SUBJECT_TO_GDPR)
-        userDefaults.removeObject(forKey: CCPAConsentViewController.IAB_CONSENT_CONSENT_STRING)
-        userDefaults.removeObject(forKey: CCPAConsentViewController.IAB_CONSENT_PARSED_PURPOSE_CONSENTS)
-        userDefaults.removeObject(forKey: CCPAConsentViewController.IAB_CONSENT_PARSED_VENDOR_CONSENTS)
         userDefaults.synchronize()
     }
 }
@@ -263,20 +179,19 @@ extension CCPAConsentViewController: ConsentDelegate {
     public func onAction(_ action: Action) {
         if(action == .AcceptAll || action == .RejectAll || action == .PMAction) {
             sourcePoint.postAction(action: action, consentUUID: consentUUID) { [weak self] response in
-                self?.getConsents(forUUID: response.uuid, consentString: response.euconsent)
+                self?.getConsents(forUUID: response.uuid, consentString: response.ccpaString)
             }
         }
     }
     
-    public func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: ConsentString?) {
+    public func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: CCPAString?) {
         guard let consentString = consentString else {
             consentDelegate?.onConsentReady?(consentUUID: consentUUID, consents: consents, consentString: nil)
             return
         }
         self.consentUUID = consentUUID
-        euconsent = consentString
-        storeIABVars(consentString: consentString)
-        UserDefaults.standard.setValue(consentString.consentString, forKey: CCPAConsentViewController.EU_CONSENT_KEY)
+        ccpaString = consentString
+        UserDefaults.standard.setValue(consentString, forKey: CCPAConsentViewController.CCPA_CONSENT_KEY)
         UserDefaults.standard.setValue(consentUUID.uuidString, forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
         UserDefaults.standard.synchronize()
         consentDelegate?.onConsentReady?(consentUUID: consentUUID, consents: consents, consentString: consentString)
