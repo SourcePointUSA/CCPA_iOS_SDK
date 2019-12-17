@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9E27EA3F-929F-44A0-9B7E-B10E71394A47"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C15CA4F4-6B8A-4080-8891-4AA82EEB4C05"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CCPAConsentViewController/Classes/SourcePointClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "getCustomConsents(consentUUID:onSuccess:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55D78CD5-228A-4C39-B7D9-778830D904D3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CCPAConsentViewController/Classes/SourcePointClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "postAction(action:consentUUID:onSuccess:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "55D78CD5-228A-4C39-B7D9-778830D904D3 - 7e6dc9b7a56df759"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CCPAConsentViewController.SourcePointClient.postAction(action: CCPAConsentViewController.Action, consentUUID: Swift.Optional&lt;Foundation.UUID&gt;, onSuccess: (CCPAConsentViewController.ActionResponse) -&gt; ()) -&gt; ()"
+                  moduleName = "CCPAConsentViewController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreherculano/dev/sourcepoint/ios-cmp-app/CCPAConsentViewController/Classes/SourcePointClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "1197">
+               </Location>
+               <Location
+                  uuid = "55D78CD5-228A-4C39-B7D9-778830D904D3 - 8705b4108191cf86"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.Data) -&gt; () in CCPAConsentViewController.SourcePointClient.postAction(action: CCPAConsentViewController.Action, consentUUID: Swift.Optional&lt;Foundation.UUID&gt;, onSuccess: (CCPAConsentViewController.ActionResponse) -&gt; ()) -&gt; ()"
+                  moduleName = "CCPAConsentViewController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andreherculano/dev/sourcepoint/ios-cmp-app/CCPAConsentViewController/Classes/SourcePointClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "325">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC0E4C5A-A4C1-4C14-B950-743AFAD07FA3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CCPAConsentViewController/Classes/SourcePointClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "postAction(action:consentUUID:onSuccess:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E7C6E5B0-CA41-41EE-9996-088847D5ED7D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../CCPAConsentViewController/Classes/CCPAConsentViewControllerError.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "MessageEventParsingError"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

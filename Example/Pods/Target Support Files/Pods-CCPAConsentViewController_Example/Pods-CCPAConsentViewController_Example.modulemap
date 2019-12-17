@@ -1,0 +1,6 @@
+framework module Pods_CCPAConsentViewController_Example {
+  umbrella header "Pods-CCPAConsentViewController_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

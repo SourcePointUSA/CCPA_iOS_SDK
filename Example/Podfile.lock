@@ -1,0 +1,31 @@
+PODS:
+  - CCPAConsentViewController (3.1.0)
+  - IQKeyboardManagerSwift (6.5.4)
+  - Nimble (8.0.4)
+  - Quick (2.2.0)
+
+DEPENDENCIES:
+  - CCPAConsentViewController (from `../`)
+  - IQKeyboardManagerSwift
+  - Nimble
+  - Quick
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - Nimble
+    - Quick
+
+EXTERNAL SOURCES:
+  CCPAConsentViewController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CCPAConsentViewController: cddd9811353307aa51f16b591ffa5604f7f12b39
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+
+PODFILE CHECKSUM: 3d35277c535da90dbd9910f89adaf13f2c25e649
+
+COCOAPODS: 1.8.4
