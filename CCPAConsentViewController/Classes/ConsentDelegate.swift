@@ -13,8 +13,8 @@ import Foundation
     @objc optional func pmWillShow()
     @objc optional func pmDidDisappear()
     @objc optional func messageDidDisappear()
-    @objc optional func onAction(_ action: Action)
+    @objc optional func onAction(_ action: Action, consents: PMConsents?)
     @objc func consentUIDidDisappear()
-    @objc optional func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: CCPAString?)
+    @objc optional func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent)
     @objc optional func onError(error: CCPAConsentViewControllerError?)
 }

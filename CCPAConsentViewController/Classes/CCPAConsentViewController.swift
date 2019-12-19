@@ -9,45 +9,23 @@
 import UIKit
 
 @objcMembers open class CCPAConsentViewController: UIViewController {
-    /// :nodoc:
-    public enum DebugLevel: String {
-        case DEBUG, INFO, TIME, WARN, ERROR, OFF
-    }
+    static public let CCPA_USER_CONSENTS: String = "sp_ccpa_user_consents"
+    static public let CONSENT_UUID_KEY: String = "sp_consentUUID"
+    static public let META_KEY: String = "sp_meta"
 
-    /// :nodoc:
-    static public let CCPA_CONSENT_KEY: String = "ccpastring"
-    /// :nodoc:
-    static public let CONSENT_UUID_KEY: String = "consentUUID"
-
-    /// :nodoc:
-    public var debugLevel: DebugLevel = .OFF
-
-    public var ccpaString: CCPAString?
-
-    /// The UUID assigned to the user, set after the user has chosen after interacting with the CCPAConsentViewController
-    public var consentUUID: UUID?
-
-    /// The timeout interval in seconds for the message being displayed
-    public var messageTimeoutInSeconds = TimeInterval(300)
-
-    private let accountId: Int
-    private let property: String
-    private let propertyId: Int
+    private let accountId, propertyId: Int
+    private let propertyName: PropertyName
     private let pmId: String
 
-    typealias TargetingParams = [String:String]
+    public typealias TargetingParams = [String:String]
     private let targetingParams: TargetingParams = [:]
 
     private let sourcePoint: SourcePointClient
-    private lazy var logger = { return Logger() }()
-
-    /// will instruct the SDK to clean consent data if an error occurs
-    public var shouldCleanConsentOnError = true
 
     private weak var consentDelegate: ConsentDelegate?
     private var messageViewController: MessageViewController?
     
-    enum LoadingStatus: String {
+    private enum LoadingStatus: String {
         case Ready = "Ready"
         case Presenting = "Presenting"
         case Loading = "Loading"
@@ -69,52 +47,63 @@ import UIKit
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         viewController.didMove(toParent: self)
     }
+    
+    /// Contains the `ConsentStatus`, an array of rejected vendor ids and and array of rejected purposes
+    public var userConsent: UserConsent
+
+    /// The UUID assigned to a user, available after calling `loadMessage`
+    public var consentUUID: ConsentUUID?
+    
+    /// Instructs the SDK to clean consent data if an error occurs. It's `true` by default.
+    public var shouldCleanConsentOnError = true
 
     /**
-     Initialises the library with `accountId`, `propertyId`, `property`, `PMId`,`campaign` and `messageDelegate`.
+        - Parameter accountId: the id of your account, can be found in the Account section of SourcePoint's dashboard
+        - Parameter propertyId: the id of your property, can be found in the property page of SourcePoint's dashboard
+        - Parameter propertyName: the exact name of your property,
+        - Parameter PMId: the id of the PrivacyManager, can be found in the PrivacyManager page of SourcePoint's dashboard
+        - Parameter PMId: the id of the PrivacyManager, can be found in the PrivacyManager page of SourcePoint's dashboard
      */
     public init(
         accountId: Int,
         propertyId: Int,
-        property: String,
+        propertyName: PropertyName,
         PMId: String,
         campaign: String,
         consentDelegate: ConsentDelegate
     ){
         self.accountId = accountId
-        self.property = property
+        self.propertyName = propertyName
         self.propertyId = propertyId
         self.pmId = PMId
         self.consentDelegate = consentDelegate
-
+        if let data = UserDefaults.standard.value(forKey: CCPAConsentViewController.CCPA_USER_CONSENTS) as? Data {
+            self.userConsent = (try? PropertyListDecoder().decode(UserConsent.self, from: data)) ?? UserConsent.rejectedNone()
+        } else {
+            self.userConsent = UserConsent.rejectedNone()
+        }
+        self.userConsent = (UserDefaults.standard.object(forKey: CCPAConsentViewController.CCPA_USER_CONSENTS) as? UserConsent) ??
+            UserConsent(status: .RejectedNone, rejectedVendors: [], rejectedCategories: [])
+        self.consentUUID = UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
+        
         self.sourcePoint = SourcePointClient(
             accountId: accountId,
             propertyId: propertyId,
+            propertyName: propertyName,
             pmId: PMId,
-            campaign: campaign,
-            onError: consentDelegate.onError(error:)
+            campaign: campaign
         )
 
-        self.ccpaString = UserDefaults.standard.string(forKey: CCPAConsentViewController.CCPA_CONSENT_KEY)
-        self.consentUUID = UUID(uuidString: UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY) ?? "")
-
         super.init(nibName: nil, bundle: nil)
+        
+        sourcePoint.onError = onError
+        
         modalPresentationStyle = .overFullScreen
     }
 
     /// :nodoc:
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func getConsents(forUUID uuid: UUID, consentString: CCPAString?) {
-        sourcePoint.getCustomConsents(consentUUID: uuid) { [weak self] consents in
-            self?.onConsentReady(
-                consentUUID: uuid,
-                consents: consents.consentedPurposes + consents.consentedVendors,
-                consentString: consentString
-            )
-        }
     }
     
     private func loadMessage(fromUrl url: URL) {
@@ -126,11 +115,12 @@ import UIKit
     public func loadMessage() {
         if loading == .Ready {
             loading = .Loading
-            sourcePoint.getMessage(accountId: accountId, propertyId: propertyId) { [weak self] message in
+            sourcePoint.getMessage(consentUUID: consentUUID) { [weak self] message in
                 if let url = message.url {
                     self?.loadMessage(fromUrl: url)
                 } else {
-                    self?.getConsents(forUUID: message.uuid, consentString: message.ccpaString)
+                    self?.loading = .Ready
+                    self?.onConsentReady(consentUUID: message.uuid, userConsent: message.userConsent)
                 }
             }
         }
@@ -145,12 +135,12 @@ import UIKit
         }
     }
 
-    /// It will clear all the stored userDefaults Data
+    /// Remove all consent related data from the UserDefaults
     public func clearAllConsentData() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.removeObject(forKey: CCPAConsentViewController.CCPA_CONSENT_KEY)
-        userDefaults.removeObject(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
-        userDefaults.synchronize()
+        UserDefaults.standard.removeObject(forKey: CCPAConsentViewController.CCPA_USER_CONSENTS)
+        UserDefaults.standard.removeObject(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
+        UserDefaults.standard.removeObject(forKey: CCPAConsentViewController.META_KEY)
+        UserDefaults.standard.synchronize()
     }
 }
 
@@ -176,25 +166,21 @@ extension CCPAConsentViewController: ConsentDelegate {
         consentDelegate?.onError?(error: error)
     }
 
-    public func onAction(_ action: Action) {
-        if(action == .AcceptAll || action == .RejectAll || action == .PMAction) {
-            sourcePoint.postAction(action: action, consentUUID: consentUUID) { [weak self] response in
-                self?.getConsents(forUUID: response.uuid, consentString: response.ccpaString)
+    public func onAction(_ action: Action, consents: PMConsents?) {
+        if(action == .AcceptAll || action == .RejectAll || action == .SaveAndExit) {
+            sourcePoint.postAction(action: action, consentUUID: consentUUID, consents: consents) { [weak self] response in
+                self?.onConsentReady(consentUUID: response.uuid, userConsent: response.userConsent)
             }
         }
     }
     
-    public func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: CCPAString?) {
-        guard let consentString = consentString else {
-            consentDelegate?.onConsentReady?(consentUUID: consentUUID, consents: consents, consentString: nil)
-            return
-        }
+    public func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
         self.consentUUID = consentUUID
-        ccpaString = consentString
-        UserDefaults.standard.setValue(consentString, forKey: CCPAConsentViewController.CCPA_CONSENT_KEY)
-        UserDefaults.standard.setValue(consentUUID.uuidString, forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
+        self.userConsent = userConsent
+        UserDefaults.standard.setValue(try? PropertyListEncoder().encode(userConsent), forKey: CCPAConsentViewController.CCPA_USER_CONSENTS)
+        UserDefaults.standard.setValue(consentUUID, forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
         UserDefaults.standard.synchronize()
-        consentDelegate?.onConsentReady?(consentUUID: consentUUID, consents: consents, consentString: consentString)
+        consentDelegate?.onConsentReady?(consentUUID: consentUUID, userConsent: userConsent)
     }
 
     public func messageWillShow() { consentDelegate?.messageWillShow?() }
