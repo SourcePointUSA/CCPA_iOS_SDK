@@ -13,7 +13,7 @@ class ViewController: UIViewController, ConsentDelegate {
     let logger = Logger()
 
     lazy var consentViewController: CCPAConsentViewController = {
-        return CCPAConsentViewController(accountId: 22, propertyId: 2372, property: "mobile.demo", PMId: "5c0e81b7d74b3c30c6852301", campaign: "stage", consentDelegate: self)
+        return CCPAConsentViewController(accountId: 22, propertyId: 6099, propertyName: try! PropertyName("ccpa.mobile.demo"), PMId: "5df9105bcf42027ce707bb43", campaign: "prod", consentDelegate: self)
     }()
     
     func consentUIWillShow() {
@@ -24,10 +24,9 @@ class ViewController: UIViewController, ConsentDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: CCPAString?) {
-        consents.forEach({ [weak self] consent in
-            self?.logger.log("Consented to: %{public}@)", [consent])
-        })
+    func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
+        print("consentUUID: \(consentUUID)")
+        print("userConsents: \(userConsent)")
     }
 
     func onError(error: CCPAConsentViewControllerError?) {
