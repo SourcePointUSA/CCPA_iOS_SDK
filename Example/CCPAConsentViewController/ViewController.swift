@@ -13,7 +13,7 @@ class ViewController: UIViewController, ConsentDelegate {
     let logger = Logger()
 
     lazy var consentViewController: CCPAConsentViewController = {
-        return CCPAConsentViewController(accountId: 22, propertyId: 6099, propertyName: try! PropertyName("ccpa.mobile.demo"), PMId: "5df9105bcf42027ce707bb43", campaign: "prod", consentDelegate: self)
+        return CCPAConsentViewController(accountId: 22, propertyId: 60999, propertyName: try! PropertyName("ccpa.mobile.demo"), PMId: "5df9105bcf42027ce707bb43", campaign: "prod", consentDelegate: self)
     }()
     
     func consentUIWillShow() {

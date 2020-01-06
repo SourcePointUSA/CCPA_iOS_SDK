@@ -13,6 +13,7 @@ import WebKit
 
 class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, UITextFieldDelegate, WKNavigationDelegate, ConsentDelegate {
     
+    
     //// MARK: - IBOutlet
     /** UITextField outlet for account ID textField.
      */
@@ -54,25 +55,13 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
         */
     @IBOutlet weak var isStagingSwitchOutlet: UISwitch!
     
-    /** UISwitch outlet for show PM switch.
-           */
-    @IBOutlet weak var showPMSwitchOutlet: UISwitch!
-    
     /** UILabel outlet for showing No targeting param data.
     */
     @IBOutlet weak var noTargetingParamDataLabel: UILabel!
     
     /** Default campaign value is public
      */
-    var campaign = "public"
-    
-    /** show PM directly or not
-     */
-    var showPM = false
-    
-    /** consentViewController is loaded or not
-     */
-    var consentViewControllerStatus = false
+    var campaign = "prod"
     
     // Reference to the selected property managed object ID
     var propertyManagedObjectID : NSManagedObjectID?
@@ -88,6 +77,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     
     // MARK: - Initializer
     let addpropertyViewModel: AddPropertyViewModel = AddPropertyViewModel()
+    var consentViewController: CCPAConsentViewController?
     
     let logger = Logger()
     
@@ -111,12 +101,11 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
                 
                 self?.accountIDTextFieldOutlet.text = String(propertyDetailsModel.accountId)
                 self?.propertyIdTextFieldOutlet.text = String(propertyDetailsModel.propertyId)
-                self?.propertyNameTextField.text = propertyDetailsModel.property
+                self?.propertyNameTextField.text = propertyDetailsModel.propertyName
                 self?.privacyManagerTextField.text = propertyDetailsModel.privacyManagerId
                 if let authId = propertyDetailsModel.authId {
                     self?.authIdTextField.text = authId
                 }
-                self?.showPMSwitchOutlet.isOn = propertyDetailsModel.showPM
                 self?.isStagingSwitchOutlet.isOn = propertyDetailsModel.campaign == "stage" ? true : false
                 if let targetingParams = propertyDetailsModel.manyTargetingParams?.allObjects as! [TargetingParams]? {
                     for targetingParam in targetingParams {
@@ -138,10 +127,6 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     // Set value of staging switch
     @IBAction func campaignSwitchButtonAction(_ sender: UISwitch) {
         campaign = sender.isOn ? "stage" : "public"
-    }
-    
-    @IBAction func showPMSwitchButtonAction(_ sender: UISwitch) {
-        showPM = sender.isOn
     }
     
     func setTableViewHidden() {
@@ -177,7 +162,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
                     targetingParamsArray.append(targetingParamModel)
                 }
             }
-            
+             
             keyTextFieldOutlet.text = ""
             valueTextFieldOutlet.text = ""
             targetingParamTableview.reloadData()
@@ -197,16 +182,17 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
         }
     }
     
+    
     // save property details to database and show SP messages/PM
     @IBAction func savepropertyDetailsAction(_ sender: Any) {
         self.showIndicator()
         let accountIDString = accountIDTextFieldOutlet.text?.trimmingCharacters(in: .whitespaces)
         let propertyId = propertyIdTextFieldOutlet.text?.trimmingCharacters(in: .whitespaces)
-        let property = propertyNameTextField.text?.trimmingCharacters(in: .whitespaces)
+        let propertyName = propertyNameTextField.text?.trimmingCharacters(in: .whitespaces)
         let privacyManagerId = privacyManagerTextField.text?.trimmingCharacters(in: .whitespaces)
         let authId = authIdTextField.text?.trimmingCharacters(in: .whitespaces)
         
-        if addpropertyViewModel.validatepropertyDetails(accountID: accountIDString, propertyId: propertyId, property: property, privacyManagerId: privacyManagerId) {
+        if addpropertyViewModel.validatepropertyDetails(accountID: accountIDString, propertyId: propertyId, propertyName: propertyName, privacyManagerId: privacyManagerId) {
             guard let accountIDText = accountIDString, let accountID = Int64(accountIDText),
                 let propertyIDText = propertyId, let propertyID = Int64(propertyIDText) else {
                     let okHandler = {
@@ -215,7 +201,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
                     AlertView.sharedInstance.showAlertView(title: Alert.alert, message: Alert.messageForWrongAccountIdAndPropertyId, actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
                     return
             }
-            propertyDetailsModel = PropertyDetailsModel(accountId: accountID, propertyId: propertyID, property: property, campaign: campaign, privacyManagerId: privacyManagerId, showPM: showPM, creationTimestamp: Date(),authId: authId)
+            propertyDetailsModel = PropertyDetailsModel(accountId: accountID, propertyId: propertyID, propertyName: propertyName, campaign: campaign, privacyManagerId: privacyManagerId, creationTimestamp: Date(),authId: authId)
             
             if let propertyDetails = propertyDetailsModel {
                 checkExitanceOfpropertyData(propertyDetails: propertyDetails)
@@ -242,126 +228,49 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     }
     
     func loadConsentManager(propertyDetails : PropertyDetailsModel) {
-        do {
-            let consentViewController = try CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), property: propertyDetails.property!, PMId: propertyDetails.privacyManagerId!, campaign: campaign, showPM: showPM, consentDelegate: self)
-            // optional, set custom targeting parameters supports Strings and Integers
-            for targetingParam in self.targetingParamsArray {
-                if let targetingKey = targetingParam.targetingKey, let targetingValue = targetingParam.targetingValue {
-                    consentViewController.setTargetingParam(key: targetingKey, value: targetingValue)
-                }
-            }
-            consentViewController.messageTimeoutInSeconds = TimeInterval(60)
-            if let authId = propertyDetails.authId {
-                consentViewController.loadMessage(forAuthId: authId)
-            }else {
-                consentViewController.loadMessage()
-            }
-        }catch {
-            let okHandler = {
-            }
-            self.hideIndicator()
-            AlertView.sharedInstance.showAlertView(title: Alert.message, message: error as! String, actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
+//            consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaign: campaign, consentDelegate: self)
+        consentViewController = CCPAConsentViewController(accountId: 22, propertyId: 6099, propertyName: try! PropertyName("ccpa.mobile.demo"), PMId: "5df9105bcf42027ce707bb43", campaign: "public", consentDelegate: self)
+//        consentViewController?.loadPrivacyManager()
+        consentViewController?.loadMessage()
+          
+//            if let authId = propertyDetails.authId {
+//                consentViewController.loadMessage(forAuthId: authId)
+//            }else {
+//                consentViewController.loadMessage()
+//            }
         }
+    
+    func consentUIWillShow() {
+        hideIndicator()
+        present(self.consentViewController!, animated: true, completion: nil)
+    }
+
+    func consentUIDidDisappear() {
+        dismiss(animated: true, completion: nil)
+    }
+
+    func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
+        showIndicator()
+        saveSitDataToDatabase(propertyDetailsModel: propertyDetailsModel!)
+        self.loadConsentInfoController(consentUUID: consentUUID, userConsent: userConsent)
     }
     
-    func onMessageReady(controller: CCPAConsentViewController) {
-        hideIndicator()
-        saveSitDataToDatabase(propertyDetailsModel: propertyDetailsModel!)
-        self.consentViewControllerStatus = true
-        if let consentSubViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConsentSubViewController") as? ConsentSubViewController {
-            consentSubViewController.consentSubViewController = controller
-            self.navigationController!.pushViewController(consentSubViewController, animated: true)
-        }
-    }
-
-    func onConsentReady(controller: CCPAConsentViewController) {
-        showIndicator()
-        if consentViewControllerStatus {
-            fetchConsentInfo(consentViewController: controller, completionHandler: { [weak self] (vendorConsents, purposeConsents) in
-                self?.loadConsentInfoController(vendorConsents: vendorConsents, purposeConsents: purposeConsents)
-            })
-        }else {
-            let showpropertyInfotHandler = {
-                self.fetchConsentInfo(consentViewController: controller, completionHandler: { [weak self] (vendorConsents, purposeConsents) in
-                    self?.loadConsentInfoController(vendorConsents: vendorConsents, purposeConsents: purposeConsents)
-                })
-            }
-            let clearCookiesHandler = {
-                let alertController = UIAlertController(title: "", message: "", preferredStyle: UIAlertController.Style.alert)
-                
-                alertController.setValue(SPLiteral.attributedString(), forKey: "attributedTitle")
-                let noAction = UIAlertAction(title: "NO", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in
-                    self.fetchConsentInfo(consentViewController: controller, completionHandler: { [weak self] (vendorConsents, purposeConsents) in
-                        self?.loadConsentInfoController(vendorConsents: vendorConsents, purposeConsents: purposeConsents)
-                    })
-                })
-                let yesAction = UIAlertAction(title: "YES", style: UIAlertAction.Style.default, handler: { [weak self] (alert: UIAlertAction!) in
-                    self?.addpropertyViewModel.clearUserDefaultsData()
-                    self?.clearCookies()
-                    self?.savepropertyDetailsAction(AnyObject.self)
-                    self?.hideIndicator()
-                })
-                alertController.addAction(noAction)
-                alertController.addAction(yesAction)
-                self.present(alertController, animated: true, completion: nil)
-            }
-            AlertView.sharedInstance.showAlertView(title: Alert.message, message: Alert.messageAlreadyShown, actions: [showpropertyInfotHandler, clearCookiesHandler], titles: [Alert.showPropertyInfo, Alert.clearCookies], actionStyle: UIAlertController.Style.alert)
-            
-        }
-    }
-
-    func onErrorOccurred(error: CCPAConsentViewControllerError) {
-        logger.log("Error: %{public}@", [error])
+    func onError(error: CCPAConsentViewControllerError?) {
+        logger.log("Error: %{public}@", [error?.description ?? "Something Went Wrong"])
         let okHandler = {
             self.hideIndicator()
             self.dismiss(animated: false, completion: nil)
         }
-        AlertView.sharedInstance.showAlertView(title: Alert.message, message: error.description, actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
+        AlertView.sharedInstance.showAlertView(title: Alert.message, message: error?.description ?? "Something Went Wrong", actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
     }
     
-    func fetchConsentInfo(consentViewController: CCPAConsentViewController, completionHandler: @escaping ([VendorConsent]?, [PurposeConsent]?) -> Void) {
-        var vendorConsents = [VendorConsent]()
-        var purposeConsents = [PurposeConsent]()
-        consentViewController.getCustomVendorConsents { [weak self] (vendors, error) in
-            if let _error = error {
-                self?.onErrorOccurred(error: _error)
-            }else {
-                if let vendors = vendors {
-                    for consent in vendors {
-                        print("Custom Vendor Consent id: \(consent.id), name: \(consent.name)")
-                        vendorConsents.append(consent)
-                    }
-                }
-                consentViewController.getCustomPurposeConsents { (purposes, error) in
-                    if let _error = error {
-                        self?.onErrorOccurred(error: _error)
-                    }else {
-                        if let purposes = purposes {
-                            for consent in purposes {
-                                print("Custom Purpose Consent id: \(consent.id), name: \(consent.name)")
-                                purposeConsents.append(consent)
-                            }
-                        }
-                        completionHandler(vendorConsents,purposeConsents)
-                        self?.hideIndicator()
-                    }
-                }
-            }
-        }
-    }
     
-    func loadConsentInfoController(vendorConsents : [VendorConsent]?, purposeConsents : [PurposeConsent]? ) {
-        
-        if let consentViewDetailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConsentViewDetailsViewController") as? ConsentViewDetailsViewController {
-            if let _vendorConsents = vendorConsents {
-                consentViewDetailsController.vendorConsents = _vendorConsents
-            }
-            if let _purposeConsents = purposeConsents {
-                consentViewDetailsController.purposeConsents = _purposeConsents
-            }
+    func loadConsentInfoController(consentUUID:ConsentUUID, userConsent: UserConsent) {
+        self.hideIndicator()
+        if let consentViewDetailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConsentDetailsViewController") as? ConsentDetailsViewController {
+            consentViewDetailsController.userConsents = userConsent
             self.navigationController?.pushViewController(consentViewDetailsController, animated: true)
         }
-        self.hideIndicator()
     }
     
     // save property details to database
@@ -440,3 +349,4 @@ extension AddPropertyViewController : UITableViewDelegate {
     }
 }
 
+   

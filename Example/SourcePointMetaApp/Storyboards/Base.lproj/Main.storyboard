@@ -156,33 +156,15 @@
                                                     <action selector="campaignSwitchButtonAction:" destination="cyC-sw-8W2" eventType="valueChanged" id="q6c-Wr-cIZ"/>
                                                 </connections>
                                             </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show PM: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MW-hK-XvT">
-                                                <rect key="frame" x="20" y="326" width="273" height="31"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="showPMLabel" label="showPMLabel"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="31" id="jBr-jg-LbP"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="v4i-av-QdI"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2sx-3z-BdR">
-                                                <rect key="frame" x="301" y="326" width="51" height="31"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="showPMSwitchOutlet" label="showPMSwitchOutlet"/>
-                                                <connections>
-                                                    <action selector="showPMSwitchButtonAction:" destination="cyC-sw-8W2" eventType="valueChanged" id="400-yN-cfK"/>
-                                                </connections>
-                                            </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Targeting Parameter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QN6-iP-uvT">
-                                                <rect key="frame" x="20" y="377" width="335" height="20"/>
+                                                <rect key="frame" x="20" y="336" width="335" height="20"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="targetingParametrLabel" label="targetingParametrLabel"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                                                 <color key="textColor" red="0.2470588235" green="0.79607843140000001" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAT-eK-kxm" userLabel="TargetingKeyLabel">
-                                                <rect key="frame" x="20" y="412" width="39.5" height="30"/>
+                                                <rect key="frame" x="20" y="371" width="39.5" height="30"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="targetingKey" label="targetingKey"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="hWr-eL-2u6"/>
@@ -192,7 +174,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Targeting Key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xQ-qp-kCe" userLabel="KeyTextfiled">
-                                                <rect key="frame" x="77" y="410" width="278" height="34"/>
+                                                <rect key="frame" x="77" y="369" width="278" height="34"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="targetingParamKeyTextFieldOutlet" label="targetingParamKeyTextFieldOutlet"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
@@ -202,7 +184,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c67-NQ-pCu" userLabel="TargetingValueLabel">
-                                                <rect key="frame" x="20" y="456" width="49" height="30"/>
+                                                <rect key="frame" x="20" y="415" width="49" height="30"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="targetingValueLabel" label="targetingValueLabel"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="q6g-Ct-oiV"/>
@@ -212,7 +194,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Targeting Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8G-su-8BI" userLabel="TargetingValueTextField">
-                                                <rect key="frame" x="77" y="454" width="278" height="34"/>
+                                                <rect key="frame" x="77" y="413" width="278" height="34"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="targetingParamValueTextFieldOutlet" label="targetingParamValueTextFieldOutlet"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
@@ -222,14 +204,14 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Targeting Parameter List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8k-6P-4hr">
-                                                <rect key="frame" x="20" y="513" width="267" height="20"/>
+                                                <rect key="frame" x="20" y="472" width="267" height="20"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="targetingparameterlist" label="targetingparameterlist"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                                                 <color key="textColor" red="0.2470588235" green="0.79607843140000001" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-sE-xTQ" userLabel="AddButton">
-                                                <rect key="frame" x="295" y="513" width="60" height="20"/>
+                                                <rect key="frame" x="295" y="472" width="60" height="20"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="addButton" label="addButton"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="xCE-tU-Nj1"/>
@@ -244,23 +226,23 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iU-bH-K9k" userLabel="lineView">
-                                                <rect key="frame" x="20" y="535" width="335" height="1"/>
+                                                <rect key="frame" x="20" y="494" width="335" height="1"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="3hZ-Ol-M4f"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxB-D1-vpN" userLabel="TargetingParamListView">
-                                                <rect key="frame" x="0.0" y="537" width="375" height="419"/>
+                                                <rect key="frame" x="0.0" y="496" width="375" height="460"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Targeting parameter data is not added" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUc-zL-t7J" userLabel="NoDataLabel">
-                                                        <rect key="frame" x="52" y="200.5" width="271" height="18"/>
+                                                        <rect key="frame" x="52" y="221" width="271" height="18"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="noDataLabel" label="noDataLabel"/>
                                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JeP-tI-auQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="419"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="targetingParamCell" id="P4G-ju-zL2" customClass="TargetingParamCell" customModule="SourcePointMetaApp" customModuleProvider="target">
@@ -325,15 +307,12 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ZdE-5Q-Bgq" firstAttribute="leading" secondItem="0Yc-bl-D6Y" secondAttribute="trailing" constant="8" symbolic="YES" id="0fD-cK-HX4"/>
-                                            <constraint firstItem="QN6-iP-uvT" firstAttribute="top" secondItem="0MW-hK-XvT" secondAttribute="bottom" constant="20" id="29a-cr-BS3"/>
-                                            <constraint firstItem="2sx-3z-BdR" firstAttribute="centerY" secondItem="0MW-hK-XvT" secondAttribute="centerY" id="3e5-d5-UMh"/>
                                             <constraint firstAttribute="trailing" secondItem="HoB-pj-18x" secondAttribute="trailing" constant="20" id="62Q-GM-7rk"/>
                                             <constraint firstAttribute="trailing" secondItem="ZdE-5Q-Bgq" secondAttribute="trailing" constant="25" id="6WS-nS-blX"/>
                                             <constraint firstItem="pAT-eK-kxm" firstAttribute="top" secondItem="QN6-iP-uvT" secondAttribute="bottom" constant="15" id="6n9-YB-Hc3"/>
                                             <constraint firstItem="9xQ-qp-kCe" firstAttribute="centerY" secondItem="pAT-eK-kxm" secondAttribute="centerY" id="6ya-r2-rjf"/>
                                             <constraint firstItem="ILg-hD-20L" firstAttribute="top" secondItem="T1z-3i-XRG" secondAttribute="bottom" constant="20" id="7pc-cd-qvx"/>
                                             <constraint firstItem="VeY-YI-wzN" firstAttribute="centerY" secondItem="fa1-sV-qzO" secondAttribute="centerY" id="95a-8s-jAj"/>
-                                            <constraint firstAttribute="trailing" secondItem="2sx-3z-BdR" secondAttribute="trailing" constant="25" id="99V-KQ-zq9"/>
                                             <constraint firstItem="V8G-su-8BI" firstAttribute="leading" secondItem="c67-NQ-pCu" secondAttribute="trailing" constant="8" symbolic="YES" id="9IC-j6-1LG"/>
                                             <constraint firstAttribute="trailing" secondItem="0iU-bH-K9k" secondAttribute="trailing" constant="20" id="AP8-vD-PqA"/>
                                             <constraint firstItem="ZdE-5Q-Bgq" firstAttribute="centerY" secondItem="0Yc-bl-D6Y" secondAttribute="centerY" id="AU0-zo-pvR"/>
@@ -343,7 +322,6 @@
                                             <constraint firstItem="0Yc-bl-D6Y" firstAttribute="leading" secondItem="hS7-WV-dXy" secondAttribute="leading" constant="20" id="HEN-V1-XKm"/>
                                             <constraint firstAttribute="trailing" secondItem="QN6-iP-uvT" secondAttribute="trailing" constant="20" symbolic="YES" id="I3D-TQ-gmq"/>
                                             <constraint firstItem="qxB-D1-vpN" firstAttribute="top" secondItem="0iU-bH-K9k" secondAttribute="bottom" constant="1" id="Jew-DO-hcL"/>
-                                            <constraint firstItem="0MW-hK-XvT" firstAttribute="leading" secondItem="hS7-WV-dXy" secondAttribute="leading" constant="20" id="L9c-vE-sIu"/>
                                             <constraint firstItem="xLh-rs-wyR" firstAttribute="leading" secondItem="HoB-pj-18x" secondAttribute="leading" id="MCh-oF-Uob"/>
                                             <constraint firstItem="0iU-bH-K9k" firstAttribute="leading" secondItem="hS7-WV-dXy" secondAttribute="leading" constant="20" id="MhH-z5-yAG"/>
                                             <constraint firstItem="xLh-rs-wyR" firstAttribute="centerY" secondItem="yGV-0o-HrB" secondAttribute="centerY" id="NAF-yd-ozu"/>
@@ -363,6 +341,7 @@
                                             <constraint firstItem="IC5-sE-xTQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="I8k-6P-4hr" secondAttribute="trailing" constant="8" symbolic="YES" id="gkt-2w-Kc6"/>
                                             <constraint firstItem="0iU-bH-K9k" firstAttribute="top" secondItem="IC5-sE-xTQ" secondAttribute="bottom" constant="2" id="hYh-7J-uhx"/>
                                             <constraint firstItem="VeY-YI-wzN" firstAttribute="leading" secondItem="fa1-sV-qzO" secondAttribute="trailing" constant="5" id="i7w-6W-ONS"/>
+                                            <constraint firstItem="QN6-iP-uvT" firstAttribute="top" secondItem="0Yc-bl-D6Y" secondAttribute="bottom" constant="25" id="j4Z-fG-Hmz"/>
                                             <constraint firstAttribute="trailing" secondItem="T1z-3i-XRG" secondAttribute="trailing" constant="20" id="jfJ-P1-3OM"/>
                                             <constraint firstAttribute="trailing" secondItem="9xQ-qp-kCe" secondAttribute="trailing" constant="20" id="kpb-GW-lB0"/>
                                             <constraint firstAttribute="trailing" secondItem="qxB-D1-vpN" secondAttribute="trailing" id="lfL-P4-NS4"/>
@@ -374,10 +353,8 @@
                                             <constraint firstItem="HoB-pj-18x" firstAttribute="leading" secondItem="VeY-YI-wzN" secondAttribute="leading" id="rr2-4X-ZtL"/>
                                             <constraint firstAttribute="bottom" secondItem="qxB-D1-vpN" secondAttribute="bottom" id="s4J-es-8Xe"/>
                                             <constraint firstAttribute="trailing" secondItem="ILg-hD-20L" secondAttribute="trailing" constant="20" id="sY0-Yu-2Wg"/>
-                                            <constraint firstItem="2sx-3z-BdR" firstAttribute="top" secondItem="ZdE-5Q-Bgq" secondAttribute="bottom" constant="15" id="smp-mP-gYi"/>
                                             <constraint firstItem="HoB-pj-18x" firstAttribute="top" secondItem="VeY-YI-wzN" secondAttribute="bottom" constant="15" id="sy1-Pm-iCD"/>
                                             <constraint firstItem="T1z-3i-XRG" firstAttribute="leading" secondItem="xLh-rs-wyR" secondAttribute="leading" id="tmW-2U-ZTP"/>
-                                            <constraint firstItem="2sx-3z-BdR" firstAttribute="leading" secondItem="0MW-hK-XvT" secondAttribute="trailing" constant="8" symbolic="YES" id="v8H-jU-sgn"/>
                                             <constraint firstItem="lJg-Gx-AGf" firstAttribute="centerY" secondItem="ILg-hD-20L" secondAttribute="centerY" id="vtN-WW-r4i"/>
                                             <constraint firstAttribute="trailing" secondItem="VeY-YI-wzN" secondAttribute="trailing" constant="20" id="woA-TH-FRQ"/>
                                             <constraint firstItem="QN6-iP-uvT" firstAttribute="leading" secondItem="hS7-WV-dXy" secondAttribute="leading" constant="20" id="wvU-xr-iNt"/>
@@ -425,7 +402,6 @@
                         <outlet property="propertyIdTextFieldOutlet" destination="HoB-pj-18x" id="7jS-ZP-6jb"/>
                         <outlet property="propertyNameTextField" destination="xLh-rs-wyR" id="79b-8S-Goc"/>
                         <outlet property="scrollView" destination="mhW-Wn-4Ou" id="u2A-Pj-VBm"/>
-                        <outlet property="showPMSwitchOutlet" destination="2sx-3z-BdR" id="XKe-vs-9Sm"/>
                         <outlet property="targetingParamTableview" destination="JeP-tI-auQ" id="hba-Fw-sFB"/>
                         <outlet property="valueTextFieldOutlet" destination="V8G-su-8BI" id="ejc-au-VRn"/>
                     </connections>
@@ -437,7 +413,7 @@
         <!--Property Debug Info-->
         <scene sceneID="5ca-lh-QwF">
             <objects>
-                <viewController storyboardIdentifier="ConsentViewDetailsViewController" id="Lyi-Xh-6dq" customClass="ConsentViewDetailsViewController" customModule="SourcePointMetaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConsentDetailsViewController" id="Lyi-Xh-6dq" customClass="ConsentDetailsViewController" customModule="SourcePointMetaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GBV-7x-oY4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -617,7 +593,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JPT-Vh-gpO"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Property Debug Info" id="1Mn-Sb-edJ"/>
+                    <navigationItem key="navigationItem" title="Property Debug Info" id="1Mn-Sb-edJ">
+                        <barButtonItem key="rightBarButtonItem" title="Show PM" id="OZ3-RW-yhs">
+                            <connections>
+                                <action selector="showPMAction:" destination="Lyi-Xh-6dq" id="94p-W4-wLz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="consentTableView" destination="hNV-ao-Wfg" id="TPh-cs-u4W"/>
                         <outlet property="consentUUIDLabel" destination="b7c-ec-m48" id="M5Y-Dx-8xP"/>
@@ -627,23 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voL-ZI-KqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5209" y="793"/>
-        </scene>
-        <!--Consent Sub View Controller-->
-        <scene sceneID="QQB-Z3-hyh">
-            <objects>
-                <viewController storyboardIdentifier="ConsentSubViewController" id="jub-cV-es9" customClass="ConsentSubViewController" customModule="SourcePointMetaApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SPZ-Wq-9vj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ajB-65-DHc"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="JxK-eT-T6r"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jGa-y2-nwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3602" y="801"/>
+            <point key="canvasLocation" x="5153" y="787"/>
         </scene>
         <!--Property List-->
         <scene sceneID="zDA-pX-BuF">
