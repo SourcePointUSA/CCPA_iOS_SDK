@@ -1,0 +1,16 @@
+version: "Apple Swift version 5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
+options: "6a23762a5b3a2624a5d5b74453c2af72"
+build_time: [1578381349, 592414000]
+inputs:
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/Action.swift": [1577086396, 762177855]
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/CCPAConsentViewController.swift": [1577086396, 762467297]
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/CCPAConsentViewControllerError.swift": [1577086396, 762678494]
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/ConnectivityManager.swift": [1577086396, 762889959]
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/ConsentDelegate.swift": [1577086396, 763133611]
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/Logger.swift": [1577086396, 763353537]
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/MessageViewController.swift": [1577086396, 763555186]
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/MessageWebViewController.swift": [1577086396, 763778606]
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/PropertyName.swift": [1577086396, 763974701]
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/SourcePointClient.swift": [1577086396, 764218946]
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/SourcePointRequestsResponses.swift": [1577086396, 764399949]
+  "/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/UserConsent.swift": [1577086396, 764589796]
