@@ -1,0 +1,11 @@
+framework module CCPAConsentViewController {
+  umbrella header "CCPAConsentViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module CCPAConsentViewController.Swift {
+    header "CCPAConsentViewController-Swift.h"
+    requires objc
+}
