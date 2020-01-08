@@ -58,18 +58,21 @@ import UIKit
     public var shouldCleanConsentOnError = true
 
     /**
-        - Parameter accountId: the id of your account, can be found in the Account section of SourcePoint's dashboard
-        - Parameter propertyId: the id of your property, can be found in the property page of SourcePoint's dashboard
-        - Parameter propertyName: the exact name of your property,
-        - Parameter PMId: the id of the PrivacyManager, can be found in the PrivacyManager page of SourcePoint's dashboard
-        - Parameter PMId: the id of the PrivacyManager, can be found in the PrivacyManager page of SourcePoint's dashboard
+        - Parameters:
+            - accountId: the id of your account, can be found in the Account section of SourcePoint's dashboard
+            - propertyId: the id of your property, can be found in the property page of SourcePoint's dashboard
+            - propertyName: the exact name of your property,
+            -  PMId: the id of the PrivacyManager, can be found in the PrivacyManager page of SourcePoint's dashboard
+            -  campaignEnv: Indicates if the SDK should load the message from the Public or Stage campaign
+            -  consentDelegate: responsible for dealing with the different consent lifecycle functions.
+        - SeeAlso: ConsentDelegate
      */
     public init(
         accountId: Int,
         propertyId: Int,
         propertyName: PropertyName,
         PMId: String,
-        campaign: String,
+        campaignEnv: CampaignEnv,
         consentDelegate: ConsentDelegate
     ){
         self.accountId = accountId
@@ -91,7 +94,7 @@ import UIKit
             propertyId: propertyId,
             propertyName: propertyName,
             pmId: PMId,
-            campaign: campaign
+            campaignEnv: campaignEnv
         )
 
         super.init(nibName: nil, bundle: nil)
