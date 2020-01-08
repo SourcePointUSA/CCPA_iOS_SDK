@@ -81,6 +81,10 @@ struct JSON {
     }
 }
 
+/**
+A Http client for SourcePoint's endpoints
+ - Important: it should only be used the SDK as its public API is still in constant development and is probably going to change.
+ */
 class SourcePointClient {
     static let WRAPPER_API = URL(string: "https://wrapper-api.sp-prod.net")!
     static let CMP_URL = URL(string: "https://sourcepoint.mgr.consensu.org")!
@@ -94,21 +98,21 @@ class SourcePointClient {
     private let propertyId: Int
     private let propertyName: PropertyName
     private let pmId: String
-    private let campaign: String
+    private let campaignEnv: CampaignEnv
     
     public var onError: OnError? { didSet { client.defaultOnError = onError } }
 
-    init(accountId: Int, propertyId:Int, propertyName: PropertyName, pmId:String, campaign: String, client: HttpClient) {
+    init(accountId: Int, propertyId:Int, propertyName: PropertyName, pmId:String, campaignEnv: CampaignEnv, client: HttpClient) {
         self.accountId = accountId
         self.propertyId = propertyId
         self.propertyName = propertyName
         self.pmId = pmId
-        self.campaign = campaign
+        self.campaignEnv = campaignEnv
         self.client = client
     }
     
-    convenience init(accountId: Int, propertyId: Int, propertyName: PropertyName, pmId: String, campaign: String) {
-        self.init(accountId: accountId, propertyId: propertyId, propertyName: propertyName, pmId: pmId, campaign: campaign, client: SimpleClient())
+    convenience init(accountId: Int, propertyId: Int, propertyName: PropertyName, pmId: String, campaignEnv: CampaignEnv) {
+        self.init(accountId: accountId, propertyId: propertyId, propertyName: propertyName, pmId: pmId, campaignEnv: campaignEnv, client: SimpleClient())
     }
 
     func getMessageUrl(_ consentUUID: ConsentUUID?, propertyName: PropertyName) -> URL? {
@@ -120,6 +124,7 @@ class SourcePointClient {
             URLQueryItem(name: "accountId", value: String(accountId)),
             URLQueryItem(name: "requestUUID", value: requestUUID.uuidString),
             URLQueryItem(name: "propertyHref", value: propertyName.rawValue),
+            URLQueryItem(name: "campaignEnv", value: campaignEnv == .Stage ? "stage" : "prod"),
             URLQueryItem(name: "meta", value: UserDefaults.standard.string(forKey: CCPAConsentViewController.META_KEY)),
         ]
         return components?.url
