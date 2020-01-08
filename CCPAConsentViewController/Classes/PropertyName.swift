@@ -26,7 +26,8 @@ import Foundation
     /// - Parameter _: the exact name of your property as created in SourcePoint's dashboard.
     /// - Throws: `InvalidArgumentError` if the property name contain anything other than letters, numbers, . (dots), : (semicolons) and / (slashes).
     public init(_ rawValue: String) throws {
-        self.rawValue = try PropertyName.validate(rawValue)
+        let validRawValue = try PropertyName.validate(rawValue)
+        self.rawValue = "https://" + validRawValue
     }
     
     required public init(from decoder: Decoder) throws {

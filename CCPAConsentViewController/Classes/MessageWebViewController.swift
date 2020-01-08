@@ -80,8 +80,8 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     }
     
     func onError(error: CCPAConsentViewControllerError?) {
-        closeConsentUIIfOpen()
         consentDelegate?.onError?(error: error)
+        closeConsentUIIfOpen()
     }
     
     func showPrivacyManagerFromMessageAction() {
@@ -148,12 +148,33 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         return nil
     }
     
+    private func getPMConsentsIfAny(_ payload: [String: Any]) -> PMConsents {
+        guard
+            let consents = payload["consents"] as? [String: Any],
+            let vendors = consents["vendors"] as? [String: Any],
+            let purposes = consents["categories"] as? [String: Any],
+            let acceptedVendors = vendors["accepted"] as? [String],
+            let rejectedVendors = vendors["rejected"] as? [String],
+            let acceptedPurposes = purposes["accepted"] as? [String],
+            let rejectedPurposes = purposes["rejected"] as? [String]
+        else {
+            return PMConsents(
+                vendors: PMConsent(accepted: [], rejected: []),
+                categories: PMConsent(accepted: [], rejected: [])
+            )
+        }
+        return PMConsents(
+            vendors: PMConsent(accepted: acceptedVendors, rejected: rejectedVendors),
+            categories: PMConsent(accepted: acceptedPurposes, rejected: rejectedPurposes)
+        )
+    }
+    
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard
             let body = message.body as? [String: Any?],
             let name = body["name"] as? String
         else {
-            onError(error: MessageEventParsingError(message: message.description))
+            onError(error: MessageEventParsingError(message: Optional(message.body).debugDescription))
             return
         }
         
@@ -166,23 +187,12 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
                 guard
                     let payload = body["body"] as? [String: Any],
                     let actionType = payload["type"] as? Int,
-                    let action = Action(rawValue: actionType),
-                    let consents = payload["consents"] as? [String: Any],
-                    let vendors = consents["vendors"] as? [String: Any],
-                    let purposes = consents["categories"] as? [String: Any],
-                    let acceptedVendors = vendors["accepted"] as? [String],
-                    let rejectedVendors = vendors["rejected"] as? [String],
-                    let acceptedPurposes = purposes["accepted"] as? [String],
-                    let rejectedPurposes = purposes["rejected"] as? [String]
+                    let action = Action(rawValue: actionType)
                 else {
-                    onError(error: MessageEventParsingError(message: message.debugDescription))
+                    onError(error: MessageEventParsingError(message: Optional(message.body).debugDescription))
                     return
                 }
-                let pmConsents = PMConsents(
-                    vendors: PMConsent(accepted: acceptedVendors, rejected: rejectedVendors),
-                    categories: PMConsent(accepted: acceptedPurposes, rejected: rejectedPurposes)
-                )
-                onAction(action, consents: pmConsents)
+                onAction(action, consents: getPMConsentsIfAny(payload))
             case "onError":
                 onError(error: WebViewError())
             default:

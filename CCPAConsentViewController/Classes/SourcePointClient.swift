@@ -125,6 +125,7 @@ class SourcePointClient {
             URLQueryItem(name: "requestUUID", value: requestUUID.uuidString),
             URLQueryItem(name: "propertyHref", value: propertyName.rawValue),
             URLQueryItem(name: "campaignEnv", value: campaignEnv == .Stage ? "stage" : "prod"),
+            URLQueryItem(name: "alwaysDisplayDNS", value: String(false)),
             URLQueryItem(name: "meta", value: UserDefaults.standard.string(forKey: CCPAConsentViewController.META_KEY)),
         ]
         return components?.url
