@@ -12,8 +12,10 @@ protocol Connectivity {
     func isConnectedToNetwork() -> Bool
 }
 
+/**
+    Used to query for the users's connectivity state. E.g. connected to internet vs not connected
+ */
 final class ConnectivityManager: Connectivity {
-    
     /// Shared Instance of Connectivity manager
     static let shared = ConnectivityManager()
     
