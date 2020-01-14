@@ -11,7 +11,11 @@ In your `Podfile` add the following line to your app target:
 pod 'CCPAConsentViewController', '1.0.0'
 ```
 ### Carthage
-We also support [Carthage](https://github.com/Carthage/Carthage). It requires a couple more steps to install so we dedicated a whole [wiki page](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/Step-by-step-guide-for-Carthage) for it.
+We also support [Carthage](https://github.com/Carthage/Carthage). It requires a couple more steps to install so we dedicated a whole [wiki page](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/Carthage-SDK-integration-guide) for it.
+Let us know if we missed any step.
+
+### Manual
+We also support Manual integration of SDK. It requires a couple more steps to install so we dedicated a whole [wiki page](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/Manual-SDK-integration-guide) for it.
 Let us know if we missed any step.
 
 ## How to use it

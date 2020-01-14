@@ -1,0 +1,12 @@
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/Action.swift
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/CCPAConsentViewController.swift
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/CCPAConsentViewControllerError.swift
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/ConnectivityManager.swift
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/ConsentDelegate.swift
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/Logger.swift
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/MessageViewController.swift
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/MessageWebViewController.swift
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/PropertyName.swift
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/SourcePointClient.swift
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/SourcePointRequestsResponses.swift
+/Vilas/CCPA_SDK/CCPAConsentViewController/Classes/UserConsent.swift
