@@ -8,6 +8,11 @@
 import UIKit
 import WebKit
 
+/**
+ MessageWebViewController is responsible for loading the consent message and privacy manager through a webview.
+ 
+ It not only knows how to render the message and pm but also understands how to react to their different events (showing, user action, etc)
+ */
 class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, ConsentDelegate {
     static let MESSAGE_HANDLER_NAME = "JSReceiver"
 

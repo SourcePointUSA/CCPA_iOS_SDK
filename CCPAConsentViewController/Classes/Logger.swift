@@ -8,6 +8,8 @@
 import Foundation
 import os
 
+/// Used to maintaing a single point for logging rather than relying on `print`
+/// - Important: this API should not be used in production and it's probably going to change in the next releases
 @objcMembers public class Logger {
     static let TOO_MANY_ARGS_ERROR = StaticString("Cannot log messages with more than 5 argumetns")
 
