@@ -2,7 +2,7 @@
 //  PropertyDetails+CoreDataClass.swift
 //  
 //
-//  Created by Vilas on 12/24/19.
+//  Created by Vilas on 1/14/20.
 //
 //
 

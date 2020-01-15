@@ -61,7 +61,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     
     /** Default campaign value is public
      */
-    var campaign = "prod"
+    var campaign = CampaignEnv.Public
     
     // Reference to the selected property managed object ID
     var propertyManagedObjectID : NSManagedObjectID?
@@ -106,7 +106,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
                 if let authId = propertyDetailsModel.authId {
                     self?.authIdTextField.text = authId
                 }
-                self?.isStagingSwitchOutlet.isOn = propertyDetailsModel.campaign == "stage" ? true : false
+                self?.isStagingSwitchOutlet.isOn = propertyDetailsModel.campaign == 0 ? true : false
                 if let targetingParams = propertyDetailsModel.manyTargetingParams?.allObjects as! [TargetingParams]? {
                     for targetingParam in targetingParams {
                         let targetingParamModel = TargetingParamModel(targetingParamKey: targetingParam.key, targetingParamValue: targetingParam.value)
@@ -126,7 +126,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     
     // Set value of staging switch
     @IBAction func campaignSwitchButtonAction(_ sender: UISwitch) {
-        campaign = sender.isOn ? "stage" : "public"
+        campaign = sender.isOn ? CampaignEnv.Stage : CampaignEnv.Public
     }
     
     func setTableViewHidden() {
@@ -201,7 +201,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
                     AlertView.sharedInstance.showAlertView(title: Alert.alert, message: Alert.messageForWrongAccountIdAndPropertyId, actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
                     return
             }
-            propertyDetailsModel = PropertyDetailsModel(accountId: accountID, propertyId: propertyID, propertyName: propertyName, campaign: campaign, privacyManagerId: privacyManagerId, creationTimestamp: Date(),authId: authId)
+            propertyDetailsModel = PropertyDetailsModel(accountId: accountID, propertyId: propertyID, propertyName: propertyName, campaign: Int64(campaign.rawValue), privacyManagerId: privacyManagerId, creationTimestamp: Date(),authId: authId)
             
             if let propertyDetails = propertyDetailsModel {
                 checkExitanceOfpropertyData(propertyDetails: propertyDetails)
@@ -228,8 +228,8 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     }
     
     func loadConsentManager(propertyDetails : PropertyDetailsModel) {
-//            consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaign: campaign, consentDelegate: self)
-        consentViewController = CCPAConsentViewController(accountId: 22, propertyId: 6099, propertyName: try! PropertyName("ccpa.mobile.demo"), PMId: "5df9105bcf42027ce707bb43", campaign: "public", consentDelegate: self)
+//        consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: campaign, consentDelegate: self)
+        consentViewController = CCPAConsentViewController(accountId: 808, propertyId: 6168, propertyName: try! PropertyName("ccpa.cybage.testing.com"), PMId: "5dfc9a9c02a1ec21b082b9fa", campaignEnv: .Public, consentDelegate: self)
 //        consentViewController?.loadPrivacyManager()
         consentViewController?.loadMessage()
           

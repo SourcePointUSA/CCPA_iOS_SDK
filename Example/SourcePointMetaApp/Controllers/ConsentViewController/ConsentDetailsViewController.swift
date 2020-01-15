@@ -84,7 +84,7 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
     
     func fetchDataFromDatabase(propertyManagedObjectID : NSManagedObjectID, completionHandler: @escaping (PropertyDetailsModel, [TargetingParamModel]) -> Void)  {
         self.addpropertyViewModel.fetch(property: propertyManagedObjectID, completionHandler: {( propertyDataModel) in
-            let propertyDetail = PropertyDetailsModel(accountId: propertyDataModel.accountId, propertyId: propertyDataModel.propertyId, propertyName: propertyDataModel.propertyName, campaign: propertyDataModel.campaign!, privacyManagerId: propertyDataModel.privacyManagerId, creationTimestamp: propertyDataModel.creationTimestamp! ,authId: propertyDataModel.authId)
+            let propertyDetail = PropertyDetailsModel(accountId: propertyDataModel.accountId, propertyId: propertyDataModel.propertyId, propertyName: propertyDataModel.propertyName, campaign: propertyDataModel.campaign, privacyManagerId: propertyDataModel.privacyManagerId, creationTimestamp: propertyDataModel.creationTimestamp! ,authId: propertyDataModel.authId)
             var targetingParamsArray = [TargetingParamModel]()
             if let targetingParams = propertyDataModel.manyTargetingParams?.allObjects as! [TargetingParams]? {
                 for targetingParam in targetingParams {
@@ -98,7 +98,7 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
     
     func loadConsentManager(propertyDetails : PropertyDetailsModel, targetingParamsArray:[TargetingParamModel]) {
             
-            let consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaign: propertyDetails.campaign, consentDelegate: self)
+        let consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: .Public, consentDelegate: self)
         consentViewController.loadMessage()
            
 //            if let authId = propertyDetails.authId {

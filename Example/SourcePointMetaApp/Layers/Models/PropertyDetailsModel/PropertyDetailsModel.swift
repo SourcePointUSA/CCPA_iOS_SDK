@@ -22,7 +22,7 @@ struct PropertyDetailsModel {
     let propertyId: Int64
     
     /// It holds campaign value
-    let campaign : String
+    let campaign : Int64
     
     /// It holds privacy manager Id
     let privacyManagerId : String?
@@ -44,7 +44,7 @@ struct PropertyDetailsModel {
     ///   - campaign: stage/public.
     ///   - privacyManagerId: privacyManagerId which is associated with the property
     ///   - creationTimestamp: property added in database time
-    init(accountId:Int64, propertyId: Int64, propertyName: String?, campaign: String, privacyManagerId:String?, creationTimestamp: Date, authId: String? ) {
+    init(accountId:Int64, propertyId: Int64, propertyName: String?, campaign: Int64, privacyManagerId:String?, creationTimestamp: Date, authId: String? ) {
         self.accountId = accountId
         self.propertyId = propertyId
         self.propertyName = propertyName

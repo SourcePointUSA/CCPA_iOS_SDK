@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		196496AA23B10B1E0073F065 /* ConsentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196496A823B10B1E0073F065 /* ConsentDetailsViewController.swift */; };
-		196496B223B262950073F065 /* PropertyDetails+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196496B023B262940073F065 /* PropertyDetails+CoreDataClass.swift */; };
-		196496B323B262950073F065 /* PropertyDetails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196496B123B262950073F065 /* PropertyDetails+CoreDataProperties.swift */; };
 		1997B669238FDE7C0079AF34 /* PropertyDetailsStorageCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B65C238FDE7B0079AF34 /* PropertyDetailsStorageCoordinatorTest.swift */; };
 		1997B66A238FDE7C0079AF34 /* PropertyListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B65D238FDE7B0079AF34 /* PropertyListViewControllerTest.swift */; };
 		1997B66B238FDE7C0079AF34 /* AddPropertyViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B65E238FDE7C0079AF34 /* AddPropertyViewModelTest.swift */; };
@@ -61,6 +59,8 @@
 		1997B6EE238FDEA10079AF34 /* SourcePointUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6C2238FDEA10079AF34 /* SourcePointUITableView.swift */; };
 		1997B6F0238FDEA10079AF34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6C4238FDEA10079AF34 /* Constants.swift */; };
 		1997B6F1238FDEA10079AF34 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6C5238FDEA10079AF34 /* Debug.swift */; };
+		19C6FF3923CDFDC7002AA984 /* PropertyDetails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6FF3723CDFDC6002AA984 /* PropertyDetails+CoreDataProperties.swift */; };
+		19C6FF3A23CDFDC7002AA984 /* PropertyDetails+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6FF3823CDFDC6002AA984 /* PropertyDetails+CoreDataClass.swift */; };
 		1E615B5870CE7B7613E16D1E /* Pods_CCPAConsentViewController_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3A964BB15381C33142E2F7 /* Pods_CCPAConsentViewController_ExampleTests.framework */; };
 		2CFC9C3AF90EE5DB973D86BC /* Pods_SourcePointMetaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1D17A70C5D85C8CF196D90 /* Pods_SourcePointMetaApp.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -100,8 +100,6 @@
 /* Begin PBXFileReference section */
 		0BDE5ACAC1E5A13268DEE6F2 /* Pods-CCPAConsentViewController_ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCPAConsentViewController_ExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-CCPAConsentViewController_ExampleTests/Pods-CCPAConsentViewController_ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		196496A823B10B1E0073F065 /* ConsentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsentDetailsViewController.swift; path = SourcePointMetaApp/Controllers/ConsentViewController/ConsentDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
-		196496B023B262940073F065 /* PropertyDetails+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PropertyDetails+CoreDataClass.swift"; sourceTree = "<group>"; };
-		196496B123B262950073F065 /* PropertyDetails+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PropertyDetails+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1997B63A238FDCE80079AF34 /* SourcePointMetaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SourcePointMetaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1997B64A238FDCF30079AF34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1997B64F238FDCF30079AF34 /* SourcePointMetaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SourcePointMetaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +155,8 @@
 		1997B6C2238FDEA10079AF34 /* SourcePointUITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcePointUITableView.swift; sourceTree = "<group>"; };
 		1997B6C4238FDEA10079AF34 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1997B6C5238FDEA10079AF34 /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		19C6FF3723CDFDC6002AA984 /* PropertyDetails+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PropertyDetails+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		19C6FF3823CDFDC6002AA984 /* PropertyDetails+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PropertyDetails+CoreDataClass.swift"; sourceTree = "<group>"; };
 		29E4CB9D68D8CACB2559F42C /* Pods-CCPAConsentViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCPAConsentViewController_Example.release.xcconfig"; path = "Target Support Files/Pods-CCPAConsentViewController_Example/Pods-CCPAConsentViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		307C13E5A29EC6925265CD80 /* Pods-AuthExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthExample.release.xcconfig"; path = "Target Support Files/Pods-AuthExample/Pods-AuthExample.release.xcconfig"; sourceTree = "<group>"; };
 		36C713B0FF3D9458F2FFA2EA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -558,8 +558,8 @@
 		1997B6BA238FDEA10079AF34 /* PropertyDetailsModel */ = {
 			isa = PBXGroup;
 			children = (
-				196496B023B262940073F065 /* PropertyDetails+CoreDataClass.swift */,
-				196496B123B262950073F065 /* PropertyDetails+CoreDataProperties.swift */,
+				19C6FF3823CDFDC6002AA984 /* PropertyDetails+CoreDataClass.swift */,
+				19C6FF3723CDFDC6002AA984 /* PropertyDetails+CoreDataProperties.swift */,
 			);
 			path = PropertyDetailsModel;
 			sourceTree = "<group>";
@@ -1160,12 +1160,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1997B6E4238FDEA10079AF34 /* AddPropertyViewModel.swift in Sources */,
-				196496B223B262950073F065 /* PropertyDetails+CoreDataClass.swift in Sources */,
+				19C6FF3A23CDFDC7002AA984 /* PropertyDetails+CoreDataClass.swift in Sources */,
 				1997B6C8238FDEA10079AF34 /* SourcePointMetaApp.xcdatamodeld in Sources */,
 				1997B6EC238FDEA10079AF34 /* TargetingParams+CoreDataClass.swift in Sources */,
 				1997B6E5238FDEA10079AF34 /* PropertyListViewModel.swift in Sources */,
-				196496B323B262950073F065 /* PropertyDetails+CoreDataProperties.swift in Sources */,
 				1997B6F1238FDEA10079AF34 /* Debug.swift in Sources */,
+				19C6FF3923CDFDC7002AA984 /* PropertyDetails+CoreDataProperties.swift in Sources */,
 				1997B6DB238FDEA10079AF34 /* PropertyCell.swift in Sources */,
 				1997B6E0238FDEA10079AF34 /* LoaderView.swift in Sources */,
 				1997B6E3238FDEA10079AF34 /* AppDelegate.swift in Sources */,
