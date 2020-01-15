@@ -3,7 +3,7 @@
     <entity name="PropertyDetails" representedClassName="PropertyDetails" syncable="YES">
         <attribute name="accountId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="authId" optional="YES" attributeType="String"/>
-        <attribute name="campaign" optional="YES" attributeType="String"/>
+        <attribute name="campaign" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="creationTimestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="privacyManagerId" optional="YES" attributeType="String"/>
         <attribute name="propertyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
