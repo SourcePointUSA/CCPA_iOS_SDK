@@ -7,10 +7,8 @@
 
 import Foundation
 
-
 /// PropertyName is the exact name of your property as created in SourcePoint's dashboard.
-/// It's important to notice that it can only contain letters, numbers, . (dots), : (semicolons) and / (slashes).
-/// The constructor will validate upon that and throw an error otherwise.
+/// - Important: notice that it can only contain letters, numbers, . (dots), : (semicolons) and / (slashes). The constructor will validate upon that and throw an error otherwise.
 @objcMembers open class PropertyName: NSObject, Codable {
     private static func validate(_ string: String) throws -> String {
         let regex = try NSRegularExpression(pattern: "^[a-zA-Z.:/0-9]*$", options: [])
@@ -26,7 +24,8 @@ import Foundation
     /// - Parameter _: the exact name of your property as created in SourcePoint's dashboard.
     /// - Throws: `InvalidArgumentError` if the property name contain anything other than letters, numbers, . (dots), : (semicolons) and / (slashes).
     public init(_ rawValue: String) throws {
-        self.rawValue = try PropertyName.validate(rawValue)
+        let validRawValue = try PropertyName.validate(rawValue)
+        self.rawValue = "https://" + validRawValue
     }
     
     required public init(from decoder: Decoder) throws {

@@ -30,7 +30,8 @@ import UIKit
         case Presenting = "Presenting"
         case Loading = "Loading"
     }
-    /// used in order not to load the message ui multiple times
+
+    // used in order not to load the message ui multiple times
     private var loading: LoadingStatus = .Ready
 
     private func remove(asChildViewController viewController: UIViewController?) {

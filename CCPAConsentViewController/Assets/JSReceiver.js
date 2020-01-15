@@ -25,8 +25,7 @@
     }
   }(postToWebView);
 
-  var getActionFromMessage = function (payload) {
-    var actions = payload.actions || [];
+  var getActionFromMessage = function (actions) {
     var choiceAction = actions.filter(function (action) { return action.type === 'choice'; })[0] || {};
     var choiceData = choiceAction.data || {};
     return { id: choiceData.choice_id, type: choiceData.type };
@@ -63,7 +62,7 @@
   var handleMessageOrPMEvent = function (SDK) {
     return function (event) {
       try {
-        handleMessageEvent(SDK)(event.name, event.payload || {});
+        handleMessageEvent(SDK)(event.name, event.payload || event.actions || {});
       } catch (error) {
         SDK.onError(error);
       }
