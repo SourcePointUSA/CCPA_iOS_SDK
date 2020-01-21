@@ -66,8 +66,6 @@ class SimpleClient: HttpClient {
     }
 }
 
-typealias TargetingParams = [String:Codable]
-
 struct JSON {
     private lazy var jsonDecoder: JSONDecoder = { return JSONDecoder() }()
     private lazy var jsonEncoder: JSONEncoder = { return JSONEncoder() }()
@@ -99,20 +97,32 @@ class SourcePointClient {
     private let propertyName: PropertyName
     private let pmId: String
     private let campaignEnv: CampaignEnv
+    private let targetingParams: TargetingParams
     
     public var onError: OnError? { didSet { client.defaultOnError = onError } }
 
-    init(accountId: Int, propertyId:Int, propertyName: PropertyName, pmId:String, campaignEnv: CampaignEnv, client: HttpClient) {
+    init(accountId: Int, propertyId:Int, propertyName: PropertyName, pmId:String, campaignEnv: CampaignEnv, targetingParams: TargetingParams, client: HttpClient) {
         self.accountId = accountId
         self.propertyId = propertyId
         self.propertyName = propertyName
         self.pmId = pmId
         self.campaignEnv = campaignEnv
         self.client = client
+        self.targetingParams = targetingParams
     }
     
-    convenience init(accountId: Int, propertyId: Int, propertyName: PropertyName, pmId: String, campaignEnv: CampaignEnv) {
-        self.init(accountId: accountId, propertyId: propertyId, propertyName: propertyName, pmId: pmId, campaignEnv: campaignEnv, client: SimpleClient())
+    convenience init(accountId: Int, propertyId: Int, propertyName: PropertyName, pmId: String, campaignEnv: CampaignEnv, targetingParams: TargetingParams) {
+        self.init(accountId: accountId, propertyId: propertyId, propertyName: propertyName, pmId: pmId, campaignEnv: campaignEnv, targetingParams: targetingParams, client: SimpleClient())
+    }
+    
+    private func targetingParamsToString(_ params: TargetingParams) -> String {
+        let emptyParams = "{}"
+        do {
+            let data = try JSONSerialization.data(withJSONObject: params)
+            return String(data: data, encoding: .utf8) ?? emptyParams
+        } catch {
+            return emptyParams
+        }
     }
 
     func getMessageUrl(_ consentUUID: ConsentUUID?, propertyName: PropertyName) -> URL? {
@@ -125,6 +135,7 @@ class SourcePointClient {
             URLQueryItem(name: "requestUUID", value: requestUUID.uuidString),
             URLQueryItem(name: "propertyHref", value: propertyName.rawValue),
             URLQueryItem(name: "campaignEnv", value: campaignEnv == .Stage ? "stage" : "prod"),
+            URLQueryItem(name: "targetingParams", value: targetingParamsToString(targetingParams)),
             URLQueryItem(name: "alwaysDisplayDNS", value: String(false)),
             URLQueryItem(name: "meta", value: UserDefaults.standard.string(forKey: CCPAConsentViewController.META_KEY)),
         ]

@@ -17,7 +17,7 @@ class ViewController: UIViewController, ConsentDelegate {
         propertyId: 6099,
         propertyName: try! PropertyName("ccpa.mobile.demo"),
         PMId: "5df9105bcf42027ce707bb43",
-        campaignEnv: .Stage,
+        campaignEnv: .Public,
         consentDelegate: self
     )}()
     
