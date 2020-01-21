@@ -8,7 +8,7 @@ We strongly recommend the use of [CocoaPods](https://cocoapods.org) in order to 
 In your `Podfile` add the following line to your app target:
 
 ```
-pod 'CCPAConsentViewController', '1.0.0'
+pod 'CCPAConsentViewController', '1.1.0'
 ```
 ### Carthage
 We also support [Carthage](https://github.com/Carthage/Carthage). It requires a couple more steps to install so we dedicated a whole [wiki page](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/Carthage-SDK-integration-guide) for it.
@@ -36,9 +36,14 @@ import CCPAConsentViewController
 class ViewController: UIViewController, ConsentDelegate {
     let logger = Logger()
 
-    lazy var consentViewController: CCPAConsentViewController = {
-        return CCPAConsentViewController(accountId: 22, propertyId: 6099, propertyName: try! PropertyName("ccpa.mobile.demo"), PMId: "5df9105bcf42027ce707bb43", campaign: "prod", consentDelegate: self)
-    }()
+    lazy var consentViewController: CCPAConsentViewController = { return CCPAConsentViewController(
+      accountId: 22,
+      propertyId: 6099, 
+      propertyName: try! PropertyName("ccpa.mobile.demo"), 
+      PMId: "5df9105bcf42027ce707bb43", 
+      campaignEnv: .Public, 
+      consentDelegate: self
+    )}()
 
     func consentUIWillShow() {
         present(consentViewController, animated: true, completion: nil)
@@ -84,9 +89,15 @@ CCPAConsentViewController *cvc;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    PropertyName *pn = [[PropertyName alloc] init:@"ccpa.mobile.demo" error: nil];
-
-    cvc = [[CCPAConsentViewController alloc] initWithAccountId:22 propertyId:6099 propertyName:pn PMId:@"5df9105bcf42027ce707bb43" campaign:@"prod" consentDelegate:self];
+    PropertyName *propertyName = [[PropertyName alloc] init:@"ccpa.mobile.demo" error: nil];
+    
+    cvc = [[CCPAConsentViewController alloc]
+        initWithAccountId:22
+        propertyId:6099
+        propertyName:propertyName
+        PMId:@"5df9105bcf42027ce707bb43"
+        campaignEnv:CampaignEnvPublic
+        consentDelegate:self];
 
     [cvc loadMessage];
 }
