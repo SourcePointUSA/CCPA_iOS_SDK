@@ -59,6 +59,16 @@ public typealias TargetingParams = [String:String]
     /// Instructs the SDK to clean consent data if an error occurs. It's `true` by default.
     public var shouldCleanConsentOnError = true
     
+    /**
+       - Parameters:
+           - accountId: the id of your account, can be found in the Account section of SourcePoint's dashboard
+           - propertyId: the id of your property, can be found in the property page of SourcePoint's dashboard
+           - propertyName: the exact name of your property,
+           - PMId: the id of the PrivacyManager, can be found in the PrivacyManager page of SourcePoint's dashboard
+           - campaignEnv: Indicates if the SDK should load the message from the Public or Stage campaign
+           - consentDelegate: responsible for dealing with the different consent lifecycle functions.
+       - SeeAlso: ConsentDelegate
+    */
     convenience init(
         accountId: Int,
         propertyId: Int,
@@ -71,15 +81,16 @@ public typealias TargetingParams = [String:String]
     }
 
     /**
-        - Parameters:
-            - accountId: the id of your account, can be found in the Account section of SourcePoint's dashboard
-            - propertyId: the id of your property, can be found in the property page of SourcePoint's dashboard
-            - propertyName: the exact name of your property,
-            - PMId: the id of the PrivacyManager, can be found in the PrivacyManager page of SourcePoint's dashboard
-            - campaignEnv: Indicates if the SDK should load the message from the Public or Stage campaign
-            - consentDelegate: responsible for dealing with the different consent lifecycle functions.
-        - SeeAlso: ConsentDelegate
-     */
+       - Parameters:
+           - accountId: the id of your account, can be found in the Account section of SourcePoint's dashboard
+           - propertyId: the id of your property, can be found in the property page of SourcePoint's dashboard
+           - propertyName: the exact name of your property,
+           - PMId: the id of the PrivacyManager, can be found in the PrivacyManager page of SourcePoint's dashboard
+           - campaignEnv: Indicates if the SDK should load the message from the Public or Stage campaign
+           - targetingParams: A dictionary of arbitrary key/value pairs of string to be used in the scenario builder
+           - consentDelegate: responsible for dealing with the different consent lifecycle functions.
+       - SeeAlso: ConsentDelegate
+    */
     public init(
         accountId: Int,
         propertyId: Int,
