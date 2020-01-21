@@ -69,7 +69,7 @@ public typealias TargetingParams = [String:String]
            - consentDelegate: responsible for dealing with the different consent lifecycle functions.
        - SeeAlso: ConsentDelegate
     */
-    convenience init(
+    public convenience init(
         accountId: Int,
         propertyId: Int,
         propertyName: PropertyName,
