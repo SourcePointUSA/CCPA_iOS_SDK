@@ -23,7 +23,7 @@ import Foundation
     The UserConsent class encapsulates the consent status, rejected vendor ids and rejected categories (purposes) ids.
     - Important: The `rejectedVendors` and `rejectedCategories` arrays will only be populated if the `status` is `.Some`. That is, if the user has rejected `.All` or `.None` vendors/categories, those arrays will be empty.
  */
-@objc public class UserConsent: NSObject, Codable {
+@objcMembers public class UserConsent: NSObject, Codable {
     /// Indicates if the user has rejected `.All`, `.Some` or `.None` of the vendors **and** categories.
     public let status: ConsentStatus
     /// The ids of the rejected vendors and categories. These can be found in SourcePoint's dashboard

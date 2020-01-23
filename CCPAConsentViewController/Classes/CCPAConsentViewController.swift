@@ -8,17 +8,18 @@
 
 import UIKit
 
+public typealias TargetingParams = [String:String]
+
 @objcMembers open class CCPAConsentViewController: UIViewController {
     static public let CCPA_USER_CONSENTS: String = "sp_ccpa_user_consents"
-    static public let CONSENT_UUID_KEY: String = "sp_consentUUID"
-    static public let META_KEY: String = "sp_meta"
+    static public let CONSENT_UUID_KEY: String = "sp_ccpa_consentUUID"
+    static public let META_KEY: String = "sp_ccpa_meta"
 
     private let accountId, propertyId: Int
     private let propertyName: PropertyName
     private let pmId: String
 
-    public typealias TargetingParams = [String:String]
-    private let targetingParams: TargetingParams = [:]
+    private let targetingParams: TargetingParams
 
     private let sourcePoint: SourcePointClient
 
@@ -57,18 +58,18 @@ import UIKit
     
     /// Instructs the SDK to clean consent data if an error occurs. It's `true` by default.
     public var shouldCleanConsentOnError = true
-
+    
     /**
-        - Parameters:
-            - accountId: the id of your account, can be found in the Account section of SourcePoint's dashboard
-            - propertyId: the id of your property, can be found in the property page of SourcePoint's dashboard
-            - propertyName: the exact name of your property,
-            -  PMId: the id of the PrivacyManager, can be found in the PrivacyManager page of SourcePoint's dashboard
-            -  campaignEnv: Indicates if the SDK should load the message from the Public or Stage campaign
-            -  consentDelegate: responsible for dealing with the different consent lifecycle functions.
-        - SeeAlso: ConsentDelegate
-     */
-    public init(
+       - Parameters:
+           - accountId: the id of your account, can be found in the Account section of SourcePoint's dashboard
+           - propertyId: the id of your property, can be found in the property page of SourcePoint's dashboard
+           - propertyName: the exact name of your property,
+           - PMId: the id of the PrivacyManager, can be found in the PrivacyManager page of SourcePoint's dashboard
+           - campaignEnv: Indicates if the SDK should load the message from the Public or Stage campaign
+           - consentDelegate: responsible for dealing with the different consent lifecycle functions.
+       - SeeAlso: ConsentDelegate
+    */
+    public convenience init(
         accountId: Int,
         propertyId: Int,
         propertyName: PropertyName,
@@ -76,10 +77,34 @@ import UIKit
         campaignEnv: CampaignEnv,
         consentDelegate: ConsentDelegate
     ){
+        self.init(accountId: accountId, propertyId: propertyId, propertyName: propertyName, PMId: PMId, campaignEnv: campaignEnv, targetingParams: [:], consentDelegate: consentDelegate)
+    }
+
+    /**
+       - Parameters:
+           - accountId: the id of your account, can be found in the Account section of SourcePoint's dashboard
+           - propertyId: the id of your property, can be found in the property page of SourcePoint's dashboard
+           - propertyName: the exact name of your property,
+           - PMId: the id of the PrivacyManager, can be found in the PrivacyManager page of SourcePoint's dashboard
+           - campaignEnv: Indicates if the SDK should load the message from the Public or Stage campaign
+           - targetingParams: A dictionary of arbitrary key/value pairs of string to be used in the scenario builder
+           - consentDelegate: responsible for dealing with the different consent lifecycle functions.
+       - SeeAlso: ConsentDelegate
+    */
+    public init(
+        accountId: Int,
+        propertyId: Int,
+        propertyName: PropertyName,
+        PMId: String,
+        campaignEnv: CampaignEnv,
+        targetingParams: TargetingParams,
+        consentDelegate: ConsentDelegate
+    ){
         self.accountId = accountId
         self.propertyName = propertyName
         self.propertyId = propertyId
         self.pmId = PMId
+        self.targetingParams = targetingParams
         self.consentDelegate = consentDelegate
         if let data = UserDefaults.standard.value(forKey: CCPAConsentViewController.CCPA_USER_CONSENTS) as? Data {
             self.userConsent = (try? PropertyListDecoder().decode(UserConsent.self, from: data)) ?? UserConsent.rejectedNone()
@@ -95,7 +120,8 @@ import UIKit
             propertyId: propertyId,
             propertyName: propertyName,
             pmId: PMId,
-            campaignEnv: campaignEnv
+            campaignEnv: campaignEnv,
+            targetingParams: targetingParams
         )
 
         super.init(nibName: nil, bundle: nil)
