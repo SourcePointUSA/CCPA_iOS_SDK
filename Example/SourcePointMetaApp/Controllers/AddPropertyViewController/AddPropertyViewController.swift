@@ -70,7 +70,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     private let cellIdentifier = "targetingParamCell"
     
     // Will add all the targeting params to this array
-    var targetingParamsArray = [TargetingParamModel]()
+    var targetingParams = [TargetingParamModel]()
     
     // this variable holds the property details entered by user
     var propertyDetailsModel: PropertyDetailsModel?
@@ -83,15 +83,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        accountIDTextFieldOutlet.delegate = self
-        propertyIdTextFieldOutlet.delegate = self
-        propertyNameTextField.delegate = self
-        authIdTextField.delegate = self
-        privacyManagerTextField.delegate = self
-        keyTextFieldOutlet.delegate = self
-        valueTextFieldOutlet.delegate = self
-        
+        setTextFieldDelegate()
         targetingParamTableview.tableFooterView = UIView(frame: .zero)
         setTableViewHidden()
                 
@@ -110,7 +102,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
                 if let targetingParams = propertyDetailsModel.manyTargetingParams?.allObjects as! [TargetingParams]? {
                     for targetingParam in targetingParams {
                         let targetingParamModel = TargetingParamModel(targetingParamKey: targetingParam.key, targetingParamValue: targetingParam.value)
-                        self?.targetingParamsArray.append(targetingParamModel)
+                        self?.targetingParams.append(targetingParamModel)
                     }
                     self?.targetingParamTableview.reloadData()
                 }
@@ -130,16 +122,18 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     }
     
     func setTableViewHidden() {
-        targetingParamTableview.isHidden = !(targetingParamsArray.count > 0)
-        noTargetingParamDataLabel.isHidden = targetingParamsArray.count > 0
+        targetingParamTableview.isHidden = !(targetingParams.count > 0)
+        noTargetingParamDataLabel.isHidden = targetingParams.count > 0
     }
     
-    func clearCookies() {
-        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
-        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in records.forEach { record in
-            WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
-            }
-        }
+    func setTextFieldDelegate() {
+        accountIDTextFieldOutlet.delegate = self
+        propertyIdTextFieldOutlet.delegate = self
+        propertyNameTextField.delegate = self
+        authIdTextField.delegate = self
+        privacyManagerTextField.delegate = self
+        keyTextFieldOutlet.delegate = self
+        valueTextFieldOutlet.delegate = self
     }
     
     // add targeting param value to the tableview
@@ -150,16 +144,16 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
         
         if targetingKeyString!.count > 0 && targetingValueString!.count > 0 {
             let targetingParamModel = TargetingParamModel(targetingParamKey: targetingKeyString, targetingParamValue: targetingValueString)
-            if targetingParamsArray.count == 0 {
-                targetingParamsArray.append(targetingParamModel)
-            } else if targetingParamsArray.count > 0 {
-                if let targetingIndex = targetingParamsArray.index(where: { $0.targetingKey == targetingKeyString}) {
-                    var targetingParamModelLocal = targetingParamsArray[targetingIndex]
+            if targetingParams.count == 0 {
+                targetingParams.append(targetingParamModel)
+            } else if targetingParams.count > 0 {
+                if let targetingIndex = targetingParams.index(where: { $0.targetingKey == targetingKeyString}) {
+                    var targetingParamModelLocal = targetingParams[targetingIndex]
                     targetingParamModelLocal.targetingValue = targetingValueString
-                    targetingParamsArray.remove(at: targetingIndex)
-                    targetingParamsArray.insert(targetingParamModelLocal, at: targetingIndex)
+                    targetingParams.remove(at: targetingIndex)
+                    targetingParams.insert(targetingParamModelLocal, at: targetingIndex)
                 }else {
-                    targetingParamsArray.append(targetingParamModel)
+                    targetingParams.append(targetingParamModel)
                 }
             }
              
@@ -177,11 +171,10 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
         let buttonPosition : CGPoint = sender.convert(sender.bounds.origin, to: targetingParamTableview)
         let indexPath = targetingParamTableview.indexPathForRow(at: buttonPosition)
         if let row = indexPath?.row {
-            targetingParamsArray.remove(at: row)
+            targetingParams.remove(at: row)
             targetingParamTableview.reloadData()
         }
     }
-    
     
     // save property details to database and show SP messages/PM
     @IBAction func savepropertyDetailsAction(_ sender: Any) {
@@ -215,7 +208,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     }
     
     func checkExitanceOfpropertyData(propertyDetails : PropertyDetailsModel) {
-        addpropertyViewModel.checkExitanceOfData(propertyDetails: propertyDetails, targetingParams: targetingParamsArray, completionHandler: { [weak self] (isStored) in
+        addpropertyViewModel.checkExitanceOfData(propertyDetails: propertyDetails, targetingParams: targetingParams, completionHandler: { [weak self] (isStored) in
             if isStored {
                 let okHandler = {
                 }
@@ -228,16 +221,13 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     }
     
     func loadConsentManager(propertyDetails : PropertyDetailsModel) {
-//        consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: campaign, consentDelegate: self)
-        consentViewController = CCPAConsentViewController(accountId: 808, propertyId: 6168, propertyName: try! PropertyName("ccpa.cybage.testing.com"), PMId: "5dfc9a9c02a1ec21b082b9fa", campaignEnv: .Public, consentDelegate: self)
-//        consentViewController?.loadPrivacyManager()
-        consentViewController?.loadMessage()
-          
+        consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: campaign, consentDelegate: self)
 //            if let authId = propertyDetails.authId {
 //                consentViewController.loadMessage(forAuthId: authId)
 //            }else {
 //                consentViewController.loadMessage()
 //            }
+        consentViewController?.loadMessage()
         }
     
     func consentUIWillShow() {
@@ -252,7 +242,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
         showIndicator()
         saveSitDataToDatabase(propertyDetailsModel: propertyDetailsModel!)
-        self.loadConsentInfoController(consentUUID: consentUUID, userConsent: userConsent)
+        self.loadConsentInfoController(userConsents: userConsent)
     }
     
     func onError(error: CCPAConsentViewControllerError?) {
@@ -265,19 +255,21 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     }
     
     
-    func loadConsentInfoController(consentUUID:ConsentUUID, userConsent: UserConsent) {
-        self.hideIndicator()
+    func loadConsentInfoController(userConsents: UserConsent) {
         if let consentViewDetailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConsentDetailsViewController") as? ConsentDetailsViewController {
-            consentViewDetailsController.userConsents = userConsent
+            consentViewDetailsController.userConsents = userConsents
+            consentViewDetailsController.propertyDetails = propertyDetailsModel
+            consentViewDetailsController.targetingParams = targetingParams
             self.navigationController?.pushViewController(consentViewDetailsController, animated: true)
         }
+        self.hideIndicator()
     }
     
     // save property details to database
     func saveSitDataToDatabase(propertyDetailsModel: PropertyDetailsModel) {
 
         if let _propertyManagedObjectID = propertyManagedObjectID {
-            addpropertyViewModel.update(propertyDetails: propertyDetailsModel, targetingParams:targetingParamsArray, whereManagedObjectID: _propertyManagedObjectID, completionHandler: {(optionalpropertyManagedObjectID, executionStatus) in
+            addpropertyViewModel.update(propertyDetails: propertyDetailsModel, targetingParams:targetingParams, whereManagedObjectID: _propertyManagedObjectID, completionHandler: {(optionalpropertyManagedObjectID, executionStatus) in
                 if executionStatus {
                     Log.sharedLog.DLog(message:"property details are updated")
                 }else {
@@ -285,7 +277,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
                 }
             })
         } else {
-            addpropertyViewModel.addproperty(propertyDetails: propertyDetailsModel, targetingParams: targetingParamsArray, completionHandler: { (error, _,propertyManagedObjectID) in
+            addpropertyViewModel.addproperty(propertyDetails: propertyDetailsModel, targetingParams: targetingParams, completionHandler: { (error, _,propertyManagedObjectID) in
 
                 if let _error = error {
                     let okHandler = {
@@ -326,14 +318,14 @@ extension AddPropertyViewController : UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         setTableViewHidden()
-        return targetingParamsArray.count
+        return targetingParams.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? TargetingParamCell {
             cell.delegate = self
-            let targetingParamName = targetingParamsArray[indexPath.row].targetingKey! + " : " + targetingParamsArray[indexPath.row].targetingValue!
+            let targetingParamName = targetingParams[indexPath.row].targetingKey! + " : " + targetingParams[indexPath.row].targetingValue!
             cell.targetingParamLabel.text = targetingParamName
             return cell
         }

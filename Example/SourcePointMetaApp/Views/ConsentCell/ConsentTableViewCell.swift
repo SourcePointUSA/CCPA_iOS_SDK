@@ -10,8 +10,8 @@ import UIKit
 
 class ConsentTableViewCell: SourcePointUItablewViewCell {
 
-    @IBOutlet weak var consentIDString: UILabel!
-    @IBOutlet weak var consentNameString: UILabel!
+    @IBOutlet weak var rejectedConsentID: UILabel!
+    @IBOutlet weak var consentType: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -13,10 +13,9 @@ import WebKit
 
 class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, ConsentDelegate {
     
-    @IBOutlet weak var euConsentLabel: UILabel!
     @IBOutlet weak var consentUUIDLabel: UILabel!
-    @IBOutlet weak var consentTableView: UITableView!
-    @IBOutlet weak var noDataLabel: UILabel!
+    @IBOutlet weak var rejectedConsentsTableView: UITableView!
+    @IBOutlet weak var userConsentedToAll: UILabel!
     
     //// MARK: - Instance properties
     private let cellIdentifier = "ConsentCell"
@@ -24,33 +23,41 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
     // Reference to the selected property managed object ID
     var propertyManagedObjectID : NSManagedObjectID?
     
+    /** PM is loaded or not
+     */
+    var pmloadedStatus = false
+    
     var userConsents: UserConsent?
-    let sections = ["Vendor Consents", "Purpose Consents"]
+    let sections = ["Rejected Vendors", "Rejected Categories"]
     
     // MARK: - Initializer
     let addpropertyViewModel: AddPropertyViewModel = AddPropertyViewModel()
-    
+    var consentViewController: CCPAConsentViewController?
+    var propertyDetails: PropertyDetailsModel?
+    var targetingParams: [TargetingParamModel]?
     let logger = Logger()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        consentTableView.tableFooterView = UIView(frame: .zero)
+        rejectedConsentsTableView.tableFooterView = UIView(frame: .zero)
         self.navigationItem.hidesBackButton = true
         navigationSetup()
         setTableViewHidden()
-        setconsentIdFromUserDefaults()
+        setconsentUUIdFromUserDefaults()
         
         if let _propertyManagedObjectID = propertyManagedObjectID {
             self.showIndicator()
-            fetchDataFromDatabase(propertyManagedObjectID: _propertyManagedObjectID, completionHandler: {(propertyDetails, targetingParamsArray) in
-                self.loadConsentManager(propertyDetails: propertyDetails, targetingParamsArray: targetingParamsArray)
+            fetchDataFromDatabase(propertyManagedObjectID: _propertyManagedObjectID, completionHandler: {(propertyDetails, targetingParams) in
+                self.propertyDetails = propertyDetails
+                self.targetingParams = targetingParams
+                self.loadConsentManager(propertyDetails: propertyDetails, targetingParams: targetingParams)
             })
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setconsentIdFromUserDefaults()
+        setconsentUUIdFromUserDefaults()
     }
     
     func navigationSetup() {
@@ -68,17 +75,25 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
     }
     
     func setTableViewHidden() {
-//        consentTableView.isHidden = !(userConsents()
-//        noDataLabel.isHidden = userConsents.count > 0
+        if userConsents?.status == ConsentStatus.RejectedSome {
+            rejectedConsentsTableView.isHidden = false
+            userConsentedToAll.isHidden = true
+        }else {
+          rejectedConsentsTableView.isHidden = true
+          userConsentedToAll.isHidden = false
+            if userConsents?.status == ConsentStatus.RejectedAll {
+                userConsentedToAll.text = SPLiteral.rejectedAll
+            }else {
+                userConsentedToAll.text = SPLiteral.rejectedNone
+            }
+        }
     }
     
-    func setconsentIdFromUserDefaults() {
+    func setconsentUUIdFromUserDefaults() {
         if let consentID = UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY),consentID.count > 0 {
             consentUUIDLabel.text = UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
-            euConsentLabel.text = UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
         }else {
             consentUUIDLabel.text = SPLiteral.consentUUID
-            euConsentLabel.text = SPLiteral.euConsentID
         }
     }
     
@@ -96,103 +111,125 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
         })
     }
     
-    func loadConsentManager(propertyDetails : PropertyDetailsModel, targetingParamsArray:[TargetingParamModel]) {
-            
-        let consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: .Public, consentDelegate: self)
-        consentViewController.loadMessage()
-           
-//            if let authId = propertyDetails.authId {
-//                consentViewController.loadMessage(forAuthId: authId)
-//                consentViewController.loadMessage()
-//            }else {
-//                consentViewController.loadMessage()
-//            }
+    func loadConsentManager(propertyDetails : PropertyDetailsModel, targetingParams:[TargetingParamModel]) {
+        let campaign: CampaignEnv = propertyDetails.campaign == 0 ? .Stage : .Public
+        consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: campaign, consentDelegate: self)
+        
+        //            if let authId = propertyDetails.authId {
+        //                consentViewController.loadMessage(forAuthId: authId)
+        //            }else {
+        //                consentViewController.loadMessage()
+        //            }
+        consentViewController?.loadMessage()
+        
     }
     func consentUIWillShow() {
-           hideIndicator()
-//           present(self.consentViewController!, animated: true, completion: nil)
-       }
-
-       func consentUIDidDisappear() {
-           dismiss(animated: true, completion: nil)
-       }
+        hideIndicator()
+        present(self.consentViewController!, animated: true, completion: nil)
+    }
     
-    func onMessageReady(controller: CCPAConsentViewController) {
+    func consentUIDidDisappear() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
+        self.showIndicator()
+        self.userConsents = userConsent
+        setconsentUUIdFromUserDefaults()
+        rejectedConsentsTableView.reloadData()
         self.hideIndicator()
     }
     
-    func onErrorOccurred(error: CCPAConsentViewControllerError) {
-        logger.log("Error: %{public}@", [error])
-        self.hideIndicator()
+    func pmWillShow() {
+        hideIndicator()
+        present(self.consentViewController!, animated: true, completion: nil)
+    }
+    
+    func pmDidDisappear() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func onError(error: CCPAConsentViewControllerError?) {
+        logger.log("Error: %{public}@", [error?.description ?? "Something Went Wrong"])
         let okHandler = {
+            self.hideIndicator()
             self.dismiss(animated: false, completion: nil)
         }
-        AlertView.sharedInstance.showAlertView(title: Alert.message, message: error.description, actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
+        AlertView.sharedInstance.showAlertView(title: Alert.message, message: error?.description ?? "Something Went Wrong", actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
     }
     
     
-    func loadConsentInfoController(vendorConsents : UserConsent ) {
+    func loadConsentInfoController(userConsents : UserConsent ) {
         self.hideIndicator()
         
         if let consentViewDetailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConsentDetailsViewController") as? ConsentDetailsViewController {
-                consentViewDetailsController.userConsents = vendorConsents
+            consentViewDetailsController.userConsents = userConsents
             self.navigationController?.pushViewController(consentViewDetailsController, animated: true)
         }
     }
     
     func refreshTableViewWithConsentInfo(vendorConsents : UserConsent) {
         self.userConsents = vendorConsents
-        self.consentTableView.reloadData()
+        self.rejectedConsentsTableView.reloadData()
     }
     
     @IBAction func showPMAction(_ sender: Any) {
-    }
-    func clearCookies() {
-        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
-        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in records.forEach { record in
-            WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
-            }
-        }
+        self.showIndicator()
+        let campaign: CampaignEnv = self.propertyDetails?.campaign == 0 ? .Stage : .Public
+        consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails!.accountId), propertyId: Int(propertyDetails!.propertyId), propertyName: try! PropertyName((propertyDetails?.propertyName)!), PMId: (propertyDetails?.privacyManagerId)!, campaignEnv: campaign, consentDelegate: self)
+        consentViewController?.loadPrivacyManager()
     }
 }
 
 //// MARK: UITableViewDataSource
 extension ConsentDetailsViewController : UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if let headerView = view as? UITableViewHeaderFooterView {
-            headerView.textLabel?.textColor = #colorLiteral(red: 0.2841853499, green: 0.822665453, blue: 0.653732717, alpha: 1)
+    func numberOfSections(in tableView: UITableView) -> Int {
+            return sections.count
         }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+            return sections[section]
+        }
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ConsentTableViewCell {
-            if indexPath.section == 0 {
-//                cell.consentIDString.text = vendorConsents[indexPath.row].id
-//                cell.consentNameString.text = vendorConsents[indexPath.row].name
-            } else {
-//                cell.consentIDString.text = purposeConsents[indexPath.row].id
-//                cell.consentNameString.text = purposeConsents[indexPath.row].name
-            }
-            return cell
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return UITableView.automaticDimension
         }
-        return UITableViewCell()
+        
+        func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+            if let headerView = view as? UITableViewHeaderFooterView {
+                headerView.textLabel?.textColor = #colorLiteral(red: 0.2841853499, green: 0.822665453, blue: 0.653732717, alpha: 1)
+            }
+        }
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            setTableViewHidden()
+            if section == 0 {
+                return userConsents?.rejectedVendors.count ?? 0
+            }else {
+                return userConsents?.rejectedCategories.count ?? 0
+            }
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            
+            if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ConsentTableViewCell {
+                if indexPath.section == 0 {
+                    cell.rejectedConsentID.text = userConsents?.rejectedVendors[indexPath.row]
+                    cell.consentType.text = "Vendore Id: "
+                } else {
+                    cell.rejectedConsentID.text = userConsents?.rejectedCategories[indexPath.row]
+                    cell.consentType.text = "Purpose Id: "
+                }
+                return cell
+            }
+            return UITableViewCell()
+        }
     }
-}
 
 //// MARK: - UITableViewDelegate
 extension ConsentDetailsViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        consentTableView.deselectRow(at: indexPath, animated: false)
+        rejectedConsentsTableView.deselectRow(at: indexPath, animated: false)
     }
 }
