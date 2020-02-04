@@ -9,7 +9,7 @@
 import XCTest
 import CoreData
 import CCPAConsentViewController
-@testable import SourcePointMetaApp
+@testable import CCPA_MetaApp
 
 class AddPropertyViewControllerTest: XCTestCase {
 
