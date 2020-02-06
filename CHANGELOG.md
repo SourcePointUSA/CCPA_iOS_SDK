@@ -1,3 +1,6 @@
+## 1.1.1 (January, 27, 2020)
+* expanded `PropertyName` to accept property names with dashes (-)
+
 ## 1.1.0 (January, 21, 2020)
 * Changed init method to receive `campaignEnv` instead of `campaign`
 * `campaignEnv` is now an enum (`CampaignEnv`) with two possible values `.Public` and `.Stage`
