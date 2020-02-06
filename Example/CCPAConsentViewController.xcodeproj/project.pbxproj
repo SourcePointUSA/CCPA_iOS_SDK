@@ -7,17 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1997B669238FDE7C0079AF34 /* PropertyDetailsStorageCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B65C238FDE7B0079AF34 /* PropertyDetailsStorageCoordinatorTest.swift */; };
+		196496AA23B10B1E0073F065 /* ConsentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196496A823B10B1E0073F065 /* ConsentDetailsViewController.swift */; };
 		1997B66A238FDE7C0079AF34 /* PropertyListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B65D238FDE7B0079AF34 /* PropertyListViewControllerTest.swift */; };
-		1997B66B238FDE7C0079AF34 /* AddPropertyViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B65E238FDE7C0079AF34 /* AddPropertyViewModelTest.swift */; };
 		1997B66C238FDE7C0079AF34 /* XCUIElement+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B65F238FDE7C0079AF34 /* XCUIElement+Extensions.swift */; };
-		1997B66D238FDE7C0079AF34 /* CCPAConsentViewControllerErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B661238FDE7C0079AF34 /* CCPAConsentViewControllerErrorTest.swift */; };
-		1997B66E238FDE7C0079AF34 /* CCPAConsentViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B662238FDE7C0079AF34 /* CCPAConsentViewControllerTest.swift */; };
-		1997B66F238FDE7C0079AF34 /* SourcePointClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B663238FDE7C0079AF34 /* SourcePointClientTest.swift */; };
-		1997B670238FDE7C0079AF34 /* ConsentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B664238FDE7C0079AF34 /* ConsentTest.swift */; };
-		1997B671238FDE7C0079AF34 /* TestData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1997B665238FDE7C0079AF34 /* TestData.plist */; };
-		1997B672238FDE7C0079AF34 /* PropertyListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B666238FDE7C0079AF34 /* PropertyListViewModelTest.swift */; };
-		1997B673238FDE7C0079AF34 /* ConsentViewDetailsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B667238FDE7C0079AF34 /* ConsentViewDetailsViewControllerTest.swift */; };
 		1997B674238FDE7C0079AF34 /* AddPropertyViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B668238FDE7C0079AF34 /* AddPropertyViewControllerTest.swift */; };
 		1997B6C6238FDEA10079AF34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1997B675238FDEA00079AF34 /* Assets.xcassets */; };
 		1997B6C7238FDEA10079AF34 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B678238FDEA10079AF34 /* DBManager.swift */; };
@@ -37,8 +29,6 @@
 		1997B6D5238FDEA10079AF34 /* BaseWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B68C238FDEA10079AF34 /* BaseWindow.swift */; };
 		1997B6D6238FDEA10079AF34 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B68E238FDEA10079AF34 /* BaseViewController.swift */; };
 		1997B6D7238FDEA10079AF34 /* AddPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B690238FDEA10079AF34 /* AddPropertyViewController.swift */; };
-		1997B6D8238FDEA10079AF34 /* ConsentViewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B692238FDEA10079AF34 /* ConsentViewDetailsViewController.swift */; };
-		1997B6D9238FDEA10079AF34 /* ConsentSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B693238FDEA10079AF34 /* ConsentSubViewController.swift */; };
 		1997B6DA238FDEA10079AF34 /* PropertyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B695238FDEA10079AF34 /* PropertyListViewController.swift */; };
 		1997B6DB238FDEA10079AF34 /* PropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B698238FDEA10079AF34 /* PropertyCell.swift */; };
 		1997B6DC238FDEA10079AF34 /* ConsentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B69A238FDEA10079AF34 /* ConsentTableViewCell.swift */; };
@@ -55,13 +45,14 @@
 		1997B6E7238FDEA10079AF34 /* TargetingParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6B3238FDEA10079AF34 /* TargetingParamModel.swift */; };
 		1997B6E8238FDEA10079AF34 /* PropertyDetailsStorageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6B6238FDEA10079AF34 /* PropertyDetailsStorageCoordinator.swift */; };
 		1997B6E9238FDEA10079AF34 /* BaseStorageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6B8238FDEA10079AF34 /* BaseStorageCoordinator.swift */; };
-		1997B6EA238FDEA10079AF34 /* PropertyDetails+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6BB238FDEA10079AF34 /* PropertyDetails+CoreDataClass.swift */; };
-		1997B6EB238FDEA10079AF34 /* PropertyDetails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6BC238FDEA10079AF34 /* PropertyDetails+CoreDataProperties.swift */; };
 		1997B6EC238FDEA10079AF34 /* TargetingParams+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6BE238FDEA10079AF34 /* TargetingParams+CoreDataClass.swift */; };
 		1997B6ED238FDEA10079AF34 /* TargetingParams+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6BF238FDEA10079AF34 /* TargetingParams+CoreDataProperties.swift */; };
 		1997B6EE238FDEA10079AF34 /* SourcePointUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6C2238FDEA10079AF34 /* SourcePointUITableView.swift */; };
 		1997B6F0238FDEA10079AF34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6C4238FDEA10079AF34 /* Constants.swift */; };
 		1997B6F1238FDEA10079AF34 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997B6C5238FDEA10079AF34 /* Debug.swift */; };
+		19A8BE9123E9961700842F10 /* TestData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A8BE9023E9961700842F10 /* TestData.plist */; };
+		19C6FF3923CDFDC7002AA984 /* PropertyDetails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6FF3723CDFDC6002AA984 /* PropertyDetails+CoreDataProperties.swift */; };
+		19C6FF3A23CDFDC7002AA984 /* PropertyDetails+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6FF3823CDFDC6002AA984 /* PropertyDetails+CoreDataClass.swift */; };
 		1E615B5870CE7B7613E16D1E /* Pods_CCPAConsentViewController_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3A964BB15381C33142E2F7 /* Pods_CCPAConsentViewController_ExampleTests.framework */; };
 		2CFC9C3AF90EE5DB973D86BC /* Pods_SourcePointMetaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1D17A70C5D85C8CF196D90 /* Pods_SourcePointMetaApp.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -100,21 +91,13 @@
 
 /* Begin PBXFileReference section */
 		0BDE5ACAC1E5A13268DEE6F2 /* Pods-CCPAConsentViewController_ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCPAConsentViewController_ExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-CCPAConsentViewController_ExampleTests/Pods-CCPAConsentViewController_ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1997B63A238FDCE80079AF34 /* SourcePointMetaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SourcePointMetaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		196496A823B10B1E0073F065 /* ConsentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsentDetailsViewController.swift; path = SourcePointMetaApp/Controllers/ConsentViewController/ConsentDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		1997B63A238FDCE80079AF34 /* CCPA-MetaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CCPA-MetaApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1997B64A238FDCF30079AF34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1997B64F238FDCF30079AF34 /* SourcePointMetaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SourcePointMetaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1997B655238FDCF30079AF34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1997B65C238FDE7B0079AF34 /* PropertyDetailsStorageCoordinatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyDetailsStorageCoordinatorTest.swift; sourceTree = "<group>"; };
 		1997B65D238FDE7B0079AF34 /* PropertyListViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListViewControllerTest.swift; sourceTree = "<group>"; };
-		1997B65E238FDE7C0079AF34 /* AddPropertyViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPropertyViewModelTest.swift; sourceTree = "<group>"; };
 		1997B65F238FDE7C0079AF34 /* XCUIElement+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Extensions.swift"; sourceTree = "<group>"; };
-		1997B661238FDE7C0079AF34 /* CCPAConsentViewControllerErrorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPAConsentViewControllerErrorTest.swift; sourceTree = "<group>"; };
-		1997B662238FDE7C0079AF34 /* CCPAConsentViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPAConsentViewControllerTest.swift; sourceTree = "<group>"; };
-		1997B663238FDE7C0079AF34 /* SourcePointClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcePointClientTest.swift; sourceTree = "<group>"; };
-		1997B664238FDE7C0079AF34 /* ConsentTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTest.swift; sourceTree = "<group>"; };
-		1997B665238FDE7C0079AF34 /* TestData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestData.plist; sourceTree = "<group>"; };
-		1997B666238FDE7C0079AF34 /* PropertyListViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListViewModelTest.swift; sourceTree = "<group>"; };
-		1997B667238FDE7C0079AF34 /* ConsentViewDetailsViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentViewDetailsViewControllerTest.swift; sourceTree = "<group>"; };
 		1997B668238FDE7C0079AF34 /* AddPropertyViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPropertyViewControllerTest.swift; sourceTree = "<group>"; };
 		1997B675238FDEA00079AF34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1997B678238FDEA10079AF34 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
@@ -134,8 +117,6 @@
 		1997B68C238FDEA10079AF34 /* BaseWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWindow.swift; sourceTree = "<group>"; };
 		1997B68E238FDEA10079AF34 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1997B690238FDEA10079AF34 /* AddPropertyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPropertyViewController.swift; sourceTree = "<group>"; };
-		1997B692238FDEA10079AF34 /* ConsentViewDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentViewDetailsViewController.swift; sourceTree = "<group>"; };
-		1997B693238FDEA10079AF34 /* ConsentSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentSubViewController.swift; sourceTree = "<group>"; };
 		1997B695238FDEA10079AF34 /* PropertyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListViewController.swift; sourceTree = "<group>"; };
 		1997B698238FDEA10079AF34 /* PropertyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyCell.swift; sourceTree = "<group>"; };
 		1997B69A238FDEA10079AF34 /* ConsentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTableViewCell.swift; sourceTree = "<group>"; };
@@ -152,13 +133,14 @@
 		1997B6B3238FDEA10079AF34 /* TargetingParamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetingParamModel.swift; sourceTree = "<group>"; };
 		1997B6B6238FDEA10079AF34 /* PropertyDetailsStorageCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyDetailsStorageCoordinator.swift; sourceTree = "<group>"; };
 		1997B6B8238FDEA10079AF34 /* BaseStorageCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStorageCoordinator.swift; sourceTree = "<group>"; };
-		1997B6BB238FDEA10079AF34 /* PropertyDetails+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PropertyDetails+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1997B6BC238FDEA10079AF34 /* PropertyDetails+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PropertyDetails+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1997B6BE238FDEA10079AF34 /* TargetingParams+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TargetingParams+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1997B6BF238FDEA10079AF34 /* TargetingParams+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TargetingParams+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1997B6C2238FDEA10079AF34 /* SourcePointUITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourcePointUITableView.swift; sourceTree = "<group>"; };
 		1997B6C4238FDEA10079AF34 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1997B6C5238FDEA10079AF34 /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		19A8BE9023E9961700842F10 /* TestData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = TestData.plist; path = SourcePointMetaAppTests/ConsentViewControllerTests/TestData.plist; sourceTree = SOURCE_ROOT; };
+		19C6FF3723CDFDC6002AA984 /* PropertyDetails+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PropertyDetails+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		19C6FF3823CDFDC6002AA984 /* PropertyDetails+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PropertyDetails+CoreDataClass.swift"; sourceTree = "<group>"; };
 		29E4CB9D68D8CACB2559F42C /* Pods-CCPAConsentViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCPAConsentViewController_Example.release.xcconfig"; path = "Target Support Files/Pods-CCPAConsentViewController_Example/Pods-CCPAConsentViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		307C13E5A29EC6925265CD80 /* Pods-AuthExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthExample.release.xcconfig"; path = "Target Support Files/Pods-AuthExample/Pods-AuthExample.release.xcconfig"; sourceTree = "<group>"; };
 		36C713B0FF3D9458F2FFA2EA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -264,12 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				1997B668238FDE7C0079AF34 /* AddPropertyViewControllerTest.swift */,
-				1997B65E238FDE7C0079AF34 /* AddPropertyViewModelTest.swift */,
 				1997B660238FDE7C0079AF34 /* CCPAConsentViewControllerTests */,
-				1997B667238FDE7C0079AF34 /* ConsentViewDetailsViewControllerTest.swift */,
-				1997B65C238FDE7B0079AF34 /* PropertyDetailsStorageCoordinatorTest.swift */,
 				1997B65D238FDE7B0079AF34 /* PropertyListViewControllerTest.swift */,
-				1997B666238FDE7C0079AF34 /* PropertyListViewModelTest.swift */,
 				1997B65F238FDE7C0079AF34 /* XCUIElement+Extensions.swift */,
 				1997B655238FDCF30079AF34 /* Info.plist */,
 			);
@@ -279,11 +257,7 @@
 		1997B660238FDE7C0079AF34 /* CCPAConsentViewControllerTests */ = {
 			isa = PBXGroup;
 			children = (
-				1997B661238FDE7C0079AF34 /* CCPAConsentViewControllerErrorTest.swift */,
-				1997B662238FDE7C0079AF34 /* CCPAConsentViewControllerTest.swift */,
-				1997B663238FDE7C0079AF34 /* SourcePointClientTest.swift */,
-				1997B664238FDE7C0079AF34 /* ConsentTest.swift */,
-				1997B665238FDE7C0079AF34 /* TestData.plist */,
+				19A8BE9023E9961700842F10 /* TestData.plist */,
 			);
 			path = CCPAConsentViewControllerTests;
 			sourceTree = "<group>";
@@ -378,8 +352,7 @@
 		1997B691238FDEA10079AF34 /* CCPAConsentViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1997B692238FDEA10079AF34 /* ConsentViewDetailsViewController.swift */,
-				1997B693238FDEA10079AF34 /* ConsentSubViewController.swift */,
+				196496A823B10B1E0073F065 /* ConsentDetailsViewController.swift */,
 			);
 			path = CCPAConsentViewController;
 			sourceTree = "<group>";
@@ -561,8 +534,8 @@
 		1997B6BA238FDEA10079AF34 /* PropertyDetailsModel */ = {
 			isa = PBXGroup;
 			children = (
-				1997B6BB238FDEA10079AF34 /* PropertyDetails+CoreDataClass.swift */,
-				1997B6BC238FDEA10079AF34 /* PropertyDetails+CoreDataProperties.swift */,
+				19C6FF3823CDFDC6002AA984 /* PropertyDetails+CoreDataClass.swift */,
+				19C6FF3723CDFDC6002AA984 /* PropertyDetails+CoreDataProperties.swift */,
 			);
 			path = PropertyDetailsModel;
 			sourceTree = "<group>";
@@ -615,7 +588,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* CCPAConsentViewController_Example.app */,
 				8231B13D22BA5A6B00D2669B /* AuthExample.app */,
-				1997B63A238FDCE80079AF34 /* SourcePointMetaApp.app */,
+				1997B63A238FDCE80079AF34 /* CCPA-MetaApp.app */,
 				1997B64F238FDCF30079AF34 /* SourcePointMetaAppTests.xctest */,
 				82FC4D3A23983231002F08E5 /* CCPAConsentViewController_ExampleTests.xctest */,
 			);
@@ -743,7 +716,7 @@
 			);
 			name = SourcePointMetaApp;
 			productName = SourcePointMetaApp;
-			productReference = 1997B63A238FDCE80079AF34 /* SourcePointMetaApp.app */;
+			productReference = 1997B63A238FDCE80079AF34 /* CCPA-MetaApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1997B64E238FDCF30079AF34 /* SourcePointMetaAppTests */ = {
@@ -843,14 +816,14 @@
 						CreatedOnToolsVersion = 11.1;
 						DevelopmentTeam = 6KYEQLUC5A;
 						LastSwiftMigration = 1110;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = 1997B639238FDCE80079AF34;
 					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 6KYEQLUC5A;
+						DevelopmentTeam = VB78Y67GX6;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					8231B13C22BA5A6B00D2669B = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -915,7 +888,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1997B671238FDE7C0079AF34 /* TestData.plist in Resources */,
+				19A8BE9123E9961700842F10 /* TestData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1163,15 +1136,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1997B6E4238FDEA10079AF34 /* AddPropertyViewModel.swift in Sources */,
+				19C6FF3A23CDFDC7002AA984 /* PropertyDetails+CoreDataClass.swift in Sources */,
 				1997B6C8238FDEA10079AF34 /* SourcePointMetaApp.xcdatamodeld in Sources */,
-				1997B6D8238FDEA10079AF34 /* ConsentViewDetailsViewController.swift in Sources */,
 				1997B6EC238FDEA10079AF34 /* TargetingParams+CoreDataClass.swift in Sources */,
 				1997B6E5238FDEA10079AF34 /* PropertyListViewModel.swift in Sources */,
 				1997B6F1238FDEA10079AF34 /* Debug.swift in Sources */,
+				19C6FF3923CDFDC7002AA984 /* PropertyDetails+CoreDataProperties.swift in Sources */,
 				1997B6DB238FDEA10079AF34 /* PropertyCell.swift in Sources */,
 				1997B6E0238FDEA10079AF34 /* LoaderView.swift in Sources */,
 				1997B6E3238FDEA10079AF34 /* AppDelegate.swift in Sources */,
-				1997B6EA238FDEA10079AF34 /* PropertyDetails+CoreDataClass.swift in Sources */,
 				1997B6E9238FDEA10079AF34 /* BaseStorageCoordinator.swift in Sources */,
 				1997B6E8238FDEA10079AF34 /* PropertyDetailsStorageCoordinator.swift in Sources */,
 				1997B6D6238FDEA10079AF34 /* BaseViewController.swift in Sources */,
@@ -1180,13 +1153,12 @@
 				1997B6EE238FDEA10079AF34 /* SourcePointUITableView.swift in Sources */,
 				1997B6DC238FDEA10079AF34 /* ConsentTableViewCell.swift in Sources */,
 				1997B6E7238FDEA10079AF34 /* TargetingParamModel.swift in Sources */,
-				1997B6EB238FDEA10079AF34 /* PropertyDetails+CoreDataProperties.swift in Sources */,
 				1997B6E6238FDEA10079AF34 /* PropertyDetailsModel.swift in Sources */,
 				1997B6D5238FDEA10079AF34 /* BaseWindow.swift in Sources */,
-				1997B6D9238FDEA10079AF34 /* ConsentSubViewController.swift in Sources */,
 				1997B6D7238FDEA10079AF34 /* AddPropertyViewController.swift in Sources */,
 				1997B6DA238FDEA10079AF34 /* PropertyListViewController.swift in Sources */,
 				1997B6C7238FDEA10079AF34 /* DBManager.swift in Sources */,
+				196496AA23B10B1E0073F065 /* ConsentDetailsViewController.swift in Sources */,
 				1997B6ED238FDEA10079AF34 /* TargetingParams+CoreDataProperties.swift in Sources */,
 				1997B6F0238FDEA10079AF34 /* Constants.swift in Sources */,
 			);
@@ -1196,17 +1168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1997B66B238FDE7C0079AF34 /* AddPropertyViewModelTest.swift in Sources */,
-				1997B672238FDE7C0079AF34 /* PropertyListViewModelTest.swift in Sources */,
 				1997B66C238FDE7C0079AF34 /* XCUIElement+Extensions.swift in Sources */,
-				1997B66F238FDE7C0079AF34 /* SourcePointClientTest.swift in Sources */,
-				1997B669238FDE7C0079AF34 /* PropertyDetailsStorageCoordinatorTest.swift in Sources */,
-				1997B66E238FDE7C0079AF34 /* CCPAConsentViewControllerTest.swift in Sources */,
 				1997B66A238FDE7C0079AF34 /* PropertyListViewControllerTest.swift in Sources */,
-				1997B673238FDE7C0079AF34 /* ConsentViewDetailsViewControllerTest.swift in Sources */,
-				1997B670238FDE7C0079AF34 /* ConsentTest.swift in Sources */,
 				1997B674238FDE7C0079AF34 /* AddPropertyViewControllerTest.swift in Sources */,
-				1997B66D238FDE7C0079AF34 /* CCPAConsentViewControllerErrorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1317,16 +1281,19 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vilas Mane (MRXLYP9499)";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 6KYEQLUC5A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_PROFILING_CODE = YES;
 				INFOPLIST_FILE = SourcePointMetaApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sourcepoint.metaapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "CCPA-MetaApp";
 				PROVISIONING_PROFILE_SPECIFIER = MetaAppDevProfile;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 4.2;
@@ -1347,14 +1314,18 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Vilas Mane (MRXLYP9499)";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 6KYEQLUC5A;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_PROFILING_CODE = YES;
 				INFOPLIST_FILE = SourcePointMetaApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sourcepoint.metaapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "CCPA-MetaApp";
 				PROVISIONING_PROFILE_SPECIFIER = MetaAppDevProfile;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1373,10 +1344,13 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vilas Mane (MRXLYP9499)";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 6KYEQLUC5A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GENERATE_PROFILING_CODE = YES;
 				INFOPLIST_FILE = SourcePointMetaAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1388,7 +1362,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SourcePointMetaApp.app/SourcePointMetaApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCPA-MetaApp.app/CCPA-MetaApp";
 			};
 			name = Debug;
 		};
@@ -1404,18 +1378,25 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vilas Mane (MRXLYP9499)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer: Vilas Mane (MRXLYP9499)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6KYEQLUC5A;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GENERATE_PROFILING_CODE = YES;
 				INFOPLIST_FILE = SourcePointMetaAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sourcepoint.SourcePointMetaAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SourcePointMetaApp.app/SourcePointMetaApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCPA-MetaApp.app/CCPA-MetaApp";
 			};
 			name = Release;
 		};
@@ -1529,16 +1510,16 @@
 			baseConfigurationReference = FE1D7CD534C416F2450772D5 /* Pods-CCPAConsentViewController_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Somnath Kulkarni (PJR3M53AWU)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VB78Y67GX6;
 				INFOPLIST_FILE = CCPAConsentViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sourcepoint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cybage.somnathPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = SomnathDevProfile;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1550,16 +1531,16 @@
 			baseConfigurationReference = 29E4CB9D68D8CACB2559F42C /* Pods-CCPAConsentViewController_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Somnath Kulkarni (PJR3M53AWU)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VB78Y67GX6;
 				INFOPLIST_FILE = CCPAConsentViewController/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sourcepoint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cybage.somnathPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = SomnathDevProfile;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
