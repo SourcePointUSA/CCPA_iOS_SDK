@@ -25,7 +25,7 @@
         <!--New Property-->
         <scene sceneID="sbr-vP-gOd">
             <objects>
-                <viewController storyboardIdentifier="AddPropertyViewController" id="cyC-sw-8W2" customClass="AddPropertyViewController" customModule="SourcePointMetaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPropertyViewController" id="cyC-sw-8W2" customClass="AddPropertyViewController" customModule="CCPA_MetaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ARi-0k-eP1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,7 +245,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="targetingParamCell" id="P4G-ju-zL2" customClass="TargetingParamCell" customModule="SourcePointMetaApp" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="targetingParamCell" id="P4G-ju-zL2" customClass="TargetingParamCell" customModule="CCPA_MetaApp" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P4G-ju-zL2" id="ea8-m7-aEF">
@@ -413,7 +413,7 @@
         <!--Property Debug Info-->
         <scene sceneID="5ca-lh-QwF">
             <objects>
-                <viewController storyboardIdentifier="ConsentDetailsViewController" id="Lyi-Xh-6dq" customClass="ConsentDetailsViewController" customModule="SourcePointMetaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConsentDetailsViewController" id="Lyi-Xh-6dq" customClass="ConsentDetailsViewController" customModule="CCPA_MetaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GBV-7x-oY4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -441,7 +441,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rejected Vendors &amp; Purpose List" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="huu-nZ-kKX">
-                                <rect key="frame" x="15" y="129" width="273" height="20"/>
+                                <rect key="frame" x="15" y="129" width="250" height="20"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Vendor and Purpose Consents List" label="Vendor and Purpose Consents List"/>
                                 <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" red="0.2470588235" green="0.79607843140000001" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -458,8 +458,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocf-eS-t5u" userLabel="RejectedConsentsTableView">
                                 <rect key="frame" x="0.0" y="152" width="375" height="515"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0L-qg-gaa">
-                                        <rect key="frame" x="187.5" y="257.5" width="0.0" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User consents are not yet received." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0L-qg-gaa">
+                                        <rect key="frame" x="61" y="248" width="253" height="19"/>
                                         <accessibility key="accessibilityConfiguration" identifier="noDataLabel" label="noDataLabel"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -469,37 +469,35 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="515"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConsentCell" rowHeight="30" id="dbp-dA-FSM" customClass="ConsentTableViewCell" customModule="SourcePointMetaApp" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConsentCell" rowHeight="30" id="dbp-dA-FSM" customClass="ConsentTableViewCell" customModule="CCPA_MetaApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="30"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dbp-dA-FSM" id="x2W-Ep-CTP">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQc-K3-8B7">
-                                                            <rect key="frame" x="15" y="5" width="28" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purpose Id:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQc-K3-8B7">
+                                                            <rect key="frame" x="15" y="6" width="90" height="18"/>
                                                             <accessibility key="accessibilityConfiguration" identifier="ID" label="ID"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="66R-db-J3x"/>
+                                                                <constraint firstAttribute="width" constant="90" id="feM-0q-K15"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consent ID" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="sOG-oW-c07" userLabel="ConsentIDString">
-                                                            <rect key="frame" x="276.5" y="5" width="78.5" height="20"/>
+                                                            <rect key="frame" x="113" y="6.5" width="242" height="17.5"/>
                                                             <accessibility key="accessibilityConfiguration" identifier="consentID" label="consentID"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="P2v-z2-b0B"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="vQc-K3-8B7" firstAttribute="top" secondItem="x2W-Ep-CTP" secondAttribute="top" constant="5" id="doj-at-9Nr"/>
-                                                        <constraint firstItem="sOG-oW-c07" firstAttribute="top" secondItem="x2W-Ep-CTP" secondAttribute="top" constant="5" id="hz0-4s-f4b"/>
+                                                        <constraint firstItem="vQc-K3-8B7" firstAttribute="centerY" secondItem="x2W-Ep-CTP" secondAttribute="centerY" id="86H-TQ-3IM"/>
+                                                        <constraint firstItem="sOG-oW-c07" firstAttribute="leading" secondItem="vQc-K3-8B7" secondAttribute="trailing" constant="8" symbolic="YES" id="LuH-Cc-a8i"/>
+                                                        <constraint firstItem="sOG-oW-c07" firstAttribute="centerY" secondItem="x2W-Ep-CTP" secondAttribute="centerY" id="rnM-pB-njG"/>
                                                         <constraint firstAttribute="trailing" secondItem="sOG-oW-c07" secondAttribute="trailing" constant="20" id="uWB-j0-43x"/>
                                                         <constraint firstItem="vQc-K3-8B7" firstAttribute="leading" secondItem="x2W-Ep-CTP" secondAttribute="leading" constant="15" id="z0v-IU-RDf"/>
                                                     </constraints>
@@ -567,7 +565,7 @@
         <!--Property List-->
         <scene sceneID="zDA-pX-BuF">
             <objects>
-                <viewController storyboardIdentifier="PropertyListViewController" id="nwW-9M-3Wu" customClass="PropertyListViewController" customModule="SourcePointMetaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PropertyListViewController" id="nwW-9M-3Wu" customClass="PropertyListViewController" customModule="CCPA_MetaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="POH-Ao-l0L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -576,7 +574,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="propertyCell" rowHeight="70" id="oya-4T-sTe" userLabel="propertyCell" customClass="PropertyCell" customModule="SourcePointMetaApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="propertyCell" rowHeight="70" id="oya-4T-sTe" userLabel="propertyCell" customClass="PropertyCell" customModule="CCPA_MetaApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oya-4T-sTe" id="BDy-AV-b9J">

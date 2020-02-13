@@ -23,10 +23,6 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
     // Reference to the selected property managed object ID
     var propertyManagedObjectID : NSManagedObjectID?
     
-    /** PM is loaded or not
-     */
-    var pmloadedStatus = false
-    
     var userConsents: UserConsent?
     let sections = ["Rejected Vendors", "Rejected Categories"]
     
@@ -79,8 +75,8 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
             rejectedConsentsTableView.isHidden = false
             userConsentedToAll.isHidden = true
         }else {
-          rejectedConsentsTableView.isHidden = true
-          userConsentedToAll.isHidden = false
+            rejectedConsentsTableView.isHidden = true
+            userConsentedToAll.isHidden = false
             if userConsents?.status == ConsentStatus.RejectedAll {
                 userConsentedToAll.text = SPLiteral.rejectedAll
             }else {
@@ -140,15 +136,6 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
         self.hideIndicator()
     }
     
-    func pmWillShow() {
-        hideIndicator()
-        present(self.consentViewController!, animated: true, completion: nil)
-    }
-    
-    func pmDidDisappear() {
-        dismiss(animated: true, completion: nil)
-    }
-    
     func onError(error: CCPAConsentViewControllerError?) {
         logger.log("Error: %{public}@", [error?.description ?? "Something Went Wrong"])
         let okHandler = {
@@ -156,21 +143,6 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
             self.dismiss(animated: false, completion: nil)
         }
         AlertView.sharedInstance.showAlertView(title: Alert.message, message: error?.description ?? "Something Went Wrong", actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
-    }
-    
-    
-    func loadConsentInfoController(userConsents : UserConsent ) {
-        self.hideIndicator()
-        
-        if let consentViewDetailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConsentDetailsViewController") as? ConsentDetailsViewController {
-            consentViewDetailsController.userConsents = userConsents
-            self.navigationController?.pushViewController(consentViewDetailsController, animated: true)
-        }
-    }
-    
-    func refreshTableViewWithConsentInfo(vendorConsents : UserConsent) {
-        self.userConsents = vendorConsents
-        self.rejectedConsentsTableView.reloadData()
     }
     
     @IBAction func showPMAction(_ sender: Any) {
@@ -214,7 +186,7 @@ extension ConsentDetailsViewController : UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ConsentTableViewCell {
                 if indexPath.section == 0 {
                     cell.rejectedConsentID.text = userConsents?.rejectedVendors[indexPath.row]
-                    cell.consentType.text = "Vendore Id: "
+                    cell.consentType.text = "Vendor Id: "
                 } else {
                     cell.rejectedConsentID.text = userConsents?.rejectedCategories[indexPath.row]
                     cell.consentType.text = "Purpose Id: "
