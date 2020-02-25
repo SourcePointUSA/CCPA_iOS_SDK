@@ -221,14 +221,18 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     }
     
     func loadConsentManager(propertyDetails : PropertyDetailsModel) {
-        consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: campaign, consentDelegate: self)
-//            if let authId = propertyDetails.authId {
-//                consentViewController.loadMessage(forAuthId: authId)
-//            }else {
-//                consentViewController.loadMessage()
-//            }
-        consentViewController?.loadMessage()
+        var targetingParameters = [String:String]()
+        for targetingParam in targetingParams {
+            targetingParameters[targetingParam.targetingKey!] = targetingParam.targetingValue
         }
+        consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: campaign, targetingParams: targetingParameters, consentDelegate: self)
+        //            if let authId = propertyDetails.authId {
+        //                consentViewController.loadMessage(forAuthId: authId)
+        //            }else {
+        //                consentViewController.loadMessage()
+        //            }
+        consentViewController?.loadMessage()
+    }
     
     func consentUIWillShow() {
         hideIndicator()

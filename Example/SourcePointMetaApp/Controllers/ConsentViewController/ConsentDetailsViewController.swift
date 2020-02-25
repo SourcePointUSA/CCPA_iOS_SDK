@@ -30,7 +30,7 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
     let addpropertyViewModel: AddPropertyViewModel = AddPropertyViewModel()
     var consentViewController: CCPAConsentViewController?
     var propertyDetails: PropertyDetailsModel?
-    var targetingParams: [TargetingParamModel]?
+    var targetingParams = [TargetingParamModel]()
     let logger = Logger()
     
     override func viewDidLoad() {
@@ -109,7 +109,11 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
     
     func loadConsentManager(propertyDetails : PropertyDetailsModel, targetingParams:[TargetingParamModel]) {
         let campaign: CampaignEnv = propertyDetails.campaign == 0 ? .Stage : .Public
-        consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: campaign, consentDelegate: self)
+        var targetingParameters = [String:String]()
+        for targetingParam in targetingParams {
+            targetingParameters[targetingParam.targetingKey!] = targetingParam.targetingValue
+        }
+        consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: campaign, targetingParams:targetingParameters, consentDelegate: self)
         
         //            if let authId = propertyDetails.authId {
         //                consentViewController.loadMessage(forAuthId: authId)
@@ -148,7 +152,11 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
     @IBAction func showPMAction(_ sender: Any) {
         self.showIndicator()
         let campaign: CampaignEnv = self.propertyDetails?.campaign == 0 ? .Stage : .Public
-        consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails!.accountId), propertyId: Int(propertyDetails!.propertyId), propertyName: try! PropertyName((propertyDetails?.propertyName)!), PMId: (propertyDetails?.privacyManagerId)!, campaignEnv: campaign, consentDelegate: self)
+        var targetingParameters = [String:String]()
+        for targetingParam in targetingParams {
+            targetingParameters[targetingParam.targetingKey!] = targetingParam.targetingValue
+        }
+        consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails!.accountId), propertyId: Int(propertyDetails!.propertyId), propertyName: try! PropertyName((propertyDetails?.propertyName)!), PMId: (propertyDetails?.privacyManagerId)!, campaignEnv: campaign, targetingParams: targetingParameters, consentDelegate: self)
         consentViewController?.loadPrivacyManager()
     }
 }
