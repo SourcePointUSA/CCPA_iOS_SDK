@@ -184,7 +184,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
         let propertyName = propertyNameTextField.text?.trimmingCharacters(in: .whitespaces)
         let privacyManagerId = privacyManagerTextField.text?.trimmingCharacters(in: .whitespaces)
         let authId = authIdTextField.text?.trimmingCharacters(in: .whitespaces)
-        
+        campaign = self.isStagingSwitchOutlet.isOn ? CampaignEnv.Stage : CampaignEnv.Public
         if addpropertyViewModel.validatepropertyDetails(accountID: accountIDString, propertyId: propertyId, propertyName: propertyName, privacyManagerId: privacyManagerId) {
             guard let accountIDText = accountIDString, let accountID = Int64(accountIDText),
                 let propertyIDText = propertyId, let propertyID = Int64(propertyIDText) else {
