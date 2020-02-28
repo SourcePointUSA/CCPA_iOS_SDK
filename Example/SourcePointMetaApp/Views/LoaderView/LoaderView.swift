@@ -12,11 +12,6 @@ class LoaderView: UIView {
 
     // MARK: - Instance Properties
     
-    /**
-     *  Identifier to track how much strongly refered these LoaderView in App and how many relinquished ownership for this loader.
-     */
-    var retainCountValue : Int = 0
-    
     var dummyView = UIView()
     
     // MARK: - IBoutlets
@@ -62,7 +57,6 @@ class LoaderView: UIView {
      */
     func show (inView view : UIView) {
         
-        if retainCountValue == 0 {
             activity.startAnimating()
             
             let leadingConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0)
@@ -71,26 +65,18 @@ class LoaderView: UIView {
             let bottomConstraint = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
             view.addSubview(self)
             view.addConstraints([leadingConstraint, topConstraint, trailingConstraint,bottomConstraint])
-        }
+
         DispatchQueue.main.async {
             view.bringSubviewToFront(self)
         }
-        
-        retainCountValue += 1
     }
     
     /**
      Hide loader view from main window and decrease retain count
      */
     func hide() {
-        
-        if retainCountValue > 0 {
-            retainCountValue -=  1
-            if retainCountValue == 0 {
-                activity.stopAnimating()
-                removeFromSuperview()
-            }
-        }
+        activity.stopAnimating()
+        removeFromSuperview()
     }
 }
 

@@ -48,6 +48,8 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
                 self.targetingParams = targetingParams
                 self.loadConsentManager(propertyDetails: propertyDetails, targetingParams: targetingParams)
             })
+        }else {
+            self.hideIndicator()
         }
     }
     
