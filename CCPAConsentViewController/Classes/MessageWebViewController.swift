@@ -62,7 +62,8 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     func consentUIWillShow() {
         if(!consentUILoaded) {
             consentUILoaded = true
-            consentDelegate?.consentUIWillShow()
+            consentDelegate?.consentUIWillShow!() //**deprecated**
+            consentDelegate?.ccpaConsentUIWillShow!()
         }
     }
     
