@@ -181,7 +181,7 @@ extension CCPAConsentViewController: ConsentDelegate {
         consentDelegate?.ccpaConsentUIWillShow?()
     }
     
-    @available(*, deprecated)
+    @available(*, deprecated, message: "use ccpaConsentUIWillShow() instead")
     public func consentUIWillShow() {
         guard let viewController = messageViewController else { return }
         add(asChildViewController: viewController)
