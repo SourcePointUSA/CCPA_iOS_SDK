@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, ConsentDelegate {
     var userData: [String] = []
     var consents:[Consent] = []
     
-    func consentUIWillShow() {
+    func ccpaConsentUIWillShow() {
         self.present(consentViewController, animated: true, completion: nil)
     }
     

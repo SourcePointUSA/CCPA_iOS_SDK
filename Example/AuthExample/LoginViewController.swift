@@ -41,7 +41,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ConsentDelegat
         self.view.endEditing(true)
     }
     
-    func consentUIWillShow() {
+    func ccpaConsentUIWillShow() {
         self.present(consentViewController, animated: true, completion: nil)
     }
     
