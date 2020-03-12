@@ -175,10 +175,17 @@ public typealias TargetingParams = [String:String]
 }
 
 extension CCPAConsentViewController: ConsentDelegate {
+    public func ccpaConsentUIWillShow() {
+        guard let viewController = messageViewController else { return }
+        add(asChildViewController: viewController)
+        consentDelegate?.ccpaConsentUIWillShow?()
+    }
+    
+    @available(*, deprecated, message: "use ccpaConsentUIWillShow() instead")
     public func consentUIWillShow() {
         guard let viewController = messageViewController else { return }
         add(asChildViewController: viewController)
-        consentDelegate?.consentUIWillShow()
+        consentDelegate?.consentUIWillShow?()
     }
 
     public func consentUIDidDisappear() {

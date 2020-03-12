@@ -10,6 +10,7 @@ import UIKit
 import CCPAConsentViewController
 
 class ViewController: UIViewController, ConsentDelegate {
+    
     let logger = Logger()
 
     lazy var consentViewController: CCPAConsentViewController = { return CCPAConsentViewController(
@@ -21,7 +22,7 @@ class ViewController: UIViewController, ConsentDelegate {
         consentDelegate: self
     )}()
     
-    func consentUIWillShow() {
+    func ccpaConsentUIWillShow() {
         present(consentViewController, animated: true, completion: nil)
     }
 

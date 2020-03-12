@@ -13,8 +13,12 @@ import Foundation
  Have a look at [SDKs Lifecycle](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/SDKs-Lifecycle-methods)
 */
 @objc public protocol ConsentDelegate {
+    /// called when there's a consent Message to be shown or before the PM is shown (deprecated)
+    @available(*, deprecated, message: "use ccpaConsentUIWillShow() instead")
+    @objc optional func consentUIWillShow()
+    
     /// called when there's a consent Message to be shown or before the PM is shown
-    @objc func consentUIWillShow()
+    @objc optional func ccpaConsentUIWillShow()
     
     /// called when the consent message is about to show
     @objc optional func messageWillShow()
