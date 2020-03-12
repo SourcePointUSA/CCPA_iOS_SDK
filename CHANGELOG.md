@@ -1,4 +1,4 @@
-## 1.1.1 (March, 12, 2020)
+## 1.1.2 (March, 12, 2020)
 * ConsentUIWillShow renamed to ccpaConsentUIWillShow to enable integration with gdpr SDK.
 
 ## 1.1.1 (January, 27, 2020)
