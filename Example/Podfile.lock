@@ -1,5 +1,5 @@
 PODS:
-  - CCPAConsentViewController (1.0.0)
+  - CCPAConsentViewController (1.1.2)
   - IQKeyboardManagerSwift (6.5.4)
   - Nimble (8.0.4)
   - Quick (2.2.0)
@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CCPAConsentViewController: 88f6051e4d8a182381525e1884f18b28cdba342d
+  CCPAConsentViewController: 240ebedfb3d989411ebd1a7275f46a731994e900
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
