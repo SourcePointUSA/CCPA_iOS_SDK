@@ -234,7 +234,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
         consentViewController?.loadMessage()
     }
     
-    func consentUIWillShow() {
+    func ccpaConsentUIWillShow() {
         hideIndicator()
         present(self.consentViewController!, animated: true, completion: nil)
     }
