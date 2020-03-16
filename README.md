@@ -45,7 +45,7 @@ class ViewController: UIViewController, ConsentDelegate {
       consentDelegate: self
     )}()
 
-    func consentUIWillShow() {
+    func ccpaConsentUIWillShow() {
         present(consentViewController, animated: true, completion: nil)
     }
 
@@ -121,7 +121,7 @@ CCPAConsentViewController *cvc;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)consentUIWillShow {
+- (void)ccpaConsentUIWillShow {
     [self presentViewController:cvc animated:YES completion:NULL];
 }
 

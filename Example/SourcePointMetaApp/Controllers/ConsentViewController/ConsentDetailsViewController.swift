@@ -123,7 +123,7 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
         consentViewController?.loadMessage()
         
     }
-    func consentUIWillShow() {
+    func ccpaConsentUIWillShow() {
         hideIndicator()
         present(self.consentViewController!, animated: true, completion: nil)
     }
