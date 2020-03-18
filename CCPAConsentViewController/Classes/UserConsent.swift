@@ -17,6 +17,12 @@ import Foundation
     
     /// Indicates the user has rejected none of the vendors or purposes (categories)
     case RejectedAll
+
+    /// Indicates the user has **explicitly** acceted all vendors and purposes (categories).
+    /// That's slightly different than `RejectNone`. By default in the CCPA users are already
+    /// `RejectedNone`, the `ConsentedAll` indicates the user has taken an action to
+    /// consent to all vendors and purposes.
+    case ConsentedAll
 }
 
 /**
@@ -53,7 +59,8 @@ import Foundation
         switch statusString {
             case "rejectedNone": status = .RejectedNone
             case "rejectedSome": status = .RejectedSome
-            case "rejectedAll": status = .RejectedAll
+            case "rejectedAll":  status = .RejectedAll
+            case "consentedAll": status = .ConsentedAll
             default: throw MessageEventParsingError(message: "Unknown status string: \(statusString)")
         }
     }
