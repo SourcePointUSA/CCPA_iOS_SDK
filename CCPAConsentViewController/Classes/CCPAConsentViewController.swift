@@ -54,7 +54,7 @@ public typealias TargetingParams = [String:String]
     public var userConsent: UserConsent
 
     /// The UUID assigned to a user, available after calling `loadMessage`
-    public var consentUUID: ConsentUUID?
+    public var consentUUID: ConsentUUID
     
     /// Instructs the SDK to clean consent data if an error occurs. It's `true` by default.
     public var shouldCleanConsentOnError = true
@@ -113,7 +113,7 @@ public typealias TargetingParams = [String:String]
         }
         self.userConsent = (UserDefaults.standard.object(forKey: CCPAConsentViewController.CCPA_USER_CONSENTS) as? UserConsent) ??
             UserConsent(status: .RejectedNone, rejectedVendors: [], rejectedCategories: [])
-        self.consentUUID = UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
+        self.consentUUID = UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY) ?? UUID().uuidString
         
         self.sourcePoint = SourcePointClient(
             accountId: accountId,

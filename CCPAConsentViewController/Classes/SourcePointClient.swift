@@ -125,7 +125,7 @@ class SourcePointClient {
         }
     }
 
-    func getMessageUrl(_ consentUUID: ConsentUUID?, propertyName: PropertyName) -> URL? {
+    func getMessageUrl(_ consentUUID: ConsentUUID, propertyName: PropertyName) -> URL? {
         var components = URLComponents(url: SourcePointClient.WRAPPER_API, resolvingAgainstBaseURL: true)
         components?.path = "/ccpa/message-url"
         components?.queryItems = [
@@ -142,7 +142,7 @@ class SourcePointClient {
         return components?.url
     }
 
-    func getMessage(consentUUID: ConsentUUID?, onSuccess: @escaping (MessageResponse) -> Void) {
+    func getMessage(consentUUID: ConsentUUID, onSuccess: @escaping (MessageResponse) -> Void) {
         let url = getMessageUrl(consentUUID, propertyName: propertyName)
         client.get(url: url) { [weak self] data in
             do {
