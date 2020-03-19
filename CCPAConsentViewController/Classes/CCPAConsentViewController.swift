@@ -50,6 +50,21 @@ public typealias TargetingParams = [String:String]
         viewController.didMove(toParent: self)
     }
     
+    private static func getStoredUserConsents() -> UserConsent {
+        guard
+            let jsonConsents = UserDefaults.standard.string(forKey: CCPA_USER_CONSENTS),
+            let jsonData = jsonConsents.data(using: .utf8),
+            let userConsent = try? JSONDecoder().decode(UserConsent.self, from: jsonData)
+        else {
+            return UserConsent.rejectedNone()
+        }
+        return userConsent
+    }
+    
+    private static func getStoredConsentUUID() -> ConsentUUID {
+        return UserDefaults.standard.string(forKey: CONSENT_UUID_KEY) ?? UUID().uuidString
+    }
+    
     /// Contains the `ConsentStatus`, an array of rejected vendor ids and and array of rejected purposes
     public var userConsent: UserConsent
 
@@ -106,14 +121,9 @@ public typealias TargetingParams = [String:String]
         self.pmId = PMId
         self.targetingParams = targetingParams
         self.consentDelegate = consentDelegate
-        if let data = UserDefaults.standard.value(forKey: CCPAConsentViewController.CCPA_USER_CONSENTS) as? Data {
-            self.userConsent = (try? PropertyListDecoder().decode(UserConsent.self, from: data)) ?? UserConsent.rejectedNone()
-        } else {
-            self.userConsent = UserConsent.rejectedNone()
-        }
-        self.userConsent = (UserDefaults.standard.object(forKey: CCPAConsentViewController.CCPA_USER_CONSENTS) as? UserConsent) ??
-            UserConsent(status: .RejectedNone, rejectedVendors: [], rejectedCategories: [])
-        self.consentUUID = UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY) ?? UUID().uuidString
+        
+        self.userConsent = CCPAConsentViewController.getStoredUserConsents()
+        self.consentUUID = CCPAConsentViewController.getStoredConsentUUID()
         
         self.sourcePoint = SourcePointClient(
             accountId: accountId,
@@ -208,8 +218,10 @@ extension CCPAConsentViewController: ConsentDelegate {
     public func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
         self.consentUUID = consentUUID
         self.userConsent = userConsent
-        UserDefaults.standard.setValue(try? PropertyListEncoder().encode(userConsent), forKey: CCPAConsentViewController.CCPA_USER_CONSENTS)
-        UserDefaults.standard.setValue(consentUUID, forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
+        if let encodedConsents = try? JSONEncoder().encode(userConsent) {
+            UserDefaults.standard.set(String(data: encodedConsents, encoding: .utf8), forKey: CCPAConsentViewController.CCPA_USER_CONSENTS)
+        }
+        UserDefaults.standard.set(consentUUID, forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
         UserDefaults.standard.synchronize()
         consentDelegate?.onConsentReady?(consentUUID: consentUUID, userConsent: userConsent)
     }
