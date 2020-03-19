@@ -1,3 +1,9 @@
+## 1.1.3 (March, 18, 2020)
+* Added a new consent status ConsentedAll.
+* Fixed an issue that was causing consent from not being stored when clickin on a button of action type "Accept All"
+* Fixed an issue that prevented the message from showing on every second app launch if no user interaction was taken.
+* Fixed an issue that would cause the stored userConsents to always be RejectedNone
+
 ## 1.1.2 (March, 16, 2020)
 * ConsentUIWillShow deprecated and substituted for ccpaConsentUIWillShow to enable integration with gdpr SDK.
 
