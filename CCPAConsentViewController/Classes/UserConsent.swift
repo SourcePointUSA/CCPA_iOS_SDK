@@ -23,6 +23,21 @@ import Foundation
     /// `RejectedNone`, the `ConsentedAll` indicates the user has taken an action to
     /// consent to all vendors and purposes.
     case ConsentedAll
+    
+    func description() -> String {
+        switch self {
+        case .ConsentedAll:
+            return "ConsentedAll"
+        case .RejectedAll:
+            return "RejectedAll"
+        case .RejectedSome:
+            return "RejectedSome"
+        case .RejectedNone:
+            return "RejectedNone"
+        default:
+            return "<Unknown>"
+        }
+    }
 }
 
 /**
@@ -45,9 +60,9 @@ import Foundation
         self.rejectedCategories = rejectedCategories
     }
     
-    open override var description: String { return "Status: \(status.rawValue), rejectedVendors: \(rejectedVendors), rejectedCategories: \(rejectedCategories)" }
+    open override var description: String { return "Status: \(status.description()), rejectedVendors: \(rejectedVendors), rejectedCategories: \(rejectedCategories)" }
     
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: CodingKey {
        case status, rejectedVendors, rejectedCategories
     }
     
