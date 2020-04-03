@@ -810,29 +810,32 @@
 					1997B639238FDCE80079AF34 = {
 						CreatedOnToolsVersion = 11.1;
 						DevelopmentTeam = 6KYEQLUC5A;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Manual;
 					};
 					1997B64E238FDCF30079AF34 = {
 						CreatedOnToolsVersion = 11.1;
 						DevelopmentTeam = 6KYEQLUC5A;
-						LastSwiftMigration = 1110;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Manual;
 						TestTargetID = 1997B639238FDCE80079AF34;
 					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = VB78Y67GX6;
-						LastSwiftMigration = 1020;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Manual;
 					};
 					8231B13C22BA5A6B00D2669B = {
 						CreatedOnToolsVersion = 10.2.1;
 						DevelopmentTeam = 6KYEQLUC5A;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
 					82FC4D3923983231002F08E5 = {
 						CreatedOnToolsVersion = 11.2.1;
 						DevelopmentTeam = 6KYEQLUC5A;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -1296,7 +1299,7 @@
 				PRODUCT_NAME = "CCPA-MetaApp";
 				PROVISIONING_PROFILE_SPECIFIER = MetaAppDevProfile;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1327,7 +1330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sourcepoint.metaapp;
 				PRODUCT_NAME = "CCPA-MetaApp";
 				PROVISIONING_PROFILE_SPECIFIER = MetaAppDevProfile;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1360,7 +1363,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCPA-MetaApp.app/CCPA-MetaApp";
 			};
@@ -1394,7 +1397,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCPA-MetaApp.app/CCPA-MetaApp";
 			};
@@ -1521,7 +1524,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = SomnathDevProfile;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1541,7 +1544,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cybage.somnathPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = SomnathDevProfile;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1570,7 +1573,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sourcepoint.AuthExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1596,7 +1599,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sourcepoint.AuthExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1624,7 +1627,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sourcepoint.CCPAConsentViewController-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCPAConsentViewController_Example.app/CCPAConsentViewController_Example";
 			};
@@ -1650,7 +1653,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sourcepoint.CCPAConsentViewController-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCPAConsentViewController_Example.app/CCPAConsentViewController_Example";
 			};
