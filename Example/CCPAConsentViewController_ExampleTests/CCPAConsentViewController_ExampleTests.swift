@@ -11,6 +11,7 @@ import Nimble
 @testable import CCPAConsentViewController
 
 public class MockHttp: HttpClient {
+    public var defaultOnError: OnError?
     var getCalledWith: URL?
     var success: Data?
     var error: Error?
@@ -23,37 +24,28 @@ public class MockHttp: HttpClient {
         self.error = error
     }
     
-    public func get(url: URL, completionHandler handler: @escaping (Data?, Error?) -> Void) {
-        getCalledWith = url.absoluteURL
+    public func get(url: URL?, onSuccess: @escaping OnSuccess) {
+        getCalledWith = url?.absoluteURL
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            handler(self.success, self.error)
+            onSuccess(self.success!)
         })
     }
     
-    public func get(url: URL, onSuccess: @escaping OnSuccess, onError: OnError?) {
-        getCalledWith = url.absoluteURL
+    public func post(url: URL?, body: Data?, onSuccess: @escaping OnSuccess) {
+        getCalledWith = url?.absoluteURL
+        var urlRequest = URLRequest(url: getCalledWith!)
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpMethod = "POST"
+        urlRequest.httpBody = body
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            self.success != nil ?
-                onSuccess(self.success!) :
-                onError?(self.error)
+            onSuccess(self.success!)
         })
     }
 }
 
 class SourcePointClientSpec: QuickSpec {
     func getClient(_ client: MockHttp) -> SourcePointClient {
-        return try! SourcePointClient(
-            accountId: 123,
-            propertyId: 123,
-            pmId: "abc",
-            showPM: true,
-            propertyUrl: URL(string: "https://demo.com")!,
-            campaign: "public",
-            mmsUrl: URL(string: "https://demo.com")!,
-            cmpUrl: URL(string: "https://demo.com")!,
-            messageUrl: URL(string: "https://demo.com")!,
-            client: client
-        )
+        return SourcePointClient(accountId: 123, propertyId: 123, propertyName: try! PropertyName("ccpa.mobile.demo"), pmId: "5df9105bcf42027ce707bb43", campaignEnv: .Public, targetingParams: [:], client: client)
     }
     
     override func spec() {
@@ -70,28 +62,13 @@ class SourcePointClientSpec: QuickSpec {
                 }
                 
                 it("calls get on the http client with the right url") {
-                    client.getMessageUrl(accountId: 123, propertyId: 123, onSuccess: {_ in}, onError: nil)
+                    _ = client.getMessageUrl("744BC49E-7327-4255-9794-FB07AA43E1DF", propertyName: try! PropertyName("ccpa.mobile.demo"))
                     expect(httpClient?.getCalledWith).to(equal(URL(string: "https://fake_wrapper_api.com/getMessageUrl")))
                 }
-
+                
                 it("returns the url of a message") {
-                    var messageResponse: MessageResponse?
-                    client.getMessageUrl(accountId: 123, propertyId: 123, onSuccess: { response in messageResponse = response}, onError: nil)
-                    expect(messageResponse).toEventually(equal(MessageResponse(url: URL(string: "https://notice.sp-prod.net/?message_id=59706")!)), timeout: 5)
-                }
-            }
-
-            describe("with an invalid MessageResponse") {
-                beforeEach {
-                    mockedResponse = "{\"url\": \"a invalid url\"}".data(using: .utf8)
-                    httpClient = MockHttp(success: mockedResponse)
-                    client = self.getClient(httpClient!)
-                }
-
-                it("calls the onError callback with a GetMessageAPIError") {
-                    var messageError: Error?
-                    client.getMessageUrl(accountId: 123, propertyId: 123, onSuccess: { _ in }, onError: { error in messageError = error })
-                    expect(messageError).toEventually(beAKindOf(GetMessageAPIError?.self), timeout: 5)
+                    client.getMessage(consentUUID: "744BC49E-7327-4255-9794-FB07AA43E1DF", onSuccess: { _ in})
+                    expect(httpClient?.getCalledWith).to(equal(URL(string: "https://fake_wrapper_api.com/getMessageUrl")))
                 }
             }
         }

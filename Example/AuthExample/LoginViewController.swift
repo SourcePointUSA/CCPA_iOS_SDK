@@ -15,12 +15,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ConsentDelegat
     @IBOutlet var consentTableView: UITableView!
     
     lazy var consentViewController = {
-        return CCPAConsentViewController(accountId: 22, propertyId: 2372, property: "mobile.demo", PMId: "5c0e81b7d74b3c30c6852301", campaign: "stage", consentDelegate: self)
+        return CCPAConsentViewController(accountId: 22, propertyId: 6099, propertyName: try! PropertyName("ccpa.mobile.demo"), PMId: "5df9105bcf42027ce707bb43", campaignEnv: .Public, consentDelegate: self)
     }()
     
-    let tableSections = ["userData", "consents"]
-    var userData: [String] = []
-    var consents:[Consent] = []
+    let tableSections = ["ConsentUUID", "Rejected consents"]
+    var consentUUID: String?
+    var userConsents: UserConsent?
 
     @IBAction func onUserNameChanged(_ sender: UITextField) {
         let userName = sender.text ?? ""
@@ -49,12 +49,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ConsentDelegat
         self.dismiss(animated: true, completion: nil)
     }
 
-    func onConsentReady(consentUUID: UUID, consents: [Consent], consentString: CCPAString?) {
-        self.userData = [
-            "consentUUID: \(consentUUID.uuidString)",
-            "consentString: \(consentString ?? "<unknown>")"
-        ]
-        self.consents = consents
+    func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
+        self.consentUUID = consentUUID
+        self.userConsents = userConsent
         self.consentTableView.reloadData()
     }
 
@@ -83,43 +80,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ConsentDelegat
 
 extension LoginViewController: UITableViewDataSource {
     func initData() {
-        self.userData = [
-            "consentUUID: loading...",
-            "consentString: loading..."
-        ]
+        self.consentUUID = "consentUUID: loading..."
         consentTableView.reloadData()
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return userData.count
+            return 1
         case 1:
-            return consents.count
+            return userConsents?.rejectedVendors.count ?? 0
         default:
             return 0
         }
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return tableSections[section]
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return tableSections.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
         switch indexPath.section {
         case 0:
-            cell.textLabel?.text = userData[indexPath.row]
+            cell.textLabel?.text = self.consentUUID
             break
         case 1:
-            let consent = consents[indexPath.row]
+            let consent = userConsents?.rejectedVendors[indexPath.row]
             cell.textLabel?.adjustsFontSizeToFitWidth = false
             cell.textLabel?.font = UIFont.systemFont(ofSize: 8)
-            cell.textLabel?.text = "\(type(of: consent)) \(consent.name)"
+            if let consentID = consent{
+                cell.textLabel?.text = "Vendor ID: \(consentID))"
+            }
             break
         default:
             break
