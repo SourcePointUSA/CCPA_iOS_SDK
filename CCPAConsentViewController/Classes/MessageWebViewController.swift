@@ -73,7 +73,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     
     func onPMReady() {
         ccpaConsentUIWillShow()
-        consentDelegate?.pmWillShow?()
+        consentDelegate?.ccpaPMWillShow?()
     }
     
     func closeConsentUIIfOpen() {
@@ -81,7 +81,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     }
 
     func consentUIDidDisappear() {
-        consentDelegate?.consentUIDidDisappear()
+        consentDelegate?.consentUIDidDisappear?()
     }
     
     func onError(error: CCPAConsentViewControllerError?) {
@@ -102,7 +102,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     
     func navigateBackToMessage() {
         webview.goBack()
-        consentDelegate?.pmDidDisappear?()
+        consentDelegate?.ccpaPMDidDisappear?()
     }
     
     func onAction(_ action: Action, consents: PMConsents?) {

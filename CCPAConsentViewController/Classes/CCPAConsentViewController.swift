@@ -196,7 +196,7 @@ extension CCPAConsentViewController: ConsentDelegate {
         loading = .Ready
         remove(asChildViewController: messageViewController)
         messageViewController = nil
-        consentDelegate?.consentUIDidDisappear()
+        consentDelegate?.consentUIDidDisappear?()
     }
 
     public func onError(error: CCPAConsentViewControllerError?) {
@@ -228,6 +228,6 @@ extension CCPAConsentViewController: ConsentDelegate {
 
     public func messageWillShow() { consentDelegate?.messageWillShow?() }
     public func messageDidDisappear() { consentDelegate?.messageDidDisappear?() }
-    public func pmWillShow() { consentDelegate?.pmWillShow?() }
-    public func pmDidDisappear() { consentDelegate?.pmDidDisappear?() }
+    public func ccpaPMWillShow() { consentDelegate?.ccpaPMWillShow?() }
+    public func ccpaPMDidDisappear() { consentDelegate?.ccpaPMDidDisappear?() }
 }
