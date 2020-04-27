@@ -38,11 +38,12 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         return wv
     }()
     
-    private let propertyId: Int
-    private let pmId: String
-    private let consentUUID: ConsentUUID?
+    let propertyId: Int
+    let pmId: String
+    let consentUUID: ConsentUUID?
     
-    private var consentUILoaded = false
+    var consentUILoaded = false
+    var isPMLoaded = false
     
     init(propertyId: Int, pmId: String, consentUUID: ConsentUUID?) {
         self.propertyId = propertyId
@@ -70,54 +71,66 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         ccpaConsentUIWillShow()
         consentDelegate?.messageWillShow?()
     }
-    
+
     func onPMReady() {
         ccpaConsentUIWillShow()
         consentDelegate?.ccpaPMWillShow?()
+        isPMLoaded = true
     }
-    
+
+    func closePrivacyManager() {
+        isPMLoaded = false
+        consentDelegate?.ccpaPMDidDisappear?()
+    }
+
+    func closeMessage() {
+        consentDelegate?.messageDidDisappear?()
+    }
+
     func closeConsentUIIfOpen() {
-        if(consentUILoaded) { consentUIDidDisappear() }
+        isPMLoaded ? closePrivacyManager() : closeMessage()
+        if consentUILoaded { consentUIDidDisappear() }
     }
 
     func consentUIDidDisappear() {
         consentDelegate?.consentUIDidDisappear?()
     }
-    
+
     func onError(error: CCPAConsentViewControllerError?) {
         consentDelegate?.onError?(error: error)
         closeConsentUIIfOpen()
     }
-    
+
     func showPrivacyManagerFromMessageAction() {
-        consentDelegate?.messageDidDisappear?()
+        closeMessage()
         loadPrivacyManager()
     }
-    
+
     func cancelPMAction() {
         webview.canGoBack ?
-            navigateBackToMessage():
+            goBackAndClosePrivacyManager():
             closeConsentUIIfOpen()
     }
-    
-    func navigateBackToMessage() {
+
+    func goBackAndClosePrivacyManager() {
         webview.goBack()
-        consentDelegate?.ccpaPMDidDisappear?()
+        closePrivacyManager()
+        onMessageReady()
     }
-    
+
     func onAction(_ action: Action, consents: PMConsents?) {
         consentDelegate?.onAction?(action, consents: consents)
         switch action {
-            case .ShowPrivacyManager:
-                showPrivacyManagerFromMessageAction()
-            case .Dismiss:
-                cancelPMAction()
-            default:
-                closeConsentUIIfOpen()
+        case .ShowPrivacyManager:
+            showPrivacyManagerFromMessageAction()
+        case .Dismiss:
+            cancelPMAction()
+        default:
+            closeConsentUIIfOpen()
         }
     }
-    
-    private func load(url: URL) {
+
+    func load(url: URL) {
         if ConnectivityManager.shared.isConnectedToNetwork() {
             webview.load(URLRequest(url: url))
         } else {
@@ -153,7 +166,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         return nil
     }
     
-    private func getPMConsentsIfAny(_ payload: [String: Any]) -> PMConsents {
+    func getPMConsentsIfAny(_ payload: [String: Any]) -> PMConsents {
         guard
             let consents = payload["consents"] as? [String: Any],
             let vendors = consents["vendors"] as? [String: Any],
