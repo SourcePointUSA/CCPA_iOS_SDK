@@ -16,12 +16,19 @@ import WebKit
 class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, ConsentDelegate {
     static let MESSAGE_HANDLER_NAME = "JSReceiver"
 
-    lazy var webview: WKWebView = {
+    lazy var webview: WKWebView? = {
         let config = WKWebViewConfiguration()
         let userContentController = WKUserContentController()
-        let scriptSource = try! String(contentsOfFile: Bundle(for: CCPAConsentViewController.self).path(forResource: MessageWebViewController.MESSAGE_HANDLER_NAME, ofType: "js")!)
+        guard let scriptSource = try? String(
+            contentsOfFile: Bundle(for: CCPAConsentViewController.self).path(forResource:
+                MessageWebViewController.MESSAGE_HANDLER_NAME, ofType: "js")!)
+            else {
+                consentDelegate?.onError?(error: UnableToLoadJSReceiver())
+                return nil
+        }
         let script = WKUserScript(source: scriptSource, injectionTime: .atDocumentStart, forMainFrameOnly: true)
         userContentController.addUserScript(script)
+        userContentController.addUserScript(self.disableZoomInScrollView())
         userContentController.add(self, name: MessageWebViewController.MESSAGE_HANDLER_NAME)
         config.userContentController = userContentController
         let wv = WKWebView(frame: .zero, configuration: config)
@@ -32,6 +39,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         wv.translatesAutoresizingMaskIntoConstraints = true
         wv.uiDelegate = self
         wv.navigationDelegate = self
+        wv.scrollView.delegate = self
         wv.isOpaque = false
         wv.backgroundColor = .clear
         wv.allowsBackForwardNavigationGestures = true
@@ -107,13 +115,13 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     }
 
     func cancelPMAction() {
-        webview.canGoBack ?
+        (webview?.canGoBack ?? false) ?
             goBackAndClosePrivacyManager():
             closeConsentUIIfOpen()
     }
 
     func goBackAndClosePrivacyManager() {
-        webview.goBack()
+        webview?.goBack()
         closePrivacyManager()
         onMessageReady()
     }
@@ -132,7 +140,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
 
     func load(url: URL) {
         if ConnectivityManager.shared.isConnectedToNetwork() {
-            webview.load(URLRequest(url: url))
+            webview?.load(URLRequest(url: url))
         } else {
             onError(error: NoInternetConnection())
         }
@@ -220,8 +228,28 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     
     override func viewWillDisappear(_ animated: Bool) {
         consentDelegate = nil
-        let contentController = webview.configuration.userContentController
+        if let contentController = webview?.configuration.userContentController {
         contentController.removeScriptMessageHandler(forName: MessageWebViewController.MESSAGE_HANDLER_NAME)
         contentController.removeAllUserScripts()
+        }
+    }
+}
+
+// we implement this protocol to disable the zoom when the user taps twice on the screen
+extension MessageWebViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        scrollView.pinchGestureRecognizer?.isEnabled = false
+    }
+
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return nil
+    }
+
+    func disableZoomInScrollView() -> WKUserScript {
+        let source: String = "var meta = document.createElement('meta');" +
+            "meta.name = 'viewport';" +
+            "meta.content = 'width=device-width, initial-scale=1.0, maximum- scale=1.0, user-scalable=no';" +
+            "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);"
+        return WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
     }
 }
