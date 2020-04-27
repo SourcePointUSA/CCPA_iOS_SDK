@@ -23,10 +23,10 @@ import Foundation
     @objc optional func messageWillShow()
     
     /// called when the privacy manager is about to show
-    @objc optional func pmWillShow()
+    @objc optional func ccpaPMWillShow()
     
     /// called when the privacy manager is closed
-    @objc optional func pmDidDisappear()
+    @objc optional func ccpaPMDidDisappear()
     
     /// called when the consent message is closed
     @objc optional func messageDidDisappear()
@@ -35,7 +35,7 @@ import Foundation
     @objc optional func onAction(_ action: Action, consents: PMConsents?)
     
     /// called when the consent ui is closed
-    @objc func consentUIDidDisappear()
+    @objc optional func consentUIDidDisappear()
     
     /// called when we finish getting the consent profile from SourcePoint's endpoints
     /// - Parameters:
