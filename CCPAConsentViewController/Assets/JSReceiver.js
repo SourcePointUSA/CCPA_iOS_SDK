@@ -43,7 +43,6 @@
 
   var handleMessageEvent = function(SDK) {
     return function(eventData) {
-        debugger
       switch(eventData.name) {
         case "sp.showMessage":
           eventData.fromPM ? SDK.onPMReady() : SDK.onMessageReady();
@@ -61,7 +60,7 @@
   };
     
   function isFromPM(event) {
-    return event.settings != null ? false : true
+    return event.settings == null
   }
 
   var handleMessageOrPMEvent = function (SDK) {
