@@ -152,18 +152,30 @@ public typealias TargetingParams = [String:String]
         messageViewController?.loadMessage(fromUrl: url)
     }
     
-    public func loadMessage() {
+    /// Will first check if there's a message to show according to the scenario, for the `authId` provided.
+    /// If there is, we'll load the message in a WebView and call `ConsentDelegate.onConsentUIWillShow`
+    /// Otherwise, we short circuit to `ConsentDelegate.onConsentReady`
+    ///
+    /// - Parameter authId: any arbitrary token that uniquely identifies an user in your system.
+    public func loadMessage(forAuthId authId: String?) {
         if loading == .Ready {
             loading = .Loading
-            sourcePoint.getMessage(consentUUID: consentUUID) { [weak self] message in
+            sourcePoint.getMessage(consentUUID: consentUUID, authId: authId) { [weak self] message in
+                self?.loading = .Ready
                 if let url = message.url {
                     self?.loadMessage(fromUrl: url)
                 } else {
-                    self?.loading = .Ready
                     self?.onConsentReady(consentUUID: message.uuid, userConsent: message.userConsent)
                 }
             }
         }
+    }
+
+    /// Will first check if there's a message to show according to the scenario setup in our dashboard.
+    /// If there is, we'll load the message in a WebView and call `ConsentDelegate.onConsentUIWillShow`
+    /// Otherwise, we short circuit to `ConsentDelegate.onConsentReady`
+    public func loadMessage() {
+        loadMessage(forAuthId: nil)
     }
 
     public func loadPrivacyManager() {
