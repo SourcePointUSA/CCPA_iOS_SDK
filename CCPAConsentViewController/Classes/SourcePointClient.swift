@@ -20,6 +20,31 @@ protocol HttpClient {
 class SimpleClient: HttpClient {
     var defaultOnError: OnError?
     let connectivityManager: Connectivity
+    let printCalls = false
+
+    func logRequest(_ request: URLRequest) {
+        if printCalls {
+            if let method = request.httpMethod, let url = request.url {
+                print("\(method) \(url)")
+            }
+            if let body = request.httpBody, let bodyString = String(data: body, encoding: .utf8) {
+                print("REQUEST: \(bodyString)")
+            }
+            print("\n")
+        }
+    }
+
+    func logResponse(_ request: URLRequest, response: Data) {
+        if printCalls {
+            if let method = request.httpMethod, let url = request.url {
+                print("\(method) \(url)")
+            }
+            if let responseString =  String(data: response, encoding: .utf8) {
+                print("RESPONSE: \(responseString)")
+            }
+            print("\n")
+        }
+    }
     
     init(connectivityManager: Connectivity) {
         self.connectivityManager = connectivityManager
@@ -31,12 +56,14 @@ class SimpleClient: HttpClient {
     
     func request(_ urlRequest: URLRequest, _ onSuccess: @escaping OnSuccess) {
         if(connectivityManager.isConnectedToNetwork()) {
+            logRequest(urlRequest)
             URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 DispatchQueue.main.async { [weak self] in
                     guard let data = data else {
                         self?.defaultOnError?(GeneralRequestError(urlRequest.url, response, error))
                         return
                     }
+                    self?.logResponse(urlRequest, response: data)
                     onSuccess(data)
                 }
             }.resume()
