@@ -167,6 +167,7 @@ public typealias TargetingParams = [String:String]
             }
             sourcePoint.getMessage(consentUUID: consentUUID, authId: authId) { [weak self] message in
                 self?.loading = .Ready
+                self?.consentUUID = message.uuid
                 if let url = message.url {
                     self?.loadMessage(fromUrl: url)
                 } else {
