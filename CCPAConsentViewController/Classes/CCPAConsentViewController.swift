@@ -13,6 +13,7 @@ public typealias TargetingParams = [String:String]
 @objcMembers open class CCPAConsentViewController: UIViewController {
     static public let CCPA_USER_CONSENTS: String = "sp_ccpa_user_consents"
     static public let CONSENT_UUID_KEY: String = "sp_ccpa_consentUUID"
+    static let CCPA_AUTH_ID_KEY = "sp_ccpa_authId"
     static public let META_KEY: String = "sp_ccpa_meta"
 
     private let accountId, propertyId: Int
@@ -160,6 +161,10 @@ public typealias TargetingParams = [String:String]
     public func loadMessage(forAuthId authId: String?) {
         if loading == .Ready {
             loading = .Loading
+            if didAuthIdChange(newAuthId: (authId)) {
+                resetConsentData()
+                UserDefaults.standard.setValue(authId, forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
+            }
             sourcePoint.getMessage(consentUUID: consentUUID, authId: authId) { [weak self] message in
                 self?.loading = .Ready
                 if let url = message.url {
@@ -169,6 +174,10 @@ public typealias TargetingParams = [String:String]
                 }
             }
         }
+    }
+    
+    private func didAuthIdChange(newAuthId: String?) -> Bool {
+        return newAuthId != UserDefaults.standard.string(forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
     }
 
     /// Will first check if there's a message to show according to the scenario setup in our dashboard.
@@ -186,9 +195,15 @@ public typealias TargetingParams = [String:String]
             messageViewController?.loadPrivacyManager()
         }
     }
+    
+    private func resetConsentData() {
+        self.consentUUID = ""
+        clearAllConsentData()
+    }
 
     /// Remove all consent related data from the UserDefaults
     public func clearAllConsentData() {
+        UserDefaults.standard.removeObject(forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
         UserDefaults.standard.removeObject(forKey: CCPAConsentViewController.CCPA_USER_CONSENTS)
         UserDefaults.standard.removeObject(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
         UserDefaults.standard.removeObject(forKey: CCPAConsentViewController.META_KEY)
