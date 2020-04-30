@@ -1,3 +1,6 @@
+## 1.2.0 (April, 30, 2020)
+* Added authenticated consent. For more details on how to use it check the README
+
 ## 1.1.3 (March, 18, 2020)
 * Added a new consent status ConsentedAll.
 * Fixed an issue that was causing consent from not being stored when clickin on a button of action type "Accept All"
