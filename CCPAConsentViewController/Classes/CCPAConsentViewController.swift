@@ -63,7 +63,7 @@ public typealias TargetingParams = [String:String]
     }
     
     private static func getStoredConsentUUID() -> ConsentUUID {
-        return UserDefaults.standard.string(forKey: CONSENT_UUID_KEY) ?? UUID().uuidString
+        return UserDefaults.standard.string(forKey: CONSENT_UUID_KEY) ?? ""
     }
     
     /// Contains the `ConsentStatus`, an array of rejected vendor ids and and array of rejected purposes
