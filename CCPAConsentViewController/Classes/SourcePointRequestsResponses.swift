@@ -36,7 +36,7 @@ struct ActionRequest: WrapperApiRequest {
 
     let propertyId, accountId: Int
     let privacyManagerId: String
-    let uuid: ConsentUUID?
+    let uuid: ConsentUUID
     let requestUUID: UUID
     let consents: CPPAPMConsents
     let meta: Meta

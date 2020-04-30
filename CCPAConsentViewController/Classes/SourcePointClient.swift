@@ -20,6 +20,31 @@ protocol HttpClient {
 class SimpleClient: HttpClient {
     var defaultOnError: OnError?
     let connectivityManager: Connectivity
+    let printCalls = false
+
+    func logRequest(_ request: URLRequest) {
+        if printCalls {
+            if let method = request.httpMethod, let url = request.url {
+                print("\(method) \(url)")
+            }
+            if let body = request.httpBody, let bodyString = String(data: body, encoding: .utf8) {
+                print("REQUEST: \(bodyString)")
+            }
+            print("\n")
+        }
+    }
+
+    func logResponse(_ request: URLRequest, response: Data) {
+        if printCalls {
+            if let method = request.httpMethod, let url = request.url {
+                print("\(method) \(url)")
+            }
+            if let responseString =  String(data: response, encoding: .utf8) {
+                print("RESPONSE: \(responseString)")
+            }
+            print("\n")
+        }
+    }
     
     init(connectivityManager: Connectivity) {
         self.connectivityManager = connectivityManager
@@ -31,12 +56,14 @@ class SimpleClient: HttpClient {
     
     func request(_ urlRequest: URLRequest, _ onSuccess: @escaping OnSuccess) {
         if(connectivityManager.isConnectedToNetwork()) {
+            logRequest(urlRequest)
             URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 DispatchQueue.main.async { [weak self] in
                     guard let data = data else {
                         self?.defaultOnError?(GeneralRequestError(urlRequest.url, response, error))
                         return
                     }
+                    self?.logResponse(urlRequest, response: data)
                     onSuccess(data)
                 }
             }.resume()
@@ -125,11 +152,12 @@ class SourcePointClient {
         }
     }
 
-    func getMessageUrl(_ consentUUID: ConsentUUID, propertyName: PropertyName) -> URL? {
+    func getMessageUrl(_ consentUUID: ConsentUUID, propertyName: PropertyName, authId: String?) -> URL? {
         var components = URLComponents(url: SourcePointClient.WRAPPER_API, resolvingAgainstBaseURL: true)
         components?.path = "/ccpa/message-url"
         components?.queryItems = [
             URLQueryItem(name: "uuid", value: consentUUID),
+            URLQueryItem(name: "authId", value: authId),
             URLQueryItem(name: "propertyId", value: String(propertyId)),
             URLQueryItem(name: "accountId", value: String(accountId)),
             URLQueryItem(name: "requestUUID", value: requestUUID.uuidString),
@@ -142,8 +170,8 @@ class SourcePointClient {
         return components?.url
     }
 
-    func getMessage(consentUUID: ConsentUUID, onSuccess: @escaping (MessageResponse) -> Void) {
-        let url = getMessageUrl(consentUUID, propertyName: propertyName)
+    func getMessage(consentUUID: ConsentUUID, authId: String?, onSuccess: @escaping (MessageResponse) -> Void) {
+        let url = getMessageUrl(consentUUID, propertyName: propertyName, authId: authId)
         client.get(url: url) { [weak self] data in
             do {
                 let messageResponse = try (self?.json.decode(MessageResponse.self, from: data))!
@@ -162,7 +190,7 @@ class SourcePointClient {
         )
     }
     
-    func postAction(action: Action, consentUUID: ConsentUUID?, consents: PMConsents?, onSuccess: @escaping (ActionResponse) -> Void) {
+    func postAction(action: Action, consentUUID: ConsentUUID, consents: PMConsents?, onSuccess: @escaping (ActionResponse) -> Void) {
         let url = postActionUrl(action.rawValue)
         let meta = UserDefaults.standard.string(forKey: CCPAConsentViewController.META_KEY) ?? "{}"
         let ccpaConsents = CPPAPMConsents(rejectedVendors: consents?.vendors.rejected ?? [], rejectedCategories: consents?.categories.rejected ?? [])

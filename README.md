@@ -34,8 +34,6 @@ import UIKit
 import CCPAConsentViewController
 
 class ViewController: UIViewController, ConsentDelegate {
-    let logger = Logger()
-
     lazy var consentViewController: CCPAConsentViewController = { return CCPAConsentViewController(
       accountId: 22,
       propertyId: 6099, 
@@ -59,7 +57,7 @@ class ViewController: UIViewController, ConsentDelegate {
     }
 
     func onError(error: CCPAConsentViewControllerError?) {
-        logger.log("Error: %{public}@", [error?.description ?? "Something Went Wrong"])
+        print("Error: \(error?.description ?? "Something Went Wrong")")
     }
 
     @IBAction func onPrivacySettingsTap(_ sender: Any) {
@@ -126,4 +124,22 @@ CCPAConsentViewController *cvc;
 }
 
 @end
+```
+
+### Authenticated Consent
+
+#### How does it work?
+You need to give us a `authId`, that can be anything, user name, email, uuid, as long as you can uniquely identifies an user in your user base.
+
+We'll check our database for a consent profile associated with that `authId`. If we find one, we'll bring it to the user's device and not show a consent message again (technically this will depend on the scenario setup in our dashboard). If we haven't found any consent profile for that `authId` we'll create one and associate with the current user. 
+
+#### How to use it?
+
+The workflow to use authenticated consent is exactly the same as the one above but instead of calling:
+```swift
+consentViewController.loadMessage()
+```
+you should use:
+```swift
+consentViewController.loadMessage(forAuthId: String?)
 ```
