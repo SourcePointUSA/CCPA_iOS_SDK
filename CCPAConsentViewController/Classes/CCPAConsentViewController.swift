@@ -178,7 +178,8 @@ public typealias TargetingParams = [String:String]
     }
     
     private func didAuthIdChange(newAuthId: String?) -> Bool {
-        return newAuthId != UserDefaults.standard.string(forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
+        let storedAuthId = UserDefaults.standard.string(forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
+        return newAuthId != nil && storedAuthId != nil && storedAuthId != newAuthId
     }
 
     /// Will first check if there's a message to show according to the scenario setup in our dashboard.
