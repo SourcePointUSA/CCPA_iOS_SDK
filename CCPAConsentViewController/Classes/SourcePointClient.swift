@@ -7,18 +7,15 @@
 
 import Foundation
 
-typealias OnSuccess = (Data) -> Void
-typealias OnError = (CCPAConsentViewControllerError?) -> Void
+typealias CompletionHandler = (Data?, CCPAConsentViewControllerError?) -> Void
 
 protocol HttpClient {
-    var defaultOnError: OnError? { get set }
-    
-    func get(url: URL?, onSuccess: @escaping OnSuccess)
-    func post(url: URL?, body: Data?, onSuccess: @escaping OnSuccess)
+
+    func get(url: URL?, completionHandler: @escaping CompletionHandler)
+    func post(url: URL?, body: Data?, completionHandler: @escaping CompletionHandler)
 }
 
 class SimpleClient: HttpClient {
-    var defaultOnError: OnError?
     let connectivityManager: Connectivity
     let printCalls = false
 
@@ -51,45 +48,45 @@ class SimpleClient: HttpClient {
     }
     
     convenience init() {
-        self.init(connectivityManager: ConnectivityManager.shared)
+        self.init(connectivityManager: ConnectivityManager())
     }
     
-    func request(_ urlRequest: URLRequest, _ onSuccess: @escaping OnSuccess) {
+    func request(_ urlRequest: URLRequest, _ completionHandler: @escaping CompletionHandler) {
         if(connectivityManager.isConnectedToNetwork()) {
             logRequest(urlRequest)
             URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 DispatchQueue.main.async { [weak self] in
                     guard let data = data else {
-                        self?.defaultOnError?(GeneralRequestError(urlRequest.url, response, error))
+                        completionHandler(nil, GeneralRequestError(urlRequest.url, response, error))
                         return
                     }
                     self?.logResponse(urlRequest, response: data)
-                    onSuccess(data)
+                    completionHandler(data, nil)
                 }
             }.resume()
         } else {
-            defaultOnError?(NoInternetConnection())
+            completionHandler(nil, NoInternetConnection())
         }
     }
     
-    func post(url: URL?, body: Data?, onSuccess: @escaping OnSuccess) {
+    func post(url: URL?, body: Data?, completionHandler: @escaping CompletionHandler) {
         guard let _url = url else {
-            defaultOnError?(GeneralRequestError(url, nil, nil))
+            completionHandler(nil, GeneralRequestError(url, nil, nil))
             return
         }
         var urlRequest = URLRequest(url: _url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "POST"
         urlRequest.httpBody = body
-        request(urlRequest, onSuccess)
+        request(urlRequest, completionHandler)
     }
     
-    func get(url: URL?, onSuccess: @escaping OnSuccess) {
+    func get(url: URL?, completionHandler: @escaping CompletionHandler) {
         guard let _url = url else {
-            defaultOnError?(GeneralRequestError(url, nil, nil))
+            completionHandler(nil, GeneralRequestError(url, nil, nil))
             return
         }
-        request(URLRequest(url: _url), onSuccess)
+        request(URLRequest(url: _url), completionHandler)
     }
 }
 
@@ -125,8 +122,6 @@ class SourcePointClient {
     private let pmId: String
     private let campaignEnv: CampaignEnv
     private let targetingParams: TargetingParams
-    
-    public var onError: OnError? { didSet { client.defaultOnError = onError } }
 
     init(accountId: Int, propertyId:Int, propertyName: PropertyName, pmId:String, campaignEnv: CampaignEnv, targetingParams: TargetingParams, client: HttpClient) {
         self.accountId = accountId
@@ -170,15 +165,19 @@ class SourcePointClient {
         return components?.url
     }
 
-    func getMessage(consentUUID: ConsentUUID, authId: String?, onSuccess: @escaping (MessageResponse) -> Void) {
+    func getMessage(consentUUID: ConsentUUID, authId: String?, completionHandler: @escaping (MessageResponse?, APIParsingError?) -> Void) {
         let url = getMessageUrl(consentUUID, propertyName: propertyName, authId: authId)
-        client.get(url: url) { [weak self] data in
+        client.get(url: url) { [weak self] data,error in
             do {
-                let messageResponse = try (self?.json.decode(MessageResponse.self, from: data))!
-                UserDefaults.standard.setValue(messageResponse.meta, forKey: CCPAConsentViewController.META_KEY)
-                onSuccess(messageResponse)
+                if let messageData = data {
+                    let messageResponse = try (self?.json.decode(MessageResponse.self, from: messageData))
+                    UserDefaults.standard.setValue(messageResponse?.meta, forKey: CCPAConsentViewController.META_KEY)
+                    completionHandler(messageResponse, nil)
+                } else {
+                    completionHandler(nil, APIParsingError(url?.absoluteString ?? "getMessage", error))
+                }
             } catch {
-                self?.onError?(APIParsingError(url?.absoluteString ?? "getMessage", error))
+                completionHandler(nil, APIParsingError(url?.absoluteString ?? "getMessage", error))
             }
         }
     }
@@ -190,22 +189,26 @@ class SourcePointClient {
         )
     }
     
-    func postAction(action: Action, consentUUID: ConsentUUID, consents: PMConsents?, onSuccess: @escaping (ActionResponse) -> Void) {
+    func postAction(action: Action, consentUUID: ConsentUUID, consents: PMConsents?, completionHandler: @escaping (ActionResponse?, APIParsingError?) -> Void) {
         let url = postActionUrl(action.rawValue)
         let meta = UserDefaults.standard.string(forKey: CCPAConsentViewController.META_KEY) ?? "{}"
         let ccpaConsents = CPPAPMConsents(rejectedVendors: consents?.vendors.rejected ?? [], rejectedCategories: consents?.categories.rejected ?? [])
         guard let body = try? json.encode(ActionRequest(propertyId: propertyId, accountId: accountId, privacyManagerId: pmId, uuid: consentUUID, requestUUID: requestUUID, consents: ccpaConsents, meta: meta)) else {
-            self.onError?(APIParsingError(url?.absoluteString ?? "POST consent", nil))
+            completionHandler(nil, APIParsingError(url?.absoluteString ?? "POST consent", nil))
             return
         }
         
-        client.post(url: url, body: body) { [weak self] data in
+        client.post(url: url, body: body) { [weak self] data, error in
             do {
-                let actionResponse = try (self?.json.decode(ActionResponse.self, from: data))!
-                UserDefaults.standard.setValue(actionResponse.meta, forKey: CCPAConsentViewController.META_KEY)
-                onSuccess(actionResponse)
+                if let actionData = data {
+                    let actionResponse = try (self?.json.decode(ActionResponse.self, from: actionData))
+                    UserDefaults.standard.setValue(actionResponse?.meta, forKey: CCPAConsentViewController.META_KEY)
+                    completionHandler(actionResponse, nil)
+                } else {
+                    completionHandler(nil, APIParsingError(url?.absoluteString ?? "POST consent", error))
+                }
             } catch {
-                self?.onError?(APIParsingError(url?.absoluteString ?? "POST consent", error))
+                completionHandler(nil, APIParsingError(url?.absoluteString ?? "POST consent", error))
             }
         }
     }

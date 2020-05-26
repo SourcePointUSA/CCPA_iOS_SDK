@@ -136,9 +136,6 @@ public typealias TargetingParams = [String:String]
         )
 
         super.init(nibName: nil, bundle: nil)
-        
-        sourcePoint.onError = onError
-        
         modalPresentationStyle = .overFullScreen
     }
 
@@ -165,13 +162,17 @@ public typealias TargetingParams = [String:String]
             if didAuthIdChange(newAuthId: (authId)) {
                 resetConsentData()
             }
-            sourcePoint.getMessage(consentUUID: consentUUID, authId: authId) { [weak self] message in
+            sourcePoint.getMessage(consentUUID: consentUUID, authId: authId) { [weak self] messageResponse, error in
                 self?.loading = .Ready
-                self?.consentUUID = message.uuid
-                if let url = message.url {
-                    self?.loadMessage(fromUrl: url)
+                if let message = messageResponse {
+                    self?.consentUUID = message.uuid
+                    if let url = message.url {
+                        self?.loadMessage(fromUrl: url)
+                    } else {
+                        self?.onConsentReady(consentUUID: message.uuid, userConsent: message.userConsent)
+                    }
                 } else {
-                    self?.onConsentReady(consentUUID: message.uuid, userConsent: message.userConsent)
+                    self?.onError(error: error)
                 }
             }
         }
@@ -238,8 +239,12 @@ extension CCPAConsentViewController: ConsentDelegate {
 
     public func onAction(_ action: Action, consents: PMConsents?) {
         if(action == .AcceptAll || action == .RejectAll || action == .SaveAndExit) {
-            sourcePoint.postAction(action: action, consentUUID: consentUUID, consents: consents) { [weak self] response in
-                self?.onConsentReady(consentUUID: response.uuid, userConsent: response.userConsent)
+            sourcePoint.postAction(action: action, consentUUID: consentUUID, consents: consents) { [weak self] actionResponse, error in
+                if let response = actionResponse {
+                    self?.onConsentReady(consentUUID: response.uuid, userConsent: response.userConsent)
+                } else {
+                    self?.onError(error: error)
+                }
             }
         }
     }

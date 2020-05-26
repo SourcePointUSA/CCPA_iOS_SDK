@@ -131,7 +131,8 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     }
 
     func load(url: URL) {
-        if ConnectivityManager.shared.isConnectedToNetwork() {
+        let connectvityManager = ConnectivityManager()
+        if connectvityManager.isConnectedToNetwork() {
             webview.load(URLRequest(url: url))
         } else {
             onError(error: NoInternetConnection())
