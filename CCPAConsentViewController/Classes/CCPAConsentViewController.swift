@@ -24,26 +24,26 @@ public typealias TargetingParams = [String:String]
 
     private let sourcePoint: SourcePointClient
 
-    private weak var consentDelegate: ConsentDelegate?
-    private var messageViewController: MessageViewController?
+    public weak var consentDelegate: ConsentDelegate?
+    var messageViewController: MessageViewController?
     
-    private enum LoadingStatus: String {
+    enum LoadingStatus: String {
         case Ready = "Ready"
         case Presenting = "Presenting"
         case Loading = "Loading"
     }
 
     // used in order not to load the message ui multiple times
-    private var loading: LoadingStatus = .Ready
+    var loading: LoadingStatus = .Ready
 
-    private func remove(asChildViewController viewController: UIViewController?) {
+    func remove(asChildViewController viewController: UIViewController?) {
         guard let viewController = viewController else { return }
         viewController.willMove(toParent: nil)
         viewController.view.removeFromSuperview()
         viewController.removeFromParent()
     }
 
-    private func add(asChildViewController viewController: UIViewController) {
+    func add(asChildViewController viewController: UIViewController) {
         addChild(viewController)
         view.addSubview(viewController.view)
         viewController.view.frame = view.bounds
@@ -51,7 +51,7 @@ public typealias TargetingParams = [String:String]
         viewController.didMove(toParent: self)
     }
     
-    private static func getStoredUserConsents() -> UserConsent {
+    static func getStoredUserConsents() -> UserConsent {
         guard
             let jsonConsents = UserDefaults.standard.string(forKey: CCPA_USER_CONSENTS),
             let jsonData = jsonConsents.data(using: .utf8),
@@ -62,7 +62,7 @@ public typealias TargetingParams = [String:String]
         return userConsent
     }
     
-    private static func getStoredConsentUUID() -> ConsentUUID {
+    static func getStoredConsentUUID() -> ConsentUUID {
         return UserDefaults.standard.string(forKey: CONSENT_UUID_KEY) ?? ""
     }
     
@@ -144,7 +144,7 @@ public typealias TargetingParams = [String:String]
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func loadMessage(fromUrl url: URL) {
+    func loadMessage(fromUrl url: URL) {
         messageViewController = MessageWebViewController(propertyId: propertyId, pmId: pmId, consentUUID: consentUUID)
         messageViewController?.consentDelegate = self
         messageViewController?.loadMessage(fromUrl: url)
@@ -178,7 +178,7 @@ public typealias TargetingParams = [String:String]
         }
     }
     
-    private func didAuthIdChange(newAuthId: String?) -> Bool {
+    func didAuthIdChange(newAuthId: String?) -> Bool {
         let storedAuthId = UserDefaults.standard.string(forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
         return newAuthId != nil && storedAuthId != nil && storedAuthId != newAuthId
     }
@@ -199,7 +199,7 @@ public typealias TargetingParams = [String:String]
         }
     }
     
-    private func resetConsentData() {
+    func resetConsentData() {
         self.consentUUID = ""
         clearAllConsentData()
     }
