@@ -51,5 +51,5 @@ public struct execTypesCountTuple<T: ExpressibleByIntegerLiteral> {
 	public init() {
 	}
 }
-	
+
 #endif

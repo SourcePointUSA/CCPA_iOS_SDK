@@ -1,20 +1,23 @@
 PODS:
   - CCPAConsentViewController (1.2.0)
-  - IQKeyboardManagerSwift (6.5.4)
-  - Nimble (8.0.4)
+  - IQKeyboardManagerSwift (6.5.5)
+  - Nimble (8.0.9)
   - Quick (2.2.0)
+  - SwiftLint (0.39.2)
 
 DEPENDENCIES:
   - CCPAConsentViewController (from `../`)
   - IQKeyboardManagerSwift
   - Nimble
   - Quick
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManagerSwift
     - Nimble
     - Quick
+    - SwiftLint
 
 EXTERNAL SOURCES:
   CCPAConsentViewController:
@@ -22,10 +25,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CCPAConsentViewController: d958510fbcb970a607ad51dbe73fbc8e98e1737a
-  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
-  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  Nimble: 98b888285a615fd34f20e61753cf58ea1402bde4
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 3d35277c535da90dbd9910f89adaf13f2c25e649
+PODFILE CHECKSUM: cd3c412869008fd80d3f9ef2ff337e95c1e9a27c
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.2

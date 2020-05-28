@@ -24,7 +24,7 @@
 import Foundation
 
 ///-----------------------------------
-/// MARK: IQAutoToolbarManageBehaviour
+// MARK: IQAutoToolbarManageBehaviour
 ///-----------------------------------
 
 /**
