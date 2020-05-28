@@ -4,10 +4,10 @@
 # Make sure the rules are always in sync with the one from Example/.swiftlint.yml
 
 included: # paths to include during linting. `--path` is ignored if present.
- - CCPAConsentViewController/Classes
- - Example/CCPAConsentViewController_ExampleTests
+ - /Users/runner/runners/2.263.0/work/CCPA_iOS_SDK/CCPA_iOS_SDK/CCPAConsentViewController/Classes
+ - /Users/runner/runners/2.263.0/work/CCPA_iOS_SDK/CCPA_iOS_SDK/Example/CCPAConsentViewController_ExampleTests
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - Example/Pods
+  - /Users/runner/runners/2.263.0/work/CCPA_iOS_SDK/CCPA_iOS_SDK/Example/Pods
 identifier_name:
   min_length:
     - 1
