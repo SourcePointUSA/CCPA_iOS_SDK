@@ -6,6 +6,8 @@
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
+// swiftlint:disable force_try function_body_length
+
 import Quick
 import Nimble
 @testable import CCPAConsentViewController
@@ -72,7 +74,7 @@ class SourcePointClientSpec: QuickSpec {
         var client: SourcePointClient!
         var httpClient: MockHttp?
         var mockedResponse: Data?
-        var pmConsents : PMConsents!
+        var pmConsents: PMConsents!
         let acceptAllAction = Action.AcceptAll
 
         describe("Test SourcePointClient Methods") {
@@ -197,4 +199,3 @@ class SourcePointClientSpec: QuickSpec {
         }
     }
 }
-

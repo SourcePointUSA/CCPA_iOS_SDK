@@ -6,6 +6,8 @@
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
+// swiftlint:disable force_try function_body_length
+
 import Quick
 import Nimble
 @testable import CCPAConsentViewController
@@ -57,4 +59,3 @@ class CCPAConsentViewControllerErrorSpec: QuickSpec {
         }
     }
 }
-
