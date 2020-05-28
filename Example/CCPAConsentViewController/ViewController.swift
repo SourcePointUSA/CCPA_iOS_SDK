@@ -50,4 +50,3 @@ extension ViewController: ConsentDelegate {
         logger.log("Error: %{public}@", [error?.description ?? "Something Went Wrong"])
     }
 }
-
