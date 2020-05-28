@@ -12,7 +12,7 @@ class ConsentTableViewCell: SourcePointUItablewViewCell {
 
     @IBOutlet weak var rejectedConsentID: UILabel!
     @IBOutlet weak var consentType: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
