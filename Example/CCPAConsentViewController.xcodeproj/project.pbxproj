@@ -60,13 +60,19 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		6D872A6A247EF21500791341 /* SimpleClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D872A69247EF21500791341 /* SimpleClientSpec.swift */; };
+		6DC3E563247D7D1F00434063 /* SourcePointClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3E562247D7D1F00434063 /* SourcePointClientSpec.swift */; };
+		6DC3E569247D824000434063 /* ConnectivityManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3E564247D824000434063 /* ConnectivityManagerSpec.swift */; };
+		6DC3E56A247D824000434063 /* CCPAConsentViewControllerErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3E565247D824000434063 /* CCPAConsentViewControllerErrorSpec.swift */; };
+		6DC3E56B247D824000434063 /* MessageWebViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3E566247D824000434063 /* MessageWebViewControllerSpec.swift */; };
+		6DC3E56C247D824000434063 /* CCPAConsentViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3E567247D824000434063 /* CCPAConsentViewControllerSpec.swift */; };
+		6DC3E56D247D824000434063 /* MessageViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3E568247D824000434063 /* MessageViewControllerSpec.swift */; };
 		8231B14022BA5A6B00D2669B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231B13F22BA5A6B00D2669B /* AppDelegate.swift */; };
 		8231B14222BA5A6B00D2669B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8231B14122BA5A6B00D2669B /* LoginViewController.swift */; };
 		8231B14522BA5A6B00D2669B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8231B14322BA5A6B00D2669B /* Main.storyboard */; };
 		8231B14722BA5A6C00D2669B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8231B14622BA5A6C00D2669B /* Assets.xcassets */; };
 		8231B14A22BA5A6C00D2669B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8231B14822BA5A6C00D2669B /* LaunchScreen.storyboard */; };
 		8277C33C22BBD22C00F1607F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8277C33B22BBD22C00F1607F /* HomeViewController.swift */; };
-		82FC4D3D23983231002F08E5 /* CCPAConsentViewController_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC4D3C23983231002F08E5 /* CCPAConsentViewController_ExampleTests.swift */; };
 		CD08F7398F861D3646C078F1 /* Pods_AuthExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA0B92B34711B38EB60F6AE /* Pods_AuthExample.framework */; };
 		D27304762F62EA2B4B72BE26 /* Pods_CCPAConsentViewController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA0CBA670D68BBB8AFE8398 /* Pods_CCPAConsentViewController_Example.framework */; };
 		ED02A40F4D7B97008AE03ECE /* Pods_SourcePointMetaAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937D545BC56548B90BF91A92 /* Pods_SourcePointMetaAppTests.framework */; };
@@ -157,6 +163,13 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		663DE362110AEABD75816094 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		6D872A69247EF21500791341 /* SimpleClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleClientSpec.swift; sourceTree = "<group>"; };
+		6DC3E562247D7D1F00434063 /* SourcePointClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePointClientSpec.swift; sourceTree = "<group>"; };
+		6DC3E564247D824000434063 /* ConnectivityManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityManagerSpec.swift; sourceTree = "<group>"; };
+		6DC3E565247D824000434063 /* CCPAConsentViewControllerErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPAConsentViewControllerErrorSpec.swift; sourceTree = "<group>"; };
+		6DC3E566247D824000434063 /* MessageWebViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWebViewControllerSpec.swift; sourceTree = "<group>"; };
+		6DC3E567247D824000434063 /* CCPAConsentViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCPAConsentViewControllerSpec.swift; sourceTree = "<group>"; };
+		6DC3E568247D824000434063 /* MessageViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewControllerSpec.swift; sourceTree = "<group>"; };
 		7031AE131A2643F525FFF2A8 /* Pods-SourcePointMetaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourcePointMetaAppTests.release.xcconfig"; path = "Target Support Files/Pods-SourcePointMetaAppTests/Pods-SourcePointMetaAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7105A642C441F93BEB1071BC /* Pods-AuthExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthExample.debug.xcconfig"; path = "Target Support Files/Pods-AuthExample/Pods-AuthExample.debug.xcconfig"; sourceTree = "<group>"; };
 		8231B13D22BA5A6B00D2669B /* AuthExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,7 +182,6 @@
 		8231B15122BBC39900D2669B /* CCPAConsentViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CCPAConsentViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8277C33B22BBD22C00F1607F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		82FC4D3A23983231002F08E5 /* CCPAConsentViewController_ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCPAConsentViewController_ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		82FC4D3C23983231002F08E5 /* CCPAConsentViewController_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPAConsentViewController_ExampleTests.swift; sourceTree = "<group>"; };
 		82FC4D3E23983231002F08E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		937D545BC56548B90BF91A92 /* Pods_SourcePointMetaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SourcePointMetaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1D17A70C5D85C8CF196D90 /* Pods_SourcePointMetaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SourcePointMetaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -678,7 +690,13 @@
 		82FC4D3B23983231002F08E5 /* CCPAConsentViewController_ExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				82FC4D3C23983231002F08E5 /* CCPAConsentViewController_ExampleTests.swift */,
+				6DC3E567247D824000434063 /* CCPAConsentViewControllerSpec.swift */,
+				6DC3E565247D824000434063 /* CCPAConsentViewControllerErrorSpec.swift */,
+				6DC3E568247D824000434063 /* MessageViewControllerSpec.swift */,
+				6DC3E566247D824000434063 /* MessageWebViewControllerSpec.swift */,
+				6DC3E562247D7D1F00434063 /* SourcePointClientSpec.swift */,
+				6D872A69247EF21500791341 /* SimpleClientSpec.swift */,
+				6DC3E564247D824000434063 /* ConnectivityManagerSpec.swift */,
 				82FC4D3E23983231002F08E5 /* Info.plist */,
 			);
 			path = CCPAConsentViewController_ExampleTests;
@@ -1199,7 +1217,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82FC4D3D23983231002F08E5 /* CCPAConsentViewController_ExampleTests.swift in Sources */,
+				6DC3E56C247D824000434063 /* CCPAConsentViewControllerSpec.swift in Sources */,
+				6D872A6A247EF21500791341 /* SimpleClientSpec.swift in Sources */,
+				6DC3E563247D7D1F00434063 /* SourcePointClientSpec.swift in Sources */,
+				6DC3E569247D824000434063 /* ConnectivityManagerSpec.swift in Sources */,
+				6DC3E56D247D824000434063 /* MessageViewControllerSpec.swift in Sources */,
+				6DC3E56B247D824000434063 /* MessageWebViewControllerSpec.swift in Sources */,
+				6DC3E56A247D824000434063 /* CCPAConsentViewControllerErrorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
