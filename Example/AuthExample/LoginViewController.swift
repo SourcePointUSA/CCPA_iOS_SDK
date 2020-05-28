@@ -13,11 +13,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ConsentDelegat
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var authIdField: UITextField!
     @IBOutlet var consentTableView: UITableView!
-    
+
     lazy var consentViewController = {
         return CCPAConsentViewController(accountId: 22, propertyId: 6099, propertyName: try! PropertyName("ccpa.mobile.demo"), PMId: "5df9105bcf42027ce707bb43", campaignEnv: .Public, consentDelegate: self)
     }()
-    
+
     let tableSections = ["ConsentUUID", "Rejected consents"]
     var consentUUID: String?
     var userConsents: UserConsent?
@@ -30,7 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ConsentDelegat
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         let userName = textField.text ?? ""
-        if(userName.trimmingCharacters(in: .whitespacesAndNewlines) != "") {
+        if userName.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
             loginButton.sendActions(for: .touchUpInside)
             return true
         }
@@ -40,11 +40,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ConsentDelegat
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
+
     func ccpaConsentUIWillShow() {
         self.present(consentViewController, animated: true, completion: nil)
     }
-    
+
     func consentUIDidDisappear() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -83,7 +83,7 @@ extension LoginViewController: UITableViewDataSource {
         self.consentUUID = "consentUUID: loading..."
         consentTableView.reloadData()
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -94,15 +94,15 @@ extension LoginViewController: UITableViewDataSource {
             return 0
         }
     }
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return tableSections[section]
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return tableSections.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
         switch indexPath.section {
@@ -113,7 +113,7 @@ extension LoginViewController: UITableViewDataSource {
             let consent = userConsents?.rejectedVendors[indexPath.row]
             cell.textLabel?.adjustsFontSizeToFitWidth = false
             cell.textLabel?.font = UIFont.systemFont(ofSize: 8)
-            if let consentID = consent{
+            if let consentID = consent {
                 cell.textLabel?.text = "Vendor ID: \(consentID))"
             }
             break
@@ -124,4 +124,3 @@ extension LoginViewController: UITableViewDataSource {
         return cell
     }
 }
-
