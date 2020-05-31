@@ -4,6 +4,7 @@
 //
 //  Created by Andre Herculano on 06.10.19.
 //
+// swiftlint:disable all
 
 import Foundation
 import os
