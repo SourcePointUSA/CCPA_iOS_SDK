@@ -2,26 +2,12 @@
 # It needs to be called from the root folder of the project and uses
 # the "github-actions-logging" reporter.
 # Make sure the rules are always in sync with the one from Example/.swiftlint.yml
-disabled_rules: # rule identifiers to exclude from running
-  - colon
-  - comma
-  - control_statement
-  - trailing_newline
-  - trailing_whitespace
-  - line_length
-  - closure_parameter_position
-  - opening_brace
-  - vertical_parameter_alignment
-  - unused_optional_binding
-  - unused_closure_parameter
-  - function_body_length
-  - large_tuple
+
 included: # paths to include during linting. `--path` is ignored if present.
- - /Users/runner/runners/2.263.0/work/CCPA_iOS_SDK/CCPA_iOS_SDK/CCPAConsentViewController/Classes/
- - /Users/runner/runners/2.263.0/work/CCPA_iOS_SDK/CCPA_iOS_SDK/Example/CCPAConsentViewController_ExampleTests/
+ - CCPAConsentViewController/Classes
+ - Example/CCPAConsentViewController_ExampleTests
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - /Users/runner/runners/2.263.0/work/CCPA_iOS_SDK/CCPA_iOS_SDK/Example/Pods/Nimble
-   - /Users/runner/runners/2.263.0/work/CCPA_iOS_SDK/CCPA_iOS_SDK/Example/Pods/IQKeyboardManagerSwift
+  - Pods
 identifier_name:
   min_length:
     - 1
