@@ -16,17 +16,22 @@ import WebKit
 class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, ConsentDelegate {
     static let MESSAGE_HANDLER_NAME = "JSReceiver"
 
-    lazy var webview: WKWebView = {
+    lazy var webview: WKWebView? = {
         let config = WKWebViewConfiguration()
         let userContentController = WKUserContentController()
-        let scriptSource = try! String(contentsOfFile: Bundle(for: CCPAConsentViewController.self).path(forResource: MessageWebViewController.MESSAGE_HANDLER_NAME, ofType: "js")!)
+        guard let scriptSource = try? String(
+            contentsOfFile: Bundle(for: CCPAConsentViewController.self).path(forResource: MessageWebViewController.MESSAGE_HANDLER_NAME, ofType: "js")!)
+            else {
+                consentDelegate?.onError?(error: UnableToLoadJSReceiver())
+                return nil
+        }
         let script = WKUserScript(source: scriptSource, injectionTime: .atDocumentStart, forMainFrameOnly: true)
         userContentController.addUserScript(script)
         userContentController.add(self, name: MessageWebViewController.MESSAGE_HANDLER_NAME)
         config.userContentController = userContentController
         let wv = WKWebView(frame: .zero, configuration: config)
         if #available(iOS 11.0, *) {
-            wv.scrollView.contentInsetAdjustmentBehavior = .never;
+            wv.scrollView.contentInsetAdjustmentBehavior = .never
         }
         wv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         wv.translatesAutoresizingMaskIntoConstraints = true
@@ -37,36 +42,36 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         wv.allowsBackForwardNavigationGestures = true
         return wv
     }()
-    
+
     let propertyId: Int
     let pmId: String
     let consentUUID: ConsentUUID?
-    
+
     var consentUILoaded = false
     var isPMLoaded = false
-    
+
     init(propertyId: Int, pmId: String, consentUUID: ConsentUUID?) {
         self.propertyId = propertyId
         self.pmId = pmId
         self.consentUUID = consentUUID
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func loadView() {
         view = webview
     }
-    
+
     func ccpaConsentUIWillShow() {
-        if(!consentUILoaded) {
+        if !consentUILoaded {
             consentUILoaded = true
             consentDelegate?.ccpaConsentUIWillShow?()
         }
     }
-    
+
     func onMessageReady() {
         ccpaConsentUIWillShow()
         consentDelegate?.messageWillShow?()
@@ -107,13 +112,13 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     }
 
     func cancelPMAction() {
-        webview.canGoBack ?
+        (webview?.canGoBack ?? false) ?
             goBackAndClosePrivacyManager():
             closeConsentUIIfOpen()
     }
 
     func goBackAndClosePrivacyManager() {
-        webview.goBack()
+        webview?.goBack()
         closePrivacyManager()
         onMessageReady()
     }
@@ -133,20 +138,21 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     func load(url: URL) {
         let connectvityManager = ConnectivityManager()
         if connectvityManager.isConnectedToNetwork() {
-            webview.load(URLRequest(url: url))
+            webview?.load(URLRequest(url: url))
         } else {
             onError(error: NoInternetConnection())
         }
     }
-    
+
     override func loadMessage(fromUrl url: URL) {
         load(url: url)
     }
-    
+
+    // swiftlint:disable line_length
     func pmUrl() -> URL? {
         return URL(string: "https://ccpa-inapp-pm.sp-prod.net/?privacy_manager_id=\(pmId)&site_id=\(propertyId)&ccpa_origin=https://ccpa-service.sp-prod.net&ccpaUUID=\(consentUUID ?? "")")
     }
-    
+
     override func loadPrivacyManager() {
         guard let url = pmUrl() else {
             onError(error: URLParsingError(urlString: "PMUrl"))
@@ -154,9 +160,10 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         }
         load(url: url)
     }
-    
+
     /// :nodoc:
     // handles links with "target=_blank", forcing them to open in Safari
+    // swiftlint:disable:next line_length
     public func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         guard let url = navigationAction.request.url else { return nil }
         if #available(iOS 10.0, *) {
@@ -166,7 +173,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         }
         return nil
     }
-    
+
     func getPMConsentsIfAny(_ payload: [String: Any]) -> PMConsents {
         guard
             let consents = payload["consents"] as? [String: Any],
@@ -187,7 +194,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
             categories: PMConsent(accepted: acceptedPurposes, rejected: rejectedPurposes)
         )
     }
-    
+
     public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard
             let body = message.body as? [String: Any?],
@@ -196,33 +203,34 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
             onError(error: MessageEventParsingError(message: Optional(message.body).debugDescription))
             return
         }
-        
+
         switch name {
-            case "onMessageReady":
+        case "onMessageReady":
                 onMessageReady()
-            case "onPMReady":
+        case "onPMReady":
                 onPMReady()
-            case "onAction":
-                guard
-                    let payload = body["body"] as? [String: Any],
-                    let actionType = payload["type"] as? Int,
-                    let action = Action(rawValue: actionType)
-                else {
-                    onError(error: MessageEventParsingError(message: Optional(message.body).debugDescription))
-                    return
-                }
-                onAction(action, consents: getPMConsentsIfAny(payload))
-            case "onError":
-                onError(error: WebViewError())
-            default:
-                print(message.body)
+        case "onAction":
+            guard
+                let payload = body["body"] as? [String: Any],
+                let actionType = payload["type"] as? Int,
+                let action = Action(rawValue: actionType)
+            else {
+                onError(error: MessageEventParsingError(message: Optional(message.body).debugDescription))
+                return
+            }
+            onAction(action, consents: getPMConsentsIfAny(payload))
+        case "onError":
+            onError(error: WebViewError())
+        default:
+            print(message.body)
         }
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         consentDelegate = nil
-        let contentController = webview.configuration.userContentController
+        if let contentController = webview?.configuration.userContentController {
         contentController.removeScriptMessageHandler(forName: MessageWebViewController.MESSAGE_HANDLER_NAME)
         contentController.removeAllUserScripts()
+        }
     }
 }
