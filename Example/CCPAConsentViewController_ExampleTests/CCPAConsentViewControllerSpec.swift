@@ -5,6 +5,7 @@
 //  Created by Vilas on 24/05/20.
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
+// swiftlint:disable force_try function_body_length
 
 import Quick
 import Nimble
@@ -143,7 +144,6 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
                 expect(authIdChangeStatus).to(equal(true), description: "Auth Id changed successfully")
             }
         }
-
 
         describe("Clears UserDefaults ") {
             beforeEach {

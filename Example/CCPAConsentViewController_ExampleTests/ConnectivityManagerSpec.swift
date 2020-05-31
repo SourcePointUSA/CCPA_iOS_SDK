@@ -54,4 +54,3 @@ class ConnectivityManagerSpec: QuickSpec {
         }
     }
 }
-
