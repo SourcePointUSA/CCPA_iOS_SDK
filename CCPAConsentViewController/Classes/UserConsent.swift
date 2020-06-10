@@ -29,25 +29,25 @@ import Foundation
     public var rawValue: RawValue {
         switch self {
         case .ConsentedAll:
-            return "ConsentedAll"
+            return "consentedAll"
         case .RejectedAll:
-            return "RejectedAll"
+            return "rejectedAll"
         case .RejectedSome:
-            return "RejectedSome"
+            return "rejectedSome"
         case .RejectedNone:
-            return "RejectedNone"
+            return "rejectedNone"
         }
     }
 
     public init?(rawValue: RawValue) {
         switch rawValue {
-        case "ConsentedAll":
+        case "consentedAll":
             self = .ConsentedAll
-        case "RejectedAll":
+        case "rejectedAll":
             self = .RejectedAll
-        case "RejectedSome":
+        case "rejectedSome":
             self = .RejectedSome
-        case "RejectedNone":
+        case "rejectedNone":
             self = .RejectedNone
         default:
             return nil
@@ -91,10 +91,6 @@ import Foundation
         case "rejectedSome": status = .RejectedSome
         case "rejectedAll":  status = .RejectedAll
         case "consentedAll": status = .ConsentedAll
-        case "RejectedNone": status = .RejectedNone
-        case "RejectedSome": status = .RejectedSome
-        case "RejectedAll":  status = .RejectedAll
-        case "ConsentedAll": status = .ConsentedAll
         default: throw MessageEventParsingError(message: "Unknown status string: \(statusString)")
         }
     }
