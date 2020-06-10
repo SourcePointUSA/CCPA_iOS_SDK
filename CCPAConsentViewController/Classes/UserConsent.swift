@@ -8,7 +8,7 @@
 import Foundation
 
 /// Indicates the consent status of a given user.
-@objc public enum ConsentStatus: Int, RawRepresentable, Codable {
+@objc public enum ConsentStatus: Int, Codable {
     /// Indicates the user has rejected none of the vendors or purposes (categories)
     case RejectedNone
     
