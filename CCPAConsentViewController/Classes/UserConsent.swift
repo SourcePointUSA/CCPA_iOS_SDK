@@ -23,7 +23,7 @@ import Foundation
     /// `RejectedNone`, the `ConsentedAll` indicates the user has taken an action to
     /// consent to all vendors and purposes.
     case ConsentedAll
-  
+
     public typealias RawValue = String
 
     public var rawValue: RawValue {
@@ -75,9 +75,9 @@ import Foundation
         self.rejectedVendors = rejectedVendors
         self.rejectedCategories = rejectedCategories
     }
-    
+
     open override var description: String { return "Status: \(status.rawValue), rejectedVendors: \(rejectedVendors), rejectedCategories: \(rejectedCategories)" }
-    
+
     enum CodingKeys: CodingKey {
        case status, rejectedVendors, rejectedCategories
     }
