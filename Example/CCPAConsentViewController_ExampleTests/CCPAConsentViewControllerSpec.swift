@@ -125,7 +125,7 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
 
             it("get stored user consents") {
                 let userConsents = CCPAConsentViewController.getStoredUserConsents()
-                expect(userConsents.status.description()).to(equal("RejectedNone"), description: "userConsents is stored in UserDefaults")
+                expect(userConsents.status.rawValue).to(equal("rejectedNone"), description: "userConsents is stored in UserDefaults")
             }
 
             it("get stored consentUUID") {
