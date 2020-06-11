@@ -23,19 +23,34 @@ import Foundation
     /// `RejectedNone`, the `ConsentedAll` indicates the user has taken an action to
     /// consent to all vendors and purposes.
     case ConsentedAll
+  
+    public typealias RawValue = String
 
-    func description() -> String {
+    public var rawValue: RawValue {
         switch self {
         case .ConsentedAll:
-            return "ConsentedAll"
+            return "consentedAll"
         case .RejectedAll:
-            return "RejectedAll"
+            return "rejectedAll"
         case .RejectedSome:
-            return "RejectedSome"
+            return "rejectedSome"
         case .RejectedNone:
-            return "RejectedNone"
+            return "rejectedNone"
+        }
+    }
+
+    public init?(rawValue: RawValue) {
+        switch rawValue {
+        case "consentedAll":
+            self = .ConsentedAll
+        case "rejectedAll":
+            self = .RejectedAll
+        case "rejectedSome":
+            self = .RejectedSome
+        case "rejectedNone":
+            self = .RejectedNone
         default:
-            return "<Unknown>"
+            return nil
         }
     }
 }
@@ -60,9 +75,9 @@ import Foundation
         self.rejectedVendors = rejectedVendors
         self.rejectedCategories = rejectedCategories
     }
-
-    open override var description: String { return "Status: \(status.description()), rejectedVendors: \(rejectedVendors), rejectedCategories: \(rejectedCategories)" }
-
+    
+    open override var description: String { return "Status: \(status.rawValue), rejectedVendors: \(rejectedVendors), rejectedCategories: \(rejectedCategories)" }
+    
     enum CodingKeys: CodingKey {
        case status, rejectedVendors, rejectedCategories
     }
