@@ -15,6 +15,16 @@ public typealias TargetingParams = [String: String]
     static public let CONSENT_UUID_KEY: String = "sp_ccpa_consentUUID"
     static let CCPA_AUTH_ID_KEY = "sp_ccpa_authId"
     static public let META_KEY: String = "sp_ccpa_meta"
+    public static let IAB_PRIVACY_STRING_KEY = "IABUSPrivacy_String"
+    public static let CCPA_APPLIES_KEY = "sp_ccpa_applies"
+
+    static func setUSPrivacyString(_ usps: SPUsPrivacyString) {
+        UserDefaults.standard.set(usps, forKey: IAB_PRIVACY_STRING_KEY)
+    }
+
+    static func setCCPAApplies(_ applies: Bool) {
+        UserDefaults.standard.set(applies, forKey: CCPA_APPLIES_KEY)
+    }
 
     private let accountId, propertyId: Int
     private let propertyName: PropertyName
@@ -172,6 +182,8 @@ public typealias TargetingParams = [String: String]
                 self?.loading = .Ready
                 if let message = messageResponse {
                     self?.consentUUID = message.uuid
+                    CCPAConsentViewController.setCCPAApplies(message.ccpaApplies)
+                    CCPAConsentViewController.setUSPrivacyString(message.userConsent.uspstring)
                     if let url = message.url {
                         self?.loadMessage(fromUrl: url)
                     } else {
@@ -247,6 +259,8 @@ extension CCPAConsentViewController: ConsentDelegate {
         if action == .AcceptAll || action == .RejectAll || action == .SaveAndExit {
             sourcePoint.postAction(action: action, consentUUID: consentUUID, consents: consents) { [weak self] actionResponse, error in
                 if let response = actionResponse {
+                    CCPAConsentViewController.setUSPrivacyString(response.userConsent.uspstring)
+                    CCPAConsentViewController.setCCPAApplies(response.ccpaApplies)
                     self?.onConsentReady(consentUUID: response.uuid, userConsent: response.userConsent)
                 } else {
                     self?.onError(error: error)
