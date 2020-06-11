@@ -5,6 +5,7 @@
 //  Created by Vilas on 25/05/20.
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
+// swiftlint:disable force_cast function_body_length
 
 import Quick
 import Nimble
@@ -149,7 +150,7 @@ class MessageWebViewControllerSpec: QuickSpec, ConsentDelegate, WKNavigationDele
                 messageWebViewController = self.getMessageWebViewController()
             }
             it("Test MessageWebViewController calls getPMConsentsIfAny method") {
-                pmConsents = messageWebViewController.getPMConsentsIfAny(payload as! [String : Any])
+                pmConsents = messageWebViewController.getPMConsentsIfAny(payload as! [String: Any])
                 if pmConsents?.categories.accepted.count ?? 0 > 0 {
                     expect(pmConsents?.categories.accepted.first).to(equal("1234"), description: "Able to get accepted categories")
                 } else {
@@ -159,4 +160,3 @@ class MessageWebViewControllerSpec: QuickSpec, ConsentDelegate, WKNavigationDele
         }
     }
 }
-

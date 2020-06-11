@@ -8,7 +8,7 @@
 
 import UIKit
 
-public typealias TargetingParams = [String:String]
+public typealias TargetingParams = [String: String]
 
 @objcMembers open class CCPAConsentViewController: UIViewController {
     static public let CCPA_USER_CONSENTS: String = "sp_ccpa_user_consents"
@@ -26,11 +26,11 @@ public typealias TargetingParams = [String:String]
 
     public weak var consentDelegate: ConsentDelegate?
     var messageViewController: MessageViewController?
-    
+
     enum LoadingStatus: String {
-        case Ready = "Ready"
-        case Presenting = "Presenting"
-        case Loading = "Loading"
+        case Ready
+        case Presenting
+        case Loading
     }
 
     // used in order not to load the message ui multiple times
@@ -50,7 +50,7 @@ public typealias TargetingParams = [String:String]
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         viewController.didMove(toParent: self)
     }
-    
+
     static func getStoredUserConsents() -> UserConsent {
         guard
             let jsonConsents = UserDefaults.standard.string(forKey: CCPA_USER_CONSENTS),
@@ -61,20 +61,20 @@ public typealias TargetingParams = [String:String]
         }
         return userConsent
     }
-    
+
     static func getStoredConsentUUID() -> ConsentUUID {
         return UserDefaults.standard.string(forKey: CONSENT_UUID_KEY) ?? ""
     }
-    
+
     /// Contains the `ConsentStatus`, an array of rejected vendor ids and and array of rejected purposes
     public var userConsent: UserConsent
 
     /// The UUID assigned to a user, available after calling `loadMessage`
     public var consentUUID: ConsentUUID
-    
+
     /// Instructs the SDK to clean consent data if an error occurs. It's `true` by default.
     public var shouldCleanConsentOnError = true
-    
+
     /**
        - Parameters:
            - accountId: the id of your account, can be found in the Account section of SourcePoint's dashboard
@@ -92,8 +92,14 @@ public typealias TargetingParams = [String:String]
         PMId: String,
         campaignEnv: CampaignEnv,
         consentDelegate: ConsentDelegate
-    ){
-        self.init(accountId: accountId, propertyId: propertyId, propertyName: propertyName, PMId: PMId, campaignEnv: campaignEnv, targetingParams: [:], consentDelegate: consentDelegate)
+    ) {
+        self.init(accountId: accountId,
+                  propertyId: propertyId,
+                  propertyName: propertyName,
+                  PMId: PMId,
+                  campaignEnv: campaignEnv,
+                  targetingParams: [:],
+                  consentDelegate: consentDelegate)
     }
 
     /**
@@ -115,17 +121,17 @@ public typealias TargetingParams = [String:String]
         campaignEnv: CampaignEnv,
         targetingParams: TargetingParams,
         consentDelegate: ConsentDelegate
-    ){
+    ) {
         self.accountId = accountId
         self.propertyName = propertyName
         self.propertyId = propertyId
         self.pmId = PMId
         self.targetingParams = targetingParams
         self.consentDelegate = consentDelegate
-        
+
         self.userConsent = CCPAConsentViewController.getStoredUserConsents()
         self.consentUUID = CCPAConsentViewController.getStoredConsentUUID()
-        
+
         self.sourcePoint = SourcePointClient(
             accountId: accountId,
             propertyId: propertyId,
@@ -143,13 +149,13 @@ public typealias TargetingParams = [String:String]
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func loadMessage(fromUrl url: URL) {
         messageViewController = MessageWebViewController(propertyId: propertyId, pmId: pmId, consentUUID: consentUUID)
         messageViewController?.consentDelegate = self
         messageViewController?.loadMessage(fromUrl: url)
     }
-    
+
     /// Will first check if there's a message to show according to the scenario, for the `authId` provided.
     /// If there is, we'll load the message in a WebView and call `ConsentDelegate.onConsentUIWillShow`
     /// Otherwise, we short circuit to `ConsentDelegate.onConsentReady`
@@ -177,7 +183,7 @@ public typealias TargetingParams = [String:String]
             }
         }
     }
-    
+
     func didAuthIdChange(newAuthId: String?) -> Bool {
         let storedAuthId = UserDefaults.standard.string(forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
         return newAuthId != nil && storedAuthId != nil && storedAuthId != newAuthId
@@ -198,7 +204,7 @@ public typealias TargetingParams = [String:String]
             messageViewController?.loadPrivacyManager()
         }
     }
-    
+
     func resetConsentData() {
         self.consentUUID = ""
         clearAllConsentData()
@@ -231,14 +237,14 @@ extension CCPAConsentViewController: ConsentDelegate {
 
     public func onError(error: CCPAConsentViewControllerError?) {
         loading = .Ready
-        if(shouldCleanConsentOnError) {
+        if shouldCleanConsentOnError {
             clearAllConsentData()
         }
         consentDelegate?.onError?(error: error)
     }
 
     public func onAction(_ action: Action, consents: PMConsents?) {
-        if(action == .AcceptAll || action == .RejectAll || action == .SaveAndExit) {
+        if action == .AcceptAll || action == .RejectAll || action == .SaveAndExit {
             sourcePoint.postAction(action: action, consentUUID: consentUUID, consents: consents) { [weak self] actionResponse, error in
                 if let response = actionResponse {
                     self?.onConsentReady(consentUUID: response.uuid, userConsent: response.userConsent)
@@ -248,7 +254,7 @@ extension CCPAConsentViewController: ConsentDelegate {
             }
         }
     }
-    
+
     public func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
         self.consentUUID = consentUUID
         self.userConsent = userConsent

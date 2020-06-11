@@ -5,6 +5,7 @@
 //  Created by Vilas on 24/05/20.
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
+// swiftlint:disable force_try function_body_length
 
 import Quick
 import Nimble
@@ -124,7 +125,7 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
 
             it("get stored user consents") {
                 let userConsents = CCPAConsentViewController.getStoredUserConsents()
-                expect(userConsents.status.description()).to(equal("RejectedNone"), description: "userConsents is stored in UserDefaults")
+                expect(userConsents.status.rawValue).to(equal("rejectedNone"), description: "userConsents is stored in UserDefaults")
             }
 
             it("get stored consentUUID") {
@@ -143,7 +144,6 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
                 expect(authIdChangeStatus).to(equal(true), description: "Auth Id changed successfully")
             }
         }
-
 
         describe("Clears UserDefaults ") {
             beforeEach {

@@ -44,7 +44,7 @@ struct ActionRequest: WrapperApiRequest {
 
 @objc public class PMConsents: NSObject, Codable {
     let vendors, categories: PMConsent
-    
+
     public init(vendors: PMConsent, categories: PMConsent) {
         self.vendors = vendors
         self.categories = categories
@@ -53,7 +53,7 @@ struct ActionRequest: WrapperApiRequest {
 
 @objc public class PMConsent: NSObject, Codable {
     let accepted, rejected: [String]
-    
+
     public init(accepted: [String], rejected: [String]) {
         self.accepted = accepted
         self.rejected = rejected

@@ -42,17 +42,17 @@ class SimpleClient: HttpClient {
             print("\n")
         }
     }
-    
+
     init(connectivityManager: Connectivity) {
         self.connectivityManager = connectivityManager
     }
-    
+
     convenience init() {
         self.init(connectivityManager: ConnectivityManager())
     }
-    
+
     func request(_ urlRequest: URLRequest, _ completionHandler: @escaping CompletionHandler) {
-        if(connectivityManager.isConnectedToNetwork()) {
+        if connectivityManager.isConnectedToNetwork() {
             logRequest(urlRequest)
             URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 DispatchQueue.main.async { [weak self] in
@@ -68,7 +68,7 @@ class SimpleClient: HttpClient {
             completionHandler(nil, NoInternetConnection())
         }
     }
-    
+
     func post(url: URL?, body: Data?, completionHandler: @escaping CompletionHandler) {
         guard let _url = url else {
             completionHandler(nil, GeneralRequestError(url, nil, nil))
@@ -80,7 +80,7 @@ class SimpleClient: HttpClient {
         urlRequest.httpBody = body
         request(urlRequest, completionHandler)
     }
-    
+
     func get(url: URL?, completionHandler: @escaping CompletionHandler) {
         guard let _url = url else {
             completionHandler(nil, GeneralRequestError(url, nil, nil))
@@ -93,11 +93,11 @@ class SimpleClient: HttpClient {
 struct JSON {
     private lazy var jsonDecoder: JSONDecoder = { return JSONDecoder() }()
     private lazy var jsonEncoder: JSONEncoder = { return JSONEncoder() }()
-    
+
     mutating func decode<T: Decodable>(_ decodable: T.Type, from data: Data) throws -> T {
         return try jsonDecoder.decode(decodable, from: data)
     }
-    
+
     mutating func encode<T: Encodable>(_ encodable: T) throws -> Data {
         return try jsonEncoder.encode(encodable)
     }
@@ -110,12 +110,12 @@ A Http client for SourcePoint's endpoints
 class SourcePointClient {
     static let WRAPPER_API = URL(string: "https://wrapper-api.sp-prod.net")!
     static let CMP_URL = URL(string: "https://sourcepoint.mgr.consensu.org")!
-    
+
     private var client: HttpClient
     private lazy var json: JSON = { return JSON() }()
-    
+
     let requestUUID = UUID()
-    
+
     private let accountId: Int
     private let propertyId: Int
     private let propertyName: PropertyName
@@ -123,7 +123,7 @@ class SourcePointClient {
     private let campaignEnv: CampaignEnv
     private let targetingParams: TargetingParams
 
-    init(accountId: Int, propertyId:Int, propertyName: PropertyName, pmId:String, campaignEnv: CampaignEnv, targetingParams: TargetingParams, client: HttpClient) {
+    init(accountId: Int, propertyId: Int, propertyName: PropertyName, pmId: String, campaignEnv: CampaignEnv, targetingParams: TargetingParams, client: HttpClient) {
         self.accountId = accountId
         self.propertyId = propertyId
         self.propertyName = propertyName
@@ -132,11 +132,17 @@ class SourcePointClient {
         self.client = client
         self.targetingParams = targetingParams
     }
-    
+
     convenience init(accountId: Int, propertyId: Int, propertyName: PropertyName, pmId: String, campaignEnv: CampaignEnv, targetingParams: TargetingParams) {
-        self.init(accountId: accountId, propertyId: propertyId, propertyName: propertyName, pmId: pmId, campaignEnv: campaignEnv, targetingParams: targetingParams, client: SimpleClient())
+        self.init(accountId: accountId,
+                  propertyId: propertyId,
+                  propertyName: propertyName,
+                  pmId: pmId,
+                  campaignEnv: campaignEnv,
+                  targetingParams: targetingParams,
+                  client: SimpleClient())
     }
-    
+
     func targetingParamsToString(_ params: TargetingParams) -> String {
         let emptyParams = "{}"
         do {
@@ -160,14 +166,14 @@ class SourcePointClient {
             URLQueryItem(name: "campaignEnv", value: campaignEnv == .Stage ? "stage" : "prod"),
             URLQueryItem(name: "targetingParams", value: targetingParamsToString(targetingParams)),
             URLQueryItem(name: "alwaysDisplayDNS", value: String(false)),
-            URLQueryItem(name: "meta", value: UserDefaults.standard.string(forKey: CCPAConsentViewController.META_KEY)),
+            URLQueryItem(name: "meta", value: UserDefaults.standard.string(forKey: CCPAConsentViewController.META_KEY))
         ]
         return components?.url
     }
 
     func getMessage(consentUUID: ConsentUUID, authId: String?, completionHandler: @escaping (MessageResponse?, APIParsingError?) -> Void) {
         let url = getMessageUrl(consentUUID, propertyName: propertyName, authId: authId)
-        client.get(url: url) { [weak self] data,error in
+        client.get(url: url) { [weak self] data, error in
             do {
                 if let messageData = data {
                     let messageResponse = try (self?.json.decode(MessageResponse.self, from: messageData))
@@ -181,23 +187,31 @@ class SourcePointClient {
             }
         }
     }
-    
+
     func postActionUrl(_ actionType: Int) -> URL? {
         return URL(
             string: "ccpa/consent/\(actionType)",
             relativeTo: SourcePointClient.WRAPPER_API
         )
     }
-    
+
     func postAction(action: Action, consentUUID: ConsentUUID, consents: PMConsents?, completionHandler: @escaping (ActionResponse?, APIParsingError?) -> Void) {
         let url = postActionUrl(action.rawValue)
         let meta = UserDefaults.standard.string(forKey: CCPAConsentViewController.META_KEY) ?? "{}"
         let ccpaConsents = CPPAPMConsents(rejectedVendors: consents?.vendors.rejected ?? [], rejectedCategories: consents?.categories.rejected ?? [])
-        guard let body = try? json.encode(ActionRequest(propertyId: propertyId, accountId: accountId, privacyManagerId: pmId, uuid: consentUUID, requestUUID: requestUUID, consents: ccpaConsents, meta: meta)) else {
+        guard let body = try? json.encode(ActionRequest(
+            propertyId: propertyId,
+            accountId: accountId,
+            privacyManagerId: pmId,
+            uuid: consentUUID,
+            requestUUID: requestUUID,
+            consents: ccpaConsents,
+            meta: meta
+        )) else {
             completionHandler(nil, APIParsingError(url?.absoluteString ?? "POST consent", nil))
             return
         }
-        
+
         client.post(url: url, body: body) { [weak self] data, error in
             do {
                 if let actionData = data {
