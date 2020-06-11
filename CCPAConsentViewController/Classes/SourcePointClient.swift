@@ -137,7 +137,7 @@ class SourcePointClient {
         self.init(accountId: accountId, propertyId: propertyId, propertyName: propertyName, pmId: pmId, campaignEnv: campaignEnv, targetingParams: targetingParams, client: SimpleClient())
     }
     
-    private func targetingParamsToString(_ params: TargetingParams) -> String {
+    func targetingParamsToString(_ params: TargetingParams) -> String {
         let emptyParams = "{}"
         do {
             let data = try JSONSerialization.data(withJSONObject: params)

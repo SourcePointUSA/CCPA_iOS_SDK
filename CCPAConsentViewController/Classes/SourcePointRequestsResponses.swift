@@ -16,14 +16,14 @@ protocol WrapperApiRequest: Codable, Equatable {
     var meta: Meta { get }
 }
 
-struct MessageResponse: Codable {
+struct MessageResponse: Codable, Equatable {
     let url: URL?
     let uuid: ConsentUUID
     let userConsent: UserConsent
     var meta: Meta
 }
 
-struct ActionResponse: Codable {
+struct ActionResponse: Codable, Equatable {
     let uuid: ConsentUUID
     let userConsent: UserConsent
     var meta: Meta
