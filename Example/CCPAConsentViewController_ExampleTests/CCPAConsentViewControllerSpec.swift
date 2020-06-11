@@ -82,13 +82,7 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
         let mockConsentDelegate = MockConsentDelegate()
         let consentUUID = UUID().uuidString
         let messageViewController = MessageViewController()
-        let rejectedVendors = ["321", "654", "987"]
-        let rejectedCategories = ["4321", "7654", "0987"]
-        let userConsents = UserConsent(
-            status: .RejectedSome,
-            rejectedVendors: rejectedVendors,
-            rejectedCategories: rejectedCategories
-        )
+        let userConsents = UserConsent.empty()
 
         describe("load Message in webview") {
             beforeEach {
