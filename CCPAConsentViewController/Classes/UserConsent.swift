@@ -23,19 +23,34 @@ import Foundation
     /// `RejectedNone`, the `ConsentedAll` indicates the user has taken an action to
     /// consent to all vendors and purposes.
     case ConsentedAll
-    
-    func description() -> String {
+
+    public typealias RawValue = String
+
+    public var rawValue: RawValue {
         switch self {
         case .ConsentedAll:
-            return "ConsentedAll"
+            return "consentedAll"
         case .RejectedAll:
-            return "RejectedAll"
+            return "rejectedAll"
         case .RejectedSome:
-            return "RejectedSome"
+            return "rejectedSome"
         case .RejectedNone:
-            return "RejectedNone"
+            return "rejectedNone"
+        }
+    }
+
+    public init?(rawValue: RawValue) {
+        switch rawValue {
+        case "consentedAll":
+            self = .ConsentedAll
+        case "rejectedAll":
+            self = .RejectedAll
+        case "rejectedSome":
+            self = .RejectedSome
+        case "rejectedNone":
+            self = .RejectedNone
         default:
-            return "<Unknown>"
+            return nil
         }
     }
 }
@@ -60,7 +75,7 @@ import Foundation
         self.rejectedCategories = rejectedCategories
     }
     
-    open override var description: String { return "Status: \(status.description()), rejectedVendors: \(rejectedVendors), rejectedCategories: \(rejectedCategories)" }
+    open override var description: String { return "Status: \(status.rawValue), rejectedVendors: \(rejectedVendors), rejectedCategories: \(rejectedCategories)" }
     
     enum CodingKeys: CodingKey {
        case status, rejectedVendors, rejectedCategories
@@ -72,11 +87,11 @@ import Foundation
         rejectedCategories = try values.decode([String].self, forKey: .rejectedCategories)
         let statusString = try values.decode(String.self, forKey: .status)
         switch statusString {
-            case "rejectedNone": status = .RejectedNone
-            case "rejectedSome": status = .RejectedSome
-            case "rejectedAll":  status = .RejectedAll
-            case "consentedAll": status = .ConsentedAll
-            default: throw MessageEventParsingError(message: "Unknown status string: \(statusString)")
+        case "rejectedNone": status = .RejectedNone
+        case "rejectedSome": status = .RejectedSome
+        case "rejectedAll":  status = .RejectedAll
+        case "consentedAll": status = .ConsentedAll
+        default: throw MessageEventParsingError(message: "Unknown status string: \(statusString)")
         }
     }
 }
