@@ -89,6 +89,10 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
                 consentViewController = self.getCCPAConsentViewController()
             }
 
+            afterEach {
+                consentViewController.clearAllConsentData()
+            }
+
             it("Load message in webview without authId") {
                 consentViewController.loadMessage()
                 expect(consentViewController.loading).to(equal(.Loading), description: "loadMessage method works as expected")
@@ -133,9 +137,23 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
                 consentViewController = self.getCCPAConsentViewController()
             }
 
-            it("Test did AuthId Change") {
-                let authIdChangeStatus = consentViewController.didAuthIdChange(newAuthId: Date().description)
-                expect(authIdChangeStatus).to(equal(true), description: "Auth Id changed successfully")
+            context("when the new authId is nil") {
+                it("returns false") {
+                    expect(consentViewController.didAuthIdChange(newAuthId: nil)).to(equal(false))
+                }
+            }
+
+            context("when there's no stored id") {
+                it("returns false") {
+                    expect(consentViewController.didAuthIdChange(newAuthId: "different")).to(equal(false))
+                }
+            }
+
+            context("when there is stored id") {
+                it("returns true") {
+                    UserDefaults.standard.set("authId", forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
+                    expect(consentViewController.didAuthIdChange(newAuthId: "different")).to(equal(true))
+                }
             }
         }
 
@@ -166,6 +184,19 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
                 consentViewController = self.getCCPAConsentViewController()
                 consentViewController.consentDelegate = mockConsentDelegate
             }
+
+            describe("onAction") {
+                it("should set the consentUUID in the UserDefaults") {
+                    consentViewController.onAction(.AcceptAll, consents: nil)
+                    expect(UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)).toEventuallyNot(beEmpty())
+                }
+
+                it("should set the consentUUID as attribute of CCPAConsentViewController") {
+                    consentViewController.onAction(.AcceptAll, consents: nil)
+                    expect(consentViewController.consentUUID).toEventuallyNot(beEmpty())
+                }
+            }
+
             context("Test consentUIWillShow delegate method") {
                 it("Test CCPAConsentViewController calls consentUIWillShow delegate method") {
                     consentViewController.ccpaConsentUIWillShow()
@@ -193,20 +224,9 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
             }
 
             context("onConsentReady delegate method") {
-
                 it("calls onConsentReady delegate method") {
                     consentViewController.onConsentReady(consentUUID: consentUUID, userConsent: userConsents)
                     expect(mockConsentDelegate.isOnConsentReadyCalled).to(equal(true), description: "onConsentReady delegate method calls successfully")
-                }
-
-                it("should set the consentUUID in the UserDefaults") {
-                    consentViewController.onConsentReady(consentUUID: "sp_ccpa_consentUUID", userConsent: userConsents)
-                    expect(UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)).to(equal("sp_ccpa_consentUUID"))
-                }
-
-                it("should set the consentUUID as attribute of CCPAConsentViewController") {
-                    consentViewController.onConsentReady(consentUUID: "sp_ccpa_consentUUID", userConsent: userConsents)
-                    expect(consentViewController.consentUUID).to(equal("sp_ccpa_consentUUID"))
                 }
             }
 
