@@ -1,3 +1,7 @@
+## 1.3.0 (Jun, 12, 2020)
+* Store the `IABUSPrivacy_String` as spec'ed by the [CCPA IAB](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/USP%20API.md#in-app-support).
+* Fixed an issue that'd prevent the consent message from showing again if the user dismissed it in the first place.
+
 ## 1.2.0 (April, 30, 2020)
 * Added authenticated consent. For more details on how to use it check the README
 

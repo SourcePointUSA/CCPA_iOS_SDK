@@ -8,7 +8,7 @@ We strongly recommend the use of [CocoaPods](https://cocoapods.org) in order to 
 In your `Podfile` add the following line to your app target:
 
 ```
-pod 'CCPAConsentViewController', '1.1.3'
+pod 'CCPAConsentViewController', '1.3.0'
 ```
 ### Carthage
 We also support [Carthage](https://github.com/Carthage/Carthage). It requires a couple more steps to install so we dedicated a whole [wiki page](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/Carthage-SDK-integration-guide) for it.
@@ -30,19 +30,31 @@ It's pretty simple, here are 5 easy steps for you:
 
 ### Swift
 ```swift
-import UIKit
 import CCPAConsentViewController
 
-class ViewController: UIViewController, ConsentDelegate {
+class ViewController: UIViewController {
+    let logger = Logger()
+
     lazy var consentViewController: CCPAConsentViewController = { return CCPAConsentViewController(
-      accountId: 22,
-      propertyId: 6099, 
-      propertyName: try! PropertyName("ccpa.mobile.demo"), 
-      PMId: "5df9105bcf42027ce707bb43", 
-      campaignEnv: .Public, 
-      consentDelegate: self
+        accountId: 22,
+        propertyId: 6099,
+        propertyName: try! PropertyName("ccpa.mobile.demo"),
+        PMId: "5df9105bcf42027ce707bb43",
+        campaignEnv: .Public,
+        consentDelegate: self
     )}()
 
+    @IBAction func onPrivacySettingsTap(_ sender: Any) {
+        consentViewController.loadPrivacyManager()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        consentViewController.loadMessage()
+    }
+}
+
+extension ViewController: ConsentDelegate {
     func ccpaConsentUIWillShow() {
         present(consentViewController, animated: true, completion: nil)
     }
@@ -54,19 +66,12 @@ class ViewController: UIViewController, ConsentDelegate {
     func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
         print("consentUUID: \(consentUUID)")
         print("userConsents: \(userConsent)")
+        print("CCPA applies:", UserDefaults.standard.bool(forKey: CCPAConsentViewController.CCPA_APPLIES_KEY))
+        print("US Privacy String:", UserDefaults.standard.string(forKey: CCPAConsentViewController.IAB_PRIVACY_STRING_KEY)!)
     }
 
     func onError(error: CCPAConsentViewControllerError?) {
-        print("Error: \(error?.description ?? "Something Went Wrong")")
-    }
-
-    @IBAction func onPrivacySettingsTap(_ sender: Any) {
-        consentViewController.loadPrivacyManager()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        consentViewController.loadMessage()
+        logger.log("Error: %{public}@", [error?.description ?? "Something Went Wrong"])
     }
 }
 ```
@@ -76,53 +81,49 @@ class ViewController: UIViewController, ConsentDelegate {
 #import "ViewController.h"
 @import CCPAConsentViewController;
 
-@interface ViewController ()<ConsentDelegate>
-
+@interface ViewController ()<ConsentDelegate> {
+    CCPAConsentViewController *ccpa;
+}
 @end
 
 @implementation ViewController
 
-CCPAConsentViewController *cvc;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    PropertyName *propertyName = [[PropertyName alloc] init:@"ccpa.mobile.demo" error: nil];
-    
-    cvc = [[CCPAConsentViewController alloc]
-        initWithAccountId:22
-        propertyId:6099
-        propertyName:propertyName
-        PMId:@"5df9105bcf42027ce707bb43"
-        campaignEnv:CampaignEnvPublic
-        consentDelegate:self];
-
-    [cvc loadMessage];
+    PropertyName *propertyName = [[PropertyName alloc] init:@"ccpa.mobile.demo" error:NULL];
+    ccpa = [[CCPAConsentViewController alloc]
+           initWithAccountId:22
+           propertyId:6099
+           propertyName:propertyName
+           PMId:@"5df9105bcf42027ce707bb43"
+           campaignEnv:CampaignEnvPublic
+           consentDelegate:self];
+    [ccpa loadMessage];
 }
 
-- (IBAction)onPrivacySettingsTap:(UIButton *)sender {
-    [cvc loadPrivacyManager];
+- (void)consentUIWillShow {
+    [self presentViewController:ccpa animated:true completion:NULL];
+}
+
+- (void)consentUIDidDisappear {
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (void)onConsentReadyWithConsentUUID:(NSString *)consentUUID userConsent:(UserConsent *)userConsent {
-    NSLog(@"uuid: %@", consentUUID);
-    NSLog(@"userConsent: %@", userConsent);
+    NSLog(@"ConsentUUID: %@", consentUUID);
+    NSLog(@"US Privacy String: %@", userConsent.uspstring);
+    NSLog(@"Consent status: %ld", (long)userConsent.status);
+    for (id vendorId in userConsent.rejectedVendors) {
+        NSLog(@"Rejected to Vendor(id: %@)", vendorId);
+    }
+    for (id purposeId in userConsent.rejectedCategories) {
+        NSLog(@"Rejected to Purpose(id: %@)", purposeId);
+    }
 }
 
 - (void)onErrorWithError:(CCPAConsentViewControllerError *)error {
-    NSLog(@"Error: %@", error);
-    [self dismissViewControllerAnimated:NO completion:nil];
+    NSLog(@"Something went wrong: %@", error);
 }
-
-
-- (void)consentUIDidDisappear {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)ccpaConsentUIWillShow {
-    [self presentViewController:cvc animated:YES completion:NULL];
-}
-
 @end
 ```
 
@@ -131,7 +132,7 @@ CCPAConsentViewController *cvc;
 #### How does it work?
 You need to give us a `authId`, that can be anything, user name, email, uuid, as long as you can uniquely identifies an user in your user base.
 
-We'll check our database for a consent profile associated with that `authId`. If we find one, we'll bring it to the user's device and not show a consent message again (technically this will depend on the scenario setup in our dashboard). If we haven't found any consent profile for that `authId` we'll create one and associate with the current user. 
+We'll check our database for a consent profile associated with that `authId`. If we find one, we'll bring it to the user's device and not show a consent message again (technically this will depend on the scenario setup in our dashboard). If we haven't found any consent profile for that `authId` we'll create one and associate with the current user.
 
 #### How to use it?
 
