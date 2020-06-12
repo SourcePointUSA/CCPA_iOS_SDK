@@ -1,5 +1,9 @@
 ## 1.3.0 (Jun, 12, 2020)
 * Store the `IABUSPrivacy_String` as spec'ed by the [CCPA IAB](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/USP%20API.md#in-app-support).
+* Store the "ccpa applies" boolean. This is not covered by the IAB CCPA In-app spec so we're using our own key. It can be retrieved by reading it from the `UserDefaults` with:
+```swift
+UserDefaults.standard.bool(forKey: CCPAConsentViewController.CCPA_APPLIES_KEY)
+```
 * Fixed an issue that'd prevent the consent message from showing again if the user dismissed it in the first place.
 
 ## 1.2.0 (April, 30, 2020)
