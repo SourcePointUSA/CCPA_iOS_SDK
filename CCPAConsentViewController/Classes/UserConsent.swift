@@ -55,37 +55,53 @@ import Foundation
     }
 }
 
+public typealias SPUsPrivacyString = String
+
 /**
     The UserConsent class encapsulates the consent status, rejected vendor ids and rejected categories (purposes) ids.
     - Important: The `rejectedVendors` and `rejectedCategories` arrays will only be populated if the `status` is `.Some`.
     That is, if the user has rejected `.All` or `.None` vendors/categories, those arrays will be empty.
  */
 @objcMembers public class UserConsent: NSObject, Codable {
+    /// represents the default state of the consumer prior to seeing the consent message
+    /// - seealso: https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/US%20Privacy%20String.md#us-privacy-string-format
+    public static let defaultUsPrivacyString = "1---"
+
+    public static func empty() -> UserConsent {
+        return UserConsent(status: .RejectedNone, rejectedVendors: [], rejectedCategories: [], uspstring: defaultUsPrivacyString)
+    }
+
     /// Indicates if the user has rejected `.All`, `.Some` or `.None` of the vendors **and** categories.
     public let status: ConsentStatus
     /// The ids of the rejected vendors and categories. These can be found in SourcePoint's dashboard
     public let rejectedVendors, rejectedCategories: [String]
+    /// the US Privacy String as described by the IAB
+    public let uspstring: SPUsPrivacyString
 
     public static func rejectedNone () -> UserConsent {
-        return UserConsent(status: ConsentStatus.RejectedNone, rejectedVendors: [], rejectedCategories: [])
+        return UserConsent(status: ConsentStatus.RejectedNone, rejectedVendors: [], rejectedCategories: [], uspstring: "")
     }
 
-    public init(status: ConsentStatus, rejectedVendors: [String], rejectedCategories: [String]) {
+    public init(status: ConsentStatus, rejectedVendors: [String], rejectedCategories: [String], uspstring: SPUsPrivacyString) {
         self.status = status
         self.rejectedVendors = rejectedVendors
         self.rejectedCategories = rejectedCategories
+        self.uspstring = uspstring
     }
 
-    open override var description: String { return "Status: \(status.rawValue), rejectedVendors: \(rejectedVendors), rejectedCategories: \(rejectedCategories)" }
+    open override var description: String {
+        return "UserConsent(status: \(status.rawValue), rejectedVendors: \(rejectedVendors), rejectedCategories: \(rejectedCategories), uspstring: \(uspstring))"
+    }
 
     enum CodingKeys: CodingKey {
-       case status, rejectedVendors, rejectedCategories
+       case status, rejectedVendors, rejectedCategories, uspstring
     }
 
     required public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         rejectedVendors = try values.decode([String].self, forKey: .rejectedVendors)
         rejectedCategories = try values.decode([String].self, forKey: .rejectedCategories)
+        uspstring = try values.decode(SPUsPrivacyString.self, forKey: .uspstring)
         let statusString = try values.decode(String.self, forKey: .status)
         switch statusString {
         case "rejectedNone": status = .RejectedNone

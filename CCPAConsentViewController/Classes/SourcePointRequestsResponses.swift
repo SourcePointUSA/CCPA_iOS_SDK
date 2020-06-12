@@ -19,12 +19,14 @@ protocol WrapperApiRequest: Codable, Equatable {
 struct MessageResponse: Codable, Equatable {
     let url: URL?
     let uuid: ConsentUUID
+    let ccpaApplies: Bool
     let userConsent: UserConsent
     var meta: Meta
 }
 
 struct ActionResponse: Codable, Equatable {
     let uuid: ConsentUUID
+    let ccpaApplies: Bool
     let userConsent: UserConsent
     var meta: Meta
 }
