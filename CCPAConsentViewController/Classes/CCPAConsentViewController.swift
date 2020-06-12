@@ -181,9 +181,9 @@ public typealias TargetingParams = [String: String]
             sourcePoint.getMessage(consentUUID: consentUUID, authId: authId) { [weak self] messageResponse, error in
                 self?.loading = .Ready
                 if let message = messageResponse {
+                    self?.setLocalStorageData(uuid: message.uuid, userConsent: message.userConsent, ccpaApplies: message.ccpaApplies)
                     self?.consentUUID = message.uuid
-                    CCPAConsentViewController.setCCPAApplies(message.ccpaApplies)
-                    CCPAConsentViewController.setUSPrivacyString(message.userConsent.uspstring)
+                    self?.userConsent = message.userConsent
                     if let url = message.url {
                         self?.loadMessage(fromUrl: url)
                     } else {
@@ -194,6 +194,16 @@ public typealias TargetingParams = [String: String]
                 }
             }
         }
+    }
+
+    func setLocalStorageData(uuid: ConsentUUID, userConsent: UserConsent, ccpaApplies: Bool) {
+        UserDefaults.standard.set(uuid, forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
+        CCPAConsentViewController.setUSPrivacyString(userConsent.uspstring)
+        CCPAConsentViewController.setCCPAApplies(ccpaApplies)
+        if let encodedConsents = try? JSONEncoder().encode(userConsent) {
+            UserDefaults.standard.set(String(data: encodedConsents, encoding: .utf8), forKey: CCPAConsentViewController.CCPA_USER_CONSENTS)
+        }
+        UserDefaults.standard.synchronize()
     }
 
     func didAuthIdChange(newAuthId: String?) -> Bool {
@@ -259,8 +269,9 @@ extension CCPAConsentViewController: ConsentDelegate {
         if action == .AcceptAll || action == .RejectAll || action == .SaveAndExit {
             sourcePoint.postAction(action: action, consentUUID: consentUUID, consents: consents) { [weak self] actionResponse, error in
                 if let response = actionResponse {
-                    CCPAConsentViewController.setUSPrivacyString(response.userConsent.uspstring)
-                    CCPAConsentViewController.setCCPAApplies(response.ccpaApplies)
+                    self?.consentUUID = response.uuid
+                    self?.userConsent = response.userConsent
+                    self?.setLocalStorageData(uuid: response.uuid, userConsent: response.userConsent, ccpaApplies: response.ccpaApplies)
                     self?.onConsentReady(consentUUID: response.uuid, userConsent: response.userConsent)
                 } else {
                     self?.onError(error: error)
@@ -270,13 +281,6 @@ extension CCPAConsentViewController: ConsentDelegate {
     }
 
     public func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
-        self.consentUUID = consentUUID
-        self.userConsent = userConsent
-        if let encodedConsents = try? JSONEncoder().encode(userConsent) {
-            UserDefaults.standard.set(String(data: encodedConsents, encoding: .utf8), forKey: CCPAConsentViewController.CCPA_USER_CONSENTS)
-        }
-        UserDefaults.standard.set(consentUUID, forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
-        UserDefaults.standard.synchronize()
         consentDelegate?.onConsentReady?(consentUUID: consentUUID, userConsent: userConsent)
     }
 
