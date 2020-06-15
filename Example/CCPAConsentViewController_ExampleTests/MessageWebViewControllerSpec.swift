@@ -15,7 +15,7 @@ import WebKit
 class MessageWebViewControllerSpec: QuickSpec, ConsentDelegate, WKNavigationDelegate {
 
     func getMessageWebViewController() -> MessageWebViewController {
-        return MessageWebViewController(propertyId: 22, pmId: "5df9105bcf42027ce707bb43", consentUUID: UUID().uuidString)
+        return MessageWebViewController(propertyId: 22, pmId: "5df9105bcf42027ce707bb43", consentUUID: UUID().uuidString, userConsent: UserConsent.rejectedNone())
     }
 
     override func spec() {
