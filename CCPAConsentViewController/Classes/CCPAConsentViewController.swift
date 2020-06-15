@@ -161,7 +161,7 @@ public typealias TargetingParams = [String: String]
     }
 
     func loadMessage(fromUrl url: URL) {
-        messageViewController = MessageWebViewController(propertyId: propertyId, pmId: pmId, consentUUID: consentUUID)
+        messageViewController = MessageWebViewController(propertyId: propertyId, pmId: pmId, consentUUID: consentUUID, userConsent: userConsent)
         messageViewController?.consentDelegate = self
         messageViewController?.loadMessage(fromUrl: url)
     }
@@ -221,7 +221,7 @@ public typealias TargetingParams = [String: String]
     public func loadPrivacyManager() {
         if loading == .Ready {
             loading = .Loading
-            messageViewController = MessageWebViewController(propertyId: propertyId, pmId: pmId, consentUUID: consentUUID)
+            messageViewController = MessageWebViewController(propertyId: propertyId, pmId: pmId, consentUUID: consentUUID, userConsent: userConsent)
             messageViewController?.consentDelegate = self
             messageViewController?.loadPrivacyManager()
         }
