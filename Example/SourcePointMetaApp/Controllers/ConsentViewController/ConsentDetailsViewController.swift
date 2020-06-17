@@ -31,7 +31,7 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
     var consentViewController: CCPAConsentViewController?
     var propertyDetails: PropertyDetailsModel?
     var targetingParams = [TargetingParamModel]()
-    let logger = Logger()
+    let logger = Logger(category: "MetaApp")
     
     override func viewDidLoad() {
         super.viewDidLoad()

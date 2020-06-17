@@ -11,8 +11,6 @@ import CCPAConsentViewController
 
 class ViewController: UIViewController {
 
-    let logger = Logger()
-
     lazy var consentViewController: CCPAConsentViewController = { return CCPAConsentViewController(
         accountId: 22,
         propertyId: 6099,
@@ -52,7 +50,7 @@ extension ViewController: ConsentDelegate {
     }
 
     func onError(error: CCPAConsentViewControllerError?) {
-        logger.log("Error: %{public}@", [error?.description ?? "Something Went Wrong"])
+        print("Error: \(error.debugDescription)")
     }
 }
 
