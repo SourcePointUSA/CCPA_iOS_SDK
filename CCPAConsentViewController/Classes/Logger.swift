@@ -9,19 +9,42 @@
 import Foundation
 import os
 
+protocol CCPALogger {
+    func log(_ message: String)
+    func debug(_ message: String)
+    func error(_ message: String)
+}
+
 /// Used to maintaing a single point for logging rather than relying on `print`
 /// - Important: this API should not be used in production and it's probably going to change in the next releases
-@objcMembers public class Logger {
+@objcMembers public class Logger: CCPALogger {
     static let TOO_MANY_ARGS_ERROR = StaticString("Cannot log messages with more than 5 argumetns")
+    static let category = "CCPAConsent"
 
     let consentLog: OSLog?
 
-    public init() {
+    public init(category: String) {
         if #available(iOS 10.0, *) {
-            consentLog = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "Consent")
+            consentLog = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: category)
         } else {
             consentLog = nil
         }
+    }
+
+    convenience init() {
+        self.init(category: Logger.category)
+    }
+
+    func log(_ message: String) {
+        log("%s", [message])
+    }
+
+    func debug(_ message: String) {
+        log("%s", [message])
+    }
+
+    func error(_ message: String) {
+        log("%s", [message])
     }
 
     public func log(_ message: StaticString, _ args: [CVarArg]) {

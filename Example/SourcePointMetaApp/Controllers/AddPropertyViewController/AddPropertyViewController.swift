@@ -79,7 +79,7 @@ class AddPropertyViewController: BaseViewController,TargetingParamCellDelegate, 
     let addpropertyViewModel: AddPropertyViewModel = AddPropertyViewModel()
     var consentViewController: CCPAConsentViewController?
     
-    let logger = Logger()
+    let logger = Logger(category: "MetaApp")
     
     override func viewDidLoad() {
         super.viewDidLoad()

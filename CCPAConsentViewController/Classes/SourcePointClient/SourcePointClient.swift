@@ -7,89 +7,6 @@
 
 import Foundation
 
-typealias CompletionHandler = (Data?, CCPAConsentViewControllerError?) -> Void
-
-protocol HttpClient {
-
-    func get(url: URL?, completionHandler: @escaping CompletionHandler)
-    func post(url: URL?, body: Data?, completionHandler: @escaping CompletionHandler)
-}
-
-class SimpleClient: HttpClient {
-    let connectivityManager: Connectivity
-    let printCalls = false
-
-    func logRequest(_ request: URLRequest) {
-        if printCalls {
-            if let method = request.httpMethod, let url = request.url {
-                print("\(method) \(url)")
-            }
-            if let body = request.httpBody, let bodyString = String(data: body, encoding: .utf8) {
-                print("REQUEST: \(bodyString)")
-            }
-            print("\n")
-        }
-    }
-
-    func logResponse(_ request: URLRequest, response: Data) {
-        if printCalls {
-            if let method = request.httpMethod, let url = request.url {
-                print("\(method) \(url)")
-            }
-            if let responseString =  String(data: response, encoding: .utf8) {
-                print("RESPONSE: \(responseString)")
-            }
-            print("\n")
-        }
-    }
-
-    init(connectivityManager: Connectivity) {
-        self.connectivityManager = connectivityManager
-    }
-
-    convenience init() {
-        self.init(connectivityManager: ConnectivityManager())
-    }
-
-    func request(_ urlRequest: URLRequest, _ completionHandler: @escaping CompletionHandler) {
-        if connectivityManager.isConnectedToNetwork() {
-            logRequest(urlRequest)
-            URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-                DispatchQueue.main.async { [weak self] in
-                    guard let data = data else {
-                        completionHandler(nil, GeneralRequestError(urlRequest.url, response, error))
-                        return
-                    }
-                    self?.logResponse(urlRequest, response: data)
-                    completionHandler(data, nil)
-                }
-            }.resume()
-        } else {
-            completionHandler(nil, NoInternetConnection())
-        }
-    }
-
-    func post(url: URL?, body: Data?, completionHandler: @escaping CompletionHandler) {
-        guard let _url = url else {
-            completionHandler(nil, GeneralRequestError(url, nil, nil))
-            return
-        }
-        var urlRequest = URLRequest(url: _url)
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.httpMethod = "POST"
-        urlRequest.httpBody = body
-        request(urlRequest, completionHandler)
-    }
-
-    func get(url: URL?, completionHandler: @escaping CompletionHandler) {
-        guard let _url = url else {
-            completionHandler(nil, GeneralRequestError(url, nil, nil))
-            return
-        }
-        request(URLRequest(url: _url), completionHandler)
-    }
-}
-
 struct JSON {
     private lazy var jsonDecoder: JSONDecoder = { return JSONDecoder() }()
     private lazy var jsonEncoder: JSONEncoder = { return JSONEncoder() }()
@@ -115,13 +32,12 @@ class SourcePointClient {
     private lazy var json: JSON = { return JSON() }()
 
     let requestUUID = UUID()
-
-    private let accountId: Int
-    private let propertyId: Int
-    private let propertyName: PropertyName
-    private let pmId: String
-    private let campaignEnv: CampaignEnv
-    private let targetingParams: TargetingParams
+    let accountId: Int
+    let propertyId: Int
+    let propertyName: PropertyName
+    let pmId: String
+    let campaignEnv: CampaignEnv
+    let targetingParams: TargetingParams
 
     init(accountId: Int, propertyId: Int, propertyName: PropertyName, pmId: String, campaignEnv: CampaignEnv, targetingParams: TargetingParams, client: HttpClient) {
         self.accountId = accountId
