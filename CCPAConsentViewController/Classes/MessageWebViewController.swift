@@ -46,12 +46,12 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     let propertyId: Int
     let pmId: String
     let consentUUID: ConsentUUID?
-    let userConsent: UserConsent?
+    let userConsent: UserConsent
 
     var consentUILoaded = false
     var isPMLoaded = false
 
-    init(propertyId: Int, pmId: String, consentUUID: ConsentUUID?, userConsent: UserConsent?) {
+    init(propertyId: Int, pmId: String, consentUUID: ConsentUUID?, userConsent: UserConsent) {
         self.propertyId = propertyId
         self.pmId = pmId
         self.consentUUID = consentUUID
