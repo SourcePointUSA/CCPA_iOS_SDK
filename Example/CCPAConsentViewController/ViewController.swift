@@ -46,7 +46,7 @@ extension ViewController: ConsentDelegate {
         print("CCPA applies:", UserDefaults.standard.bool(forKey: CCPAConsentViewController.CCPA_APPLIES_KEY))
 
         // the us privacy string can also be accessed via userConsent.uspstring
-        print("US Privacy String:", UserDefaults.standard.string(forKey: CCPAConsentViewController.IAB_PRIVACY_STRING_KEY)!)
+        print("US Privacy String:", UserDefaults.standard.string(forKey: CCPAConsentViewController.IAB_PRIVACY_STRING_KEY) ?? "")
     }
 
     func onError(error: CCPAConsentViewControllerError?) {
