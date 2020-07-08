@@ -36,13 +36,13 @@ public class ConsentViewPage extends Page {
 
 	WebDriver driver;
 
-	 public ConsentViewPage(WebDriver driver) throws InterruptedException {
-	        this.driver = driver;
-	        PageFactory.initElements(driver, this);
-	        logMessage("Initializing the "+this.getClass().getSimpleName()+" elements");
-	        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-	        Thread.sleep(1000);
-	    }
+	public ConsentViewPage(WebDriver driver) throws InterruptedException {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+		logMessage("Initializing the " + this.getClass().getSimpleName() + " elements");
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+		Thread.sleep(1000);
+	}
 //	protected Report reporter = null;
 
 	@WithTimeout(time = 30, chronoUnit = ChronoUnit.SECONDS)
@@ -108,33 +108,9 @@ public class ConsentViewPage extends Page {
 	boolean errorFound = false;
 
 	public WebElement eleButton(String buttonText) throws InterruptedException {
-		Thread.sleep(3000);	
-		eleButton = (WebElement) driver
-					.findElement(By.xpath("//XCUIElementTypeButton[@name='" + buttonText + "']"));
-			Thread.sleep(3000);
-			// eleButton = (WebElement) driver.findElement(By.("+buttonText+"));
-
+		eleButton = driver.findElement(By.xpath("//XCUIElementTypeButton[@name='" + buttonText + "']"));
+		waitForElement(eleButton, timeOutInSeconds);
 		return eleButton;
-
-	}
-
-	public void loadTime() {
-		try {
-
-			long startTime = System.currentTimeMillis();
-			new WebDriverWait(driver, 120).until(ExpectedConditions.presenceOfElementLocated(
-					By.xpath("//android.webkit.WebView[contains(@text,'Notice Message App')]")));
-			// new WebDriverWait(driver,
-			// 60).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.Button[contains(@text,'Privacy
-			// Setting')]")));
-			long endTime = System.currentTimeMillis();
-			long totalTime = endTime - startTime;
-			System.out.println("**** Total Message Load Time: " + totalTime + " milliseconds");
-		} catch (Exception ex) {
-			System.out.println(ex);
-			throw ex;
-		}
-
 	}
 
 	public void scrollAndClick(String text) throws InterruptedException {
@@ -144,16 +120,9 @@ public class ConsentViewPage extends Page {
 		scrollObject.put("direction", "down");
 		js.executeScript("mobile: scroll", scrollObject);
 		js.executeScript("mobile: scroll", scrollObject);
-		Thread.sleep(2000);
-		
-		//driver.findElement(By.xpath("//XCUIElementTypeButton[@name='" + text + "']")).click();
 		try {
-		//	long startTime = System.currentTimeMillis();
-//			new WebDriverWait(driver, 120).until(ExpectedConditions.presenceOfElementLocated(
-//					By.xpath("//XCUIElementTypeButton[@name='" + text + "']")));
-//			
 			driver.findElement(By.xpath("//XCUIElementTypeButton[@name='" + text + "']")).click();
-		}catch(Exception ex){
+		} catch (Exception ex) {
 			throw ex;
 		}
 	}
@@ -182,7 +151,9 @@ public class ConsentViewPage extends Page {
 	}
 
 	public ArrayList<String> getConsentMessageDetails() throws InterruptedException {
-		Thread.sleep(8000);
+		WebElement ele = driver.findElement(By.xpath("//XCUIElementTypeButton[@name='Privacy Settings']"));
+
+		waitForElement(ele, timeOutInSeconds);
 		for (WebElement msg : ConsentMessage) {
 			consentMsg.add(msg.getText());
 			// consentMsg.add(msg.getAttribute("value"));
@@ -190,19 +161,7 @@ public class ConsentViewPage extends Page {
 		return consentMsg;
 	}
 
-	public void getLocation() {
-		for (WebElement msg : ConsentMessage) {
-			Point point = msg.getLocation();
-			TouchAction touchAction = new TouchAction((PerformsTouchActions) driver);
-			System.out.println("******************");
-			System.out.println((point.x) + (msg.getSize().getWidth()));
-			System.out.println((point.y) + (msg.getSize().getWidth()));
-			System.out.println("******************");
-		}
-	}
-
 	public String verifyWrongCampaignError() throws InterruptedException {
-		Thread.sleep(3000);
 		try {
 			return WrongCampaignErrorText.get(WrongCampaignErrorText.size() - 1).getText();
 		} catch (Exception e) {
