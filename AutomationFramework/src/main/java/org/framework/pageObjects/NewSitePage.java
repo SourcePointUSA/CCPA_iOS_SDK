@@ -28,6 +28,7 @@ import io.appium.java_client.pagefactory.WithTimeout;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.appium.java_client.touch.offset.PointOption;
+import io.qameta.allure.Step;
 
 public class NewSitePage extends Page {
 	WebDriver driver;
@@ -94,14 +95,12 @@ public class NewSitePage extends Page {
 	boolean paramFound = false;
 
 	public void selectCampaign(WebElement ele, String staggingValue) throws InterruptedException {
-
 		if (staggingValue.equals("ON")) {
 			Point point = ele.getLocation();
 			TouchAction touchAction = new TouchAction((PerformsTouchActions) driver);
 
 			touchAction.tap(PointOption.point(point.x + 20, point.y + 20)).perform();
 		}
-		Thread.sleep(3000);
 	}
 
 	public void addTargetingParameter(WebElement paramKey, WebElement paramValue, String key, String value)
@@ -124,45 +123,9 @@ public class NewSitePage extends Page {
 
 	}
 
-	public String getError() throws InterruptedException {
-		boolean check = false;
-		// waitForElement(ErrorMessage, 10);
-		Thread.sleep(5000);
-		int i = ErrorMessage.size();
-
-		String errorMsg = ErrorMessage.get(ErrorMessage.size() - 1).getText();
-		return errorMsg;
-	}
-
-	public boolean verifyError() throws InterruptedException {
-		boolean check = false;
-		// waitForElement(ErrorMessage, 10);
-		Thread.sleep(3000);
-		int i = ErrorMessage.size();
-
-		String errorMsg = ErrorMessage.get(ErrorMessage.size() - 1).getText();
-		if (errorMsg.equals("Please enter targeting parameter key and value")) {
-			check = true;
-		}
-		return check;
-	}
-
 	public void waitForElement(WebElement ele, int timeOutInSeconds) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 		wait.until(ExpectedConditions.visibilityOf(ele));
 	}
 
-	public boolean verifyErrorMsg(String udid) throws InterruptedException {
-		boolean check = false;
-		// waitForElement(ErrorMessage, 10);
-		Thread.sleep(3000);
-		int i = ErrorMessage.size();
-
-		String errorMsg = ErrorMessage.get(ErrorMessage.size() - 1).getText();
-
-		if (errorMsg.equals("Please enter property details")) {
-			check = true;
-		}
-		return check;
-	}
 }

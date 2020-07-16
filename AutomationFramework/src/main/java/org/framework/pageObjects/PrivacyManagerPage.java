@@ -75,28 +75,15 @@ public class PrivacyManagerPage extends Page {
 		scrollObject.put("direction", "down");
 		js.executeScript("mobile: scroll", scrollObject);
 		js.executeScript("mobile: scroll", scrollObject);
-		Thread.sleep(2000);
 		driver.findElement(By.xpath("//XCUIElementTypeButton[@name='" + text + "']")).click();
 
-	}
-
-	public void loadTime() {
-		long startTime = System.currentTimeMillis();
-		new WebDriverWait(driver, 60).until(
-				ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.Button[@text='Cancel']")));
-		long endTime = System.currentTimeMillis();
-		long totalTime = endTime - startTime;
-		System.out.println("**** Total Privacy Manager Load Time: " + totalTime + " milliseconds");
 	}
 
 	boolean privacyManageeFound = false;
 
 	public boolean isPrivacyManagerViewPresent() throws InterruptedException {
-		Thread.sleep(8000);
-
 		try {
-			// if (driver.findElements(By.xpath("//XCUIElementTypeStaticText[@name='FRENCH
-			// Privacy Manager']")).size() > 0)
+			waitForElement(ccpa_RejectAllButton, timeOutInSeconds);
 			if (driver.findElements(By.xpath("//XCUIElementTypeStaticText[contains(@name,'Privacy Manager')]"))
 					.size() > 0)
 				privacyManageeFound = true;
@@ -112,6 +99,11 @@ public class PrivacyManagerPage extends Page {
 		eleButton = (WebElement) driver.findElement(By.id("+buttonText+"));
 		return eleButton;
 
+	}
+	
+	public void waitForElement(WebElement ele, int timeOutInSeconds) {
+		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+		wait.until(ExpectedConditions.visibilityOf(ele));
 	}
 
 }
