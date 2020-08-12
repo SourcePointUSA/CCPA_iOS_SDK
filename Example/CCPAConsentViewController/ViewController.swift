@@ -38,6 +38,10 @@ extension ViewController: ConsentDelegate {
         dismiss(animated: true, completion: nil)
     }
 
+    func onAction(_ action: Action, consents: PMConsents?) {
+        print("Action taken:", action)
+    }
+
     func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
         print("consentUUID:", consentUUID)
         print("userConsents:", userConsent)
