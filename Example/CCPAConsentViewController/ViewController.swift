@@ -10,7 +10,6 @@ import UIKit
 import CCPAConsentViewController
 
 class ViewController: UIViewController {
-
     lazy var consentViewController: CCPAConsentViewController = { return CCPAConsentViewController(
         accountId: 22,
         propertyId: 6099,
@@ -40,8 +39,8 @@ extension ViewController: ConsentDelegate {
     }
 
     func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
-        print("consentUUID: \(consentUUID)")
-        print("userConsents: \(userConsent)")
+        print("consentUUID:", consentUUID)
+        print("userConsents:", userConsent)
 
         print("CCPA applies:", UserDefaults.standard.bool(forKey: CCPAConsentViewController.CCPA_APPLIES_KEY))
 
@@ -50,7 +49,7 @@ extension ViewController: ConsentDelegate {
     }
 
     func onError(error: CCPAConsentViewControllerError?) {
-        print("Error: \(error.debugDescription)")
+        print("Error:", error.debugDescription)
     }
 }
 
