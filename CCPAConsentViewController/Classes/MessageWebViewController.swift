@@ -114,7 +114,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     }
 
     private func onConsentReady() {
-        consentDelegate?.onConsentReady?(consentUUID: consentUUID ?? "", userConsent: userConsent ?? UserConsent.rejectedNone())
+        consentDelegate?.onConsentReady?(consentUUID: consentUUID ?? "", userConsent: userConsent)
         closeConsentUIIfOpen()
     }
 
