@@ -8,7 +8,7 @@ We strongly recommend the use of [CocoaPods](https://cocoapods.org) in order to 
 In your `Podfile` add the following line to your app target:
 
 ```
-pod 'CCPAConsentViewController', '1.3.0'
+pod 'CCPAConsentViewController', '1.3.1'
 ```
 ### Carthage
 We also support [Carthage](https://github.com/Carthage/Carthage). It requires a couple more steps to install so we dedicated a whole [wiki page](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/Carthage-SDK-integration-guide) for it.
@@ -33,8 +33,6 @@ It's pretty simple, here are 5 easy steps for you:
 import CCPAConsentViewController
 
 class ViewController: UIViewController {
-    let logger = Logger()
-
     lazy var consentViewController: CCPAConsentViewController = { return CCPAConsentViewController(
         accountId: 22,
         propertyId: 6099,
@@ -63,15 +61,22 @@ extension ViewController: ConsentDelegate {
         dismiss(animated: true, completion: nil)
     }
 
+    func onAction(_ action: Action, consents: PMConsents?) {
+        print("Action taken:", action)
+    }
+
     func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent) {
-        print("consentUUID: \(consentUUID)")
-        print("userConsents: \(userConsent)")
+        print("consentUUID:", consentUUID)
+        print("userConsents:", userConsent)
+
         print("CCPA applies:", UserDefaults.standard.bool(forKey: CCPAConsentViewController.CCPA_APPLIES_KEY))
-        print("US Privacy String:", UserDefaults.standard.string(forKey: CCPAConsentViewController.IAB_PRIVACY_STRING_KEY)!)
+
+        // the us privacy string can also be accessed via userConsent.uspstring
+        print("US Privacy String:", UserDefaults.standard.string(forKey: CCPAConsentViewController.IAB_PRIVACY_STRING_KEY) ?? "")
     }
 
     func onError(error: CCPAConsentViewControllerError?) {
-        logger.log("Error: %{public}@", [error?.description ?? "Something Went Wrong"])
+        print("Error:", error.debugDescription)
     }
 }
 ```

@@ -1,3 +1,8 @@
+## 1.3.1 (Aug, 13, 2020)
+* Fix an issue that'd prevent the `onAction` delegate method from being called #47
+* Implement `.description` to `Action` class #46
+* Make sure `onConsentReady` is called on all actions that closes the ConsentUI #41
+
 ## 1.3.0 (Jun, 12, 2020)
 * Store the `IABUSPrivacy_String` as spec'ed by the [CCPA IAB](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/USP%20API.md#in-app-support).
 * Store the "ccpa applies" boolean. This is not covered by the IAB CCPA In-app spec so we're using our own key. It can be retrieved by reading it from the `UserDefaults` with:
