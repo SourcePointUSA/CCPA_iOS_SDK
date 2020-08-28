@@ -70,8 +70,8 @@ extension ViewController: ConsentDelegate {
         print("US Privacy String:", UserDefaults.standard.string(forKey: CCPAConsentViewController.IAB_PRIVACY_STRING_KEY)!)
     }
 
-    func onError(error: CCPAConsentViewControllerError?) {
-        logger.log("Error: %{public}@", [error?.description ?? "Something Went Wrong"])
+    func onError(ccpaError: CCPAConsentViewControllerError?) {
+        logger.log("Error: %{public}@", [ccpaError?.description ?? "Something Went Wrong"])
     }
 }
 ```
@@ -121,8 +121,8 @@ extension ViewController: ConsentDelegate {
     }
 }
 
-- (void)onErrorWithError:(CCPAConsentViewControllerError *)error {
-    NSLog(@"Something went wrong: %@", error);
+- (void)onErrorWithCcpaError:(CCPAConsentViewControllerError *)ccpaError {
+    NSLog(@"Something went wrong: %@", ccpaError);
 }
 @end
 ```
