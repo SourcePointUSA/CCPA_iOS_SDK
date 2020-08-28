@@ -35,7 +35,7 @@ public class MockConsentDelegate: ConsentDelegate {
         isConsentUIDidDisappearCalled = true
     }
 
-    public func onError(error: CCPAConsentViewControllerError?) {
+    public func onError(ccpaError: CCPAConsentViewControllerError?) {
         isOnErrorCalled = true
     }
 
