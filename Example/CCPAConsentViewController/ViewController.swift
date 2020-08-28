@@ -52,8 +52,8 @@ extension ViewController: ConsentDelegate {
         print("US Privacy String:", UserDefaults.standard.string(forKey: CCPAConsentViewController.IAB_PRIVACY_STRING_KEY) ?? "")
     }
 
-    func onError(error: CCPAConsentViewControllerError?) {
-        print("Error:", error.debugDescription)
+    func onError(ccpaError: CCPAConsentViewControllerError?) {
+        print("Error:", ccpaError.debugDescription)
     }
 }
 
