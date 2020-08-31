@@ -1116,10 +1116,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CCPAConsentViewController_Example/Pods-CCPAConsentViewController_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CCPAConsentViewController/CCPAConsentViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/ConsentViewController/ConsentViewController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCPAConsentViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConsentViewController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

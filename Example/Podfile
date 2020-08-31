@@ -3,6 +3,7 @@ platform :ios, '9.0'
 
 target 'CCPAConsentViewController_Example' do
   pod 'CCPAConsentViewController', :path => '../'
+  pod 'ConsentViewController', :path => '../../ios-cmp-app'
   pod 'SwiftLint'
 end
 

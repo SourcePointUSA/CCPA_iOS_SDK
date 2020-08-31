@@ -1,5 +1,6 @@
 PODS:
-  - CCPAConsentViewController (1.3.0)
+  - CCPAConsentViewController (1.3.1)
+  - ConsentViewController (5.2.8)
   - IQKeyboardManagerSwift (6.5.4)
   - Nimble (8.0.4)
   - Quick (2.2.0)
@@ -7,6 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - CCPAConsentViewController (from `../`)
+  - ConsentViewController (from `../../ios-cmp-app`)
   - IQKeyboardManagerSwift
   - Nimble
   - Quick
@@ -22,14 +24,17 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CCPAConsentViewController:
     :path: "../"
+  ConsentViewController:
+    :path: "../../ios-cmp-app"
 
 SPEC CHECKSUMS:
-  CCPAConsentViewController: 559add7ce7cfb9ec282cbff2a60c6903d080c8a3
+  CCPAConsentViewController: 65b717425b30ec01e680ce1acac387964e14e244
+  ConsentViewController: 3a3c60dfddbb441aa11521579f49d0ee5666ff10
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: cd3c412869008fd80d3f9ef2ff337e95c1e9a27c
+PODFILE CHECKSUM: 8ab637dc7d803ecad5fbac8e99428a4a7b45e1e0
 
-COCOAPODS: 1.9.2
+COCOAPODS: 1.9.3
