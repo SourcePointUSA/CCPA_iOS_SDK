@@ -142,13 +142,13 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
         self.hideIndicator()
     }
     
-    func onError(error: CCPAConsentViewControllerError?) {
-        logger.log("Error: %{public}@", [error?.description ?? "Something Went Wrong"])
+    func onError(ccpaError: CCPAConsentViewControllerError?) {
+        logger.log("Error: %{public}@", [ccpaError?.description ?? "Something Went Wrong"])
         let okHandler = {
             self.hideIndicator()
             self.dismiss(animated: false, completion: nil)
         }
-        AlertView.sharedInstance.showAlertView(title: Alert.message, message: error?.description ?? "Something Went Wrong", actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
+        AlertView.sharedInstance.showAlertView(title: Alert.message, message: ccpaError?.description ?? "Something Went Wrong", actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
     }
     
     @IBAction func showPMAction(_ sender: Any) {

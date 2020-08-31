@@ -22,7 +22,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         guard let scriptSource = try? String(
             contentsOfFile: Bundle(for: CCPAConsentViewController.self).path(forResource: MessageWebViewController.MESSAGE_HANDLER_NAME, ofType: "js")!)
             else {
-                consentDelegate?.onError?(error: UnableToLoadJSReceiver())
+                consentDelegate?.onError?(ccpaError: UnableToLoadJSReceiver())
                 return nil
         }
         let script = WKUserScript(source: scriptSource, injectionTime: .atDocumentStart, forMainFrameOnly: true)
@@ -104,7 +104,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     }
 
     func onError(error: CCPAConsentViewControllerError?) {
-        consentDelegate?.onError?(error: error)
+        consentDelegate?.onError?(ccpaError: error)
         closeConsentUIIfOpen()
     }
 

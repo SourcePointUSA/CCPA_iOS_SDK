@@ -262,7 +262,7 @@ extension CCPAConsentViewController: ConsentDelegate {
         if shouldCleanConsentOnError {
             clearAllConsentData()
         }
-        consentDelegate?.onError?(error: error)
+        consentDelegate?.onError?(ccpaError: error)
     }
 
     public func onAction(_ action: Action, consents: PMConsents?) {
