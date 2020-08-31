@@ -116,15 +116,9 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
             targetingParameters[targetingParam.targetingKey!] = targetingParam.targetingValue
         }
         consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: campaign, targetingParams:targetingParameters, consentDelegate: self)
-        
-        //            if let authId = propertyDetails.authId {
-        //                consentViewController.loadMessage(forAuthId: authId)
-        //            }else {
-        //                consentViewController.loadMessage()
-        //            }
-        consentViewController?.loadMessage()
-        
+        consentViewController?.loadMessage(forAuthId: propertyDetails.authId)
     }
+
     func ccpaConsentUIWillShow() {
         hideIndicator()
         present(self.consentViewController!, animated: true, completion: nil)
