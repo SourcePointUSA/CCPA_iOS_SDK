@@ -1,3 +1,9 @@
+## 1.3.2 (Sept, 29, 2020)
+* Fixed an issue that was causing clash between onError methods in GDPR and CCPA SDKs [#48](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/48)
+## 1.3.1 (Aug, 13, 2020)
+* Fix an issue that'd prevent the onAction delegate method from being called [#47](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/47).
+* Implement .description to Action class [#46](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/46).
+* Make sure onConsentReady is called on all actions that closes the ConsentUI [#41](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/41).
 ## 1.3.0 (Jun, 12, 2020)
 * Store the `IABUSPrivacy_String` as spec'ed by the [CCPA IAB](https://github.com/InteractiveAdvertisingBureau/USPrivacy/blob/master/CCPA/USP%20API.md#in-app-support).
 * Store the "ccpa applies" boolean. This is not covered by the IAB CCPA In-app spec so we're using our own key. It can be retrieved by reading it from the `UserDefaults` with:
