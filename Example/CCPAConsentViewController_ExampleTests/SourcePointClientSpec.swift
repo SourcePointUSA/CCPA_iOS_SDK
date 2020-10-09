@@ -31,7 +31,7 @@ public class MockHttp: HttpClient {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.success != nil ?
                 completionHandler(self.success!, nil) :
-                completionHandler(nil, APIParsingError(url!.absoluteString, self.error))
+                completionHandler(nil, CCPAAPIParsingError(url!.absoluteString, self.error))
         })
     }
 
@@ -47,7 +47,7 @@ public class MockHttp: HttpClient {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.success != nil ?
                 completionHandler(self.success!, nil) :
-                completionHandler(nil, APIParsingError(url!.absoluteString, self.error))
+                completionHandler(nil, CCPAAPIParsingError(url!.absoluteString, self.error))
         })
     }
 }
