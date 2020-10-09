@@ -87,7 +87,7 @@ class SourcePointClient {
         return components?.url
     }
 
-    func getMessage(consentUUID: ConsentUUID, authId: String?, completionHandler: @escaping (MessageResponse?, APIParsingError?) -> Void) {
+    func getMessage(consentUUID: ConsentUUID, authId: String?, completionHandler: @escaping (MessageResponse?, CCPAAPIParsingError?) -> Void) {
         let url = getMessageUrl(consentUUID, propertyName: propertyName, authId: authId)
         client.get(url: url) { [weak self] data, error in
             do {
@@ -96,10 +96,10 @@ class SourcePointClient {
                     UserDefaults.standard.setValue(messageResponse?.meta, forKey: CCPAConsentViewController.META_KEY)
                     completionHandler(messageResponse, nil)
                 } else {
-                    completionHandler(nil, APIParsingError(url?.absoluteString ?? "getMessage", error))
+                    completionHandler(nil, CCPAAPIParsingError(url?.absoluteString ?? "getMessage", error))
                 }
             } catch {
-                completionHandler(nil, APIParsingError(url?.absoluteString ?? "getMessage", error))
+                completionHandler(nil, CCPAAPIParsingError(url?.absoluteString ?? "getMessage", error))
             }
         }
     }
@@ -111,7 +111,7 @@ class SourcePointClient {
         )
     }
 
-    func postAction(action: Action, consentUUID: ConsentUUID, consents: PMConsents?, completionHandler: @escaping (ActionResponse?, APIParsingError?) -> Void) {
+    func postAction(action: Action, consentUUID: ConsentUUID, consents: PMConsents?, completionHandler: @escaping (ActionResponse?, CCPAAPIParsingError?) -> Void) {
         let url = postActionUrl(action.rawValue)
         let meta = UserDefaults.standard.string(forKey: CCPAConsentViewController.META_KEY) ?? "{}"
         let ccpaConsents = CPPAPMConsents(rejectedVendors: consents?.vendors.rejected ?? [], rejectedCategories: consents?.categories.rejected ?? [])
@@ -124,7 +124,7 @@ class SourcePointClient {
             consents: ccpaConsents,
             meta: meta
         )) else {
-            completionHandler(nil, APIParsingError(url?.absoluteString ?? "POST consent", nil))
+            completionHandler(nil, CCPAAPIParsingError(url?.absoluteString ?? "POST consent", nil))
             return
         }
 
@@ -135,10 +135,10 @@ class SourcePointClient {
                     UserDefaults.standard.setValue(actionResponse?.meta, forKey: CCPAConsentViewController.META_KEY)
                     completionHandler(actionResponse, nil)
                 } else {
-                    completionHandler(nil, APIParsingError(url?.absoluteString ?? "POST consent", error))
+                    completionHandler(nil, CCPAAPIParsingError(url?.absoluteString ?? "POST consent", error))
                 }
             } catch {
-                completionHandler(nil, APIParsingError(url?.absoluteString ?? "POST consent", error))
+                completionHandler(nil, CCPAAPIParsingError(url?.absoluteString ?? "POST consent", error))
             }
         }
     }
