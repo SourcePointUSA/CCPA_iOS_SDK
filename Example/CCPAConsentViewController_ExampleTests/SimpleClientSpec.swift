@@ -138,7 +138,7 @@ class SimpleClientSpec: QuickSpec {
                 let session = URLSessionMock(
                     configuration: URLSessionConfiguration.default,
                     data: nil,
-                    error: GeneralRequestError(nil, nil, nil)
+                    error: CCPAGeneralRequestError(nil, nil, nil)
                 )
                 let client = SimpleClient(
                     connectivityManager: ConnectivityMock(connected: true),
@@ -161,7 +161,7 @@ class SimpleClientSpec: QuickSpec {
                     dispatchQueue: DispatchQueue.main
                 )
                 client.request(self.exampleRequest) { _, e in error = e! }
-                expect(error).toEventually(beAKindOf(NoInternetConnection.self))
+                expect(error).toEventually(beAKindOf(CCPANoInternetConnection.self))
             }
         }
     }

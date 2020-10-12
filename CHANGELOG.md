@@ -1,5 +1,7 @@
+## 1.3.3 (Oct, 09, 2020)
+*  Fixed an issue that was causing clash between GeneralRequestError class in GDPR and CCPA SDKs [#50](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/50).
 ## 1.3.2 (Sept, 29, 2020)
-* Fixed an issue that was causing clash between onError methods in GDPR and CCPA SDKs [#48](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/48)
+* Fixed an issue that was causing clash between onError methods in GDPR and CCPA SDKs [#48](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/48).
 ## 1.3.1 (Aug, 13, 2020)
 * Fix an issue that'd prevent the onAction delegate method from being called [#47](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/47).
 * Implement .description to Action class [#46](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/46).

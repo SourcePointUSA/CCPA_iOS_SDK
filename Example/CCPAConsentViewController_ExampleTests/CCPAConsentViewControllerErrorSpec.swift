@@ -20,38 +20,38 @@ class CCPAConsentViewControllerErrorSpec: QuickSpec {
 
             it("Test GeneralRequestError method") {
                 let url = URL(string: urlString)
-                let errorObject = GeneralRequestError(url, nil, nil)
+                let errorObject = CCPAGeneralRequestError(url, nil, nil)
                 expect(errorObject.description).to(
                     equal("The request to: \(urlString) failed with response: <Unknown Response> and error: <Unknown Error>"))
             }
 
             it("Test APIParsingError method") {
-                let errorObject = APIParsingError(urlString, nil)
+                let errorObject = CCPAAPIParsingError(urlString, nil)
                 expect(errorObject.description).to(equal("Error parsing response from \(urlString): nil"))
             }
 
             it("Test NoInternetConnection method") {
-                let errorObject = NoInternetConnection()
+                let errorObject = CCPANoInternetConnection()
                 expect(errorObject.failureReason).to(equal("The device is not connected to the internet."))
             }
 
             it("Test MessageEventParsingError method") {
-                let errorObject = MessageEventParsingError(message: "The operation couldn't be completed")
+                let errorObject = CCPAMessageEventParsingError(message: "The operation couldn't be completed")
                 expect(errorObject.failureReason).to(equal("Could not parse message coming from the WebView The operation couldn't be completed"))
             }
 
             it("Test WebViewError method") {
-                let errorObject = WebViewError()
+                let errorObject = CCPAWebViewError()
                 expect(errorObject.failureReason).to(equal("Something went wrong in the webview"))
             }
 
             it("Test URLParsingError method") {
-                let errorObject = URLParsingError(urlString: urlString)
+                let errorObject = CCPAURLParsingError(urlString: urlString)
                 expect(errorObject.failureReason).to(equal("Could not parse URL: \(urlString)"))
             }
 
             it("Test InvalidArgumentError method") {
-                let errorObject = InvalidArgumentError(message: "The operation couldn't be completed")
+                let errorObject = CCPAInvalidArgumentError(message: "The operation couldn't be completed")
                 expect(errorObject.description).to(equal("The operation couldn't be completed"))
             }
         }

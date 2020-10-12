@@ -16,7 +16,7 @@ import Foundation
     }
 }
 
-@objcMembers public class GeneralRequestError: CCPAConsentViewControllerError {
+@objcMembers public class CCPAGeneralRequestError: CCPAConsentViewControllerError {
     public let url, response, error: String
 
     public var failureReason: String? { return "The request to: \(url) failed with response: \(response) and error: \(error)" }
@@ -34,7 +34,7 @@ import Foundation
     override public var description: String { return "\(failureReason!)" }
 }
 
-@objcMembers public class APIParsingError: CCPAConsentViewControllerError {
+@objcMembers public class CCPAAPIParsingError: CCPAConsentViewControllerError {
     private let parsingError: Error?
     private let endpoint: String
 
@@ -51,17 +51,17 @@ import Foundation
     public var failureReason: String? { return description }
 }
 
-@objcMembers public class UnableToLoadJSReceiver: CCPAConsentViewControllerError {
+@objcMembers public class CCPAUnableToLoadJSReceiver: CCPAConsentViewControllerError {
     public var failureReason: String? { return "Unable to load the JSReceiver.js resource." }
     override public var description: String { return "\(failureReason!)\n" }
 }
 
-@objcMembers public class NoInternetConnection: CCPAConsentViewControllerError {
+@objcMembers public class CCPANoInternetConnection: CCPAConsentViewControllerError {
     public var failureReason: String? { return "The device is not connected to the internet." }
     override public var description: String { return "\(failureReason!)\n" }
 }
 
-@objcMembers public class MessageEventParsingError: CCPAConsentViewControllerError {
+@objcMembers public class CCPAMessageEventParsingError: CCPAConsentViewControllerError {
     let message: String
 
     init(message: String) {
@@ -75,12 +75,12 @@ import Foundation
     override public var description: String { return "\(failureReason!)\n" }
 }
 
-@objcMembers public class WebViewError: CCPAConsentViewControllerError {
+@objcMembers public class CCPAWebViewError: CCPAConsentViewControllerError {
     public var failureReason: String? { return "Something went wrong in the webview" }
     override public var description: String { return "\(failureReason!)\n" }
 }
 
-@objcMembers public class URLParsingError: CCPAConsentViewControllerError {
+@objcMembers public class CCPAURLParsingError: CCPAConsentViewControllerError {
     let urlString: String
 
     init(urlString: String) {
@@ -94,7 +94,7 @@ import Foundation
     override public var description: String { return "\(failureReason!)\n" }
 }
 
-@objcMembers public class InvalidArgumentError: CCPAConsentViewControllerError {
+@objcMembers public class CCPAInvalidArgumentError: CCPAConsentViewControllerError {
     let message: String
 
     init(message: String) {
