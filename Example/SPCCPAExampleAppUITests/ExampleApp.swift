@@ -89,8 +89,5 @@ extension ExampleApp: GDPRUI {
     
     var privacyPolicyPageTitle: XCUIElement {
         webViews.containing(NSPredicate(format: "label CONTAINS[cd] 'Address'")).firstMatch
-
- //       staticTexts["AccessDenied"].firstMatch
- //       webViews.request.URL.absoluteString
     }
 }
