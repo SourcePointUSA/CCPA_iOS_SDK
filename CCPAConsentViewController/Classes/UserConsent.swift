@@ -108,7 +108,7 @@ public typealias SPUsPrivacyString = String
         case "rejectedSome": status = .RejectedSome
         case "rejectedAll":  status = .RejectedAll
         case "consentedAll": status = .ConsentedAll
-        default: throw MessageEventParsingError(message: "Unknown status string: \(statusString)")
+        default: throw CCPAMessageEventParsingError(message: "Unknown status string: \(statusString)")
         }
     }
 }
