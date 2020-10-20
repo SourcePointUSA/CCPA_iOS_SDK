@@ -1,6 +1,6 @@
 //
 //  CCPAMetaApp.swift
-//  SPCCPAMetaAppUITests
+//  CCPAMetaAppUITests
 //
 //  Created by Vrushali Deshpande on 10/14/20.
 //  Copyright © 2020 CocoaPods. All rights reserved.

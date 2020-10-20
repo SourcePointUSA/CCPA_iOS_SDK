@@ -1,6 +1,6 @@
 //
 //  AuthIdTests.swift
-//  SPCCPAMetaAppUITests
+//  CCPAMetaAppUITests
 //
 //  Created by Vrushali Deshpande on 10/19/20.
 //  Copyright © 2020 CocoaPods. All rights reserved.
