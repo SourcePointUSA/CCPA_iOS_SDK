@@ -58,16 +58,6 @@
                ReferencedContainer = "container:CCPAConsentViewController.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A960CCFE253EEA6100A87146"
-               BuildableName = "SPCCPAMetaAppUITests.xctest"
-               BlueprintName = "SPCCPAMetaAppUITests"
-               ReferencedContainer = "container:CCPAConsentViewController.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

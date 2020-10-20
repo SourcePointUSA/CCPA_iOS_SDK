@@ -107,13 +107,6 @@
 			remoteGlobalIDString = 1997B639238FDCE80079AF34;
 			remoteInfo = SourcePointMetaApp;
 		};
-		A960CD04253EEA6100A87146 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
-			remoteInfo = CCPAConsentViewController_Example;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -215,7 +208,6 @@
 		A95285CE253EF7A0009E1361 /* CCPAMetaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPAMetaApp.swift; sourceTree = "<group>"; };
 		A95285D0253EF7BA009E1361 /* AuthIdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthIdTests.swift; sourceTree = "<group>"; };
 		A95285D2253EF7D8009E1361 /* CCPAMetaAppValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPAMetaAppValidationTests.swift; sourceTree = "<group>"; };
-		A960CCFF253EEA6100A87146 /* SPCCPAMetaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPCCPAMetaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2BC74685857DDEEACE54BE /* Pods-SourcePointMetaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SourcePointMetaApp.debug.xcconfig"; path = "Target Support Files/Pods-SourcePointMetaApp/Pods-SourcePointMetaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B5AA36A7D29C1E427A75F8D4 /* CCPAConsentViewController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CCPAConsentViewController.podspec; path = ../CCPAConsentViewController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DEA0B92B34711B38EB60F6AE /* Pods_AuthExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,13 +262,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BB4E6816DC95D499B730A53 /* Pods_CCPAMetaAppUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A960CCFC253EEA6100A87146 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,7 +634,6 @@
 				1997B63A238FDCE80079AF34 /* CCPA-MetaApp.app */,
 				1997B64F238FDCF30079AF34 /* SourcePointMetaAppTests.xctest */,
 				82FC4D3A23983231002F08E5 /* CCPAConsentViewController_ExampleTests.xctest */,
-				A960CCFF253EEA6100A87146 /* SPCCPAMetaAppUITests.xctest */,
 				A95285BF253EF700009E1361 /* CCPAMetaAppUITests.xctest */,
 			);
 			name = Products;
@@ -892,24 +876,6 @@
 			productReference = A95285BF253EF700009E1361 /* CCPAMetaAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		A960CCFE253EEA6100A87146 /* SPCCPAMetaAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A960CD08253EEA6100A87146 /* Build configuration list for PBXNativeTarget "SPCCPAMetaAppUITests" */;
-			buildPhases = (
-				A960CCFB253EEA6100A87146 /* Sources */,
-				A960CCFC253EEA6100A87146 /* Frameworks */,
-				A960CCFD253EEA6100A87146 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A960CD05253EEA6100A87146 /* PBXTargetDependency */,
-			);
-			name = SPCCPAMetaAppUITests;
-			productName = SPCCPAMetaAppUITests;
-			productReference = A960CCFF253EEA6100A87146 /* SPCCPAMetaAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -956,11 +922,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1997B639238FDCE80079AF34;
 					};
-					A960CCFE253EEA6100A87146 = {
-						CreatedOnToolsVersion = 11.5;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 607FACCF1AFB9204008FA782;
-					};
 				};
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "CCPAConsentViewController" */;
@@ -981,7 +942,6 @@
 				1997B639238FDCE80079AF34 /* SourcePointMetaApp */,
 				1997B64E238FDCF30079AF34 /* SourcePointMetaAppTests */,
 				82FC4D3923983231002F08E5 /* CCPAConsentViewController_ExampleTests */,
-				A960CCFE253EEA6100A87146 /* SPCCPAMetaAppUITests */,
 				A95285BE253EF700009E1361 /* CCPAMetaAppUITests */,
 			);
 		};
@@ -1047,13 +1007,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A95285BD253EF700009E1361 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A960CCFD253EEA6100A87146 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1422,13 +1375,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A960CCFB253EEA6100A87146 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1446,11 +1392,6 @@
 			isa = PBXTargetDependency;
 			target = 1997B639238FDCE80079AF34 /* SourcePointMetaApp */;
 			targetProxy = A95285C4253EF700009E1361 /* PBXContainerItemProxy */;
-		};
-		A960CD05253EEA6100A87146 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 607FACCF1AFB9204008FA782 /* CCPAConsentViewController_Example */;
-			targetProxy = A960CD04253EEA6100A87146 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1953,55 +1894,6 @@
 			};
 			name = Release;
 		};
-		A960CD06253EEA6100A87146 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = SPCCPAMetaAppUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sourcepoint.metaapp.SPCCPAMetaAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CCPAConsentViewController_Example;
-			};
-			name = Debug;
-		};
-		A960CD07253EEA6100A87146 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = SPCCPAMetaAppUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sourcepoint.metaapp.SPCCPAMetaAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CCPAConsentViewController_Example;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2064,15 +1956,6 @@
 			buildConfigurations = (
 				A95285C6253EF700009E1361 /* Debug */,
 				A95285C7253EF700009E1361 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A960CD08253EEA6100A87146 /* Build configuration list for PBXNativeTarget "SPCCPAMetaAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A960CD06253EEA6100A87146 /* Debug */,
-				A960CD07253EEA6100A87146 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
