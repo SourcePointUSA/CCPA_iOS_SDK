@@ -37,7 +37,7 @@ class AuthIdTests: QuickSpec {
             self.app.authIdTextFieldOutlet.typeText(self.app.dateFormatterForAuthID())
         }
         
-        it("Test1: No Message shown with show once criteria when consent already saved with AuthID") {
+        it("No Message shown with show once criteria when consent already saved with AuthID") {
             self.app.addPropertyDetails()
             addAuthID()
             self.app.addTargetingParameter(targetingKey: self.properyData.targetingKeyShowOnce, targetingValue: self.properyData.targetingValueShowOnce)
@@ -59,7 +59,7 @@ class AuthIdTests: QuickSpec {
         }
         
 // Observation: Test failed for new AuthID, showing old consents
-//        it("Test2: Changing AuthID will change the consents too") {
+//        it("Changing AuthID will change the consents too") {
 //            self.app.addPropertyDetails()
 //            addAuthID()
 //            self.app.addTargetingParameter(targetingKey: self.properyData.targetingKey, targetingValue: self.properyData.targetingCAValue)
@@ -87,7 +87,7 @@ class AuthIdTests: QuickSpec {
 //            expect(self.app.noConsentDisplayed).to(showUp())
 //        }
         
-        it("Test3: Check consents with same AuthID after deleting and recreating property") {
+        it("Check consents with same AuthID after deleting and recreating property") {
             self.app.addPropertyDetails()
             let authID = self.app.dateFormatterForAuthID()
             self.app.authIdTextFieldOutlet.tap()
@@ -108,7 +108,7 @@ class AuthIdTests: QuickSpec {
             expect(self.app.rejectedVendors).to(showUp())
         }
         
-        it("Test4: When consents already given then Message will not appear with AuthID and consents will attach with AuthID") {
+        it("When consents already given then Message will not appear with AuthID and consents will attach with AuthID") {
             self.app.addPropertyDetails()
             self.app.addTargetingParameter(targetingKey: self.properyData.targetingKeyShowOnce, targetingValue: self.properyData.targetingValueShowOnce)
             expect(self.app.showOnceConsentMessage).to(showUp())
@@ -127,7 +127,7 @@ class AuthIdTests: QuickSpec {
             }
         }
         
-        it("Test5: Check Consents With Authentication To Show Message Always"){
+        it("Check Consents With Authentication To Show Message Always"){
             self.app.addPropertyDetails()
             addAuthID()
             self.app.addTargetingParameter(targetingKey: self.properyData.targetingKey, targetingValue:self.properyData.targetingCAValue)
