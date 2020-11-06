@@ -88,15 +88,15 @@ class CCPAMetaApp: XCUIApplication {
     }
     
     var editPropertyButton: XCUIElement {
-        propertyItem.buttons["trailing1"].firstMatch
+        propertyItem.buttons.element(boundBy: 1).firstMatch
     }
     
     var deletePropertyButton: XCUIElement {
-        propertyItem.buttons["trailing2"].firstMatch
+        propertyItem.buttons.element(boundBy: 2).firstMatch
     }
     
     var resetPropertyButton: XCUIElement {
-        propertyItem.buttons["trailing0"].firstMatch
+        propertyItem.buttons.element(boundBy: 0).firstMatch
     }
     
     var alertYesButton: XCUIElement {
