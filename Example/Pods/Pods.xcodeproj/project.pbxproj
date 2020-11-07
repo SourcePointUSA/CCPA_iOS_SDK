@@ -19,300 +19,300 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		041947EA9F9D51C1CD98B02D547FD624 /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145BA27E5507134C60B8ADBCFE9E613 /* IQInvocation.swift */; };
-		065E8250F16995F9920BB54FBAE0C81E /* MessageWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF9BCA6D2ABBDD50CAC6991106787A /* MessageWebViewController.swift */; };
-		06FA81C5AB9C8C8790941CED9757F54F /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC58CAB86C14D1AC5DE1B5DDE485901 /* IQUIView+IQKeyboardToolbar.swift */; };
+		0330E134D50DBD4C7E632C65CFB0C0A0 /* IQKeyboardManagerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71C065F0D60903C49CAC10E22693ABEE /* IQKeyboardManagerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0837CAE176AE66736FE457DDAAF5E01D /* Quick-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3991DB87DB4553A08BFC4A16B00DDEE3 /* Quick-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		083A75C30AFB7EF0C51EC28566B05F0A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF98EF4F83EBAED142C0DC7AD9EED5F /* XCTest.framework */; };
 		08665AFE99DBE24F44EF0ACD4F9F56CA /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC7AA84D3E045F202426CD3A9052BE /* Behavior.swift */; };
 		0892D14FE7A3452423E9129D7917664B /* MatchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA9EB8D0E680137470AC278AA38FEC4 /* MatchError.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		08E1AC524554774B154D23D7481D38DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
 		092256E303520E50ADEFF25EEB4E73EE /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = 188FDA51708BA93B6936C0F76FF9A8F7 /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D6F215A09A91CABE72DAA1605E8C373 /* CCPAConsentViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5542D1AAF4CA54070B9E455D640E065 /* CCPAConsentViewController.bundle */; };
-		1156DBFE604EEB281C88577C49CC5A1B /* CCPAConsentViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A7CDC09D3E01A2D3B7F4D987A1B5A50 /* CCPAConsentViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FEA5889C85FA2F8FD58850F2ABAF599 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47301E7084E7557769F649786238AE16 /* IQPreviousNextView.swift */; };
+		1056CA66CE84BD2710CFA177CEE79274 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561869207C17EE4563DB1C767C3E11DF /* IQToolbar.swift */; };
 		13D2A4D59DD9612E1AA7F3182A342162 /* mach_excServer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D53DF4BAC3F1E0580DB9AEABDAC11 /* mach_excServer.c */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		144AFE77979CCF388C3875CF57370ED8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
+		158DDBCD57AC353F56720E0E36D4EAD1 /* Pods-SourcePointMetaApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CE18EDD0F3D0588F8B108AFA0AAB1A /* Pods-SourcePointMetaApp-dummy.m */; };
 		192A3F8BEC1A99FD8712D3E09724D72C /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255BD5A3D68E25032BE188E5A2069580 /* FailureMessage.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		1C3CBD28F4B9619342B3730A7E9BA10D /* ConsentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF890538E9BD621068DA3179BFCBB6C /* ConsentDelegate.swift */; };
-		1D84E8735E60AA7251F3A760C62467A7 /* Pods-CCPAConsentViewController_ExampleTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E675E346EF285677C2B4E28195021AF /* Pods-CCPAConsentViewController_ExampleTests-dummy.m */; };
-		21E1958EFB17ECBF93BD2A764E308502 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
+		1CE609E96B6FA254FB42FD5B16AB68E2 /* PropertyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DB020CF8C9281F53896D6D4E94C90A /* PropertyName.swift */; };
+		1DA9DF7180A4B0E8B07B8DE43E02C122 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0190F3B699E9E4385AE7C0128BE6F073 /* CoreGraphics.framework */; };
+		1F776733D350D3448A7514EA75212939 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
 		22E1EDBF560583A04FC4C30267BD408A /* URL+FileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92980917E2E25867BF093D8FA29FB49F /* URL+FileName.swift */; };
 		234849AD309265FD107C74357FC8C0CF /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBB679CF4C113E70E549CABCD416E7 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		2391FFD3230B40E2348B5257D6296BBB /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7696436F26238F2566441D078FD80972 /* BeGreaterThanOrEqualTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		23F8CD2C5A73558BDC1399FB81B6DDEC /* Pods-SourcePointMetaAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BCED4BDC6EF6226BBD3516C11157C8A2 /* Pods-SourcePointMetaAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24970DEF031E11C41FAF107478600C75 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143479219375D8042D5DD8A2D86816E1 /* Logger.swift */; };
 		26B9FEAB3DE0C8B91709D53571752A3B /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4628F022777DC440B179FFA9DC098A /* MatcherFunc.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		26E14C84D7F7E98A314F8E01C61DA4F8 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3287CF260FFDCF312F5C32410D214E8A /* IQKeyboardManagerConstantsInternal.swift */; };
 		271C67655E6C1457D61E39822C3908A3 /* HooksPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9735D3EC3F86CB11BD7EBD5E446A18 /* HooksPhase.swift */; };
-		2985C6FCDC1BBD45AC019337FCF2D0A6 /* Pods-CCPAMetaAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D1365CAF4DF5A95B470706E925554C /* Pods-CCPAMetaAppUITests-dummy.m */; };
-		2AA6DC9706CF4F228389978F43D49351 /* IQKeyboardManagerSwift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8D8069D3964814114ACEC3084C010B59 /* IQKeyboardManagerSwift.bundle */; };
-		2AF0369096BFF874D57F0F17FF2FDE23 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE1E65EEB4103109E7B6E42CF5E1C0B /* IQNSArray+Sort.swift */; };
+		28D778BF49E73CD23660F962F675F050 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86F94195C85837AB9AEFE04F23877A /* IQTextView.swift */; };
+		2B0466CF9FCEDD405A2772A65FF0EEDE /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816370B4222CC41D3352AF6C1C3789B /* IQKeyboardManagerConstants.swift */; };
 		2B350015B9F7546D0769649EE12D7D1A /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A4D07C75476BFB8CC4D9FBCE03D18 /* NimbleXCTestHandler.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		2C124AB92F07E35180AA57F2FEF25FF9 /* CCPAConsentViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE1749384F50EAFB3006CA325B724D3 /* CCPAConsentViewController-dummy.m */; };
-		2DB68824892737B191D12CF8B36E0FD9 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E16E1E0E7C1A16A40F32878C4B41D7 /* IQKeyboardReturnKeyHandler.swift */; };
+		2CB768247F1C344C02C97CB0F1427CA8 /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA96C047A1155CF8FAF90F2BE129C7 /* IQKeyboardManager.swift */; };
 		2EA8B4F77F25009885E315BF0902172D /* Callsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A9F1A5FF0B6A4AD15F7EC403CEBE6 /* Callsite.swift */; };
-		2EDBD88E9EF15E9B9BE26B3F539ADD8B /* Pods-SPCCPAExampleAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 621527EAE5F5744C0F86A6C42BB021A0 /* Pods-SPCCPAExampleAppUITests-dummy.m */; };
-		315AED2CB54B7752129BE7F50068D21C /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CFA5CF28E94D972214BF51D37BDF3E /* IQKeyboardManagerSwift-dummy.m */; };
-		31DF78FA57185C77EDC7397453016DF9 /* Pods-SourcePointMetaAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C9568787581282980381B79206684 /* Pods-SourcePointMetaAppTests-dummy.m */; };
 		3262B230B938C8D6522790093FEAF69D /* EndWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10347589EB18E3BCCCF60C5CBB0B75AC /* EndWith.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		330E8E4A6596ED625E9B34C94CC4136E /* Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE11740EEFD1DE33DCF93FBF75C2CB6 /* Await.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		3460FEA0CEADB05D3B56C2E1CAF9590C /* ElementsEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA325E9A9AB5F35A9AEEFC0C887215CB /* ElementsEqual.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		37D473F0514AC475AF859121838FC647 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1AA1E09D199C2D69CD6C7FF67EA21 /* IQTitleBarButtonItem.swift */; };
 		39133A7716CEDEB690A7DA9D12C45C4D /* CwlDarwinDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DF5CC713753461C1213F94B5E6C483 /* CwlDarwinDefinitions.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		3964BAE860274DC785719EDD904430F0 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816370B4222CC41D3352AF6C1C3789B /* IQKeyboardManagerConstants.swift */; };
-		396868C33CDB9A154C6E74230F8A387D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
 		3BD0C370BBCEBDEA68B8EDBD969370EB /* mach_excServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 85025470BE8BF7327503389C2B79FCD1 /* mach_excServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E7E07E664BF679A4AFC0544A07D1B0D /* Pods-SourcePointMetaApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CE18EDD0F3D0588F8B108AFA0AAB1A /* Pods-SourcePointMetaApp-dummy.m */; };
+		3C3C6EB8B72A86C05605BFDCFBECA939 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF71C4CAA58881A30E6262DCD429566B /* MessageViewController.swift */; };
+		3D513E24558F1597BEBF0F9B7BC1BD0A /* Pods-SourcePointMetaAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BCED4BDC6EF6226BBD3516C11157C8A2 /* Pods-SourcePointMetaAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E199320EE33B934C4CC4D8157A940BA /* Pods-SPCCPAExampleAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 621527EAE5F5744C0F86A6C42BB021A0 /* Pods-SPCCPAExampleAppUITests-dummy.m */; };
 		4203EF96811AE514D64AE069311B1575 /* AllPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E484CCD266BB6F3ED94B4D7C8A0AEED9 /* AllPass.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		42F76698690916E0407F51610D829412 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23223EE576A8B9CA0CA19BA8C392709 /* BeGreaterThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		44C9470137EF941955A1FDCE71D68C26 /* MatcherProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B6FD6786A25E2EF13A2531FF75BA7 /* MatcherProtocols.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		45D24236B5A75680FF1FA941E5E91B64 /* UserConsent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF64865093DB7AB8C33C13219E2C50 /* UserConsent.swift */; };
 		461A0D9A9E5BAEF5F12EF9EFCB3449E8 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C9F11982AB95DE6CCE230A6DDA953B /* Closures.swift */; };
+		465E0784FED7E8008852F7150B9F0D45 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC58CAB86C14D1AC5DE1B5DDE485901 /* IQUIView+IQKeyboardToolbar.swift */; };
 		46B90B2CF2EB97B38C43A31E9A5478C2 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742C42EF11F886ECE928BACB1BF1F89 /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		46BDEBF35D99D2CC53EF72DFC5BDCDCC /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE56CEF1DA2D6D86A8C44B328CC7C55 /* BeLessThanOrEqual.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		4856237C39EB285833ABE79407F3F6F1 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86F94195C85837AB9AEFE04F23877A /* IQTextView.swift */; };
+		492643A4B169B4FC3C2B2C0A611B1C34 /* IQKeyboardManagerSwift.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54EACA46BA399DF2C9400FFFE67D0B1A /* IQKeyboardManagerSwift.xcassets */; };
 		49AFD07EF060BC4C10BC3A767CC54B05 /* String+C99ExtendedIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD4BD9595C8658B41384D746CB43DC /* String+C99ExtendedIdentifier.swift */; };
 		4A9D1029392018D69956D67CEC678D05 /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBA398684FCCA7A64EC4E4B6C9475ED /* ErrorUtility.swift */; };
 		4A9E7C1A8B697A1C0B0A1E0DF855A591 /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D53305EB5996594E3B7897B17CDD36 /* CwlCatchException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		4BDBDBB4848E19DDC3F6B1CCD5331F1C /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BFDDBA6818AFB09A3BE9810D966B1 /* Action.swift */; };
-		4EC47881FEB5159E293C8596CBAC3E3B /* IQKeyboardManagerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71C065F0D60903C49CAC10E22693ABEE /* IQKeyboardManagerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5220CE53965AEB43057039D7D31BA943 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5E0B8A1057DF9401FFA0135C6C3C4 /* Example.swift */; };
+		5280E97A6300FFBAD8A2B263B2ED9F51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
 		52AB6461CAA9481D24835F3E48301FC6 /* BeIdenticalTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE93B5210A3B737AF442B93C37C5E2B /* BeIdenticalTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		52E11D6FC2FA7DE75DB539F34834FA7E /* QuickConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 118E610748B25E72F2F1D5BD47C5E93C /* QuickConfiguration.m */; };
+		5327BEEEBE91BA603F14410BC988825C /* Pods-CCPAMetaAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E8F0B8D1CA4B67254114095047E115E /* Pods-CCPAMetaAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5578F928AEFA8B2B7CC542033590DFD6 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA935842F120C564A24E7257FEA40FDC /* Match.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		582D529682D8E57A3BE833B667F788D2 /* ExampleMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93A2C4A29A679911C25BDE74BB78356 /* ExampleMetadata.swift */; };
+		58DEA6516307C3023292807B1AF941F9 /* Pods-AuthExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB66DF4D255A2EED5B3F8B137024E43D /* Pods-AuthExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B6F70DDD4C63CF6ED95291BCB633494 /* ContainElementSatisfying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3B601DDC9F004432E9746F05FECB9 /* ContainElementSatisfying.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		5BDB0BB5F464064DF78D998FB490324F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
-		5D76AB4D7BD79747511B3584008A5E02 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1AA1E09D199C2D69CD6C7FF67EA21 /* IQTitleBarButtonItem.swift */; };
 		602E3758C0EF64AF6B7FCEA05BF5B9B9 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCCBD0752F42001B07E8B86016E1584 /* Expectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		615FD064D2CFEC7FAE86D285BF45C48B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A438CA9DCAE41CB06B85412819500 /* QuartzCore.framework */; };
 		64E26D7D025AC4462DFA8BA66B38C9D8 /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA83268055A2E2FDF831D5EA193BBC9 /* HaveCount.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		653B37247E1DBFA9D239AE3F55B78678 /* SourcePointClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762C053B021A484B54C391DC1CF9E8DD /* SourcePointClient.swift */; };
-		6562C2BA1ECAB4432FF94C20F60A32AC /* Pods-CCPAConsentViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1FA48310E164B051A790E63CFA97EE /* Pods-CCPAConsentViewController_Example-dummy.m */; };
-		66F6D80684B3F931369CCA4A63AF0A62 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47301E7084E7557769F649786238AE16 /* IQPreviousNextView.swift */; };
 		6B208ADC7C0A1E218185146D9C11A7A2 /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF48ADA6ACA2E2931741703C434D779 /* World+DSL.swift */; };
 		706CEC35B3D8A123470744F2D690B1BF /* Quick-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BE1DBEB60650F627FD0E87F26E72E4 /* Quick-dummy.m */; };
-		710CBCD5C3799F4B665874C9C7148CDD /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561869207C17EE4563DB1C767C3E11DF /* IQToolbar.swift */; };
 		72DDD7AE2125A695DB8D093F17B7C4E6 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29795EF9ECA68F194961E8C6376A3501 /* DSL.swift */; };
 		72FB8CEABF346A37D54CC08647489A98 /* ThrowAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34956468CB8614742CAE2A1F5360439F /* ThrowAssertion.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		7386CBF80A5183A6C6A0A11B5DE33734 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C6383B3B4A6F148F6AC7844380E418 /* QuickSpec.m */; };
+		7525EEC9185CBFD0E1C42C65C1132812 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09BFDDBA6818AFB09A3BE9810D966B1 /* Action.swift */; };
 		755A93B0ECC17CE5F17E3D7D62632375 /* XCTestSuite+QuickTestSuiteBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E842265E8A2F27B8014538B0339E83 /* XCTestSuite+QuickTestSuiteBuilder.m */; };
 		78A51B7FCC1DFB888AAA254529013C12 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6537C5E38903F61AD6550E22874B4EE8 /* BeginWith.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		79C113AD67314558C1885899493C9AC7 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3287CF260FFDCF312F5C32410D214E8A /* IQKeyboardManagerConstantsInternal.swift */; };
 		7ABDEE0E781182E5F0C52CE632D4ECF1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1E83C33E99136CC12D728AE0217DEB /* Configuration.swift */; };
 		7AC93EB6DCDA9226165D5BC354FE7BC6 /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = B151EDE59D57E0B196E501954113023A /* DSL.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		7D9D6E70CEDBD152BD0588A02A8FDBAA /* Pods-SPCCPAExampleAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 92BD137723921B992D55D45D44CE3400 /* Pods-SPCCPAExampleAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7DA7753E0D11ED11A3116E7C72826DA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
 		7DAC86DCBC36C10F43FA5FEB819B7BF1 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01A656A25F0000ED32220B03DEEC6B /* Functional.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		7F5DDC9D617379527E74B5CC4CF7ADDE /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929DF7F8A5FB1C51CA78DF321827525 /* IQUIScrollView+Additions.swift */; };
+		80234A369531BF330DF2F29BF2F49306 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A31F77EE781CBB8B867C3E87D7B29A /* IQUITextFieldView+Additions.swift */; };
 		806B9040D79A3DC58FB56EAC16FE19BF /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82546F11F21E26B507CCC11225CB88B9 /* Stringers.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		80DEBE41D84FBA1C4D4FE00C8D797E82 /* CwlPreconditionTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A1E219F81EB2ACDA75D917B16B18F0 /* CwlPreconditionTesting.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8160DF94C5D18D92425E56D7DED7F8A9 /* Pods-CCPAConsentViewController_ExampleTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8702BA743C1CA067ECDEB69F4C18485E /* Pods-CCPAConsentViewController_ExampleTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82505DDC4ACBB6B43693B74EED4652AF /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E16E1E0E7C1A16A40F32878C4B41D7 /* IQKeyboardReturnKeyHandler.swift */; };
 		83976C4AC81DBA1656F1358F25032074 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79719A35CA17135D54A38BB1078C1569 /* World.swift */; };
-		87474FE5D4C888A29A5F4E32F168A509 /* SimpleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D815C7719F905FD2935AB0816208BC /* SimpleClient.swift */; };
-		883812E4E194F75EF07004F677256B3E /* JSReceiver.js in Resources */ = {isa = PBXBuildFile; fileRef = 228B8B3F948CE3C4D8C2933C1D6B2E9F /* JSReceiver.js */; };
 		8911DDD5910AA1C6E099EBF768AFC8F7 /* QuickSpecBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FEF97C4357E5623DF28481AD94FC842 /* QuickSpecBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		89EE4D6DBDB79963D65AA1E67B543B6D /* CwlCatchBadInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B9AD33003E052AA783A0B568354FDE /* CwlCatchBadInstruction.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8A0EF19254BAC5DF0885D1FBA345E016 /* CwlMachBadInstructionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C6042CA2E7774BDEE0020B5A56B40341 /* CwlMachBadInstructionHandler.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		8C41FEE4956264354F5ED226B1618208 /* CCPAConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DF96BF24BFC1A1B0F3190FE8A4C7E3 /* CCPAConsentViewController.swift */; };
 		8D17749611AB0C8BD51C068749D8DF68 /* NMBExceptionCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 72BE94996AF3899BB745F5A95867BDE4 /* NMBExceptionCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D543DAD9A6C0B8BF8A5DB38AD876677 /* SatisfyAnyOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DDE08E9474C2011D129E42F7C3CDFD /* SatisfyAnyOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8D75EC8969EA46FBD6E1BED7791A3C37 /* BeLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E018DE99139D0CDECD6C1083577315 /* BeLogical.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		8DF6ED04BBFD7C2FCCEB9B49231F2D51 /* Pods-SPCCPAExampleAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 92BD137723921B992D55D45D44CE3400 /* Pods-SPCCPAExampleAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92506A7A62E10713A921D19DD0107CCA /* SuiteHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD0A4659A94B1BB36FB0A94E8F6600 /* SuiteHooks.swift */; };
-		93488FD677B533E4246DD8F1CD641EF9 /* Pods-CCPAMetaAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E8F0B8D1CA4B67254114095047E115E /* Pods-CCPAMetaAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94DA3131D64B3D904BE28E72F1871065 /* BeAKindOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ADF1327CA956CA37DD7B182F649D28 /* BeAKindOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		99E8019F4689A514DAC6AA40AFF7352E /* NMBObjCMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F410530EB4B653AE0F27E4EEC438F7 /* NMBObjCMatcher.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		9A4CECF4386A5508D5959100DAE6A3FD /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4308C4FF908866F445990D845EE2682 /* ConnectivityManager.swift */; };
+		9A8B91325828F4701746756E79CD89A0 /* SimpleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D815C7719F905FD2935AB0816208BC /* SimpleClient.swift */; };
 		9B9714C476F416AD7FD803EA1184D113 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2851DAADBC30332A29E4D2935CEBA583 /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		9BB5E9B6487FE95C710687B484C17161 /* Nimble.h in Headers */ = {isa = PBXBuildFile; fileRef = CF714C5C8436DC6B08AFA60D70E7089A /* Nimble.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C460BA614D4B1D314A252C4C5CE1D87 /* BeAnInstanceOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B970E649E185D640DBE0012C3F52F6 /* BeAnInstanceOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		9CE4B37DCBDD971DD3C077F357C0C54C /* PropertyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DB020CF8C9281F53896D6D4E94C90A /* PropertyName.swift */; };
+		9D86C1AF440C694A863C4D286C1D54D8 /* Pods-CCPAConsentViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1FA48310E164B051A790E63CFA97EE /* Pods-CCPAConsentViewController_Example-dummy.m */; };
+		9E08C2E3FA52AD0F7B80BA40467B6492 /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145BA27E5507134C60B8ADBCFE9E613 /* IQInvocation.swift */; };
 		9F70369EF71BD9ABAFF687AF532CC20D /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 149149D7083ACFB6AD1C628E4FDAB223 /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A1D5D42CC02055427AD9D1E988973A4F /* CCPAConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DF96BF24BFC1A1B0F3190FE8A4C7E3 /* CCPAConsentViewController.swift */; };
 		A205E5FE1599A32AC27D72F550EAE84F /* QuickSpecBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A1123DA82A90746A0158B061398462 /* QuickSpecBase.m */; };
+		A2B1FF4A7B9FE13C61D2468B2D9A9E6F /* Pods-CCPAConsentViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98FCFED33DD46A3D2461F90F78E3763E /* Pods-CCPAConsentViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A56F186592E7B11813DE6BC854649021 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
+		A763FC75FBA559AA7E49F817C6E0A91D /* JSReceiver.js in Resources */ = {isa = PBXBuildFile; fileRef = 228B8B3F948CE3C4D8C2933C1D6B2E9F /* JSReceiver.js */; };
 		A9996A6303084D17B9C439CB132A1F69 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3611C5269E7C8813C13F72B4BF17E5 /* DSL.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		AA5BE9396F0E107EDCA3C78CB0D5B9E2 /* JSReceiver.js in Resources */ = {isa = PBXBuildFile; fileRef = 228B8B3F948CE3C4D8C2933C1D6B2E9F /* JSReceiver.js */; };
+		ABB50F9FC023BAC60E1DA00A7FAE2AB9 /* JSReceiver.js in Resources */ = {isa = PBXBuildFile; fileRef = 228B8B3F948CE3C4D8C2933C1D6B2E9F /* JSReceiver.js */; };
+		AC724AF947E67D6F1A74D035478A08E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
 		AD69407E2FA1D39A9E09248052F2D81B /* ExpectationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C9B4FA0823BCAC58CAD1866EFBEFE /* ExpectationMessage.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		AECEF90A17592166FC57790B2767110E /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773CD324B21A2E265CB1F0CA38583ACD /* IQUIViewController+Additions.swift */; };
+		B048A41451FD3E8A264EDD9DD6276965 /* MessageWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF9BCA6D2ABBDD50CAC6991106787A /* MessageWebViewController.swift */; };
 		B2A65EEDB5D5EC246EA68E10964FF7B3 /* ThrowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CB8B724E936AE63377CBEAAD272F7 /* ThrowError.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B302667CF1F7A758EF92599C477962E9 /* QuickConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1542B5E9B20AA8170BB12E2C3422A68 /* QuickConfiguration.swift */; };
 		B4058A2AA8486E9879F113E6F67B9679 /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D32C3CCFD5E1B38CE19A3429E963A /* AdapterProtocols.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		B5A6EF561A42456C0D089A8898A5D65F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
+		B654363845D160309816FCA3BEE0A179 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
 		B6607A673440A83CE99361A08D82C734 /* QCKDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 315CEA16277D4CAE3906179290CDB38E /* QCKDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6CC23C6C288F4EB9EDD3A06F1F5F094 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9D77EA2EF06EE4B5F141FC694FC021 /* Predicate.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		B6FB55F2C74A79EDBA6FC10B52B6469B /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CFA5CF28E94D972214BF51D37BDF3E /* IQKeyboardManagerSwift-dummy.m */; };
 		B71070160CF07EFA99ED0445B0D191E7 /* Nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E30DC800F806DE504E11BCA8E9E28E91 /* Nimble-dummy.m */; };
 		B7662703AF8D3FFFCB0070C50FEDCC58 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299CEF5B6D64E31E73DA376F8643591A /* Errors.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B79FC6E46F642C3FC74B3E6D9175B1AB /* SatisfyAllOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3618A3CA549240A302DFDD4631FB56 /* SatisfyAllOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		BD1FB81743401F68C5ECA5BCB3003206 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4308C4FF908866F445990D845EE2682 /* ConnectivityManager.swift */; };
-		BDA1619A8E8794EE294AC8F51734220B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143479219375D8042D5DD8A2D86816E1 /* Logger.swift */; };
-		C014FFF4784350C600AFBDEC91B3068F /* CCPAConsentViewControllerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84405B50C97B8D556675D460EFFCC9C9 /* CCPAConsentViewControllerError.swift */; };
+		BFAE2AE77DF679F2647CE04B23C1D1E7 /* Pods-SourcePointMetaAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C9568787581282980381B79206684 /* Pods-SourcePointMetaAppTests-dummy.m */; };
 		C051C0411627BD5FCDA031782EB1F716 /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A80EA85977A779C038A40B704FA98553 /* DSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0C98C8C7D07E1598F20EE2F0539197D /* NMBExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB93FF3BFFE90E0B77097679CCCC5DC /* NMBExpectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C271B106D26C7852C5CE48CCCDAC15C8 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1FA502EF6730673B4A83E83E2912C6 /* ExampleGroup.swift */; };
-		C3009402C4415F80BE80856728C8EFA4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632205C55EA320F29F521CD75EAA944E /* UIKit.framework */; };
 		C37AB03E7188A7AEEBA352A03E323345 /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF7A74B8DB95CDB5F78DEFC45536EA /* QuickSelectedTestSuiteBuilder.swift */; };
-		C5432833D20A344262047AF48A641A58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
-		C6211564D6F304C894C04CDAB81B2632 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0929DF7F8A5FB1C51CA78DF321827525 /* IQUIScrollView+Additions.swift */; };
-		C7AFC0C2482701A1603730A174307972 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
+		C830131EEF75A8BFA5F7D3A36B1833E7 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336853E67247C86CC923A22871349F20 /* IQUIView+Hierarchy.swift */; };
 		C903AEFEEB4E73644A03FB8285543107 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C11FCFFF0416AD21167E296B1B4DCE7 /* BeEmpty.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C979EEB0159A65246F6BD2C906A8ADB7 /* BeVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765DFA0D77AE72C5346308AFA2550C4E /* BeVoid.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		C9804B63544FEDC2346DC4A752672ECD /* QCKDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = B25C2A95F7949D6BE37347BE38CAC737 /* QCKDSL.m */; };
-		C9841E369F0ADEF62D703E49413EFFF7 /* Pods-SourcePointMetaApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CE8DE42DD8337A7ABE3DDC6E2562553B /* Pods-SourcePointMetaApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C99BBC3F70E056CB6A3CC0516318939D /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D0BE923259064DBE30492D8462F090 /* AssertionDispatcher.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		CA8AB9F08CC9791CE7C624AFDB5056A6 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A31F77EE781CBB8B867C3E87D7B29A /* IQUITextFieldView+Additions.swift */; };
-		CBF0F3A70DB0EDF12BF4CF40AC05875D /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF71C4CAA58881A30E6262DCD429566B /* MessageViewController.swift */; };
+		CA9D43AEF22D24587B8175D9FF411410 /* IQKeyboardManagerSwift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8D8069D3964814114ACEC3084C010B59 /* IQKeyboardManagerSwift.bundle */; };
+		CB7D644376A44DB089C207B0613C55EC /* CampaignEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABF68E562A66B9A08AF0B1844CB661D /* CampaignEnv.swift */; };
+		CBFF72E27FDDA42E5881EEACE1E6CB8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
+		CC45C0D65D03EA53904ADF1E3CAF62BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632205C55EA320F29F521CD75EAA944E /* UIKit.framework */; };
 		CD1AB65BA0770CC8ABD2F830A4A70C83 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851069E583ABB33812373C37CBF8DBC /* Filter.swift */; };
 		CD6B1F146B0E157FE5B9CAFFAE77A5B5 /* Nimble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 33DA2617084BAF7EC1EE6F4631A11AB7 /* Nimble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CE10D2DEAFC0AAE6F7C7B8FEAED91658 /* IQKeyboardManagerSwift.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54EACA46BA399DF2C9400FFFE67D0B1A /* IQKeyboardManagerSwift.xcassets */; };
-		CE34683AB20D55BF88D58EEACADB1EC5 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336853E67247C86CC923A22871349F20 /* IQUIView+Hierarchy.swift */; };
+		CD7935C4CB9F6E5BDAA940551711E414 /* CCPAConsentViewControllerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84405B50C97B8D556675D460EFFCC9C9 /* CCPAConsentViewControllerError.swift */; };
+		CDBD45FFF72A67E2E69F5E31948E8317 /* ConsentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF890538E9BD621068DA3179BFCBB6C /* ConsentDelegate.swift */; };
 		CEE8D31A4E76BB7B350BF2A7175D4BC2 /* NMBExceptionCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A87E9D008DC653361C0B71CD116007B /* NMBExceptionCapture.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		CF9218FF56D8EE43681150A3E1635C9A /* ToSucceed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08C0E145D7F010D6653691C1DAF45D /* ToSucceed.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		D04446AC82C2AD832678C3E00B16D543 /* Pods-AuthExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB66DF4D255A2EED5B3F8B137024E43D /* Pods-AuthExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D028ED81AF564E0E22ED3BB22397A94F /* CCPAConsentViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE1749384F50EAFB3006CA325B724D3 /* CCPAConsentViewController-dummy.m */; };
 		D34D0540ADCBF163575B6B5444B1AAF6 /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089E05BB0A5DDBA28BA7D2A6CF343DE2 /* Contain.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		D4CA0936C3726E81505417EF7B2716D5 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE1E65EEB4103109E7B6E42CF5E1C0B /* IQNSArray+Sort.swift */; };
+		D62D03F5DB6352378AB9D8EEDB5D8D34 /* CCPAConsentViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A7CDC09D3E01A2D3B7F4D987A1B5A50 /* CCPAConsentViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7B67429E6A226479AECA1C13FBB2720 /* SourcePointClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762C053B021A484B54C391DC1CF9E8DD /* SourcePointClient.swift */; };
+		D8DC81374557E3A95ADEDB52977EA930 /* Pods-CCPAConsentViewController_ExampleTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E675E346EF285677C2B4E28195021AF /* Pods-CCPAConsentViewController_ExampleTests-dummy.m */; };
+		D9C21AF963168359E12AD9C1770D97DC /* SourcePointRequestsResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29631317CAD4D86FD760C8DE2C213AFF /* SourcePointRequestsResponses.swift */; };
 		D9CFB8E5E354D7BE61D092259779F437 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37064DC82DCE246B4311E4C115F32AAD /* Equal.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		D9D6150D329A87CBB415FD349F0C50FD /* SourceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A82030DB79530E40F069EB05CEFEB /* SourceLocation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		DA24139E19F4079E90AADD3A76741D96 /* CampaignEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABF68E562A66B9A08AF0B1844CB661D /* CampaignEnv.swift */; };
-		DA45BDBECB124DE5D03240E26050343F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
+		D9F61FB7E282882C4450A73A1723AC36 /* UserConsent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEF64865093DB7AB8C33C13219E2C50 /* UserConsent.swift */; };
+		DAE64320D0E96A89FE2B7A1B29D424D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
+		DB20630B2B514C76E65B184995BC0C99 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631A438CA9DCAE41CB06B85412819500 /* QuartzCore.framework */; };
 		DB84342A0C0DEABBF7F729DE55225D82 /* XCTestObservationCenter+Register.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B40A89F92DC27E8353ACB8DEACF7EE4 /* XCTestObservationCenter+Register.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		DCD198D49C0A198A09525B7688EE3BC9 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3E908481DB85A2FA7209162CC920BE /* Async.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		DED813943ABF7ACBD1C38B2D8024DA9C /* Quick.h in Headers */ = {isa = PBXBuildFile; fileRef = 413418757589ECA581BC6EFA4D6A6F29 /* Quick.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEDAFF83D3FC6BE21B0AE1551A0E81E8 /* Pods-AuthExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A931E0040428D6AC9ED54A02B720A9 /* Pods-AuthExample-dummy.m */; };
 		DFAAEF3440DDBCA8719DD048DAE27FDF /* QuickConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A076217317F1FFA9A116F600B2460C0 /* QuickConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E03B006685E41414DF876D11115753C8 /* Pods-CCPAConsentViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98FCFED33DD46A3D2461F90F78E3763E /* Pods-CCPAConsentViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E069235476E82CBF7B28802FEA34C480 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773CD324B21A2E265CB1F0CA38583ACD /* IQUIViewController+Additions.swift */; };
 		E0EAC85F7ACFAD998B14FCE66144000E /* NMBStringify.h in Headers */ = {isa = PBXBuildFile; fileRef = 1809079184D9AFC145F136BCFD519FFA /* NMBStringify.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1A7D02650CB1750B7BF3A158E56653C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
+		E2B9353FDFFD093221FEE3659A75297E /* CCPAConsentViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5542D1AAF4CA54070B9E455D640E065 /* CCPAConsentViewController.bundle */; };
 		E458AAE1AE9E2250F29806E5633B1860 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD516EDB1AC45A83B10A5F748B8ACD /* Expression.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		E4D3413849CFA118036E980BB1EB85EF /* NSBundle+CurrentTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D145E148EA9A615B84892A3DA623830 /* NSBundle+CurrentTestBundle.swift */; };
-		E5037C1C015AA1A7B35B4805057B42D8 /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E82665F0B0BC1BACC8DC1D7D0F8BDAF /* IQBarButtonItem.swift */; };
+		E5FDD6E3407FA34C590B0CFFD5DFB152 /* Pods-CCPAConsentViewController_ExampleTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8702BA743C1CA067ECDEB69F4C18485E /* Pods-CCPAConsentViewController_ExampleTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E97E6E13F2A978436DE31D7B734BE0A8 /* Pods-CCPAMetaAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D1365CAF4DF5A95B470706E925554C /* Pods-CCPAMetaAppUITests-dummy.m */; };
 		EC7EF3D5778783BD93EBC6F82016ADA9 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD43CF61EA4DC3D1A86D768F73702868 /* BeNil.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		ECCA1FA570A912E8CDB54EB843F1D030 /* NimbleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8326E857B321E3A5171565C283EBE1 /* NimbleEnvironment.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		ED48EB34AEF8152CE4CB9E3F10F9A2FB /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E82665F0B0BC1BACC8DC1D7D0F8BDAF /* IQBarButtonItem.swift */; };
 		EE157DBCE1F197BC50B908D77778B508 /* QuickSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 61174DA15F206AA4F0E6FC360A8EB238 /* QuickSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EFB9CC9267297D8104141A4046AAD14E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
+		EFECC44C139CB8F0F97A93E9ADBD1C41 /* Pods-SourcePointMetaApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CE8DE42DD8337A7ABE3DDC6E2562553B /* Pods-SourcePointMetaApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F27A7DE93F66B0C12B4C646D99F5B9F4 /* CwlCatchException.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE1D69F20B39EDFB1E3F1E18F9B548E /* CwlCatchException.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F310B21703A7BC438A09DDB96670583F /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9A4BA90D9055337E4135DB24A3A472 /* AssertionRecorder.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		F40B7770B70CE2B4A6FAB6A79398DCAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6555A11C48CA9EB74A526710B8A8CB /* Foundation.framework */; };
 		F42E00F96FA3C7D9F5FA5554A128C479 /* QuickTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0B443D49D2595FD49F39903C85E0B /* QuickTestSuite.swift */; };
 		F4877B3857C780DCDB7F413A03F95600 /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9A25C4192726B8F44AAF0A6AC1A0F /* BeCloseTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		F6FB62E5C219A1FA1168AE6C51F1B200 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0190F3B699E9E4385AE7C0128BE6F073 /* CoreGraphics.framework */; };
+		F74AC0358184D4A86D1401B422F26D88 /* Pods-AuthExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A931E0040428D6AC9ED54A02B720A9 /* Pods-AuthExample-dummy.m */; };
 		F78E35D04F09485FA5DFA72FE1AD5AB2 /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = 829AEC21CEAFE2263B903711C4945E34 /* NMBStringify.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F9E85548BF1EF8C5035BAF92233C34B6 /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2F0864D074A43796E86FCD4EC5F0E /* RaisesException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		FC4C2403BBC05722562B97C5069D7EF5 /* SourcePointRequestsResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29631317CAD4D86FD760C8DE2C213AFF /* SourcePointRequestsResponses.swift */; };
-		FE6AD29B2189E14E0F948BAE55BA0AFB /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA96C047A1155CF8FAF90F2BE129C7 /* IQKeyboardManager.swift */; };
 		FF920E965F1CA016FF302DE8C92C5122 /* CwlBadInstructionException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C1C33A6A5D3F49228E3334DEB2507 /* CwlBadInstructionException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		FFB20EE60273038323880E0E31C78056 /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C974CDD3AA74D3594111856EFC8345 /* ExampleHooks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0364ADF2EEE306D196D6D014D636786A /* PBXContainerItemProxy */ = {
+		0051FE552710BB4B1BA51E5ECD9DF44A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
+			remoteInfo = CCPAConsentViewController;
+		};
+		281C0D54719247A36F7295B7301890BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6F13695E06195A78EA8A95F8C7ED0D2F;
 			remoteInfo = Nimble;
 		};
-		15F12673DEDFCFDA57A1F7F1C68582E3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EE0E37D23ED5075BBED11CFB368839A8;
-			remoteInfo = "CCPAConsentViewController-CCPAConsentViewController";
-		};
-		1F936C5C5F66783E024977577E0112EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
-			remoteInfo = IQKeyboardManagerSwift;
-		};
-		225C6087990425E91A0F353F91C072B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
-			remoteInfo = CCPAConsentViewController;
-		};
-		22ECB127D16DE2B54F84730F085F23A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
-			remoteInfo = CCPAConsentViewController;
-		};
-		335976B6BB6F2E6A24DDF2D2157BC1DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
-			remoteInfo = CCPAConsentViewController;
-		};
-		53A92257521215EB7393F8A4A33DBE03 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
-			remoteInfo = CCPAConsentViewController;
-		};
-		5CBDFC7F796288508E0A1F123AB651BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
-			remoteInfo = CCPAConsentViewController;
-		};
-		6745706D89D56AD6BFCF2D1A2850E57F /* PBXContainerItemProxy */ = {
+		321A0943FD62FCC865320643D942FEE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6F13695E06195A78EA8A95F8C7ED0D2F;
 			remoteInfo = Nimble;
 		};
-		99DEC5D1F77FCC5AF792AF90873A15FC /* PBXContainerItemProxy */ = {
+		42CAF8D6015E1922ABA22251F02F4408 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F13695E06195A78EA8A95F8C7ED0D2F;
+			remoteInfo = Nimble;
+		};
+		48B1BFC95B72AD34CEE8DCFF055BCBBA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 982A68D37F5DCBC1FC1FDC0BB2F0EB8E;
 			remoteInfo = "IQKeyboardManagerSwift-IQKeyboardManagerSwift";
 		};
-		A337BA2BEA748CD0327CA8343BBF67DC /* PBXContainerItemProxy */ = {
+		563C6319953AA069152CAEDFE72EB07A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
+			remoteInfo = CCPAConsentViewController;
+		};
+		6D28629734DA538EF1D04D4E7B07AC74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
+			remoteInfo = CCPAConsentViewController;
+		};
+		6FF87AC76841ADF5E2A11C68700D32D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
+			remoteInfo = CCPAConsentViewController;
+		};
+		7E298F22F7256D64D977221B233AC22F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C82891EAB7293DBEE916B21F57E8474D;
 			remoteInfo = Quick;
 		};
-		B6F47B0E8A03DA3AB24FAAD66B489AA4 /* PBXContainerItemProxy */ = {
+		994B3507B3D250CEA9051D726CD2F2EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
 			remoteInfo = CCPAConsentViewController;
 		};
-		B838D45BAB3A2D60DEED1576E336CAC4 /* PBXContainerItemProxy */ = {
+		9E255ED5D9C173D81C0C28B6ADB8C90A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
-			remoteInfo = CCPAConsentViewController;
+			remoteGlobalIDString = EE0E37D23ED5075BBED11CFB368839A8;
+			remoteInfo = "CCPAConsentViewController-CCPAConsentViewController";
 		};
-		CB5DD5936AC19E4C67C432F261FC35DF /* PBXContainerItemProxy */ = {
+		B36CD9F12DAD1DD91E9973947793BFD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C82891EAB7293DBEE916B21F57E8474D;
+			remoteInfo = Quick;
+		};
+		BF60CDE204C3823F7A1138BF70A1FCE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C82891EAB7293DBEE916B21F57E8474D;
+			remoteInfo = Quick;
+		};
+		E21BE4A419670AA3396A395ADCD3402A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
 			remoteInfo = SwiftLint;
 		};
-		CE26A4279BFEEEB2B35D1E0BA8925BF5 /* PBXContainerItemProxy */ = {
+		E4EEDAA87D448F6FBF5442C8A1327B86 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C82891EAB7293DBEE916B21F57E8474D;
-			remoteInfo = Quick;
+			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
+			remoteInfo = CCPAConsentViewController;
 		};
-		F9E105FA294C156CAAEA3D88F3803C6A /* PBXContainerItemProxy */ = {
+		F4B34B4781EC5D933CEC20B3DB342B3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C82891EAB7293DBEE916B21F57E8474D;
-			remoteInfo = Quick;
+			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
+			remoteInfo = IQKeyboardManagerSwift;
 		};
-		FCDE11ED4068D18482C30E8E33E5852F /* PBXContainerItemProxy */ = {
+		F9BE6E31BA900241BE9AAA605B5E6B0A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6F13695E06195A78EA8A95F8C7ED0D2F;
-			remoteInfo = Nimble;
+			remoteGlobalIDString = C8B93DFD2D9F024D4D0E38E5EF3E3605;
+			remoteInfo = CCPAConsentViewController;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -570,6 +570,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		07C2308F003C37F766BA058EE9BBF98F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0B8AE404673E2EBB324F285A600856F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -579,18 +586,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F2A8E1425F721CFDB477A4D5D1C2861 /* Frameworks */ = {
+		1E3D740CD1317FE7B23C11798695BB20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F40B7770B70CE2B4A6FAB6A79398DCAE /* Foundation.framework in Frameworks */,
+				5280E97A6300FFBAD8A2B263B2ED9F51 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D9E5B49C506974C787785987C337214 /* Frameworks */ = {
+		3743B1A74A3608233223A030FE5F16FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE64320D0E96A89FE2B7A1B29D424D3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55776A87C1FACF28544BCE2C6386B014 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B654363845D160309816FCA3BEE0A179 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,77 +618,61 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61A238A609292329117B501CFAB492C7 /* Frameworks */ = {
+		73827D6AB52B90CE0BE68DE9999AE95C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21E1958EFB17ECBF93BD2A764E308502 /* Foundation.framework in Frameworks */,
+				E1A7D02650CB1750B7BF3A158E56653C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8CC69147FB09500C23892FCBA6F84BEC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7DA7753E0D11ED11A3116E7C72826DA8 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9286BBEE498B51DE0A73B94A68FD6693 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08E1AC524554774B154D23D7481D38DA /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BB099BFB7799DDDECC29AC58BA6EA6FD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F6FB62E5C219A1FA1168AE6C51F1B200 /* CoreGraphics.framework in Frameworks */,
-				B5A6EF561A42456C0D089A8898A5D65F /* Foundation.framework in Frameworks */,
-				615FD064D2CFEC7FAE86D285BF45C48B /* QuartzCore.framework in Frameworks */,
-				C3009402C4415F80BE80856728C8EFA4 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BC8CC8727EC07E711805CA5F5EEE1B7D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C7AFC0C2482701A1603730A174307972 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE27407C1667B3F422542F0C038131C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				396868C33CDB9A154C6E74230F8A387D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6710941DB4763A513DCF6A53B1289EF /* Frameworks */ = {
+		913957BD5443A2D8059969117EB20EC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA8668E500F9C04115ADB9DD93518796 /* Frameworks */ = {
+		A2740EA748F2DBAC581270E1D4F615CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5432833D20A344262047AF48A641A58 /* Foundation.framework in Frameworks */,
+				1F776733D350D3448A7514EA75212939 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2D2E6162776C0E300C669E44D8C731B /* Frameworks */ = {
+		AC99995C827D1F0AC4BF339ACA8AFB5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA45BDBECB124DE5D03240E26050343F /* Foundation.framework in Frameworks */,
+				A56F186592E7B11813DE6BC854649021 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C333153DC91CB200F0D592FA317A546E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBFF72E27FDDA42E5881EEACE1E6CB8A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF2ED8B6C3447EBA8928F8407E0D7B40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				144AFE77979CCF388C3875CF57370ED8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEA654DC94A0F0682ED8BE9256F105DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DA9DF7180A4B0E8B07B8DE43E02C122 /* CoreGraphics.framework in Frameworks */,
+				AC724AF947E67D6F1A74D035478A08E6 /* Foundation.framework in Frameworks */,
+				DB20630B2B514C76E65B184995BC0C99 /* QuartzCore.framework in Frameworks */,
+				CC45C0D65D03EA53904ADF1E3CAF62BF /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1172,19 +1172,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		018F65CC94CAC20C267A33BC97032CEB /* Headers */ = {
+		0B4A4B95C67CEC57284BB218381B97A1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23F8CD2C5A73558BDC1399FB81B6DDEC /* Pods-SourcePointMetaAppTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0F7B44AD47CCF50D06642C33CF1AF53C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7D9D6E70CEDBD152BD0588A02A8FDBAA /* Pods-SPCCPAExampleAppUITests-umbrella.h in Headers */,
+				A2B1FF4A7B9FE13C61D2468B2D9A9E6F /* Pods-CCPAConsentViewController_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1198,14 +1190,6 @@
 				DFAAEF3440DDBCA8719DD048DAE27FDF /* QuickConfiguration.h in Headers */,
 				EE157DBCE1F197BC50B908D77778B508 /* QuickSpec.h in Headers */,
 				8911DDD5910AA1C6E099EBF768AFC8F7 /* QuickSpecBase.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3D1C741DD6E2367EEBD76498105A75DA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D04446AC82C2AD832678C3E00B16D543 /* Pods-AuthExample-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1225,51 +1209,67 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76B8329D09ACC796641630E81A9370BE /* Headers */ = {
+		636734D0E494BE8AD774B972A37C2676 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EC47881FEB5159E293C8596CBAC3E3B /* IQKeyboardManagerSwift-umbrella.h in Headers */,
+				E5FDD6E3407FA34C590B0CFFD5DFB152 /* Pods-CCPAConsentViewController_ExampleTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FB83CA8D1F5D4185BA658289D384C9C /* Headers */ = {
+		8679797B2C33D29504ECA58538EDB0AF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8160DF94C5D18D92425E56D7DED7F8A9 /* Pods-CCPAConsentViewController_ExampleTests-umbrella.h in Headers */,
+				0330E134D50DBD4C7E632C65CFB0C0A0 /* IQKeyboardManagerSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A607C8339B7525694F8CABB4A8D24BC1 /* Headers */ = {
+		984BD6761A7CF31EA33315F64F2C81F9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1156DBFE604EEB281C88577C49CC5A1B /* CCPAConsentViewController-umbrella.h in Headers */,
+				5327BEEEBE91BA603F14410BC988825C /* Pods-CCPAMetaAppUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A63BB571C08010C54A95A22BC60E1539 /* Headers */ = {
+		9A19D68FAC90EABD1CCE3AE89E394F3C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93488FD677B533E4246DD8F1CD641EF9 /* Pods-CCPAMetaAppUITests-umbrella.h in Headers */,
+				D62D03F5DB6352378AB9D8EEDB5D8D34 /* CCPAConsentViewController-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B6B65EAF3FE2A65B7DAB61BC51B2AA89 /* Headers */ = {
+		BAFBE153D98DF3FCB69A70EFCB245E67 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E03B006685E41414DF876D11115753C8 /* Pods-CCPAConsentViewController_Example-umbrella.h in Headers */,
+				3D513E24558F1597BEBF0F9B7BC1BD0A /* Pods-SourcePointMetaAppTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C41BF3F17EAC80AAB1154EA2A3D81DA4 /* Headers */ = {
+		D37C31EEC45CDEEB5F0296B05EF0B0A8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9841E369F0ADEF62D703E49413EFFF7 /* Pods-SourcePointMetaApp-umbrella.h in Headers */,
+				EFECC44C139CB8F0F97A93E9ADBD1C41 /* Pods-SourcePointMetaApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4594A4EC43B7033DC5D13FBF4B5A323 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58DEA6516307C3023292807B1AF941F9 /* Pods-AuthExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC7E3F96F4B73710C2C2C1D52A8E003C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DF6ED04BBFD7C2FCCEB9B49231F2D51 /* Pods-SPCCPAExampleAppUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1278,17 +1278,17 @@
 /* Begin PBXNativeTarget section */
 		01887186C1AC5B5B2EA9F3FD84493914 /* Pods-AuthExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E0F244DBD1A27F04C6A34084E29C9571 /* Build configuration list for PBXNativeTarget "Pods-AuthExample" */;
+			buildConfigurationList = 875A2FE9518257C0EECBB2AC95E60D18 /* Build configuration list for PBXNativeTarget "Pods-AuthExample" */;
 			buildPhases = (
-				3D1C741DD6E2367EEBD76498105A75DA /* Headers */,
-				7A638AA5A22920DAF47999843B3DAADA /* Sources */,
-				8CC69147FB09500C23892FCBA6F84BEC /* Frameworks */,
-				CF148502D3FC577F1E7496771016B2F4 /* Resources */,
+				D4594A4EC43B7033DC5D13FBF4B5A323 /* Headers */,
+				653CEBCEB990C65C6F32AF4D1BAA5BBB /* Sources */,
+				1E3D740CD1317FE7B23C11798695BB20 /* Frameworks */,
+				9B72BA16ABBE077056033C575BB4275F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C6A1E44997031397CCE2F97637DBCF5B /* PBXTargetDependency */,
+				80F47B045A1B45FBD0ED74FE88F77F42 /* PBXTargetDependency */,
 			);
 			name = "Pods-AuthExample";
 			productName = "Pods-AuthExample";
@@ -1297,17 +1297,17 @@
 		};
 		11CF11D1E2EFDC534E0BDB1F3E253F66 /* Pods-SourcePointMetaAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02467CF902A2B22282D6067F1B55EBAF /* Build configuration list for PBXNativeTarget "Pods-SourcePointMetaAppTests" */;
+			buildConfigurationList = 4F5A47F46B1017810DF6A81B77A1CE8F /* Build configuration list for PBXNativeTarget "Pods-SourcePointMetaAppTests" */;
 			buildPhases = (
-				018F65CC94CAC20C267A33BC97032CEB /* Headers */,
-				6AF366E0A76B7086C9B881878490301C /* Sources */,
-				9286BBEE498B51DE0A73B94A68FD6693 /* Frameworks */,
-				41BA8C48D4EAC48750D83DEE126C327B /* Resources */,
+				BAFBE153D98DF3FCB69A70EFCB245E67 /* Headers */,
+				76B100BB7A1881F9D2E7940C44D3DA4E /* Sources */,
+				55776A87C1FACF28544BCE2C6386B014 /* Frameworks */,
+				23FFB72DE5DEA3B99FD92B6221DE2B6C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0C842DDEA3AE2879AD29E53CC4A19FB8 /* PBXTargetDependency */,
+				09F6B559A8317044646FA22ED88D6C58 /* PBXTargetDependency */,
 			);
 			name = "Pods-SourcePointMetaAppTests";
 			productName = "Pods-SourcePointMetaAppTests";
@@ -1316,19 +1316,19 @@
 		};
 		1D2E44B012E1B93D59E2C8619F05B046 /* Pods-SPCCPAExampleAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77B72852374A2FEBB4EAF8C3A0928F31 /* Build configuration list for PBXNativeTarget "Pods-SPCCPAExampleAppUITests" */;
+			buildConfigurationList = 284046DD0256423B10E921D36528E034 /* Build configuration list for PBXNativeTarget "Pods-SPCCPAExampleAppUITests" */;
 			buildPhases = (
-				0F7B44AD47CCF50D06642C33CF1AF53C /* Headers */,
-				9AC7DF0010642CB2043F0A22AA2F0CFE /* Sources */,
-				0F2A8E1425F721CFDB477A4D5D1C2861 /* Frameworks */,
-				9DBA40B0506690E6E6B3554D623FD97F /* Resources */,
+				DC7E3F96F4B73710C2C2C1D52A8E003C /* Headers */,
+				69FD49A90B41682862A0D7BCE8A39E8D /* Sources */,
+				C333153DC91CB200F0D592FA317A546E /* Frameworks */,
+				6B85D5AFF7821E4CE69109B094DD4C53 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				53EBA304F9EB55DC5C89E589DA49143C /* PBXTargetDependency */,
-				EB1B6B8DDEFCF4E7AFEED858E13E9017 /* PBXTargetDependency */,
-				7AD6EAE041E6A335753AB65332C34F84 /* PBXTargetDependency */,
+				83368FAD5AD7E0CF6401823E39643762 /* PBXTargetDependency */,
+				DADA6F0B8F8448BDD5B5786E78958B76 /* PBXTargetDependency */,
+				74D6F46A7C93DF0CD03CE814242454A4 /* PBXTargetDependency */,
 			);
 			name = "Pods-SPCCPAExampleAppUITests";
 			productName = "Pods-SPCCPAExampleAppUITests";
@@ -1337,19 +1337,19 @@
 		};
 		207BA1092751AF2F3001ECA0CC8F06C6 /* Pods-CCPAConsentViewController_ExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9FD14D0E84AC690DF05327CF98AE3720 /* Build configuration list for PBXNativeTarget "Pods-CCPAConsentViewController_ExampleTests" */;
+			buildConfigurationList = EE0C05A49D3160EC5BAF35D3361DBFAE /* Build configuration list for PBXNativeTarget "Pods-CCPAConsentViewController_ExampleTests" */;
 			buildPhases = (
-				7FB83CA8D1F5D4185BA658289D384C9C /* Headers */,
-				5B41AEB8DFF7A2F5DA2FB99D97DAAFD3 /* Sources */,
-				BC8CC8727EC07E711805CA5F5EEE1B7D /* Frameworks */,
-				8305FB68623D09479DCC4E35DB7A1580 /* Resources */,
+				636734D0E494BE8AD774B972A37C2676 /* Headers */,
+				F6A4477E834D001058B77CF81FBB7BD6 /* Sources */,
+				CF2ED8B6C3447EBA8928F8407E0D7B40 /* Frameworks */,
+				20CF9CE5D946DE843F78DECB6D42A37B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1375C334C935FE9FFBAB1E500A697209 /* PBXTargetDependency */,
-				A41595AFB560C728576B02414C0F5B72 /* PBXTargetDependency */,
-				A171DD6F48ABAF35D7BCC7FD4FB1820E /* PBXTargetDependency */,
+				6B6FD4147E9BBDC12DD42D1E6AFA7FDA /* PBXTargetDependency */,
+				03299CAE1200196148DAA83407AC984A /* PBXTargetDependency */,
+				0A0E25C51405F8DA9DD4406FD797E526 /* PBXTargetDependency */,
 			);
 			name = "Pods-CCPAConsentViewController_ExampleTests";
 			productName = "Pods-CCPAConsentViewController_ExampleTests";
@@ -1376,18 +1376,18 @@
 		};
 		75C70DE1BAB4AAB11B5E8493507AC9DD /* Pods-SourcePointMetaApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88EAB66EEEA5C31618522D440A38FDB8 /* Build configuration list for PBXNativeTarget "Pods-SourcePointMetaApp" */;
+			buildConfigurationList = 694F161461575305F0A30833A0ABEFE6 /* Build configuration list for PBXNativeTarget "Pods-SourcePointMetaApp" */;
 			buildPhases = (
-				C41BF3F17EAC80AAB1154EA2A3D81DA4 /* Headers */,
-				AC61892CE22FC991D1DDE33EB7745E36 /* Sources */,
-				F2D2E6162776C0E300C669E44D8C731B /* Frameworks */,
-				93DF4CB0131C27CC3BC3A00EFDF28C1A /* Resources */,
+				D37C31EEC45CDEEB5F0296B05EF0B0A8 /* Headers */,
+				509E7B608B8AD5599A0A622E010C912D /* Sources */,
+				AC99995C827D1F0AC4BF339ACA8AFB5E /* Frameworks */,
+				1896A9D529565420FD450E76CB95C828 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				23286B3ECB016C3A014CCED06685C64B /* PBXTargetDependency */,
-				F51094F587ABA9779D91CCCF2CF97A04 /* PBXTargetDependency */,
+				99235B9521140D82A67D2293A646FC5F /* PBXTargetDependency */,
+				733EB11956E85C21C7964A4F4A96E8CE /* PBXTargetDependency */,
 			);
 			name = "Pods-SourcePointMetaApp";
 			productName = "Pods-SourcePointMetaApp";
@@ -1396,19 +1396,19 @@
 		};
 		95F0AFFD1B5FD49BBFBA4CA9A9B44179 /* Pods-CCPAMetaAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5443DAEE10F3D707D59D3AD26D8E674 /* Build configuration list for PBXNativeTarget "Pods-CCPAMetaAppUITests" */;
+			buildConfigurationList = AABB9309784A78F8FE0E51B7A2B026C4 /* Build configuration list for PBXNativeTarget "Pods-CCPAMetaAppUITests" */;
 			buildPhases = (
-				A63BB571C08010C54A95A22BC60E1539 /* Headers */,
-				DBE1A4A54F5F5ECC4050360AE308AD41 /* Sources */,
-				61A238A609292329117B501CFAB492C7 /* Frameworks */,
-				4507B3BD84858989222972F2A2431B37 /* Resources */,
+				984BD6761A7CF31EA33315F64F2C81F9 /* Headers */,
+				A6EEC746ED3E1D51B864A6D0BB0DF6CD /* Sources */,
+				A2740EA748F2DBAC581270E1D4F615CB /* Frameworks */,
+				626A93E1DAB03A8673CAC9D8D79F9BE8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DE8AA64205371A8BDC1A60AECCAA8DD3 /* PBXTargetDependency */,
-				BEF1810F4016A5B4D0D9FFF74C0FCA2A /* PBXTargetDependency */,
-				B5A56E165E8DF5A09EF2C22187777FDB /* PBXTargetDependency */,
+				39F3F286C6FBA49283F26643FB1DEEFC /* PBXTargetDependency */,
+				7B4FA057FD1959BAF6F744755CF3D70F /* PBXTargetDependency */,
+				CD566186D056FA33E40D5ECA8D8AE9BA /* PBXTargetDependency */,
 			);
 			name = "Pods-CCPAMetaAppUITests";
 			productName = "Pods-CCPAMetaAppUITests";
@@ -1417,11 +1417,11 @@
 		};
 		982A68D37F5DCBC1FC1FDC0BB2F0EB8E /* IQKeyboardManagerSwift-IQKeyboardManagerSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F2D991A0A15DC6E4F3BCF4FA187F1535 /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift-IQKeyboardManagerSwift" */;
+			buildConfigurationList = 0AA63C4805ECDE25656DEB5CD006F26F /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift-IQKeyboardManagerSwift" */;
 			buildPhases = (
-				6DC337E6A7E82CC6A15F5BC78BB2731C /* Sources */,
-				E6710941DB4763A513DCF6A53B1289EF /* Frameworks */,
-				F9E78A02E2454E0D45C281AFBF0A995E /* Resources */,
+				6854567019643513C91566F28E54C1BF /* Sources */,
+				913957BD5443A2D8059969117EB20EC7 /* Frameworks */,
+				CBA2033666C3AB037F4450B8FC05B86C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1434,17 +1434,17 @@
 		};
 		B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FE4324C719BA680BF945575DA8C9041E /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */;
+			buildConfigurationList = 5FFF3D72BA4B387A62ECF69883DAE138 /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */;
 			buildPhases = (
-				76B8329D09ACC796641630E81A9370BE /* Headers */,
-				311438B71610F59D71F0687442474956 /* Sources */,
-				BB099BFB7799DDDECC29AC58BA6EA6FD /* Frameworks */,
-				89352FFCA6FE7CBC3A5050A79C60B839 /* Resources */,
+				8679797B2C33D29504ECA58538EDB0AF /* Headers */,
+				5FE8752E9F7257A759B5B220DA8F2405 /* Sources */,
+				DEA654DC94A0F0682ED8BE9256F105DA /* Frameworks */,
+				85EB654D81E137FE3F19E98BB4498FD4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4AC13950EB8888D79D75C43BBA66C847 /* PBXTargetDependency */,
+				48A7FE69AB484427253BEF301F43E654 /* PBXTargetDependency */,
 			);
 			name = IQKeyboardManagerSwift;
 			productName = IQKeyboardManagerSwift;
@@ -1471,17 +1471,17 @@
 		};
 		C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32BB47C7B0BAEB8ED4D8C30837A0581A /* Build configuration list for PBXNativeTarget "CCPAConsentViewController" */;
+			buildConfigurationList = 5AE8C2911EC81ADC908902D8DFE43E31 /* Build configuration list for PBXNativeTarget "CCPAConsentViewController" */;
 			buildPhases = (
-				A607C8339B7525694F8CABB4A8D24BC1 /* Headers */,
-				07E9C1E930EAF966044BD7AF22CF4C03 /* Sources */,
-				DE27407C1667B3F422542F0C038131C6 /* Frameworks */,
-				AB970E68EB1B0EA24A5CC8622A037646 /* Resources */,
+				9A19D68FAC90EABD1CCE3AE89E394F3C /* Headers */,
+				240884313D48BCE906A444879D826DA6 /* Sources */,
+				3743B1A74A3608233223A030FE5F16FA /* Frameworks */,
+				24F17CB03535FC0C3E112A786988A7D9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6B5C6625C455DC09C891404E1DE30D4F /* PBXTargetDependency */,
+				DC6BAD6A8F6D9BA35C706D6FC23BE7B6 /* PBXTargetDependency */,
 			);
 			name = CCPAConsentViewController;
 			productName = CCPAConsentViewController;
@@ -1490,11 +1490,11 @@
 		};
 		EE0E37D23ED5075BBED11CFB368839A8 /* CCPAConsentViewController-CCPAConsentViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DFA41FD7FCD76A4545AB0365D9287E2 /* Build configuration list for PBXNativeTarget "CCPAConsentViewController-CCPAConsentViewController" */;
+			buildConfigurationList = 875DCCACFC68C3C7723C853F379A36B9 /* Build configuration list for PBXNativeTarget "CCPAConsentViewController-CCPAConsentViewController" */;
 			buildPhases = (
-				A1064022B7E1DD8DCA5C7E15851BDBCF /* Sources */,
-				2D9E5B49C506974C787785987C337214 /* Frameworks */,
-				ECC78455094F6062F17BA13A61C6A0A7 /* Resources */,
+				A03CE2FAA30128A5AABCB41C0656B97B /* Sources */,
+				07C2308F003C37F766BA058EE9BBF98F /* Frameworks */,
+				36F62EF36B6805257D97FC7A4F3C9A3E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1507,18 +1507,18 @@
 		};
 		FF2BEAD3214A3EDF93682875816FD2C8 /* Pods-CCPAConsentViewController_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 777425F4EFFF2292283C6DB934DE4BCD /* Build configuration list for PBXNativeTarget "Pods-CCPAConsentViewController_Example" */;
+			buildConfigurationList = 6DDA5F3BCE3D83A661822208F44A487C /* Build configuration list for PBXNativeTarget "Pods-CCPAConsentViewController_Example" */;
 			buildPhases = (
-				B6B65EAF3FE2A65B7DAB61BC51B2AA89 /* Headers */,
-				DC6882608DD41E41448523404C6DC0B1 /* Sources */,
-				EA8668E500F9C04115ADB9DD93518796 /* Frameworks */,
-				D41FE21F8BD51B4F3C0A05080DF3FE16 /* Resources */,
+				0B4A4B95C67CEC57284BB218381B97A1 /* Headers */,
+				57641CC486CF29DF25DA97AA89705E64 /* Sources */,
+				73827D6AB52B90CE0BE68DE9999AE95C /* Frameworks */,
+				F0743FA09BA6FD9767F2870866FF2965 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				50A63BFEBD3E182B01DE6492B62E3EC0 /* PBXTargetDependency */,
-				32FAD5C67326333B4496CDD86BF06319 /* PBXTargetDependency */,
+				B096A1C80CF147C9063BC835AC8A6BD4 /* PBXTargetDependency */,
+				6B4135570FF4793844DF158ABF5271AA /* PBXTargetDependency */,
 			);
 			name = "Pods-CCPAConsentViewController_Example";
 			productName = "Pods-CCPAConsentViewController_Example";
@@ -1573,69 +1573,78 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		41BA8C48D4EAC48750D83DEE126C327B /* Resources */ = {
+		1896A9D529565420FD450E76CB95C828 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4507B3BD84858989222972F2A2431B37 /* Resources */ = {
+		20CF9CE5D946DE843F78DECB6D42A37B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8305FB68623D09479DCC4E35DB7A1580 /* Resources */ = {
+		23FFB72DE5DEA3B99FD92B6221DE2B6C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89352FFCA6FE7CBC3A5050A79C60B839 /* Resources */ = {
+		24F17CB03535FC0C3E112A786988A7D9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AA6DC9706CF4F228389978F43D49351 /* IQKeyboardManagerSwift.bundle in Resources */,
+				E2B9353FDFFD093221FEE3659A75297E /* CCPAConsentViewController.bundle in Resources */,
+				ABB50F9FC023BAC60E1DA00A7FAE2AB9 /* JSReceiver.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93DF4CB0131C27CC3BC3A00EFDF28C1A /* Resources */ = {
+		36F62EF36B6805257D97FC7A4F3C9A3E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A763FC75FBA559AA7E49F817C6E0A91D /* JSReceiver.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9DBA40B0506690E6E6B3554D623FD97F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AB970E68EB1B0EA24A5CC8622A037646 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0D6F215A09A91CABE72DAA1605E8C373 /* CCPAConsentViewController.bundle in Resources */,
-				883812E4E194F75EF07004F677256B3E /* JSReceiver.js in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF148502D3FC577F1E7496771016B2F4 /* Resources */ = {
+		626A93E1DAB03A8673CAC9D8D79F9BE8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D41FE21F8BD51B4F3C0A05080DF3FE16 /* Resources */ = {
+		6B85D5AFF7821E4CE69109B094DD4C53 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85EB654D81E137FE3F19E98BB4498FD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9D43AEF22D24587B8175D9FF411410 /* IQKeyboardManagerSwift.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B72BA16ABBE077056033C575BB4275F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBA2033666C3AB037F4450B8FC05B86C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				492643A4B169B4FC3C2B2C0A611B1C34 /* IQKeyboardManagerSwift.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1646,84 +1655,98 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ECC78455094F6062F17BA13A61C6A0A7 /* Resources */ = {
+		F0743FA09BA6FD9767F2870866FF2965 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA5BE9396F0E107EDCA3C78CB0D5B9E2 /* JSReceiver.js in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F9E78A02E2454E0D45C281AFBF0A995E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE10D2DEAFC0AAE6F7C7B8FEAED91658 /* IQKeyboardManagerSwift.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		07E9C1E930EAF966044BD7AF22CF4C03 /* Sources */ = {
+		240884313D48BCE906A444879D826DA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BDBDBB4848E19DDC3F6B1CCD5331F1C /* Action.swift in Sources */,
-				DA24139E19F4079E90AADD3A76741D96 /* CampaignEnv.swift in Sources */,
-				2C124AB92F07E35180AA57F2FEF25FF9 /* CCPAConsentViewController-dummy.m in Sources */,
-				A1D5D42CC02055427AD9D1E988973A4F /* CCPAConsentViewController.swift in Sources */,
-				C014FFF4784350C600AFBDEC91B3068F /* CCPAConsentViewControllerError.swift in Sources */,
-				BD1FB81743401F68C5ECA5BCB3003206 /* ConnectivityManager.swift in Sources */,
-				1C3CBD28F4B9619342B3730A7E9BA10D /* ConsentDelegate.swift in Sources */,
-				BDA1619A8E8794EE294AC8F51734220B /* Logger.swift in Sources */,
-				CBF0F3A70DB0EDF12BF4CF40AC05875D /* MessageViewController.swift in Sources */,
-				065E8250F16995F9920BB54FBAE0C81E /* MessageWebViewController.swift in Sources */,
-				9CE4B37DCBDD971DD3C077F357C0C54C /* PropertyName.swift in Sources */,
-				87474FE5D4C888A29A5F4E32F168A509 /* SimpleClient.swift in Sources */,
-				653B37247E1DBFA9D239AE3F55B78678 /* SourcePointClient.swift in Sources */,
-				FC4C2403BBC05722562B97C5069D7EF5 /* SourcePointRequestsResponses.swift in Sources */,
-				45D24236B5A75680FF1FA941E5E91B64 /* UserConsent.swift in Sources */,
+				7525EEC9185CBFD0E1C42C65C1132812 /* Action.swift in Sources */,
+				CB7D644376A44DB089C207B0613C55EC /* CampaignEnv.swift in Sources */,
+				D028ED81AF564E0E22ED3BB22397A94F /* CCPAConsentViewController-dummy.m in Sources */,
+				8C41FEE4956264354F5ED226B1618208 /* CCPAConsentViewController.swift in Sources */,
+				CD7935C4CB9F6E5BDAA940551711E414 /* CCPAConsentViewControllerError.swift in Sources */,
+				9A4CECF4386A5508D5959100DAE6A3FD /* ConnectivityManager.swift in Sources */,
+				CDBD45FFF72A67E2E69F5E31948E8317 /* ConsentDelegate.swift in Sources */,
+				24970DEF031E11C41FAF107478600C75 /* Logger.swift in Sources */,
+				3C3C6EB8B72A86C05605BFDCFBECA939 /* MessageViewController.swift in Sources */,
+				B048A41451FD3E8A264EDD9DD6276965 /* MessageWebViewController.swift in Sources */,
+				1CE609E96B6FA254FB42FD5B16AB68E2 /* PropertyName.swift in Sources */,
+				9A8B91325828F4701746756E79CD89A0 /* SimpleClient.swift in Sources */,
+				D7B67429E6A226479AECA1C13FBB2720 /* SourcePointClient.swift in Sources */,
+				D9C21AF963168359E12AD9C1770D97DC /* SourcePointRequestsResponses.swift in Sources */,
+				D9F61FB7E282882C4450A73A1723AC36 /* UserConsent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		311438B71610F59D71F0687442474956 /* Sources */ = {
+		509E7B608B8AD5599A0A622E010C912D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5037C1C015AA1A7B35B4805057B42D8 /* IQBarButtonItem.swift in Sources */,
-				041947EA9F9D51C1CD98B02D547FD624 /* IQInvocation.swift in Sources */,
-				FE6AD29B2189E14E0F948BAE55BA0AFB /* IQKeyboardManager.swift in Sources */,
-				3964BAE860274DC785719EDD904430F0 /* IQKeyboardManagerConstants.swift in Sources */,
-				79C113AD67314558C1885899493C9AC7 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
-				315AED2CB54B7752129BE7F50068D21C /* IQKeyboardManagerSwift-dummy.m in Sources */,
-				2DB68824892737B191D12CF8B36E0FD9 /* IQKeyboardReturnKeyHandler.swift in Sources */,
-				2AF0369096BFF874D57F0F17FF2FDE23 /* IQNSArray+Sort.swift in Sources */,
-				66F6D80684B3F931369CCA4A63AF0A62 /* IQPreviousNextView.swift in Sources */,
-				4856237C39EB285833ABE79407F3F6F1 /* IQTextView.swift in Sources */,
-				5D76AB4D7BD79747511B3584008A5E02 /* IQTitleBarButtonItem.swift in Sources */,
-				710CBCD5C3799F4B665874C9C7148CDD /* IQToolbar.swift in Sources */,
-				C6211564D6F304C894C04CDAB81B2632 /* IQUIScrollView+Additions.swift in Sources */,
-				CA8AB9F08CC9791CE7C624AFDB5056A6 /* IQUITextFieldView+Additions.swift in Sources */,
-				CE34683AB20D55BF88D58EEACADB1EC5 /* IQUIView+Hierarchy.swift in Sources */,
-				06FA81C5AB9C8C8790941CED9757F54F /* IQUIView+IQKeyboardToolbar.swift in Sources */,
-				AECEF90A17592166FC57790B2767110E /* IQUIViewController+Additions.swift in Sources */,
+				158DDBCD57AC353F56720E0E36D4EAD1 /* Pods-SourcePointMetaApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B41AEB8DFF7A2F5DA2FB99D97DAAFD3 /* Sources */ = {
+		57641CC486CF29DF25DA97AA89705E64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D84E8735E60AA7251F3A760C62467A7 /* Pods-CCPAConsentViewController_ExampleTests-dummy.m in Sources */,
+				9D86C1AF440C694A863C4D286C1D54D8 /* Pods-CCPAConsentViewController_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6AF366E0A76B7086C9B881878490301C /* Sources */ = {
+		5FE8752E9F7257A759B5B220DA8F2405 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31DF78FA57185C77EDC7397453016DF9 /* Pods-SourcePointMetaAppTests-dummy.m in Sources */,
+				ED48EB34AEF8152CE4CB9E3F10F9A2FB /* IQBarButtonItem.swift in Sources */,
+				9E08C2E3FA52AD0F7B80BA40467B6492 /* IQInvocation.swift in Sources */,
+				2CB768247F1C344C02C97CB0F1427CA8 /* IQKeyboardManager.swift in Sources */,
+				2B0466CF9FCEDD405A2772A65FF0EEDE /* IQKeyboardManagerConstants.swift in Sources */,
+				26E14C84D7F7E98A314F8E01C61DA4F8 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				B6FB55F2C74A79EDBA6FC10B52B6469B /* IQKeyboardManagerSwift-dummy.m in Sources */,
+				82505DDC4ACBB6B43693B74EED4652AF /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				D4CA0936C3726E81505417EF7B2716D5 /* IQNSArray+Sort.swift in Sources */,
+				0FEA5889C85FA2F8FD58850F2ABAF599 /* IQPreviousNextView.swift in Sources */,
+				28D778BF49E73CD23660F962F675F050 /* IQTextView.swift in Sources */,
+				37D473F0514AC475AF859121838FC647 /* IQTitleBarButtonItem.swift in Sources */,
+				1056CA66CE84BD2710CFA177CEE79274 /* IQToolbar.swift in Sources */,
+				7F5DDC9D617379527E74B5CC4CF7ADDE /* IQUIScrollView+Additions.swift in Sources */,
+				80234A369531BF330DF2F29BF2F49306 /* IQUITextFieldView+Additions.swift in Sources */,
+				C830131EEF75A8BFA5F7D3A36B1833E7 /* IQUIView+Hierarchy.swift in Sources */,
+				465E0784FED7E8008852F7150B9F0D45 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				E069235476E82CBF7B28802FEA34C480 /* IQUIViewController+Additions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		653CEBCEB990C65C6F32AF4D1BAA5BBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F74AC0358184D4A86D1401B422F26D88 /* Pods-AuthExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6854567019643513C91566F28E54C1BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69FD49A90B41682862A0D7BCE8A39E8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E199320EE33B934C4CC4D8157A940BA /* Pods-SPCCPAExampleAppUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1761,41 +1784,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6DC337E6A7E82CC6A15F5BC78BB2731C /* Sources */ = {
+		76B100BB7A1881F9D2E7940C44D3DA4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFAE2AE77DF679F2647CE04B23C1D1E7 /* Pods-SourcePointMetaAppTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A03CE2FAA30128A5AABCB41C0656B97B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7A638AA5A22920DAF47999843B3DAADA /* Sources */ = {
+		A6EEC746ED3E1D51B864A6D0BB0DF6CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDAFF83D3FC6BE21B0AE1551A0E81E8 /* Pods-AuthExample-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9AC7DF0010642CB2043F0A22AA2F0CFE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2EDBD88E9EF15E9B9BE26B3F539ADD8B /* Pods-SPCCPAExampleAppUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1064022B7E1DD8DCA5C7E15851BDBCF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC61892CE22FC991D1DDE33EB7745E36 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E7E07E664BF679A4AFC0544A07D1B0D /* Pods-SourcePointMetaApp-dummy.m in Sources */,
+				E97E6E13F2A978436DE31D7B734BE0A8 /* Pods-CCPAMetaAppUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1869,197 +1877,123 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBE1A4A54F5F5ECC4050360AE308AD41 /* Sources */ = {
+		F6A4477E834D001058B77CF81FBB7BD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2985C6FCDC1BBD45AC019337FCF2D0A6 /* Pods-CCPAMetaAppUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC6882608DD41E41448523404C6DC0B1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6562C2BA1ECAB4432FF94C20F60A32AC /* Pods-CCPAConsentViewController_Example-dummy.m in Sources */,
+				D8DC81374557E3A95ADEDB52977EA930 /* Pods-CCPAConsentViewController_ExampleTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0C842DDEA3AE2879AD29E53CC4A19FB8 /* PBXTargetDependency */ = {
+		03299CAE1200196148DAA83407AC984A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Nimble;
+			target = 6F13695E06195A78EA8A95F8C7ED0D2F /* Nimble */;
+			targetProxy = 321A0943FD62FCC865320643D942FEE2 /* PBXContainerItemProxy */;
+		};
+		09F6B559A8317044646FA22ED88D6C58 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CCPAConsentViewController;
 			target = C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */;
-			targetProxy = 5CBDFC7F796288508E0A1F123AB651BA /* PBXContainerItemProxy */;
+			targetProxy = E4EEDAA87D448F6FBF5442C8A1327B86 /* PBXContainerItemProxy */;
 		};
-		1375C334C935FE9FFBAB1E500A697209 /* PBXTargetDependency */ = {
+		0A0E25C51405F8DA9DD4406FD797E526 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Quick;
+			target = C82891EAB7293DBEE916B21F57E8474D /* Quick */;
+			targetProxy = BF60CDE204C3823F7A1138BF70A1FCE0 /* PBXContainerItemProxy */;
+		};
+		39F3F286C6FBA49283F26643FB1DEEFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CCPAConsentViewController;
 			target = C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */;
-			targetProxy = 53A92257521215EB7393F8A4A33DBE03 /* PBXContainerItemProxy */;
+			targetProxy = 994B3507B3D250CEA9051D726CD2F2EC /* PBXContainerItemProxy */;
 		};
-		23286B3ECB016C3A014CCED06685C64B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CCPAConsentViewController;
-			target = C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */;
-			targetProxy = 335976B6BB6F2E6A24DDF2D2157BC1DB /* PBXContainerItemProxy */;
-		};
-		32FAD5C67326333B4496CDD86BF06319 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftLint;
-			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = CB5DD5936AC19E4C67C432F261FC35DF /* PBXContainerItemProxy */;
-		};
-		4AC13950EB8888D79D75C43BBA66C847 /* PBXTargetDependency */ = {
+		48A7FE69AB484427253BEF301F43E654 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "IQKeyboardManagerSwift-IQKeyboardManagerSwift";
 			target = 982A68D37F5DCBC1FC1FDC0BB2F0EB8E /* IQKeyboardManagerSwift-IQKeyboardManagerSwift */;
-			targetProxy = 99DEC5D1F77FCC5AF792AF90873A15FC /* PBXContainerItemProxy */;
+			targetProxy = 48B1BFC95B72AD34CEE8DCFF055BCBBA /* PBXContainerItemProxy */;
 		};
-		50A63BFEBD3E182B01DE6492B62E3EC0 /* PBXTargetDependency */ = {
+		6B4135570FF4793844DF158ABF5271AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = E21BE4A419670AA3396A395ADCD3402A /* PBXContainerItemProxy */;
+		};
+		6B6FD4147E9BBDC12DD42D1E6AFA7FDA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CCPAConsentViewController;
 			target = C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */;
-			targetProxy = 225C6087990425E91A0F353F91C072B2 /* PBXContainerItemProxy */;
+			targetProxy = 6D28629734DA538EF1D04D4E7B07AC74 /* PBXContainerItemProxy */;
 		};
-		53EBA304F9EB55DC5C89E589DA49143C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CCPAConsentViewController;
-			target = C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */;
-			targetProxy = 22ECB127D16DE2B54F84730F085F23A0 /* PBXContainerItemProxy */;
-		};
-		6B5C6625C455DC09C891404E1DE30D4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "CCPAConsentViewController-CCPAConsentViewController";
-			target = EE0E37D23ED5075BBED11CFB368839A8 /* CCPAConsentViewController-CCPAConsentViewController */;
-			targetProxy = 15F12673DEDFCFDA57A1F7F1C68582E3 /* PBXContainerItemProxy */;
-		};
-		7AD6EAE041E6A335753AB65332C34F84 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Quick;
-			target = C82891EAB7293DBEE916B21F57E8474D /* Quick */;
-			targetProxy = CE26A4279BFEEEB2B35D1E0BA8925BF5 /* PBXContainerItemProxy */;
-		};
-		A171DD6F48ABAF35D7BCC7FD4FB1820E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Quick;
-			target = C82891EAB7293DBEE916B21F57E8474D /* Quick */;
-			targetProxy = A337BA2BEA748CD0327CA8343BBF67DC /* PBXContainerItemProxy */;
-		};
-		A41595AFB560C728576B02414C0F5B72 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Nimble;
-			target = 6F13695E06195A78EA8A95F8C7ED0D2F /* Nimble */;
-			targetProxy = FCDE11ED4068D18482C30E8E33E5852F /* PBXContainerItemProxy */;
-		};
-		B5A56E165E8DF5A09EF2C22187777FDB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Quick;
-			target = C82891EAB7293DBEE916B21F57E8474D /* Quick */;
-			targetProxy = F9E105FA294C156CAAEA3D88F3803C6A /* PBXContainerItemProxy */;
-		};
-		BEF1810F4016A5B4D0D9FFF74C0FCA2A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Nimble;
-			target = 6F13695E06195A78EA8A95F8C7ED0D2F /* Nimble */;
-			targetProxy = 6745706D89D56AD6BFCF2D1A2850E57F /* PBXContainerItemProxy */;
-		};
-		C6A1E44997031397CCE2F97637DBCF5B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CCPAConsentViewController;
-			target = C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */;
-			targetProxy = B838D45BAB3A2D60DEED1576E336CAC4 /* PBXContainerItemProxy */;
-		};
-		DE8AA64205371A8BDC1A60AECCAA8DD3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CCPAConsentViewController;
-			target = C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */;
-			targetProxy = B6F47B0E8A03DA3AB24FAAD66B489AA4 /* PBXContainerItemProxy */;
-		};
-		EB1B6B8DDEFCF4E7AFEED858E13E9017 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Nimble;
-			target = 6F13695E06195A78EA8A95F8C7ED0D2F /* Nimble */;
-			targetProxy = 0364ADF2EEE306D196D6D014D636786A /* PBXContainerItemProxy */;
-		};
-		F51094F587ABA9779D91CCCF2CF97A04 /* PBXTargetDependency */ = {
+		733EB11956E85C21C7964A4F4A96E8CE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = IQKeyboardManagerSwift;
 			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
-			targetProxy = 1F936C5C5F66783E024977577E0112EB /* PBXContainerItemProxy */;
+			targetProxy = F4B34B4781EC5D933CEC20B3DB342B3F /* PBXContainerItemProxy */;
+		};
+		74D6F46A7C93DF0CD03CE814242454A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Quick;
+			target = C82891EAB7293DBEE916B21F57E8474D /* Quick */;
+			targetProxy = B36CD9F12DAD1DD91E9973947793BFD4 /* PBXContainerItemProxy */;
+		};
+		7B4FA057FD1959BAF6F744755CF3D70F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Nimble;
+			target = 6F13695E06195A78EA8A95F8C7ED0D2F /* Nimble */;
+			targetProxy = 42CAF8D6015E1922ABA22251F02F4408 /* PBXContainerItemProxy */;
+		};
+		80F47B045A1B45FBD0ED74FE88F77F42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CCPAConsentViewController;
+			target = C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */;
+			targetProxy = 0051FE552710BB4B1BA51E5ECD9DF44A /* PBXContainerItemProxy */;
+		};
+		83368FAD5AD7E0CF6401823E39643762 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CCPAConsentViewController;
+			target = C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */;
+			targetProxy = 6FF87AC76841ADF5E2A11C68700D32D6 /* PBXContainerItemProxy */;
+		};
+		99235B9521140D82A67D2293A646FC5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CCPAConsentViewController;
+			target = C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */;
+			targetProxy = F9BE6E31BA900241BE9AAA605B5E6B0A /* PBXContainerItemProxy */;
+		};
+		B096A1C80CF147C9063BC835AC8A6BD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CCPAConsentViewController;
+			target = C8B93DFD2D9F024D4D0E38E5EF3E3605 /* CCPAConsentViewController */;
+			targetProxy = 563C6319953AA069152CAEDFE72EB07A /* PBXContainerItemProxy */;
+		};
+		CD566186D056FA33E40D5ECA8D8AE9BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Quick;
+			target = C82891EAB7293DBEE916B21F57E8474D /* Quick */;
+			targetProxy = 7E298F22F7256D64D977221B233AC22F /* PBXContainerItemProxy */;
+		};
+		DADA6F0B8F8448BDD5B5786E78958B76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Nimble;
+			target = 6F13695E06195A78EA8A95F8C7ED0D2F /* Nimble */;
+			targetProxy = 281C0D54719247A36F7295B7301890BF /* PBXContainerItemProxy */;
+		};
+		DC6BAD6A8F6D9BA35C706D6FC23BE7B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CCPAConsentViewController-CCPAConsentViewController";
+			target = EE0E37D23ED5075BBED11CFB368839A8 /* CCPAConsentViewController-CCPAConsentViewController */;
+			targetProxy = 9E255ED5D9C173D81C0C28B6ADB8C90A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		072469474063C473F33375C853171CCF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 885BA5CBA2B56FDF8EA2DA73670CDD3C /* Pods-SourcePointMetaAppTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SourcePointMetaAppTests/Pods-SourcePointMetaAppTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SourcePointMetaAppTests/Pods-SourcePointMetaAppTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		0C46C3812C79844B7A6704FDED28D7C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C877DA7E3E53835724BB6F1571F76C38 /* Pods-CCPAMetaAppUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CCPAMetaAppUITests/Pods-CCPAMetaAppUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CCPAMetaAppUITests/Pods-CCPAMetaAppUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		11D1EB7E24862E076879427F604C84C5 /* Release */ = {
+		03C00C43C4265BC35FCACFBC60EBBFEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E9E6B755C8060B9D75AE008925FD2A6B /* Pods-SourcePointMetaAppTests.release.xcconfig */;
 			buildSettings = {
@@ -2093,6 +2027,72 @@
 			};
 			name = Release;
 		};
+		053467A0968F8C74557CEDBCC55DD7AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C5087F5484D2670847BF12A6B4508B /* Pods-AuthExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AuthExample/Pods-AuthExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AuthExample/Pods-AuthExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1351463DA17442CCBA46FCA38402CE16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0952CC8CC93FCF850C8C521AD396C70A /* Pods-CCPAConsentViewController_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CCPAConsentViewController_Example/Pods-CCPAConsentViewController_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CCPAConsentViewController_Example/Pods-CCPAConsentViewController_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		1D5151581A0B42C2AD05F43F8D22B6EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BAC4AC776B2191BA45C19B15E1B2E7C4 /* Nimble.release.xcconfig */;
@@ -2124,149 +2124,7 @@
 			};
 			name = Release;
 		};
-		42BAEC3772C9860BE17C5CF39CEFB2EA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DA51DF173F81B0AF1D7B3CA22E65F08 /* IQKeyboardManagerSwift.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
-				PRODUCT_MODULE_NAME = IQKeyboardManagerSwift;
-				PRODUCT_NAME = IQKeyboardManagerSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		46EECD2DED30D7C5FE141C0B267C2D3F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32C59C1BFF0D20EDB0540190D51279FB /* SwiftLint.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		4E14631CB842BA76486DB76032D14970 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E185FFB6A46AF5AC70EE5CF79E72B3A3 /* Pods-AuthExample.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AuthExample/Pods-AuthExample-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AuthExample/Pods-AuthExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		530AAB6997A1876BEA4EE19432648B26 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1CA8CEFB5CD5A20BB9D6F7CD33FC85B /* CCPAConsentViewController.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CCPAConsentViewController";
-				IBSC_MODULE = CCPAConsentViewController;
-				INFOPLIST_FILE = "Target Support Files/CCPAConsentViewController/ResourceBundle-CCPAConsentViewController-CCPAConsentViewController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = CCPAConsentViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		55DD740115BE746C8DBB7753806D85D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94EF837880F727433DFA66A422BCA0E2 /* SwiftLint.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		624B7820FE2425AFFF1977631E90FAC0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 597D1E3C4CCDB7C37EAC5AD25520C446 /* Pods-SPCCPAExampleAppUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SPCCPAExampleAppUITests/Pods-SPCCPAExampleAppUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SPCCPAExampleAppUITests/Pods-SPCCPAExampleAppUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6987936E2DFFEA6DBE4907A15B1A1792 /* Release */ = {
+		23943D06EC1D076B30A00FD512FAED7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3FDC491CCFDBB443A5A9BD6F484932C0 /* Pods-CCPAMetaAppUITests.release.xcconfig */;
 			buildSettings = {
@@ -2300,16 +2158,16 @@
 			};
 			name = Release;
 		};
-		6AA86F2AA65ECCFB4CA58318F21A0A01 /* Release */ = {
+		37EDC889E2C69511E91B5328B16C6E63 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E91542CC8078F2ADA0CB01125180B31 /* IQKeyboardManagerSwift.release.xcconfig */;
+			baseConfigurationReference = D416B3B2CB3DABBF35E3EA99E6E42974 /* CCPAConsentViewController.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/IQKeyboardManagerSwift";
-				IBSC_MODULE = IQKeyboardManagerSwift;
-				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/ResourceBundle-IQKeyboardManagerSwift-IQKeyboardManagerSwift-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = IQKeyboardManagerSwift;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CCPAConsentViewController";
+				IBSC_MODULE = CCPAConsentViewController;
+				INFOPLIST_FILE = "Target Support Files/CCPAConsentViewController/ResourceBundle-CCPAConsentViewController-CCPAConsentViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = CCPAConsentViewController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2317,9 +2175,9 @@
 			};
 			name = Release;
 		};
-		71C3C8085A07BD5EAB8DD68865E61582 /* Release */ = {
+		39B63BE41D9EE764041898D4C4CB14A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1051DB676241FB0518CE3A928A9AA7B /* Pods-CCPAConsentViewController_Example.release.xcconfig */;
+			baseConfigurationReference = C877DA7E3E53835724BB6F1571F76C38 /* Pods-CCPAMetaAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -2331,12 +2189,45 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CCPAConsentViewController_Example/Pods-CCPAConsentViewController_Example-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-CCPAMetaAppUITests/Pods-CCPAMetaAppUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CCPAConsentViewController_Example/Pods-CCPAConsentViewController_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-CCPAMetaAppUITests/Pods-CCPAMetaAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		44E208557D9DC2E31F47219F9B4723B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0BDAA04F77A56A2A61F546A0BC0F54A /* Pods-CCPAConsentViewController_ExampleTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CCPAConsentViewController_ExampleTests/Pods-CCPAConsentViewController_ExampleTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CCPAConsentViewController_ExampleTests/Pods-CCPAConsentViewController_ExampleTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -2351,9 +2242,9 @@
 			};
 			name = Release;
 		};
-		743E68A9905114671D7E170870B69F31 /* Debug */ = {
+		45DC144DC8629996AF967E8361685D36 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1CA8CEFB5CD5A20BB9D6F7CD33FC85B /* CCPAConsentViewController.debug.xcconfig */;
+			baseConfigurationReference = D416B3B2CB3DABBF35E3EA99E6E42974 /* CCPAConsentViewController.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2376,6 +2267,180 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		46EECD2DED30D7C5FE141C0B267C2D3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32C59C1BFF0D20EDB0540190D51279FB /* SwiftLint.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55DD740115BE746C8DBB7753806D85D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94EF837880F727433DFA66A422BCA0E2 /* SwiftLint.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E30C14D9B6F8DF3CA62AC1B71DDC99A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DA51DF173F81B0AF1D7B3CA22E65F08 /* IQKeyboardManagerSwift.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/IQKeyboardManagerSwift";
+				IBSC_MODULE = IQKeyboardManagerSwift;
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/ResourceBundle-IQKeyboardManagerSwift-IQKeyboardManagerSwift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = IQKeyboardManagerSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		67ECF31599FD894B14839DBBB94AF980 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 597D1E3C4CCDB7C37EAC5AD25520C446 /* Pods-SPCCPAExampleAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SPCCPAExampleAppUITests/Pods-SPCCPAExampleAppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SPCCPAExampleAppUITests/Pods-SPCCPAExampleAppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		705BD05426AE49BFFCAEB5A474D4E95B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FC81116A931914AB1889D8A259AE06B /* Pods-CCPAConsentViewController_ExampleTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CCPAConsentViewController_ExampleTests/Pods-CCPAConsentViewController_ExampleTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CCPAConsentViewController_ExampleTests/Pods-CCPAConsentViewController_ExampleTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		79EAB601FB42A53E4B59564778EDE34C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E91542CC8078F2ADA0CB01125180B31 /* IQKeyboardManagerSwift.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
+				PRODUCT_MODULE_NAME = IQKeyboardManagerSwift;
+				PRODUCT_NAME = IQKeyboardManagerSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8E891A5484B91757C8646FB08EB8EBD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DA51DF173F81B0AF1D7B3CA22E65F08 /* IQKeyboardManagerSwift.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
+				PRODUCT_MODULE_NAME = IQKeyboardManagerSwift;
+				PRODUCT_NAME = IQKeyboardManagerSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2537,71 +2602,6 @@
 			};
 			name = Debug;
 		};
-		96D91FDE204C1E7B2C3E4426EE06768D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FC81116A931914AB1889D8A259AE06B /* Pods-CCPAConsentViewController_ExampleTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CCPAConsentViewController_ExampleTests/Pods-CCPAConsentViewController_ExampleTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CCPAConsentViewController_ExampleTests/Pods-CCPAConsentViewController_ExampleTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9A28FBC4CA1C861381D9A65020036F58 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E91542CC8078F2ADA0CB01125180B31 /* IQKeyboardManagerSwift.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
-				PRODUCT_MODULE_NAME = IQKeyboardManagerSwift;
-				PRODUCT_NAME = IQKeyboardManagerSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		9A462C2D9AA821315E2C9935888D665E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F58789D9EB6226544388C41021F22C13 /* Quick.release.xcconfig */;
@@ -2634,7 +2634,58 @@
 			};
 			name = Release;
 		};
-		9FEC087080BE6CE2E452C63F4169EC7F /* Release */ = {
+		9CA2067FA16D6A618E84F804CF579724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1051DB676241FB0518CE3A928A9AA7B /* Pods-CCPAConsentViewController_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CCPAConsentViewController_Example/Pods-CCPAConsentViewController_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CCPAConsentViewController_Example/Pods-CCPAConsentViewController_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AD4B510EA8BDA69B3B2D98DE25FF8701 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E91542CC8078F2ADA0CB01125180B31 /* IQKeyboardManagerSwift.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/IQKeyboardManagerSwift";
+				IBSC_MODULE = IQKeyboardManagerSwift;
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/ResourceBundle-IQKeyboardManagerSwift-IQKeyboardManagerSwift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = IQKeyboardManagerSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		B08766D6A89CD8DAE2105329F0229E8D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF7908A2681F299EBC6E3E901D794C9F /* Pods-SourcePointMetaApp.release.xcconfig */;
 			buildSettings = {
@@ -2668,9 +2719,9 @@
 			};
 			name = Release;
 		};
-		A791430551681606689BACCA21900AC6 /* Debug */ = {
+		B9C35F3AF83CCAB5863BF3DEF4A53AD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0952CC8CC93FCF850C8C521AD396C70A /* Pods-CCPAConsentViewController_Example.debug.xcconfig */;
+			baseConfigurationReference = 885BA5CBA2B56FDF8EA2DA73670CDD3C /* Pods-SourcePointMetaAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -2682,12 +2733,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CCPAConsentViewController_Example/Pods-CCPAConsentViewController_Example-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SourcePointMetaAppTests/Pods-SourcePointMetaAppTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CCPAConsentViewController_Example/Pods-CCPAConsentViewController_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SourcePointMetaAppTests/Pods-SourcePointMetaAppTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -2701,9 +2752,39 @@
 			};
 			name = Debug;
 		};
-		B2EEC49E9887C4020A1EAA0525B9A29B /* Release */ = {
+		BC2F9ACF6532E38BFD9609FF5AB4771F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0BDAA04F77A56A2A61F546A0BC0F54A /* Pods-CCPAConsentViewController_ExampleTests.release.xcconfig */;
+			baseConfigurationReference = 640C8173FB0D6634E141F0270A088D67 /* Nimble.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Nimble/Nimble-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Nimble/Nimble-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Nimble/Nimble.modulemap";
+				PRODUCT_MODULE_NAME = Nimble;
+				PRODUCT_NAME = Nimble;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BF972F178676011115820CED215E8865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E185FFB6A46AF5AC70EE5CF79E72B3A3 /* Pods-AuthExample.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -2715,12 +2796,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CCPAConsentViewController_ExampleTests/Pods-CCPAConsentViewController_ExampleTests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-AuthExample/Pods-AuthExample-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CCPAConsentViewController_ExampleTests/Pods-CCPAConsentViewController_ExampleTests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-AuthExample/Pods-AuthExample.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -2735,7 +2816,7 @@
 			};
 			name = Release;
 		};
-		B4F089714F054C962128A60059E8F0C6 /* Release */ = {
+		C5968EF75E9C73AC81F57E270AAD44C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9E54C565D2ACA4F03E3A00BAAAEC0292 /* Pods-SPCCPAExampleAppUITests.release.xcconfig */;
 			buildSettings = {
@@ -2769,103 +2850,7 @@
 			};
 			name = Release;
 		};
-		BBDEB762EA2029025BAA57CC2DBDD5EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D416B3B2CB3DABBF35E3EA99E6E42974 /* CCPAConsentViewController.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CCPAConsentViewController";
-				IBSC_MODULE = CCPAConsentViewController;
-				INFOPLIST_FILE = "Target Support Files/CCPAConsentViewController/ResourceBundle-CCPAConsentViewController-CCPAConsentViewController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = CCPAConsentViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		BC2F9ACF6532E38BFD9609FF5AB4771F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 640C8173FB0D6634E141F0270A088D67 /* Nimble.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Nimble/Nimble-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Nimble/Nimble-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Nimble/Nimble.modulemap";
-				PRODUCT_MODULE_NAME = Nimble;
-				PRODUCT_NAME = Nimble;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C7A1447030D147B4BEF6B835CF79B082 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DA51DF173F81B0AF1D7B3CA22E65F08 /* IQKeyboardManagerSwift.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/IQKeyboardManagerSwift";
-				IBSC_MODULE = IQKeyboardManagerSwift;
-				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/ResourceBundle-IQKeyboardManagerSwift-IQKeyboardManagerSwift-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = IQKeyboardManagerSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		D7755875705BFF6E7E1B382B2D760AB0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D416B3B2CB3DABBF35E3EA99E6E42974 /* CCPAConsentViewController.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CCPAConsentViewController/CCPAConsentViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CCPAConsentViewController/CCPAConsentViewController-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CCPAConsentViewController/CCPAConsentViewController.modulemap";
-				PRODUCT_MODULE_NAME = CCPAConsentViewController;
-				PRODUCT_NAME = CCPAConsentViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F48EAAA970D82E24554266249D775F2D /* Debug */ = {
+		E99988F6A67548C6F34798731AD27577 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B981D7BF7652621504C67DE03D0BC0A7 /* Pods-SourcePointMetaApp.debug.xcconfig */;
 			buildSettings = {
@@ -2898,11 +2883,27 @@
 			};
 			name = Debug;
 		};
-		F994AA5BB0D6BB445876301149AC0B05 /* Debug */ = {
+		F2DD9B3BBABBF1CC053E4327735677B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77C5087F5484D2670847BF12A6B4508B /* Pods-AuthExample.debug.xcconfig */;
+			baseConfigurationReference = C1CA8CEFB5CD5A20BB9D6F7CD33FC85B /* CCPAConsentViewController.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CCPAConsentViewController";
+				IBSC_MODULE = CCPAConsentViewController;
+				INFOPLIST_FILE = "Target Support Files/CCPAConsentViewController/ResourceBundle-CCPAConsentViewController-CCPAConsentViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = CCPAConsentViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		F7943037B5C62063607EEBE1C02F74D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1CA8CEFB5CD5A20BB9D6F7CD33FC85B /* CCPAConsentViewController.debug.xcconfig */;
+			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2912,19 +2913,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AuthExample/Pods-AuthExample-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/CCPAConsentViewController/CCPAConsentViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CCPAConsentViewController/CCPAConsentViewController-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AuthExample/Pods-AuthExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/CCPAConsentViewController/CCPAConsentViewController.modulemap";
+				PRODUCT_MODULE_NAME = CCPAConsentViewController;
+				PRODUCT_NAME = CCPAConsentViewController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2934,29 +2934,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		02467CF902A2B22282D6067F1B55EBAF /* Build configuration list for PBXNativeTarget "Pods-SourcePointMetaAppTests" */ = {
+		0AA63C4805ECDE25656DEB5CD006F26F /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift-IQKeyboardManagerSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				072469474063C473F33375C853171CCF /* Debug */,
-				11D1EB7E24862E076879427F604C84C5 /* Release */,
+				5E30C14D9B6F8DF3CA62AC1B71DDC99A /* Debug */,
+				AD4B510EA8BDA69B3B2D98DE25FF8701 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0DFA41FD7FCD76A4545AB0365D9287E2 /* Build configuration list for PBXNativeTarget "CCPAConsentViewController-CCPAConsentViewController" */ = {
+		284046DD0256423B10E921D36528E034 /* Build configuration list for PBXNativeTarget "Pods-SPCCPAExampleAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				530AAB6997A1876BEA4EE19432648B26 /* Debug */,
-				BBDEB762EA2029025BAA57CC2DBDD5EB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		32BB47C7B0BAEB8ED4D8C30837A0581A /* Build configuration list for PBXNativeTarget "CCPAConsentViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				743E68A9905114671D7E170870B69F31 /* Debug */,
-				D7755875705BFF6E7E1B382B2D760AB0 /* Release */,
+				67ECF31599FD894B14839DBBB94AF980 /* Debug */,
+				C5968EF75E9C73AC81F57E270AAD44C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2970,6 +2961,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		4F5A47F46B1017810DF6A81B77A1CE8F /* Build configuration list for PBXNativeTarget "Pods-SourcePointMetaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9C35F3AF83CCAB5863BF3DEF4A53AD9 /* Debug */,
+				03C00C43C4265BC35FCACFBC60EBBFEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		53945ADFA8D79915C0D0011CB37313D8 /* Build configuration list for PBXNativeTarget "Quick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2979,29 +2979,56 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		777425F4EFFF2292283C6DB934DE4BCD /* Build configuration list for PBXNativeTarget "Pods-CCPAConsentViewController_Example" */ = {
+		5AE8C2911EC81ADC908902D8DFE43E31 /* Build configuration list for PBXNativeTarget "CCPAConsentViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A791430551681606689BACCA21900AC6 /* Debug */,
-				71C3C8085A07BD5EAB8DD68865E61582 /* Release */,
+				F7943037B5C62063607EEBE1C02F74D3 /* Debug */,
+				45DC144DC8629996AF967E8361685D36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77B72852374A2FEBB4EAF8C3A0928F31 /* Build configuration list for PBXNativeTarget "Pods-SPCCPAExampleAppUITests" */ = {
+		5FFF3D72BA4B387A62ECF69883DAE138 /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				624B7820FE2425AFFF1977631E90FAC0 /* Debug */,
-				B4F089714F054C962128A60059E8F0C6 /* Release */,
+				8E891A5484B91757C8646FB08EB8EBD5 /* Debug */,
+				79EAB601FB42A53E4B59564778EDE34C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88EAB66EEEA5C31618522D440A38FDB8 /* Build configuration list for PBXNativeTarget "Pods-SourcePointMetaApp" */ = {
+		694F161461575305F0A30833A0ABEFE6 /* Build configuration list for PBXNativeTarget "Pods-SourcePointMetaApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F48EAAA970D82E24554266249D775F2D /* Debug */,
-				9FEC087080BE6CE2E452C63F4169EC7F /* Release */,
+				E99988F6A67548C6F34798731AD27577 /* Debug */,
+				B08766D6A89CD8DAE2105329F0229E8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DDA5F3BCE3D83A661822208F44A487C /* Build configuration list for PBXNativeTarget "Pods-CCPAConsentViewController_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1351463DA17442CCBA46FCA38402CE16 /* Debug */,
+				9CA2067FA16D6A618E84F804CF579724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		875A2FE9518257C0EECBB2AC95E60D18 /* Build configuration list for PBXNativeTarget "Pods-AuthExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				053467A0968F8C74557CEDBCC55DD7AF /* Debug */,
+				BF972F178676011115820CED215E8865 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		875DCCACFC68C3C7723C853F379A36B9 /* Build configuration list for PBXNativeTarget "CCPAConsentViewController-CCPAConsentViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2DD9B3BBABBF1CC053E4327735677B2 /* Debug */,
+				37EDC889E2C69511E91B5328B16C6E63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3015,11 +3042,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FD14D0E84AC690DF05327CF98AE3720 /* Build configuration list for PBXNativeTarget "Pods-CCPAConsentViewController_ExampleTests" */ = {
+		AABB9309784A78F8FE0E51B7A2B026C4 /* Build configuration list for PBXNativeTarget "Pods-CCPAMetaAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				96D91FDE204C1E7B2C3E4426EE06768D /* Debug */,
-				B2EEC49E9887C4020A1EAA0525B9A29B /* Release */,
+				39B63BE41D9EE764041898D4C4CB14A4 /* Debug */,
+				23943D06EC1D076B30A00FD512FAED7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3033,38 +3060,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5443DAEE10F3D707D59D3AD26D8E674 /* Build configuration list for PBXNativeTarget "Pods-CCPAMetaAppUITests" */ = {
+		EE0C05A49D3160EC5BAF35D3361DBFAE /* Build configuration list for PBXNativeTarget "Pods-CCPAConsentViewController_ExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C46C3812C79844B7A6704FDED28D7C7 /* Debug */,
-				6987936E2DFFEA6DBE4907A15B1A1792 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E0F244DBD1A27F04C6A34084E29C9571 /* Build configuration list for PBXNativeTarget "Pods-AuthExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F994AA5BB0D6BB445876301149AC0B05 /* Debug */,
-				4E14631CB842BA76486DB76032D14970 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2D991A0A15DC6E4F3BCF4FA187F1535 /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift-IQKeyboardManagerSwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C7A1447030D147B4BEF6B835CF79B082 /* Debug */,
-				6AA86F2AA65ECCFB4CA58318F21A0A01 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FE4324C719BA680BF945575DA8C9041E /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				42BAEC3772C9860BE17C5CF39CEFB2EA /* Debug */,
-				9A28FBC4CA1C861381D9A65020036F58 /* Release */,
+				705BD05426AE49BFFCAEB5A474D4E95B /* Debug */,
+				44E208557D9DC2E31F47219F9B4723B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
