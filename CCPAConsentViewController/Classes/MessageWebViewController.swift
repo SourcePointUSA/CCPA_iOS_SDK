@@ -22,7 +22,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         guard let scriptSource = try? String(
             contentsOfFile: Bundle(for: CCPAConsentViewController.self).path(forResource: MessageWebViewController.MESSAGE_HANDLER_NAME, ofType: "js")!)
             else {
-                consentDelegate?.onError?(error: UnableToLoadJSReceiver())
+                consentDelegate?.onError?(ccpaError: CCPAUnableToLoadJSReceiver())
                 return nil
         }
         let script = WKUserScript(source: scriptSource, injectionTime: .atDocumentStart, forMainFrameOnly: true)
@@ -104,7 +104,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     }
 
     func onError(error: CCPAConsentViewControllerError?) {
-        consentDelegate?.onError?(error: error)
+        consentDelegate?.onError?(ccpaError: error)
         closeConsentUIIfOpen()
     }
 
@@ -147,7 +147,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         if connectvityManager.isConnectedToNetwork() {
             webview?.load(URLRequest(url: url))
         } else {
-            onError(error: NoInternetConnection())
+            onError(error: CCPANoInternetConnection())
         }
     }
 
@@ -162,7 +162,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
 
     override func loadPrivacyManager() {
         guard let url = pmUrl() else {
-            onError(error: URLParsingError(urlString: "PMUrl"))
+            onError(error: CCPAURLParsingError(urlString: "PMUrl"))
             return
         }
         load(url: url)
@@ -207,7 +207,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
             let body = message.body as? [String: Any?],
             let name = body["name"] as? String
         else {
-            onError(error: MessageEventParsingError(message: Optional(message.body).debugDescription))
+            onError(error: CCPAMessageEventParsingError(message: Optional(message.body).debugDescription))
             return
         }
 
@@ -222,12 +222,12 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
                 let actionType = payload["type"] as? Int,
                 let action = Action(rawValue: actionType)
             else {
-                onError(error: MessageEventParsingError(message: Optional(message.body).debugDescription))
+                onError(error: CCPAMessageEventParsingError(message: Optional(message.body).debugDescription))
                 return
             }
             onAction(action, consents: getPMConsentsIfAny(payload))
         case "onError":
-            onError(error: WebViewError())
+            onError(error: CCPAWebViewError())
         default:
             print(message.body)
         }

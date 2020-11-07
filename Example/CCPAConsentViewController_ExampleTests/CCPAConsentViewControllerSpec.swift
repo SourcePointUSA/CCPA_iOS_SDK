@@ -35,7 +35,7 @@ public class MockConsentDelegate: ConsentDelegate {
         isConsentUIDidDisappearCalled = true
     }
 
-    public func onError(error: CCPAConsentViewControllerError?) {
+    public func onError(ccpaError: CCPAConsentViewControllerError?) {
         isOnErrorCalled = true
     }
 
@@ -90,7 +90,7 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
             }
 
             afterEach {
-                consentViewController.clearAllConsentData()
+                CCPAConsentViewController.clearAllConsentData()
             }
 
             it("Load message in webview without authId") {
@@ -165,7 +165,7 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
             }
 
             it("Clears all data from the UserDefaults") {
-                consentViewController.clearAllConsentData()
+                CCPAConsentViewController.clearAllConsentData()
                 let consentUUID = UserDefaults.standard.dictionaryRepresentation().filter {
                     $0.key.starts(with: CCPAConsentViewController.CONSENT_UUID_KEY)
                 }
@@ -173,7 +173,7 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
             }
 
             it("Clears all consent data from the UserDefaults") {
-                consentViewController.clearAllConsentData()
+                CCPAConsentViewController.clearAllConsentData()
                 let metaKey = UserDefaults.standard.string(forKey: CCPAConsentViewController.META_KEY)
                 expect(metaKey).to(beNil(), description: "Upon successful call to clearAllConsentData META_KEY gets cleared")
             }

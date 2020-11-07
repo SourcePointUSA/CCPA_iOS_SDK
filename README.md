@@ -8,7 +8,7 @@ We strongly recommend the use of [CocoaPods](https://cocoapods.org) in order to 
 In your `Podfile` add the following line to your app target:
 
 ```
-pod 'CCPAConsentViewController', '1.3.1'
+pod 'CCPAConsentViewController', '1.4.0'
 ```
 ### Carthage
 We also support [Carthage](https://github.com/Carthage/Carthage). It requires a couple more steps to install so we dedicated a whole [wiki page](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/Carthage-SDK-integration-guide) for it.
@@ -75,8 +75,13 @@ extension ViewController: ConsentDelegate {
         print("US Privacy String:", UserDefaults.standard.string(forKey: CCPAConsentViewController.IAB_PRIVACY_STRING_KEY) ?? "")
     }
 
+<<<<<<< HEAD
     func onError(error: CCPAConsentViewControllerError?) {
         print("Error:", error.debugDescription)
+=======
+    func onError(ccpaError: CCPAConsentViewControllerError?) {
+        logger.log("Error: %{public}@", [ccpaError?.description ?? "Something Went Wrong"])
+>>>>>>> develop
     }
 }
 ```
@@ -126,8 +131,8 @@ extension ViewController: ConsentDelegate {
     }
 }
 
-- (void)onErrorWithError:(CCPAConsentViewControllerError *)error {
-    NSLog(@"Something went wrong: %@", error);
+- (void)onErrorWithCcpaError:(CCPAConsentViewControllerError *)ccpaError {
+    NSLog(@"Something went wrong: %@", ccpaError);
 }
 @end
 ```

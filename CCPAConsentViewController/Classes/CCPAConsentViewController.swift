@@ -174,10 +174,10 @@ public typealias TargetingParams = [String: String]
     public func loadMessage(forAuthId authId: String?) {
         if loading == .Ready {
             loading = .Loading
-            UserDefaults.standard.setValue(authId, forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
             if didAuthIdChange(newAuthId: (authId)) {
                 resetConsentData()
             }
+            UserDefaults.standard.setValue(authId, forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
             sourcePoint.getMessage(consentUUID: consentUUID, authId: authId) { [weak self] messageResponse, error in
                 self?.loading = .Ready
                 if let message = messageResponse {
@@ -229,11 +229,11 @@ public typealias TargetingParams = [String: String]
 
     func resetConsentData() {
         self.consentUUID = ""
-        clearAllConsentData()
+        CCPAConsentViewController.clearAllConsentData()
     }
 
     /// Remove all consent related data from the UserDefaults
-    public func clearAllConsentData() {
+    static public func clearAllConsentData() {
         UserDefaults.standard.removeObject(forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
         UserDefaults.standard.removeObject(forKey: CCPAConsentViewController.CCPA_USER_CONSENTS)
         UserDefaults.standard.removeObject(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
@@ -260,9 +260,9 @@ extension CCPAConsentViewController: ConsentDelegate {
     public func onError(error: CCPAConsentViewControllerError?) {
         loading = .Ready
         if shouldCleanConsentOnError {
-            clearAllConsentData()
+            CCPAConsentViewController.clearAllConsentData()
         }
-        consentDelegate?.onError?(error: error)
+        consentDelegate?.onError?(ccpaError: error)
     }
 
     public func onAction(_ action: Action, consents: PMConsents?) {

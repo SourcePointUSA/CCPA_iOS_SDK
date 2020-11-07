@@ -44,5 +44,5 @@ import Foundation
     @objc optional func onConsentReady(consentUUID: ConsentUUID, userConsent: UserConsent)
 
     /// the `onError` function can be called at any moment during the SDKs lifecycle
-    @objc optional func onError(error: CCPAConsentViewControllerError?)
+    @objc optional func onError(ccpaError: CCPAConsentViewControllerError?)
 }

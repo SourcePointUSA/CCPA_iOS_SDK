@@ -116,15 +116,9 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
             targetingParameters[targetingParam.targetingKey!] = targetingParam.targetingValue
         }
         consentViewController =  CCPAConsentViewController(accountId: Int(propertyDetails.accountId), propertyId: Int(propertyDetails.propertyId), propertyName: try! PropertyName(propertyDetails.propertyName!), PMId: propertyDetails.privacyManagerId!, campaignEnv: campaign, targetingParams:targetingParameters, consentDelegate: self)
-        
-        //            if let authId = propertyDetails.authId {
-        //                consentViewController.loadMessage(forAuthId: authId)
-        //            }else {
-        //                consentViewController.loadMessage()
-        //            }
-        consentViewController?.loadMessage()
-        
+        consentViewController?.loadMessage(forAuthId: propertyDetails.authId)
     }
+
     func ccpaConsentUIWillShow() {
         hideIndicator()
         present(self.consentViewController!, animated: true, completion: nil)
@@ -142,13 +136,13 @@ class ConsentDetailsViewController: BaseViewController, WKNavigationDelegate, Co
         self.hideIndicator()
     }
     
-    func onError(error: CCPAConsentViewControllerError?) {
-        logger.log("Error: %{public}@", [error?.description ?? "Something Went Wrong"])
+    func onError(ccpaError: CCPAConsentViewControllerError?) {
+        logger.log("Error: %{public}@", [ccpaError?.description ?? "Something Went Wrong"])
         let okHandler = {
             self.hideIndicator()
             self.dismiss(animated: false, completion: nil)
         }
-        AlertView.sharedInstance.showAlertView(title: Alert.message, message: error?.description ?? "Something Went Wrong", actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
+        AlertView.sharedInstance.showAlertView(title: Alert.message, message: ccpaError?.description ?? "Something Went Wrong", actions: [okHandler], titles: [Alert.ok], actionStyle: UIAlertController.Style.alert)
     }
     
     @IBAction func showPMAction(_ sender: Any) {
