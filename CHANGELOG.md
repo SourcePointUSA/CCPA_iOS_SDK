@@ -1,3 +1,8 @@
+## 1.4.0 (Nov, 07, 2020)
+* Prefixed error classes with `CCPA` to avoid class naming clashes with the GDPR SDK [#50](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/50)
+* Fixed an issue with authenticated consent not clearing user data when authId changed [#54](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/54)
+* Significantly improved end-to-end testing
+
 ## 1.3.3 (Oct, 09, 2020)
 *  Fixed an issue that was causing clash between GeneralRequestError class in GDPR and CCPA SDKs [#50](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/50).
 ## 1.3.2 (Sept, 29, 2020)
