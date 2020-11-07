@@ -174,10 +174,10 @@ public typealias TargetingParams = [String: String]
     public func loadMessage(forAuthId authId: String?) {
         if loading == .Ready {
             loading = .Loading
-            UserDefaults.standard.setValue(authId, forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
             if didAuthIdChange(newAuthId: (authId)) {
                 resetConsentData()
             }
+            UserDefaults.standard.setValue(authId, forKey: CCPAConsentViewController.CCPA_AUTH_ID_KEY)
             sourcePoint.getMessage(consentUUID: consentUUID, authId: authId) { [weak self] messageResponse, error in
                 self?.loading = .Ready
                 if let message = messageResponse {
