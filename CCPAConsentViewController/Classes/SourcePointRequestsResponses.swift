@@ -40,8 +40,9 @@ struct ActionRequest: WrapperApiRequest {
     let privacyManagerId: String
     let uuid: ConsentUUID
     let requestUUID: UUID
-    let consents: CPPAPMConsents
+    let consents: CCPAPMConsents
     let meta: Meta
+    let publisherData: [String: SPCCPAArbitraryJson?]?
 }
 
 @objc public class PMConsents: NSObject, Codable {
@@ -62,6 +63,6 @@ struct ActionRequest: WrapperApiRequest {
     }
 }
 
-struct CPPAPMConsents: Codable {
+struct CCPAPMConsents: Codable {
     let rejectedVendors, rejectedCategories: [String]
 }
