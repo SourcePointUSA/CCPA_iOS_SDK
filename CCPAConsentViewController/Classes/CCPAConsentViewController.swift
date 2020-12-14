@@ -267,7 +267,8 @@ extension CCPAConsentViewController: ConsentDelegate {
 
     public func onAction(_ action: Action, consents: PMConsents?) {
         consentDelegate?.onAction?(action, consents: consents)
-        if action == .AcceptAll || action == .RejectAll || action == .SaveAndExit {
+        let type = action.type
+        if type == .AcceptAll || type == .RejectAll || type == .SaveAndExit {
             sourcePoint.postAction(action: action, consentUUID: consentUUID, consents: consents) { [weak self] actionResponse, error in
                 if let response = actionResponse {
                     self?.consentUUID = response.uuid
