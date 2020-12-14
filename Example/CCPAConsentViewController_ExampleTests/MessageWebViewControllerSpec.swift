@@ -21,8 +21,6 @@ class MessageWebViewControllerSpec: QuickSpec, ConsentDelegate, WKNavigationDele
     override func spec() {
         var messageWebViewController: MessageWebViewController!
         let mockConsentDelegate = MockConsentDelegate()
-        let showPMAction = Action.ShowPrivacyManager
-        let cancelPMAction = Action.Dismiss
         let acceptedVendors = ["123", "456", "789"]
         let rejectedVendors = ["321", "654", "987"]
         let acceptedPurposes = ["1234", "4567", "7890"]
@@ -32,11 +30,13 @@ class MessageWebViewControllerSpec: QuickSpec, ConsentDelegate, WKNavigationDele
         let pmConsents = PMConsents(vendors: vendors, categories: purposes)
         let payload: NSDictionary = ["id": "455262", "consents": pmConsents]
 
+        beforeEach {
+            messageWebViewController = self.getMessageWebViewController()
+            messageWebViewController.consentDelegate = mockConsentDelegate
+        }
+
         // this method is used to test whether webview is loaded or not successfully
         describe("Test loadView method") {
-            beforeEach {
-                messageWebViewController = self.getMessageWebViewController()
-            }
             it("Test MessageWebViewController calls loadView method") {
                 messageWebViewController.loadView()
                 expect(messageWebViewController.webview).notTo(beNil(), description: "Webview initialized successfully")
@@ -44,11 +44,6 @@ class MessageWebViewControllerSpec: QuickSpec, ConsentDelegate, WKNavigationDele
         }
 
         describe("Test ConsentDelegate methods") {
-            beforeEach {
-                messageWebViewController = self.getMessageWebViewController()
-                messageWebViewController.consentDelegate = mockConsentDelegate
-            }
-
             context("Test consentUIWillShow delegate method") {
                 it("Test MessageWebViewController calls consentUIWillShow delegate method") {
                     messageWebViewController.ccpaConsentUIWillShow()
@@ -101,14 +96,14 @@ class MessageWebViewControllerSpec: QuickSpec, ConsentDelegate, WKNavigationDele
 
             context("Test onAction delegate method") {
                 it("Test MessageWebViewController calls onAction delegate method for show PM action") {
-                    messageWebViewController.onAction(showPMAction, consents: pmConsents)
+                    messageWebViewController.onAction(Action(type: .ShowPrivacyManager), consents: pmConsents)
                     expect(mockConsentDelegate.isOnActionCalled).to(equal(true), description: "onAction delegate method calls successfully")
                 }
             }
 
             context("Test onAction delegate method") {
                 it("Test MessageWebViewController calls onAction delegate method for PM cancel action") {
-                    messageWebViewController.onAction(cancelPMAction, consents: pmConsents)
+                    messageWebViewController.onAction(Action(type: .Dismiss), consents: pmConsents)
                     expect(mockConsentDelegate.isOnActionCalled).to(equal(true), description: "onAction delegate method calls successfully")
                 }
             }
@@ -135,9 +130,6 @@ class MessageWebViewControllerSpec: QuickSpec, ConsentDelegate, WKNavigationDele
 
         // this method is used to test whether viewWillDisappear is called or not successfully
         describe("Test viewWillDisappear method") {
-            beforeEach {
-                messageWebViewController = self.getMessageWebViewController()
-            }
             it("Test MessageWebViewController calls viewWillDisappear method") {
                 messageWebViewController.viewWillDisappear(false)
                 expect(messageWebViewController.consentDelegate).to(beNil(), description: "ConsentDelegate gets cleared")
@@ -146,9 +138,6 @@ class MessageWebViewControllerSpec: QuickSpec, ConsentDelegate, WKNavigationDele
 
         describe("Test getPMConsentsIfAny method") {
             var pmConsents: PMConsents?
-            beforeEach {
-                messageWebViewController = self.getMessageWebViewController()
-            }
             it("Test MessageWebViewController calls getPMConsentsIfAny method") {
                 pmConsents = messageWebViewController.getPMConsentsIfAny(payload as! [String: Any])
                 if pmConsents?.categories.accepted.count ?? 0 > 0 {

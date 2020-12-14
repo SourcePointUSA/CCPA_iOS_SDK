@@ -78,17 +78,17 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
     }
 
     override func spec() {
-        var consentViewController = self.getCCPAConsentViewController()
+        let consentViewController = self.getCCPAConsentViewController()
         let mockConsentDelegate = MockConsentDelegate()
         let consentUUID = UUID().uuidString
         let messageViewController = MessageViewController()
         let userConsents = UserConsent.empty()
 
-        describe("load Message in webview") {
-            beforeEach {
-                consentViewController = self.getCCPAConsentViewController()
-            }
+        beforeEach {
+            consentViewController.consentDelegate = mockConsentDelegate
+        }
 
+        describe("load Message in webview") {
             afterEach {
                 CCPAConsentViewController.clearAllConsentData()
             }
@@ -105,10 +105,6 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
         }
 
         describe("load Privacy Manager") {
-            beforeEach {
-                consentViewController = self.getCCPAConsentViewController()
-            }
-
             it("Load privacy manager in webview") {
                 consentViewController.loadPrivacyManager()
                 expect(consentViewController.loading).to(equal(.Loading), description: "loadPrivacyManager method works as expected")
@@ -118,7 +114,6 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
         describe("get stored user consents and consent UUID") {
             beforeEach {
                 UserDefaults.standard.set("sp_ccpa_consentUUID", forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
-                consentViewController = self.getCCPAConsentViewController()
             }
 
             it("get stored user consents") {
@@ -133,10 +128,6 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
         }
 
         describe("Get right value for authID change status") {
-            beforeEach {
-                consentViewController = self.getCCPAConsentViewController()
-            }
-
             context("when the new authId is nil") {
                 it("returns false") {
                     expect(consentViewController.didAuthIdChange(newAuthId: nil)).to(equal(false))
@@ -161,7 +152,6 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
             beforeEach {
                 UserDefaults.standard.set("sp_ccpa_meta", forKey: CCPAConsentViewController.META_KEY)
                 UserDefaults.standard.set("sp_ccpa_consentUUID", forKey: CCPAConsentViewController.CONSENT_UUID_KEY)
-                consentViewController = self.getCCPAConsentViewController()
             }
 
             it("Clears all data from the UserDefaults") {
@@ -180,19 +170,14 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
         }
 
         describe("Test ConsentDelegate methods") {
-            beforeEach {
-                consentViewController = self.getCCPAConsentViewController()
-                consentViewController.consentDelegate = mockConsentDelegate
-            }
-
             describe("onAction") {
                 it("should set the consentUUID in the UserDefaults") {
-                    consentViewController.onAction(.AcceptAll, consents: nil)
+                    consentViewController.onAction(Action(type: .AcceptAll), consents: nil)
                     expect(UserDefaults.standard.string(forKey: CCPAConsentViewController.CONSENT_UUID_KEY)).toEventuallyNot(beEmpty())
                 }
 
                 it("should set the consentUUID as attribute of CCPAConsentViewController") {
-                    consentViewController.onAction(.AcceptAll, consents: nil)
+                    consentViewController.onAction(Action(type: .AcceptAll), consents: nil)
                     expect(consentViewController.consentUUID).toEventuallyNot(beEmpty())
                 }
             }
@@ -267,10 +252,6 @@ class CCPAConsentViewControllerSpec: QuickSpec, ConsentDelegate {
         }
 
         describe("Test Add/Remove MessageViewController") {
-            beforeEach {
-                consentViewController = self.getCCPAConsentViewController()
-            }
-
             it("Test add MessageViewController into viewcontroller stack") {
                 let viewController = UIViewController()
                 consentViewController.add(asChildViewController: viewController)

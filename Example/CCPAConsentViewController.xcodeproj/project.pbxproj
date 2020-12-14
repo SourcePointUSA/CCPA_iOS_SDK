@@ -60,6 +60,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		6D4EFFF725873A570014372A /* SPCCPAArbitraryJsonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4EFFF625873A570014372A /* SPCCPAArbitraryJsonSpec.swift */; };
 		6D872A6A247EF21500791341 /* SimpleClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D872A69247EF21500791341 /* SimpleClientSpec.swift */; };
 		6DC3E563247D7D1F00434063 /* SourcePointClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3E562247D7D1F00434063 /* SourcePointClientSpec.swift */; };
 		6DC3E569247D824000434063 /* ConnectivityManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3E564247D824000434063 /* ConnectivityManagerSpec.swift */; };
@@ -190,6 +191,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		65995E749796570B92FE922B /* Pods_CCPAMetaAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCPAMetaAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		663DE362110AEABD75816094 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		6D4EFFF625873A570014372A /* SPCCPAArbitraryJsonSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCCPAArbitraryJsonSpec.swift; sourceTree = "<group>"; };
 		6D872A69247EF21500791341 /* SimpleClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleClientSpec.swift; sourceTree = "<group>"; };
 		6DC3E562247D7D1F00434063 /* SourcePointClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePointClientSpec.swift; sourceTree = "<group>"; };
 		6DC3E564247D824000434063 /* ConnectivityManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityManagerSpec.swift; sourceTree = "<group>"; };
@@ -765,6 +767,7 @@
 				6DC3E562247D7D1F00434063 /* SourcePointClientSpec.swift */,
 				6D872A69247EF21500791341 /* SimpleClientSpec.swift */,
 				6DC3E564247D824000434063 /* ConnectivityManagerSpec.swift */,
+				6D4EFFF625873A570014372A /* SPCCPAArbitraryJsonSpec.swift */,
 				82FC4D3E23983231002F08E5 /* Info.plist */,
 			);
 			path = CCPAConsentViewController_ExampleTests;
@@ -1507,6 +1510,7 @@
 				6DC3E56D247D824000434063 /* MessageViewControllerSpec.swift in Sources */,
 				6DC3E56B247D824000434063 /* MessageWebViewControllerSpec.swift in Sources */,
 				6DC3E56A247D824000434063 /* CCPAConsentViewControllerErrorSpec.swift in Sources */,
+				6D4EFFF725873A570014372A /* SPCCPAArbitraryJsonSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

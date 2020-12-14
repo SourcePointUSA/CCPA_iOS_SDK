@@ -74,7 +74,7 @@ class SourcePointClientSpec: QuickSpec {
         var httpClient: MockHttp?
         var mockedResponse: Data?
         var pmConsents: PMConsents!
-        let acceptAllAction = Action.AcceptAll
+        let acceptAllAction = Action(type: .AcceptAll)
 
         describe("Test SourcePointClient Methods") {
             beforeEach {
@@ -153,7 +153,7 @@ class SourcePointClientSpec: QuickSpec {
                     }
 
                     it("get the right post url") {
-                        let postActionURL = client.postActionUrl(Action.AcceptAll.rawValue)
+                        let postActionURL = client.postActionUrl(acceptAllAction.type.rawValue)
                         expect(postActionURL?.absoluteString).to(equal("https://wrapper-api.sp-prod.net/ccpa/consent/11"))
                     }
 
