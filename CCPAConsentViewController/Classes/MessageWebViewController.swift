@@ -132,7 +132,7 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
 
     func onAction(_ action: Action, consents: PMConsents?) {
         consentDelegate?.onAction?(action, consents: consents)
-        switch action {
+        switch action.type {
         case .ShowPrivacyManager:
             showPrivacyManagerFromMessageAction()
         case .Dismiss:
@@ -219,13 +219,13 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
         case "onAction":
             guard
                 let payload = body["body"] as? [String: Any],
-                let actionType = payload["type"] as? Int,
-                let action = Action(rawValue: actionType)
+                let typeString = payload["type"] as? Int,
+                let actionType = ActionType(rawValue: typeString)
             else {
                 onError(error: CCPAMessageEventParsingError(message: Optional(message.body).debugDescription))
                 return
             }
-            onAction(action, consents: getPMConsentsIfAny(payload))
+            onAction(Action(type: actionType), consents: getPMConsentsIfAny(payload))
         case "onError":
             onError(error: CCPAWebViewError())
         default:
