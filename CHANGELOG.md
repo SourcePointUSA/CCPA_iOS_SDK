@@ -1,3 +1,6 @@
+## 1.5.0 (Dec, 15, 2020)
+* Added a feature to attach an arbitrary payload(publisher data) to action data. Check how to use it in this [section of the README](https://github.com/SourcePointUSA/CCPA_iOS_SDK#pubdata). [#55](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/55)
+
 ## 1.4.0 (Nov, 07, 2020)
 * Prefixed error classes with `CCPA` to avoid class naming clashes with the GDPR SDK [#50](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/50)
 * Fixed an issue with authenticated consent not clearing user data when authId changed [#54](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/54)

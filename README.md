@@ -8,7 +8,7 @@ We strongly recommend the use of [CocoaPods](https://cocoapods.org) in order to 
 In your `Podfile` add the following line to your app target:
 
 ```
-pod 'CCPAConsentViewController', '1.4.0'
+pod 'CCPAConsentViewController', '1.5.0'
 ```
 ### Carthage
 We also support [Carthage](https://github.com/Carthage/Carthage). It requires a couple more steps to install so we dedicated a whole [wiki page](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/Carthage-SDK-integration-guide) for it.
@@ -154,3 +154,6 @@ you should use:
 ```swift
 consentViewController.loadMessage(forAuthId: String?)
 ```
+
+## `pubData`
+When the user takes an action within the consent UI, it's possible to attach an arbitrary payload to the action data an have it sent to our endpoints. For more information on how to do that check our wiki: [Sending arbitrary data when the user takes an action](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/Sending-arbitrary-data-when-the-user-takes-an-action.)

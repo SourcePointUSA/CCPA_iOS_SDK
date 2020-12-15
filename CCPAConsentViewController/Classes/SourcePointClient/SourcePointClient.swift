@@ -112,9 +112,9 @@ class SourcePointClient {
     }
 
     func postAction(action: Action, consentUUID: ConsentUUID, consents: PMConsents?, completionHandler: @escaping (ActionResponse?, CCPAAPIParsingError?) -> Void) {
-        let url = postActionUrl(action.rawValue)
+        let url = postActionUrl(action.type.rawValue)
         let meta = UserDefaults.standard.string(forKey: CCPAConsentViewController.META_KEY) ?? "{}"
-        let ccpaConsents = CPPAPMConsents(rejectedVendors: consents?.vendors.rejected ?? [], rejectedCategories: consents?.categories.rejected ?? [])
+        let ccpaConsents = CCPAPMConsents(rejectedVendors: consents?.vendors.rejected ?? [], rejectedCategories: consents?.categories.rejected ?? [])
         guard let body = try? json.encode(ActionRequest(
             propertyId: propertyId,
             accountId: accountId,
@@ -122,7 +122,8 @@ class SourcePointClient {
             uuid: consentUUID,
             requestUUID: requestUUID,
             consents: ccpaConsents,
-            meta: meta
+            meta: meta,
+            publisherData: action.publisherData
         )) else {
             completionHandler(nil, CCPAAPIParsingError(url?.absoluteString ?? "POST consent", nil))
             return
