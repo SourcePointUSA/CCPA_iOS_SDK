@@ -19,11 +19,11 @@ class MessageWebViewController: MessageViewController, WKUIDelegate, WKNavigatio
     lazy var webview: WKWebView? = {
         let config = WKWebViewConfiguration()
         let userContentController = WKUserContentController()
-        guard let scriptSource = try? String(
-            contentsOfFile: Bundle(for: CCPAConsentViewController.self).path(forResource: MessageWebViewController.MESSAGE_HANDLER_NAME, ofType: "js")!)
-            else {
-                consentDelegate?.onError?(ccpaError: CCPAUnableToLoadJSReceiver())
-                return nil
+        guard let path = Bundle.framework.path(forResource: Self.MESSAGE_HANDLER_NAME, ofType: "js"),
+              let scriptSource = try? String(contentsOfFile: path)
+        else {
+            consentDelegate?.onError?(ccpaError: CCPAUnableToLoadJSReceiver())
+            return nil
         }
         let script = WKUserScript(source: scriptSource, injectionTime: .atDocumentStart, forMainFrameOnly: true)
         userContentController.addUserScript(script)
