@@ -1,3 +1,6 @@
+## 1.6.0 (Dec, 16, 2020)
+* Added support to Swift Package Manager (SPM) [#56](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/56)
+
 ## 1.5.0 (Dec, 15, 2020)
 * Added a feature to attach an arbitrary payload(publisher data) to action data. Check how to use it in this [section of the README](https://github.com/SourcePointUSA/CCPA_iOS_SDK#pubdata). [#55](https://github.com/SourcePointUSA/CCPA_iOS_SDK/pull/55)
 
