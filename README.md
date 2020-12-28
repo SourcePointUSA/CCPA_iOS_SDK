@@ -14,6 +14,15 @@ pod 'CCPAConsentViewController', '1.5.0'
 We also support [Carthage](https://github.com/Carthage/Carthage). It requires a couple more steps to install so we dedicated a whole [wiki page](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/Carthage-SDK-integration-guide) for it.
 Let us know if we missed any step.
 
+### Swift Package Manager
+We also support [Swift Package Manager](https://swift.org/package-manager/). It is a tool for automating the distribution of Swift code and is integrated into the swift compiler. It is in early development, but SourcePoint does support its use on iOS platform.
+
+To add our SDK package as dependency to your Xcode project, In Xcode select File > Swift Packages > Add Package Dependency and enter our SDK repository URL.
+
+```
+https://github.com/SourcePointUSA/CCPA_iOS_SDK.git
+```
+
 ### Manual
 We also support Manual integration of SDK. It requires a couple more steps to install so we dedicated a whole [wiki page](https://github.com/SourcePointUSA/CCPA_iOS_SDK/wiki/Manual-SDK-integration-guide) for it.
 Let us know if we missed any step.
