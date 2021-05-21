@@ -1,4 +1,8 @@
 
+# ❗The CCPA SDK is now part of the [Unified SDK](https://github.com/SourcePointUSA/ios-cmp-app/). This repo is now archived.
+
+
+
 # iOS Setup guide
 
 ## How to install
